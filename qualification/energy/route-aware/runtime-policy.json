@@ -1,0 +1,35 @@
+{
+  "version": "route-aware-runtime/2.0.0",
+  "worker": {
+    "user": "10001:10001",
+    "network": "none",
+    "read_only": true,
+    "cap_drop": ["ALL"],
+    "no_new_privileges": true,
+    "memory_bytes": 268435456,
+    "memory_swap_bytes": 268435456,
+    "cpus": 1,
+    "pids_limit": 32,
+    "timeout_real_life_s": 30,
+    "mounts": [],
+    "published_ports": [],
+    "max_request_bytes": 4194304,
+    "max_route_segments": 10000,
+    "max_route_vertices": 100000,
+    "max_integration_steps": 100000
+  },
+  "controller": {
+    "active_workers_global": 1,
+    "active_workers_per_asset": 1,
+    "pending_per_asset": 1,
+    "period_working_s": 30,
+    "retry_limit": 1,
+    "lease_real_life_s": 45
+  },
+  "qualification": {
+    "live_windows_reserve_bytes": 2147483648,
+    "fleet_endurance": "excluded",
+    "raw_results": "evidence/energy-v2",
+    "status": "not_yet_executed"
+  }
+}

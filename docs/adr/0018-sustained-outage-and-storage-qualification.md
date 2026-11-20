@@ -1,0 +1,23 @@
+# ADR-0018: Sustained outage and queue storage qualification
+
+Status: selected for P1-E1; actual results belong in its verification record.
+
+## Sequence and acceptance boundaries
+
+P1-E1 first qualifies a single actual paced bus through a full 300-second broker/receiver outage, an ingestion restart and pending delivery while the source continues. It also exercises the existing production SQLite queue at the declared maximum packet size and under a controlled full filesystem. This increment does not replace W0's 30-minute run, W1's ten assets/hour, W2 history queries, fleet W4/Q-07 or Q-12 resource measurement. Later P1-E increments must add measured workload clocks/browser correlation, full W0/W1, W2 history/query/recovery, retention/storage policies and final phase review.
+
+The original 20-signal bus runs for 480 actual paced observations: at least 60 confirmed observations before failure, 300 measured wall seconds with broker and receiver confirmed down, and at least 30 later live observations. No clock acceleration is allowed. An independent one-second monitor records generated/pending/terminal/database counts and consistent snapshot heads. Final acceptance reconciles every original source-report packet/recipe byte, all 9,600 scalar samples, zero quarantine/drop/pending and the latest current state. Cross-database intermediate samples are observations, not atomic accounting proofs; final reconciliation happens after generation and delivery stop.
+
+After restoring the broker and restarting ingestion, deliberately deliver the newest queued original before one older original using the authorized publisher and bound receipts. Check current after both receipts, then let the unchanged production sender drain the remainder while generation continues. Require drain within 120 seconds, sampled nonregressing current state and later fresh-source deliveries. This controlled reorder is explicit fault injection, not an alternative production scheduling policy or W1 source-to-browser latency measurement.
+
+## Storage and overflow semantics
+
+Use schema-valid 20-signal synthetic storage packets of exactly 8,192 encoded bytes. Bounded annotation strings fill the declared wire-size envelope without changing signal IDs, catalogs or production validation. These are storage inputs, not independently stepped physical buses or registered network observations. Enqueue through the real queue; 1,800 packets represent the declared one-asset 30-minute storage horizon. Fill the entire 32 MiB encoded cap (4,096 packets), refuse the next attempt, verify unchanged bytes/sequence, exit/reopen the container on the same Linux volume, acknowledge four using labeled local receipt fixtures, and refill. Record the database footprint against the 64 MiB planning budget, without claiming a hard filesystem quota or journal-peak guarantee.
+
+Retain the existing overflow choice: backpressure means refusing an attempted insertion while preserving all committed pending packets and sequence allocation. Count that refused attempt separately; it is not a generated durable event or an unreported drop. The physical model cannot resume after a producer stop, so no continuous plant/resume guarantee follows. A future physical adapter with unpausable acquisition needs its own durable rejected/dropped-reading policy and reserved critical storage. No silent eviction is introduced.
+
+Use a private 4 MiB temporary filesystem to force real SQLite `SQLITE_FULL`, keeping the host disk unaffected. Confirm transaction rollback, intact prior packet fingerprints/sequence, database integrity and connection reopen. Release only the fixture's reserve file and verify a new insertion succeeds. This is an application response to a bounded filesystem failure, not power-loss/controller-fault durability or a production quota implementation. [SQLite result codes](https://www.sqlite.org/rescode.html#full), [transaction failure handling](https://www.sqlite.org/lang_transaction.html).
+
+## Compatibility and privacy
+
+No production queue, telemetry, migration or monitoring UI change is required for this test increment. Preserve the shared-code baseline and original artifacts. Reuse isolated bootstrap with a separate checkpoint flag/project name; helpers, volumes and controls have exact ownership checks and bounded lifetimes. Capacity runs are offline and contain no credentials; service credentials, packet traces, reports and diagnostics remain ignored. Keep Windows-native agent mode and the canonical source tree. Full benchmark host-headroom/paging acceptance remains open; request unused-app closure before the service test when the measured host is constrained.

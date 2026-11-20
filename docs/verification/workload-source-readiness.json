@@ -1,0 +1,167 @@
+{
+  "date": "2026-11-03",
+  "checkpoint": "P1-E2-A",
+  "passed": true,
+  "E2_complete": false,
+  "phase_1_complete": false,
+  "W0_passed": false,
+  "W1_passed": false,
+  "scope": "Sustained numerical source/identity/format/service/browser readiness and pure measurement-rule tests",
+  "source": {
+    "scenario": "simulation/montreal-sustained",
+    "laps": 5,
+    "planned_network_lane_length_m": 21210.4,
+    "motion_and_energy_authority": "SUMO 1.28.0",
+    "parameters": "same independently instantiated assumed bus/plant as original bus 001",
+    "prefixes": {
+      "W0_plus_warmup": {
+        "repeats": 2,
+        "events_per_run": 1860,
+        "scalar_samples_per_run": 37200,
+        "physical_intervals_per_run": 9299,
+        "simulated_seconds": 1860.0,
+        "numeric_trace_sha256": "e6b1ad8f9808066287e9ab078a30b9baaffeff4d8dac6876b7b38aabc61ad52c",
+        "maximum_energy_residual_j": 2.384185791015625e-07,
+        "energy_tolerance_j": 0.01,
+        "source_continues_beyond_prefix": true,
+        "wall_time_acceptance": false
+      },
+      "W1_plus_warmup": {
+        "repeats": 2,
+        "events_per_run": 3660,
+        "scalar_samples_per_run": 73200,
+        "physical_intervals_per_run": 18299,
+        "simulated_seconds": 3660.0,
+        "numeric_trace_sha256": "bd5db6ea55e38fa5187d6ea146251319ffd463e5bb027603500224b3b272c43a",
+        "maximum_energy_residual_j": 2.384185791015625e-07,
+        "energy_tolerance_j": 0.01,
+        "source_continues_beyond_prefix": true,
+        "wall_time_acceptance": false
+      }
+    },
+    "physical_calibration_passed": false,
+    "source_state_resets_at_lap_boundaries": false
+  },
+  "format": {
+    "envelope": "3.2.0",
+    "catalog": "1.4.0",
+    "manifest": "source-run/2.2.0",
+    "initial_signals": 20,
+    "asset_ids": [
+      "bus-001",
+      "bus-002",
+      "bus-003",
+      "bus-004",
+      "bus-005",
+      "bus-006",
+      "bus-007",
+      "bus-008",
+      "bus-009",
+      "bus-010"
+    ],
+    "original_defaults_and_artifacts_preserved": true,
+    "new_artifacts_frozen": true
+  },
+  "policy_configuration": {
+    "trusted_file_max_bytes": 1048576,
+    "wire_packet_max_bytes": 65536,
+    "strict_json_and_ownership_preserved": true,
+    "public_policy_upload_endpoint_added": false,
+    "reviewed_change": "qualification/workload/core-changes.json"
+  },
+  "rehearsal": {
+    "concurrent_sources": 2,
+    "independent_source_containers": 10,
+    "events_per_asset": 30,
+    "unique_events": 300,
+    "scalar_samples": 6000,
+    "original_packet_and_recipe_bytes_equal": true,
+    "all_queues_pending": 0,
+    "cross_asset_broker_publish_denied": true,
+    "scoped_API_and_map_reads": true,
+    "browsers": [
+      {
+        "passed": true,
+        "project": "windows-edge-visible",
+        "browser": "156.0.4314.58",
+        "checks": [
+          "ten asset choices",
+          "20 existing signal definitions and values per asset",
+          "asset-scoped snapshots and reader denial",
+          "sustained mission map",
+          "desktop/mobile",
+          "no external requests"
+        ],
+        "scope": "final recorded-state UI compatibility; no live latency/DOM timing claim"
+      },
+      {
+        "passed": true,
+        "project": "chromium-automated",
+        "browser": "156.0.8078.4",
+        "checks": [
+          "ten asset choices",
+          "20 existing signal definitions and values per asset",
+          "asset-scoped snapshots and reader denial",
+          "sustained mission map",
+          "desktop/mobile",
+          "no external requests"
+        ],
+        "scope": "final recorded-state UI compatibility; no live latency/DOM timing claim"
+      }
+    ],
+    "visual_review": "representative final Edge desktop/mobile screenshots reviewed",
+    "scope": "short paced rehearsal in batches of two, not ten simultaneous sources or full W1"
+  },
+  "checks": {
+    "python_tests": 113,
+    "frontend_tests": 12,
+    "strict_typescript": true,
+    "strict_python_modules": 4,
+    "original_contract_cases_per_language": 339,
+    "operational_contract_cases_per_language": 81,
+    "all_previous_outcomes_preserved": true,
+    "guard": {
+      "passed": true,
+      "baseline_commit": "d2edc5292b6ac3812c5ee2afc3c6e03ff71d9c64",
+      "unchanged_files": 52,
+      "reviewed_core_changes": {
+        "src/evdt/monitoring/run_policy.py": {
+          "baseline_sha256": "2a55b4d476555b116a751835108185273ccce470acb1208d0081d08334ec37e4",
+          "reviewed_sha256": "9157bf0a949f8a5d5071f22547ecfb875194fb2ee904fe509d1c99eba261cadb",
+          "reason": "Only trusted startup policy-file parsing uses a separate 1 MiB portable-JSON bound; telemetry, registration and clock wire limits/validation unchanged"
+        }
+      },
+      "profile_change": "only five reviewed new format-registry entries; all prior values preserved"
+    },
+    "original_monitoring_and_isolated_replay_regression": true,
+    "measurement_rules": "nearest rank, conservative bounded clock offsets, invalid bounds, complete event sets/disjoint dispositions, no missing-event exclusion",
+    "actual_timing_collectors_implemented": false,
+    "actual_clock_synchronization_qualified": false,
+    "source_bytes_rechecked": true,
+    "format_build_privacy_secrets": true
+  },
+  "cleanup": {
+    "source_rehearsal": {
+      "containers": "",
+      "volumes": ""
+    },
+    "original_regression": {
+      "containers": "",
+      "volumes": ""
+    }
+  },
+  "private_evidence": {
+    "source_browser": "evidence/p1/2026-11-03-e2a-03/qualification.json",
+    "source_services": "evidence/p1/2026-11-03-e2a-03/services/qualification.json",
+    "regression_browser": "evidence/p1/2026-11-03-e2a-regression-01/qualification.json",
+    "regression_services": "evidence/p1/2026-11-03-e2a-regression-01/services/qualification.json",
+    "shared_checks": ".runtime/dev-checks/8576f8e848354adfa6b3e75384c2d29d/report.json"
+  },
+  "remaining": [
+    "E2-B actual source/attempt/receive/persistence/projection/DOM/clock/resource collectors and short correlated rehearsal",
+    "E2-C full warmup plus W0/W1 wall durations/rates/concurrency and required metrics",
+    "E3 W2 history/five-signal aggregation/export and timed restore",
+    "physical quotas/critical reserve/retention/startup/host paging and formal visual baseline",
+    "physical calibration/producer state resumption/future command effects"
+  ]
+}

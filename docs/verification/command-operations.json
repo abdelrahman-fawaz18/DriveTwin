@@ -1,0 +1,140 @@
+{
+  "checkpoint": "P3-B4 through P3-B6, command operations and recovery",
+  "date": "2026-11-05",
+  "passed": true,
+  "pending_commands_and_mission_intent": {
+    "cancel": {
+      "private_report": "evidence/p3/2026-11-05-pending-cancel-01/qualification.json",
+      "sha256": "391be2985dc71d3801da1b13603bed4ecf5965004608b1d84bc9e41a94127ae8",
+      "original_state": "canceled",
+      "idempotent": true,
+      "second_handoff_refused": true
+    },
+    "replace": {
+      "private_report": "evidence/p3/2026-11-05-pending-replace-01/qualification.json",
+      "sha256": "a3ac7d997662c61bb4b5ab8972836f0eb47240f2838e8267feacdd48a70d5aa3",
+      "original_state": "superseded",
+      "idempotent": true,
+      "confirmed_replacement_cap_m_s": 4.0,
+      "second_handoff_refused": true
+    },
+    "cancel-race": {
+      "private_report": "evidence/p3/2026-11-05-pending-cancel-race-01/qualification.json",
+      "sha256": "60c35610f14e0eaf902a0aff695a4fab0a1b3f44659f4c7469937e33a5a47ed6",
+      "race_winner": "cancellation",
+      "second_handoff_refused": true
+    },
+    "replace-race": {
+      "private_report": "evidence/p3/2026-11-05-pending-replace-race-01/qualification.json",
+      "sha256": "ef16b492919138759c4838d51d016d1996f3b4b4c32275d53cd87c23ee73d906",
+      "race_winner": "handoff",
+      "second_handoff_refused": true
+    },
+    "sealed-cancel": {
+      "private_report": "evidence/p3/2026-11-05-pending-sealed-cancel-01/qualification.json",
+      "sha256": "966a19911082e879fabad09500a79eec829a5edbda67111075047a227dc5ebae",
+      "canceled": true,
+      "decision_preserved": true
+    },
+    "mission": {
+      "private_report": "evidence/p3/2026-11-05-pending-mission-01/qualification.json",
+      "sha256": "2ab1bf6a024772d012de50e2a783abb536e355ba7119bb0142e83533abc648c2",
+      "mission_case": true,
+      "intent_and_read_verified": true
+    }
+  },
+  "backup_and_restore": {
+    "direct": {
+      "private_report": "evidence/p3/2026-11-05-command-backup-direct-01/qualification.json",
+      "sha256": "3d451c7f87acb9429f0a639f330845b77c4a27cf5c0b496b12404c60bc39f4c5",
+      "archive_sha256": "78e70823e0d5f8c434c0ceba750cdfe086a6eb833f48a3efe1dee7f745fc5cbc",
+      "archive_bytes": 90255,
+      "separate_cluster": true,
+      "inventory_exact": true,
+      "source_and_occupied_restore_refused": true,
+      "restored_views": 3,
+      "old_credentials_denied": true,
+      "handoff_refused_after_restore": true,
+      "command_role_denials": 4,
+      "restore_cleanup_passed": true,
+      "command_tables": {
+        "arbitration_targets": 0,
+        "attempts": 1,
+        "deadlines": 2,
+        "decisions": 0,
+        "effects": 1,
+        "migrations": 6,
+        "mission_intents": 1,
+        "mission_stations": 2,
+        "pending_changes": 1,
+        "proposals": 0,
+        "rejections": 31,
+        "requests": 2,
+        "results": 1,
+        "targets": 1
+      }
+    },
+    "arbitration": {
+      "private_report": "evidence/p3/2026-11-05-command-backup-arbitration-01/qualification.json",
+      "sha256": "b26fe47e1f7455940e68ad8074ffee3b8458a63e1266ca3b2e4b4cb622659d40",
+      "archive_sha256": "7487d42f23e2f5f98740447818c3d4f8a2a0ea2625184a5aefe41e808d57d540",
+      "archive_bytes": 90664,
+      "separate_cluster": true,
+      "inventory_exact": true,
+      "source_and_occupied_restore_refused": true,
+      "restored_views": 3,
+      "old_credentials_denied": true,
+      "handoff_refused_after_restore": true,
+      "command_role_denials": 4,
+      "restore_cleanup_passed": true,
+      "command_tables": {
+        "arbitration_targets": 1,
+        "attempts": 0,
+        "deadlines": 1,
+        "decisions": 1,
+        "effects": 0,
+        "migrations": 6,
+        "mission_intents": 1,
+        "mission_stations": 2,
+        "pending_changes": 1,
+        "proposals": 3,
+        "rejections": 38,
+        "requests": 1,
+        "results": 0,
+        "targets": 1
+      }
+    }
+  },
+  "live_regression": {
+    "baseline": {
+      "private_report": "evidence/p3/2026-11-05-command-operations-live-reference/qualification.json",
+      "sha256": "df45148eee019f6c43a1b0a18ebb7cdcc83412ed3daa6bc98fa15be1a5e4357f",
+      "accepted_originals": 16,
+      "accepted_readings": 320
+    },
+    "arbitration": {
+      "private_report": "evidence/p3/2026-11-05-command-operations-live-arbitration/qualification.json",
+      "sha256": "18397279c2813c825fceb8e90069fa550b4e05691d04274b375380d0c4e40400",
+      "accepted_originals": 16,
+      "accepted_readings": 320,
+      "selected_proposer": "operator",
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "confirmed",
+        "confirmed": true,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 7.800000000000004,
+        "maximum_commanded_m_s": 4.0,
+        "pairs_showing_lower_speed": 4,
+        "matching_pre_command_samples": 4
+      }
+    }
+  },
+  "scope": "One local simulated asset per fixture. The mission API records intent for operator review.",
+  "phase_c_ready": true,
+  "next_step": {
+    "id": "P3-C1",
+    "name": "Operator controls and command timeline"
+  }
+}

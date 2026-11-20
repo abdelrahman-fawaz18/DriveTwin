@@ -1,0 +1,15 @@
+{
+  "scope": "Read-only integrity and source compatibility review of the retained normal-queue development backup",
+  "reference": "docs/verification/p1-monitoring-complete.json",
+  "original_private_service_report": "evidence/p1/2026-11-04-final-recovery-03/services/qualification.json",
+  "original_service_report_sha256": "3f9869d57b6c21481fc6eb21dd7ddd65470a86d78b43077d4d458e82bace4c39",
+  "backup_manifest_sha256": "4d96972d9e8597eaf916df9c89c35a8d439b6a9a4243e7b6b1157dfa1acf4538",
+  "files_verified": 43,
+  "bytes_verified": 2868289,
+  "matching_application_image_available": true,
+  "application_image_id": "sha256:6c00141d129decd8edc25b3a7a2a742019836c8acc3a46a0df8cf2909c4f30a2",
+  "matching_current_source_files": 197,
+  "changed_current_source_files": 16,
+  "historical_guard_on_current_source": "Correctly refused changed dashboard bytes",
+  "current_restore_status": "Open. Use the separate current-reader qualifier with the sealed historical recording. Its initial attempt was held by the Windows memory precheck."
+}

@@ -1,0 +1,11 @@
+{
+  "profile_version": "charging-automatic-departure/1.0.0",
+  "scope": "isolated-simulation-qualification",
+  "asset_id": "bus-001",
+  "source_id": "sumo-adapter",
+  "issuer": "charging-qualification",
+  "maximum_diversions_per_run": 1,
+  "maximum_departure_speed_m_s": 0,
+  "maximum_simulation_validity_s": 1,
+  "maximum_wall_validity_s": 3
+}

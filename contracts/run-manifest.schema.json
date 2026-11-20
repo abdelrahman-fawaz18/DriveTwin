@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:evdt:source-run:2.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_version",
+    "mode",
+    "identity",
+    "asset_id",
+    "model_version",
+    "evidence_class",
+    "sumo_version",
+    "traci_protocol",
+    "packages",
+    "step_s",
+    "paced",
+    "initial_energy_j",
+    "capacity_j",
+    "sampling",
+    "source_epoch_start_sim_s",
+    "minimum_sim_time_s",
+    "initial_state_sim_s",
+    "battery_power_source",
+    "insertion_policy",
+    "schema_version",
+    "catalog_version",
+    "input_sha256",
+    "signals",
+    "heartbeat_deadline_s",
+    "driver_options_sha256"
+  ],
+  "properties": {
+    "manifest_version": {
+      "const": "source-run/2.0.0"
+    },
+    "mode": {
+      "const": "simulation"
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "run_id",
+        "asset_id",
+        "source_id",
+        "session_id",
+        "source_epoch"
+      ],
+      "properties": {
+        "run_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "asset_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{0,63}(?![\\s\\S])"
+        },
+        "source_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{0,63}(?![\\s\\S])"
+        },
+        "session_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "source_epoch": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        }
+      }
+    },
+    "asset_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{0,63}(?![\\s\\S])"
+    },
+    "model_version": {
+      "type": "string"
+    },
+    "evidence_class": {
+      "const": "assumed"
+    },
+    "sumo_version": {
+      "type": "string"
+    },
+    "traci_protocol": {
+      "type": "integer"
+    },
+    "packages": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "step_s": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "paced": {
+      "type": "boolean"
+    },
+    "initial_energy_j": {
+      "type": "number",
+      "minimum": 0
+    },
+    "capacity_j": {
+      "type": "number",
+      "minimum": 0
+    },
+    "sampling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default_period_s",
+        "period_overrides_s"
+      ],
+      "properties": {
+        "default_period_s": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "period_overrides_s": {
+          "type": "object",
+          "maxProperties": 64,
+          "additionalProperties": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        }
+      }
+    },
+    "source_epoch_start_sim_s": {
+      "type": "number",
+      "minimum": 0
+    },
+    "minimum_sim_time_s": {
+      "type": "number",
+      "minimum": 0
+    },
+    "initial_state_sim_s": {
+      "type": "number",
+      "minimum": 0
+    },
+    "battery_power_source": {
+      "type": "string"
+    },
+    "insertion_policy": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "3.0.0"
+    },
+    "catalog_version": {
+      "const": "1.2.0"
+    },
+    "input_sha256": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 128,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}(?![\\s\\S])"
+      }
+    },
+    "signals": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 64,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "period_s",
+          "freshness_s"
+        ],
+        "properties": {
+          "period_s": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "freshness_s": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        }
+      }
+    },
+    "heartbeat_deadline_s": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "driver_options_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}(?![\\s\\S])"
+    }
+  }
+}

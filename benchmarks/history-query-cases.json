@@ -1,0 +1,134 @@
+{
+  "version": "history-query-cases/1.0.0",
+  "history_protocol": "history-volume/1.0.0",
+  "method": "GET /v1/plot",
+  "case_order": "asset ascending, first then second historical hour; same order for cold and warm",
+  "point_limit_total": 5000,
+  "cold_definition": "PostgreSQL process restarted and ready before each request; API process and OS/storage caches uncontrolled",
+  "warm_definition": "One uniform untimed priming request immediately before each measured request with identical scope; priming must pass and is recorded; no PostgreSQL restarts during the warm series",
+  "primary_timing": "One client monotonic interval including HTTP response and JSON parsing; validation excluded from timed interval",
+  "p95_limit_s": 2,
+  "percentile": "nearest-rank",
+  "cases": [
+    {
+      "id": "01-1",
+      "asset_id": "bus-001",
+      "from_s": 0,
+      "to_s": 3600
+    },
+    {
+      "id": "01-2",
+      "asset_id": "bus-001",
+      "from_s": 3600,
+      "to_s": 7200
+    },
+    {
+      "id": "02-1",
+      "asset_id": "bus-002",
+      "from_s": 0,
+      "to_s": 3600
+    },
+    {
+      "id": "02-2",
+      "asset_id": "bus-002",
+      "from_s": 3600,
+      "to_s": 7200
+    },
+    {
+      "id": "03-1",
+      "asset_id": "bus-003",
+      "from_s": 0,
+      "to_s": 3600
+    },
+    {
+      "id": "03-2",
+      "asset_id": "bus-003",
+      "from_s": 3600,
+      "to_s": 7200
+    },
+    {
+      "id": "04-1",
+      "asset_id": "bus-004",
+      "from_s": 0,
+      "to_s": 3600
+    },
+    {
+      "id": "04-2",
+      "asset_id": "bus-004",
+      "from_s": 3600,
+      "to_s": 7200
+    },
+    {
+      "id": "05-1",
+      "asset_id": "bus-005",
+      "from_s": 0,
+      "to_s": 3600
+    },
+    {
+      "id": "05-2",
+      "asset_id": "bus-005",
+      "from_s": 3600,
+      "to_s": 7200
+    },
+    {
+      "id": "06-1",
+      "asset_id": "bus-006",
+      "from_s": 0,
+      "to_s": 3600
+    },
+    {
+      "id": "06-2",
+      "asset_id": "bus-006",
+      "from_s": 3600,
+      "to_s": 7200
+    },
+    {
+      "id": "07-1",
+      "asset_id": "bus-007",
+      "from_s": 0,
+      "to_s": 3600
+    },
+    {
+      "id": "07-2",
+      "asset_id": "bus-007",
+      "from_s": 3600,
+      "to_s": 7200
+    },
+    {
+      "id": "08-1",
+      "asset_id": "bus-008",
+      "from_s": 0,
+      "to_s": 3600
+    },
+    {
+      "id": "08-2",
+      "asset_id": "bus-008",
+      "from_s": 3600,
+      "to_s": 7200
+    },
+    {
+      "id": "09-1",
+      "asset_id": "bus-009",
+      "from_s": 0,
+      "to_s": 3600
+    },
+    {
+      "id": "09-2",
+      "asset_id": "bus-009",
+      "from_s": 3600,
+      "to_s": 7200
+    },
+    {
+      "id": "10-1",
+      "asset_id": "bus-010",
+      "from_s": 0,
+      "to_s": 3600
+    },
+    {
+      "id": "10-2",
+      "asset_id": "bus-010",
+      "from_s": 3600,
+      "to_s": 7200
+    }
+  ]
+}

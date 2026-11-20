@@ -1,0 +1,38 @@
+{
+  "checkpoint": "P3-C1 and P3-C2, local operator dashboard and Phase 3 closeout",
+  "date": "2026-11-05",
+  "passed": true,
+  "phase_3_complete": true,
+  "browser_sha256": "94dab99cb73c11d9c24b04438dca9b8694c5f6c63b9ad6539f949969e534babe",
+  "shared_checks_sha256": "e08388e14c06918f4852726265dd01db8d103f133f8fd4b84d2e1e8d3ff2121b",
+  "criteria": {
+    "P3-01": "Measured speed effect and scoped command admission",
+    "P3-02": "Single reservation with restart recovery by command ID",
+    "P3-03": "Interrupted handoff, uncertain outcomes and restart isolation",
+    "P3-04": "Deadline and scope rejection with audit records",
+    "P3-05": "Competing authority and stale token rejection",
+    "P3-06": "Actuator fault with no observed effect"
+  },
+  "phase_4": {
+    "command_integrity_passed": true,
+    "advisory_release_verified": true,
+    "runtime_model_qualified": false,
+    "station_endpoint_accuracy_qualified": false,
+    "automatic_dispatch_approved": false
+  },
+  "scope": "Local simulated command and mission intent interface verified in Chromium.",
+  "private_browser_evidence": "evidence/p3/2026-11-05-operator-browser-03/qualification.json",
+  "private_closeout_evidence": "evidence/p3/2026-11-05-phase3-closeout.json",
+  "closeout_sha256": "ac6ea7f9dbdc0b9b06d620909db793de1efbffd29bc560580ef4e08302270ff3",
+  "initial_browser_attempt": {
+    "private_report": "evidence/p3/2026-11-05-operator-browser-01/qualification.json",
+    "sha256": "82dcf41902e2614b3fd8d4c800bd53e5729cfe4f82962c921c72fc1b3dbea77e",
+    "passed": false,
+    "cleanup_passed": true,
+    "cause": "Playwright treated the file filter as a project argument."
+  },
+  "next_step": {
+    "id": "P4 entry",
+    "name": "Runtime model qualification and charging readiness"
+  }
+}

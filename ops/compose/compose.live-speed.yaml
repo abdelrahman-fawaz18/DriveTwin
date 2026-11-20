@@ -1,0 +1,11 @@
+# Explicit opt-in for one command-enabled monitoring source.
+services:
+  source:
+    environment:
+      EVDT_SPEED_COMMAND_TOKEN_FILE: /run/secrets/command_executor
+    secrets: [command_executor]
+  command-observer:
+    secrets: [command_monitor_reader]
+
+secrets:
+  command_monitor_reader: {file: "${SECRET_DIRECTORY:?}/command_monitor_reader"}

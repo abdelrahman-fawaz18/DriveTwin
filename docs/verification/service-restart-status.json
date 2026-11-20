@@ -1,0 +1,304 @@
+{
+  "checkpoint": "P6-02",
+  "name": "Individual service restart recovery",
+  "status": "passed_individual_restart_cases",
+  "qualification_harness": "scripts/release/qualify_restarts.py",
+  "windows_launch_available_min_bytes": 2147483648,
+  "executor_resource_monitor_correction": {
+    "scope": "Executor interruption cases can take one fresh complete sample when an owned container disappears between Docker listing and inspection during replacement.",
+    "limits": "Repeated inspection failure, other Docker errors, ownership mismatch, coverage gaps, and resource-limit violations still fail. Cases without planned container replacement keep strict inspection behavior.",
+    "focused_tests_passed": 35,
+    "focused_subtests_passed": 5,
+    "live_confirmation": "Both executor runs passed. The after-actuation run took one fresh inventory and still passed the resource coverage checks."
+  },
+  "attempts": [
+    {
+      "case": "broker",
+      "status": "held_before_services_started",
+      "private_report": "evidence/p6/restart-broker-01/qualification.json",
+      "sha256": "a25e4dd8b35b8cdb9450273607f0fd8778ed26e468d5065f3713e230c57b1454",
+      "minimum_windows_available_bytes": 1792339968,
+      "running_containers_at_launch_inventory": 0
+    },
+    {
+      "case": "broker",
+      "status": "held_before_services_started",
+      "private_report": "evidence/p6/restart-broker-02/qualification.json",
+      "sha256": "bf40db4912a166ec9b84e43f0d0d295c7d3fe67e7a33f8591b727adf0e498824",
+      "minimum_windows_available_bytes": 1946128384,
+      "running_containers_at_launch_inventory": 0
+    },
+    {
+      "case": "broker",
+      "status": "stopped_on_sampler_missing_sequence",
+      "private_report": "evidence/p6/restart-broker-03/qualification.json",
+      "sha256": "d11b33c9acb47d4b06a036c3175a8bef017ee8ec34c44d574ea0992246f34179",
+      "minimum_windows_available_bytes": 2264547328,
+      "fallback_cleanup_passed": true,
+      "minimum_runtime_windows_available_bytes": 2182205440,
+      "runtime_below_2gib_upper_s": 0.0
+    },
+    {
+      "case": "broker",
+      "status": "stopped_on_windows_runtime_memory_limit",
+      "private_report": "evidence/p6/restart-broker-04/qualification.json",
+      "sha256": "be939086891b943f64dfeddde3b6d7b12a51cc2df6921e49151152289ba93fdd",
+      "minimum_windows_available_bytes": 2188853248,
+      "fallback_cleanup_passed": true,
+      "minimum_runtime_windows_available_bytes": 1411866624,
+      "runtime_below_2gib_upper_s": 36.509
+    },
+    {
+      "case": "ingest",
+      "status": "held_before_services_started",
+      "private_report": "evidence/p6/restart-ingest-01/qualification.json",
+      "sha256": "7cfc0993946c1b503f1d573ae67206024d2d2f55daa9da20c2d1bac2975e01ba",
+      "minimum_windows_available_bytes": 2080841728,
+      "running_containers_at_launch_inventory": 0
+    },
+    {
+      "case": "ingest",
+      "status": "stopped_on_windows_runtime_memory_limit",
+      "private_report": "evidence/p6/restart-ingest-02/qualification.json",
+      "sha256": "5887e5e398b82049d7eb703aebbdafe552316bed7061ae86bec6747779e0013f",
+      "minimum_windows_available_bytes": 2227208192,
+      "minimum_runtime_windows_available_bytes": 1786707968,
+      "runtime_below_2gib_upper_s": 33.515,
+      "fallback_cleanup_passed": true,
+      "additional_harness_finding": "Compose start reran the completed migration dependency."
+    },
+    {
+      "case": "command-api",
+      "status": "stopped_on_windows_runtime_memory_limit",
+      "private_report": "evidence/p6/restart-command-api-01/qualification.json",
+      "sha256": "2ac210755dc7d873ee65ea64a5e940aa2c2c6d1f828345032e65f6708c310fc3",
+      "minimum_windows_available_bytes": 2161012736,
+      "minimum_runtime_windows_available_bytes": 1503510528,
+      "runtime_below_2gib_upper_s": 36.526,
+      "fallback_cleanup_passed": true
+    },
+    {
+      "case": "command-api",
+      "status": "stopped_on_windows_runtime_memory_limit",
+      "private_report": "evidence/p6/restart-command-api-02/qualification.json",
+      "sha256": "557e829c1a4f908d5cd63dffa5995ab429df06ad79bcecd7ca380814d024d2fa",
+      "minimum_windows_available_bytes": 2241228800,
+      "minimum_runtime_windows_available_bytes": 1492987904,
+      "runtime_below_2gib_upper_s": 36.487,
+      "fallback_cleanup_passed": true
+    },
+    {
+      "case": "command-api",
+      "status": "failed_post_restart_readiness",
+      "private_report": "evidence/p6/restart-command-api-20261106-115148/qualification.json",
+      "sha256": "b14d73f36db9ccda649ff44ec00b82a7e758d7530e758b1ef9aae71746f9640a",
+      "minimum_launch_windows_available_bytes": 3355971584,
+      "minimum_runtime_windows_available_bytes": 2730455040,
+      "monitoring_continued_during_stop": true,
+      "worker_error": "Service did not become ready",
+      "worker_cleanup_passed": true,
+      "fallback_cleanup_passed": true,
+      "remaining_owned_containers_volumes_and_networks": 0,
+      "harness_finding": "The previous runner reused the startup port after restarting a dynamically published service. The attempt did not record the post-restart port.",
+      "targeted_correction": "Resolve both published addresses after restart. A focused offline probe reproduced the stale address on the original runner and passed with both an unchanged and a reassigned port on the corrected runner. Live confirmation remains open."
+    },
+    {
+      "case": "executor-before",
+      "status": "stopped_on_linux_resource_coverage_gap",
+      "private_report": "evidence/p6/restart-executor-before-01/qualification.json",
+      "sha256": "fda4f21ccc0a8cbde7cfb4e55bbace8cbc7573ccf6ea492b4575ae5c254f2ed",
+      "minimum_launch_windows_available_bytes": 2234191872,
+      "maximum_linux_sample_gap_s": 1.583,
+      "allowed_linux_sample_gap_s": 1.5,
+      "fallback_cleanup_passed": true
+    },
+    {
+      "case": "executor-before",
+      "status": "stopped_on_windows_runtime_memory_limit",
+      "private_report": "evidence/p6/restart-executor-before-02/qualification.json",
+      "sha256": "a5b39865bcecefb9d9ecfea1d32561407dd1280e188e9b835f909b37d622f5cd",
+      "minimum_launch_windows_available_bytes": 2207092736,
+      "minimum_observed_runtime_windows_available_bytes": 1460658176,
+      "fallback_cleanup_passed": true,
+      "targeted_correction": "Sample Ubuntu every 0.75 seconds with the existing 1.5-second coverage limit. Windows and Ubuntu acceptance thresholds stayed the same."
+    },
+    {
+      "case": "executor-before",
+      "status": "incomplete_docker_metadata_during_fresh_run",
+      "private_report": "evidence/p6/restart-executor-before-20261106-123511/qualification.json",
+      "sha256": "7a51699aaf5a77371d5606eeb850481f0f0d62b8dbb96d15780b1f5dd3f81fe0",
+      "minimum_launch_windows_available_bytes": 4166098944,
+      "minimum_runtime_windows_available_bytes": 3448057856,
+      "saved_interrupted_observations": 4,
+      "linux_guard_error": "Docker metadata HTTP status 404",
+      "last_worker_stage": "Starting a fresh run with new credentials and the same durable database",
+      "fallback_cleanup_passed": true,
+      "remaining_owned_containers_volumes_and_networks": 0
+    }
+  ],
+  "executor_evidence_review": {
+    "reference": "docs/verification/p3-live-source-restart.json",
+    "original_private_reports_match": true,
+    "changed_reviewed_source_files": 13,
+    "reuse_as_current_release_pass": false,
+    "reason": "Changes include command journal, command API, live executor, and monitoring source code."
+  },
+  "passing_cases": {
+    "executor-before": {
+      "private_report": "evidence/p6/restart-executor-before-20261106-133928/qualification.json",
+      "sha256": "08f6c0de7f5050637fd23c259eec9d95decba8e4fd453b4a58fc3715c2b66283",
+      "source_inventory_sha256": "4fc02781de1711d3a2b4090ef1fc5e4a09f637ba2efcfd558d72bd025ac7d120",
+      "controller_worker_final_and_reviewed_sources_match": true,
+      "interrupted_originals": 4,
+      "fresh_originals": 16,
+      "saved_attempts": 1,
+      "same_run_restart_and_old_command_refused": true,
+      "fresh_run_did_not_inherit_command": true,
+      "windows_launch_minimum_available_bytes": 3826245632,
+      "windows_runtime_minimum_available_bytes": 3055751168,
+      "windows_runtime_samples": 88,
+      "linux_runtime_samples": 106,
+      "resource_guard_replay_passed": true,
+      "replacement_resamples": 0,
+      "cleanup_passed": true,
+      "remaining_owned_containers_volumes_and_networks": 0
+    },
+    "executor-after": {
+      "private_report": "evidence/p6/restart-executor-after-20261106-133928/qualification.json",
+      "sha256": "16f1192b0edbcb3a6aacf1af1696868f8ea71234b4eb454a3b9dc91c395eb0b5",
+      "source_inventory_sha256": "4fc02781de1711d3a2b4090ef1fc5e4a09f637ba2efcfd558d72bd025ac7d120",
+      "controller_worker_final_and_reviewed_sources_match": true,
+      "interrupted_originals": 8,
+      "fresh_originals": 16,
+      "last_four_interrupted_speeds_m_s": [4, 4, 4, 4],
+      "fresh_peak_speed_m_s": 7.8,
+      "saved_attempts": 1,
+      "same_run_restart_and_old_command_refused": true,
+      "fresh_run_did_not_inherit_command": true,
+      "windows_launch_minimum_available_bytes": 3894071296,
+      "windows_runtime_minimum_available_bytes": 3158519808,
+      "windows_runtime_samples": 91,
+      "linux_runtime_samples": 109,
+      "resource_guard_replay_passed": true,
+      "replacement_resamples": 1,
+      "cleanup_passed": true,
+      "remaining_owned_containers_volumes_and_networks": 0
+    },
+    "command-api": {
+      "private_report": "evidence/p6/restart-command-api-20261106-123511/qualification.json",
+      "sha256": "c9bf75da4a8468aeaec3df00b41489def2393e10c733cf539bea06411d996fea",
+      "source": {
+        "profile_sha256": "559c8b241e55129d3039f4910733b9aca62a9c37f12059967d4c85b46a3a4d5c",
+        "inventory": {
+          "files": 341,
+          "sha256": "229e4671ec0fb3b9557ee5ac05b30a6b1a7703f3ee5801d030a54b21106b6efd"
+        }
+      },
+      "checks": {
+        "only_target_restarted": true,
+        "third_event_recovery_s": 2.592,
+        "accepted_originals": 16,
+        "pending_at_end": 0,
+        "reservation_unchanged": true,
+        "repeat_claim_refused": true,
+        "replay_command_denied": true
+      },
+      "controller_worker_and_final_sources_match": true,
+      "originals_independently_reconciled": true,
+      "cleanup_passed": true,
+      "remaining_owned_containers_volumes_and_networks": 0,
+      "minimum_runtime_windows_available_bytes": 3403603968,
+      "binding": "Passing manual retry at e84aa5d. Later replacement resampling applies only to the executor cases."
+    },
+    "broker": {
+      "private_report": "evidence/p6/restart-broker-05/qualification.json",
+      "sha256": "a852113c75d3983b249ebfc646f8e9a4be71b45715c44bdc62d450f02ee45fe2",
+      "source": {
+        "profile_sha256": "559c8b241e55129d3039f4910733b9aca62a9c37f12059967d4c85b46a3a4d5c",
+        "inventory": {
+          "files": 333,
+          "sha256": "e0f1b37f064a2eb208e6e16266cca3a80681dc71cbaabae50cba5c57c5ebe25c"
+        }
+      },
+      "checks": {
+        "passed": true,
+        "service": "broker",
+        "only_target_restarted": true,
+        "startup_s": 10.382547231000004,
+        "third_event_recovery_s": 2.751174953000003,
+        "pending_during_stop": 1,
+        "accepted_originals": 16,
+        "pending_at_end": 0,
+        "reservation_unchanged": true,
+        "repeat_claim_refused": true,
+        "replay_command_denied": true,
+        "peak_observed_speed_m_s": 7.800000000000004
+      },
+      "cleanup_passed": true,
+      "minimum_runtime_windows_available_bytes": 1480376320,
+      "runtime_below_2gib_upper_s": 27.512,
+      "binding": "Original passing source inventory before the exact-container restart change."
+    },
+    "ingest": {
+      "private_report": "evidence/p6/restart-ingest-03/qualification.json",
+      "sha256": "2ce6a4fab4dcf076a8606b09e062640b226b6f259e8d95db90db8479e91fd812",
+      "source": {
+        "profile_sha256": "559c8b241e55129d3039f4910733b9aca62a9c37f12059967d4c85b46a3a4d5c",
+        "inventory": {
+          "files": 333,
+          "sha256": "92d7ccf447ca5b75100ed091626fcf5667c60710c178b03045f4b01428acf486"
+        }
+      },
+      "checks": {
+        "passed": true,
+        "service": "ingest",
+        "only_target_restarted": true,
+        "startup_s": 11.477023592999984,
+        "third_event_recovery_s": 5.103357192000004,
+        "pending_during_stop": 1,
+        "accepted_originals": 16,
+        "pending_at_end": 0,
+        "reservation_unchanged": true,
+        "repeat_claim_refused": true,
+        "replay_command_denied": true,
+        "peak_observed_speed_m_s": 7.800000000000004
+      },
+      "cleanup_passed": true,
+      "minimum_runtime_windows_available_bytes": 1595015168,
+      "live_memory_guard_replay_passed": true,
+      "generic_runtime_below_2gib_upper_s": 30.506,
+      "last_above_floor_to_final_report_file_write_s": 29.258,
+      "memory_review": "The original controller and replay passed. The generic estimate adds 1.5 seconds after the final sample. In the original folder the Windows final report was written after the worker and sampler finished, only 0.252 seconds after that sample."
+    },
+    "db": {
+      "private_report": "evidence/p6/restart-db-01/qualification.json",
+      "sha256": "52804967f4f1674cc32c39bde2181e99d26ec1418a45550f5f435118d214c3a0",
+      "source": {
+        "profile_sha256": "559c8b241e55129d3039f4910733b9aca62a9c37f12059967d4c85b46a3a4d5c",
+        "inventory": {
+          "files": 334,
+          "sha256": "f4289fd8bc3e87bffc4fa4949054c480e68900ccbc10c3642ff0de22a38060f2"
+        }
+      },
+      "checks": {
+        "passed": true,
+        "service": "db",
+        "only_target_restarted": true,
+        "startup_s": 11.200122405999998,
+        "third_event_recovery_s": 1.6388739420000036,
+        "pending_during_stop": null,
+        "accepted_originals": 16,
+        "pending_at_end": 0,
+        "reservation_unchanged": true,
+        "repeat_claim_refused": true,
+        "replay_command_denied": true,
+        "peak_observed_speed_m_s": 7.800000000000004
+      },
+      "cleanup_passed": true,
+      "minimum_runtime_windows_available_bytes": 1517928448,
+      "generic_runtime_below_2gib_upper_s": 26.499,
+      "runtime_final_below_floor_upper_s": 25.665,
+      "live_memory_guard_replay_passed": true
+    }
+  }
+}

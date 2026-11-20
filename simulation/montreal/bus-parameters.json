@@ -1,0 +1,157 @@
+{
+  "parameter_set_id": "synthetic-urban-bus-v1",
+  "status": "Explicit provisional design values; no real bus calibration or manufacturer-model claim",
+  "parameters": {
+    "length": {
+      "value": 12.0,
+      "unit": "m",
+      "evidence_class": "assumed",
+      "rationale": "Generic city-bus geometry",
+      "validation_due": "P1",
+      "source": "project design choice"
+    },
+    "width": {
+      "value": 2.55,
+      "unit": "m",
+      "evidence_class": "assumed",
+      "rationale": "Generic city-bus geometry",
+      "validation_due": "P1",
+      "source": "project design choice"
+    },
+    "height": {
+      "value": 3.2,
+      "unit": "m",
+      "evidence_class": "assumed",
+      "rationale": "Generic city-bus geometry",
+      "validation_due": "P2",
+      "source": "project design choice"
+    },
+    "curb_mass": {
+      "value": 13500,
+      "unit": "kg",
+      "evidence_class": "assumed",
+      "rationale": "Provisional empty mass",
+      "validation_due": "P2",
+      "source": "project design choice"
+    },
+    "passenger_load": {
+      "value": 4500,
+      "unit": "kg",
+      "evidence_class": "assumed",
+      "rationale": "60 hypothetical occupants at 75 kg each",
+      "validation_due": "P2",
+      "source": "project design choice"
+    },
+    "usable_battery_energy": {
+      "value": 350,
+      "unit": "kWh",
+      "evidence_class": "assumed",
+      "rationale": "Chosen usable capacity; chemistry/aging unspecified",
+      "validation_due": "P2",
+      "source": "project design choice"
+    },
+    "initial_soc": {
+      "value": 0.8,
+      "unit": "1",
+      "evidence_class": "assumed",
+      "rationale": "Scenario initial condition",
+      "validation_due": "P1",
+      "source": "project design choice"
+    },
+    "warning_soc": {
+      "value": 0.2,
+      "unit": "1",
+      "evidence_class": "assumed",
+      "rationale": "Informational warning only; not diversion authorization",
+      "validation_due": "P2/P4",
+      "source": "project design choice"
+    },
+    "maximum_speed": {
+      "value": 13.8888888889,
+      "unit": "m/s",
+      "evidence_class": "assumed",
+      "rationale": "50 km/h cap, also obey imported road limit",
+      "validation_due": "P1",
+      "source": "project design choice"
+    },
+    "acceleration": {
+      "value": 1.0,
+      "unit": "m/s2",
+      "evidence_class": "assumed",
+      "rationale": "Conservative deterministic movement assumption",
+      "validation_due": "P1",
+      "source": "project design choice"
+    },
+    "comfortable_deceleration": {
+      "value": 2.0,
+      "unit": "m/s2",
+      "evidence_class": "assumed",
+      "rationale": "Movement assumption",
+      "validation_due": "P1",
+      "source": "project design choice"
+    },
+    "emergency_deceleration": {
+      "value": 4.5,
+      "unit": "m/s2",
+      "evidence_class": "assumed",
+      "rationale": "Simulator limit, not physical safety validation",
+      "validation_due": "P2",
+      "source": "project design choice"
+    },
+    "baseline_auxiliary_power": {
+      "value": 8000,
+      "unit": "W",
+      "evidence_class": "assumed",
+      "rationale": "Provisional aggregate auxiliary demand",
+      "validation_due": "P2",
+      "source": "project design choice"
+    },
+    "ambient_temperature": {
+      "value": 293.15,
+      "unit": "K",
+      "evidence_class": "assumed",
+      "rationale": "20 degree C baseline",
+      "validation_due": "P1/P5",
+      "source": "project design choice"
+    },
+    "driver_tau": {
+      "value": 1.0,
+      "unit": "s",
+      "evidence_class": "assumed",
+      "rationale": "Deterministic following model assumption",
+      "validation_due": "P1",
+      "source": "project design choice"
+    },
+    "driver_sigma": {
+      "value": 0.0,
+      "unit": "1",
+      "evidence_class": "assumed",
+      "rationale": "No driver randomness in baseline",
+      "validation_due": "P1",
+      "source": "project design choice"
+    },
+    "scheduled_stop": {
+      "value": 10,
+      "unit": "s",
+      "evidence_class": "assumed",
+      "rationale": "Synthetic service dwell",
+      "validation_due": "P1",
+      "source": "project design choice"
+    }
+  },
+  "derived": {
+    "loaded_mass_kg": 18000,
+    "initial_usable_energy_J": 1008000000
+  },
+  "future_model_parameters": {
+    "status": "not selected or calibrated",
+    "items": [
+      "chemistry and capacity dependence",
+      "drivetrain/regen/charge efficiency",
+      "drag and rolling resistance",
+      "thermal capacities and heat transfer",
+      "HVAC/weather/load model",
+      "sensor bias/noise/dropout distributions"
+    ]
+  }
+}

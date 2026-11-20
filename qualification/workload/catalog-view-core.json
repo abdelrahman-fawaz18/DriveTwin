@@ -1,0 +1,8 @@
+{
+  "src/evdt/monitoring/asset_catalog.py": {
+    "baseline_sha256": "38bec86bb2c9b06caadb94adf944f21a6ac095361e29f96756ef7216ca5cbb38",
+    "previous_reviewed_sha256": "38bec86bb2c9b06caadb94adf944f21a6ac095361e29f96756ef7216ca5cbb38",
+    "reviewed_sha256": "029f5d5fd229fe4da3863dc11caa4b1a35a6ba5006b9c99dfc6b70439d64e15c",
+    "reason": "ADR-0023: bounded content/dependency-keyed validation cache only for catalog read views; retain per-call registered-byte checks, original validator and defensive copies. No observation or admission cache."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "checkpoint": "P1-E4 opt-in durable overflow-accounting component",
+  "date": "2026-11-04",
+  "component_passed": true,
+  "policy": "oldest-first/1.0.0",
+  "default_vehicle_sender_policy_changed": false,
+  "shared_checks": {
+    "python_tests": 362,
+    "frontend_tests": 22,
+    "strict_python_modules": 5,
+    "contract_outcomes_per_language": [
+      339,
+      81
+    ],
+    "types_build_format_privacy_secrets": true
+  },
+  "checks": [
+    "oldest source-epoch/sequence order",
+    "every evicted ID/hash/original time and surviving byte",
+    "atomic eviction ledger/new insert/sequence/generated count",
+    "SQL insert failure rollback",
+    "actual process exit before new insert and reopening recovery",
+    "finite audit refusal without lost evidence",
+    "legacy/default/configuration reopen guards",
+    "wrong and duplicate receipts",
+    "late accepted/rejected receipt reconciliation",
+    "explicit local loss assertion with durable audit reference",
+    "later contradiction retains assertion and receipt while correcting current disposition",
+    "bounded complete audit pages",
+    "admitted integer/fraction/signed-zero preservation",
+    "generated=accepted+rejected+dropped+pending; pending includes unresolved evictions"
+  ],
+  "source_fingerprints_match": true,
+  "new_dependencies_wire_schemas_catalogs_database_migrations": 0,
+  "physical_quota_passed": false,
+  "critical_reserve_passed": false,
+  "live_overflow_reconnect_passed": false,
+  "E4_complete": false,
+  "full_W0_W1_passed": false,
+  "phase_1_complete": false
+}

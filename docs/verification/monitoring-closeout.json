@@ -1,0 +1,120 @@
+{
+  "policy_version": "phase1-short-run/1.2.0",
+  "status": "blocked",
+  "passed": false,
+  "phase_1_monitoring_milestone_complete": false,
+  "active_configuration": "Normal monitoring with legacy durable queues; optional bounded-storage binding unset. Architecture and features frozen.",
+  "old_goal_status": "paused",
+  "budget": {
+    "start_utc": "2026-11-04T15:40:57Z",
+    "deadline_utc": "2026-11-04T16:40:57Z",
+    "documentation_finalized_utc": "2026-11-04T15:57:46.321260+00:00",
+    "live_testing_stopped_after_one_targeted_correction_and_rerun": true
+  },
+  "workloads": {
+    "W0": {
+      "buses": 1,
+      "signals_per_bus": 20,
+      "events_per_bus_s": 1,
+      "warmup_s": 60,
+      "measured_s": 120,
+      "live_result": "not completed; two failed prechecks"
+    },
+    "W1": {
+      "buses": 10,
+      "signals_per_bus": 20,
+      "events_per_bus_s": 1,
+      "warmup_s": 60,
+      "measured_s": 300,
+      "live_result": "not launched after repeat blocker"
+    }
+  },
+  "blocker": {
+    "requirement": "Q-12 Windows available physical memory must not stay below 2 GiB for more than 30 consecutive seconds",
+    "attempts": [
+      {
+        "attempt": 1,
+        "result": "failed precheck; live workload not started/incomplete",
+        "available_memory_min_bytes": 1327276032,
+        "conservative_below_2GiB_upper_s": 34.515099599957466,
+        "services_started": false,
+        "original_evidence_preserved": true
+      },
+      {
+        "attempt": 2,
+        "result": "failed precheck; live workload not started/incomplete",
+        "available_memory_min_bytes": 1543909376,
+        "conservative_below_2GiB_upper_s": 34.50957460002974,
+        "services_started": false,
+        "original_evidence_preserved": true
+      }
+    ],
+    "single_targeted_correction": "Sync and release clean Ubuntu file cache; no restart or process termination.",
+    "thresholds_unchanged": true,
+    "old_failures_preserved": true
+  },
+  "passed_checks": {
+    "focused_duration_spec_tests": 45,
+    "affected_history_source_tests": 6,
+    "final_shared_checks": true,
+    "final_shared_source_hashes_match": true,
+    "retained_evidence_compatibility_audit": true,
+    "history_checkpoint_files_verified": 88,
+    "history_checkpoint_bytes_verified": 648477603,
+    "historical_source_unchanged_count": 60,
+    "historical_source_total": 65,
+    "outage_relevant_runtime_hashes_matched": 108,
+    "final_python_tests": 506,
+    "final_frontend_tests": 22,
+    "original_contract_cases_per_language": 339,
+    "monitoring_contract_cases_per_language": 81
+  },
+  "shared_checks": {
+    "initial": "Failed: one stale history-source test asserted the previous 1,800-second live duration; original result retained.",
+    "correction": "Only the duration assertion was changed. All historical volume/query requirements remain unchanged.",
+    "final_report": ".runtime/dev-checks/43832b42e1624c9aba8b9cce902546a4/report.json",
+    "final_passed": true,
+    "scope": "Offline source/contracts/types/frontend build/privacy; not live acceptance."
+  },
+  "retained_evidence": {
+    "complete_history_queries_downloads_restore": "Passed in original recorded scope; 88 files and original manifest intact; history reader/restore modules and archived contracts/catalogs/migrations unchanged. No regeneration or guard override.",
+    "latest_real_five_minute_outage": "Passed: 300.357-second outage, 22.987-second recovery, 480 originals. Relevant runtime/configuration hashes match; opt-in nominal bounded-storage scope only.",
+    "sensor_extension_replay_access_storage": "Preserved in their tested scopes; no blanket latest-integration pass claimed."
+  },
+  "pending_not_passed_or_deferred": [
+    "W0/W1 live short-run acceptance and unchanged latency/resource/accounting requirements",
+    "Current selected-configuration readings/history/map/reconnect/stale/access/replay integration smoke",
+    "Current startup measurement and normal-queue backup compatibility integration"
+  ],
+  "deferred_to_phase_6": [
+    "Former 30-minute qualification",
+    "Sustained-load/soak qualification",
+    "Comprehensive visual regression",
+    "Broader reboot/deployment/storage lifecycle testing",
+    "Automatic retention deletion",
+    "Production hardening beyond active monitoring configuration"
+  ],
+  "nondeferrable": [
+    "Silent data corruption",
+    "Unauthorized control defects"
+  ],
+  "limitations": [
+    "Known host-memory reserve failure; assigning Ubuntu more RAM does not add physical host RAM.",
+    "No sustained-load, production readiness, physical EV validation, or current complete integration claim.",
+    "Optional storage remains disabled; its component passes do not establish default/fleet/provider deployment.",
+    "Historical restoration still requires its original exact recorded application image."
+  ],
+  "operator_guide": "docs/setup/monitoring-start-view-stop.md",
+  "cleanup": {
+    "application_containers_started_by_closeout": 0,
+    "partial_attempts_preserved": true,
+    "final_inventory": "see private cleanup record",
+    "sleep_prevention": "release confirmed; normal Windows sleep behavior restored",
+    "final_inventory_passed": true,
+    "remaining_application_containers": 0,
+    "new_attempt_volumes_remaining": 0,
+    "preexisting_volumes_preserved": 13,
+    "all_remaining_volumes_predate_closeout": true
+  },
+  "publication": "Local Git commit only; no remote or Phase 2 work."
+}

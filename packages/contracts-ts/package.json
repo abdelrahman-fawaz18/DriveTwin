@@ -1,0 +1,12 @@
+{
+  "name": "@ev-dt/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "main": ".build/index.js",
+  "types": ".build/index.d.ts",
+  "engines": {"node": ">=24 <25"},
+  "scripts": {"build": "tsc -p tsconfig.json"},
+  "dependencies": {"ajv": "8.20.0", "ajv-formats": "3.0.1", "jsonc-parser": "3.3.1"},
+  "devDependencies": {"typescript": "6.0.3"}
+}

@@ -1,0 +1,48 @@
+{
+  "version": "history-volume/1.0.0",
+  "status": "Frozen protocol; actual W2 volume/query/restore acceptance pending",
+  "assets": [
+    "bus-001",
+    "bus-002",
+    "bus-003",
+    "bus-004",
+    "bus-005",
+    "bus-006",
+    "bus-007",
+    "bus-008",
+    "bus-009",
+    "bus-010"
+  ],
+  "source_id": "sumo-adapter",
+  "scenario": "simulation/montreal-history",
+  "catalog_version": "1.4.0",
+  "samples_per_asset": 7200,
+  "signals_per_event": 20,
+  "expected_events": 72000,
+  "expected_scalar_rows": 1440000,
+  "paced": false,
+  "generation": "Actual independent SUMO/dependent-plant execution per asset; sequential generation is allowed for a history fixture",
+  "ingestion": "Explicit database history seeding from validated original fixture packet bytes; does not qualify live delivery",
+  "query": {
+    "signals": [
+      "motion.speed",
+      "battery.pack.temperature",
+      "battery.pack.soc",
+      "battery.pack.power",
+      "location.latitude"
+    ],
+    "window_s": 3600,
+    "point_limit_total": 5000,
+    "cold_cases": 20,
+    "warm_cases": 20,
+    "cold_definition": "PostgreSQL process restarted and ready before each request; OS/storage caches uncontrolled",
+    "primary_timing": "One client monotonic interval includes HTTP response and JSON parsing",
+    "percentile": "nearest-rank",
+    "p95_limit_s": 2
+  },
+  "restore": {
+    "limit_s": 900,
+    "required": "Independent cluster, fresh credentials, full data/schema/ACL/sequence inventory and representative frozen queries"
+  },
+  "live_phase_1_policy": "phase1-wall-time/1.1.0; 60 warmup + 1800 measured wall seconds; no one-hour live attempts"
+}

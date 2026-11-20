@@ -1,0 +1,85 @@
+{
+  "checkpoint": "P1-E2-C collector and presentation rehearsal",
+  "date": "2026-11-04",
+  "scope": "60 warmup plus 30 measured seconds, ten simultaneous actual sources and ten operator tabs; not full W0/W1",
+  "overall_passed": false,
+  "profile": {
+    "workload_spec_version": "1.1.0",
+    "phase_1_policy_version": "phase1-wall-time/1.1.0",
+    "workload": "rehearsal",
+    "browser": "chromium-automated",
+    "assets": [
+      "bus-001",
+      "bus-002",
+      "bus-003",
+      "bus-004",
+      "bus-005",
+      "bus-006",
+      "bus-007",
+      "bus-008",
+      "bus-009",
+      "bus-010"
+    ],
+    "warmup_samples": 60,
+    "measured_samples": 30,
+    "total_samples": 90,
+    "signals_per_asset": 20,
+    "full_duration": false,
+    "independent_contexts": false,
+    "browser_viewer_policy": "fleet-operator-tabs/1.0.0",
+    "browser_storage_contexts": 1,
+    "browser_trace_policy": "action-har/1.0.0",
+    "resource_collector_policy": "frozen-cgroup/1.0.0",
+    "synchronized_start": true
+  },
+  "verified": {
+    "events": {
+      "unique_generated": 900,
+      "accepted": 900,
+      "quarantined": 0,
+      "dropped": 0,
+      "pending": 0,
+      "measured_events": 300,
+      "warmup_events": 600,
+      "publish_attempts": 900,
+      "receiver_deliveries": 900,
+      "duplicate_deliveries": 0
+    },
+    "displayed_scalar_readings": 18000,
+    "source_to_dom_upper_measured": {
+      "count": 300,
+      "min_s": 0.05972191400002455,
+      "max_s": 0.8166521229999856,
+      "p95_s": 0.7554219890000152,
+      "p99_s": 0.8003228750000088
+    },
+    "resource_instrumentation_complete": true,
+    "linux_samples": 128,
+    "linux_maximum_sample_gap_s": 1.0208349970000086,
+    "linux_core_peak_bytes": 1702105088,
+    "linux_rolling_60s_swap_max_bytes": 0,
+    "linux_oom_events": 0,
+    "final_container_identity_restart_exit_inventory_passed": true,
+    "origin_storage_isolation_and_private_network_archive_passed": true,
+    "owned_container_and_volume_cleanup_empty": true,
+    "python_tests": 266,
+    "frontend_tests": 18,
+    "contract_outcomes_per_language": [
+      339,
+      81
+    ],
+    "ordinary_monitoring_map_history_export_quality_clock_roles_replay_both_browsers": true,
+    "held_back_sensor_and_independent_second_bus_both_browsers": true,
+    "complete_repeated_plant_missions": true
+  },
+  "failed": {
+    "windows_available_min_bytes": 533323776,
+    "below_2GiB_conservative_sampled_upper_s": 127.99289049999788,
+    "maximum_allowed_s": 30
+  },
+  "full_W0_passed": false,
+  "full_W1_passed": false,
+  "Q12_passed": false,
+  "phase_1_complete": false,
+  "limitations": "Short rehearsal only: host memory reserve failed. Full W0/W1 and Phase 1 remain open. Ordinary base and sensor-extension regressions passed separately with exact source fingerprints and empty owned cleanup."
+}

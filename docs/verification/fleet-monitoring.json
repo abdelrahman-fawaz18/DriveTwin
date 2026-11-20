@@ -1,0 +1,152 @@
+{
+  "checkpoint": "Generic fleet monitoring and short ten-bus rehearsal",
+  "date": "2026-11-04",
+  "feature_functional_passed": true,
+  "shared_checks": {
+    "python_tests": 345,
+    "frontend_tests": 22,
+    "contract_outcomes_per_language": [
+      339,
+      81
+    ],
+    "strict_types_build_format_privacy_secrets": true
+  },
+  "functional_browsers": [
+    {
+      "project": "windows-edge-visible",
+      "browser": "156.0.4314.58",
+      "fleet_checks": {
+        "passed": true,
+        "checks": [
+          "generic 20/21 signals",
+          "every value/unit/quality/asset/run/source",
+          "added metadata",
+          "single-asset failure and recovery",
+          "offline stale and resync",
+          "selection/detail navigation",
+          "desktop/mobile document overflow",
+          "403 clears fleet",
+          "scoped reauthentication",
+          "empty storage/cookies"
+        ]
+      }
+    },
+    {
+      "project": "chromium-automated",
+      "browser": "156.0.8078.4",
+      "fleet_checks": {
+        "passed": true,
+        "checks": [
+          "generic 20/21 signals",
+          "every value/unit/quality/asset/run/source",
+          "added metadata",
+          "single-asset failure and recovery",
+          "offline stale and resync",
+          "selection/detail navigation",
+          "desktop/mobile document overflow",
+          "403 clears fleet",
+          "scoped reauthentication",
+          "empty storage/cookies"
+        ]
+      }
+    }
+  ],
+  "generic_asset_signal_metadata": true,
+  "new_dependencies_backend_routes_wire_contracts_catalogs_migrations": 0,
+  "rehearsal": {
+    "overall_passed": false,
+    "profile": {
+      "workload_spec_version": "1.1.0",
+      "phase_1_policy_version": "phase1-wall-time/1.1.0",
+      "workload": "rehearsal",
+      "browser": "windows-edge-visible",
+      "assets": [
+        "bus-001",
+        "bus-002",
+        "bus-003",
+        "bus-004",
+        "bus-005",
+        "bus-006",
+        "bus-007",
+        "bus-008",
+        "bus-009",
+        "bus-010"
+      ],
+      "warmup_samples": 60,
+      "measured_samples": 30,
+      "total_samples": 90,
+      "signals_per_asset": 20,
+      "full_duration": false,
+      "independent_contexts": false,
+      "browser_viewer_policy": "fleet-operator-table/1.0.0",
+      "browser_storage_contexts": 1,
+      "browser_pages": 1,
+      "browser_trace_policy": "action-har/1.0.0",
+      "resource_collector_policy": "frozen-cgroup/1.0.0",
+      "synchronized_start": true
+    },
+    "events": {
+      "unique_generated": 900,
+      "accepted": 900,
+      "quarantined": 0,
+      "dropped": 0,
+      "pending": 0,
+      "measured_events": 300,
+      "warmup_events": 600,
+      "publish_attempts": 900,
+      "receiver_deliveries": 900,
+      "duplicate_deliveries": 0
+    },
+    "displayed_scalar_readings": 18000,
+    "source_to_dom_upper_measured": {
+      "count": 300,
+      "min_s": 0.06382051200000913,
+      "max_s": 0.7936568839999748,
+      "p95_s": 0.6638808559999941,
+      "p99_s": 0.7210333730000141
+    },
+    "instrumentation_complete": true,
+    "linux": {
+      "samples": 125,
+      "core_peak_bytes": 1706254336,
+      "rolling_60s_swap_max_bytes": 0,
+      "consecutive_excessive_rolling_windows": 0,
+      "swap_window_method": "60-second rolling windows sampled each second; three consecutive excessive windows fail Q-12",
+      "short_run_budget_conditions_met": true,
+      "whole_linux_available_min_bytes": 5790781440,
+      "oom_events": 0
+    },
+    "windows": {
+      "samples": 150,
+      "available_min_bytes": 636264448,
+      "sampled_longest_below_2GiB_s": 118.99884549994022,
+      "short_run_host_conditions_met": false,
+      "browser_name_total_peak_bytes": 1302016000,
+      "wsl_name_total_peak_bytes": 3697225728,
+      "unreadable_wsl_process_samples": 150,
+      "unreadable_browser_process_samples": 0,
+      "process_scope": "name totals may include other sessions; not isolated browser/WSL overhead",
+      "paging_peak_pages_input_s": 85576.94811681345,
+      "paging_peak_pages_output_s": 31695.183195012207,
+      "below_2GiB_conservative_sampled_upper_s": 119.98085379996337
+    },
+    "latency_conditions_met": true,
+    "resource_conditions_met": false,
+    "failure": "Windows available physical memory stayed below two GiB beyond the unchanged thirty-second allowance."
+  },
+  "owned_container_volume_cleanup_empty": true,
+  "full_W0_W1_passed": false,
+  "Q12_passed": false,
+  "phase_1_complete": false,
+  "evidence_boundary": "One operator / one ordinary page at one fixture origin, all ten buses selected simultaneously. Historical tab and independent-context results retain their original policies and failures. No independent-user or cross-origin isolation claim.",
+  "source_fingerprints_match_at_collection_completion": true,
+  "post_collection_metadata_normalization": {
+    "path": "qualification/workload/fleet-ui-core.json",
+    "previous_sha256": "fe409a7f6f63ac4770e49eab9260a5d7c18012516dd1a1dc4f564a28f6c2400e",
+    "canonical_sha256": "290e4ec4e112d256a770df63085b1895e734021248d87a679a97b6b9f8b664b1",
+    "change": "CRLF to LF text line endings only; parsed review metadata and every executed product/runtime byte unchanged.",
+    "all_other_controller_service_inputs_match": true,
+    "exact_successor_guard_rechecked": true,
+    "historical_raw_reports_preserved": true
+  }
+}

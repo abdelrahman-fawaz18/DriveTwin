@@ -1,0 +1,11 @@
+# ADR 0049. Bound command validity with two clocks
+
+The simulated clock measures the bus drive. The real-time deadline limits how long a command can wait before execution. Keep both checks at handoff and immediately before actuation. Both windows include their opening time and exclude their deadline. A paused simulator cannot obtain a new handoff.
+
+When the coordinator accepts a command, it saves a clock lease with the request. This record binds the remaining UTC validity to elapsed time on the same Linux boot. The command service rejects a different boot, an elapsed deadline, or a difference greater than 0.5 seconds between elapsed time and the change in UTC. The executor receives the authenticated clock lease with the original command bytes and checks it immediately before applying the cap. A late executor refusal is recorded against the reservation and prevents a later execution acknowledgment from replacing it. [Linux clock behavior](https://man7.org/linux/man-pages/man3/clock_gettime.3.html)
+
+An authenticated clock reading at or beyond the simulation deadline closes the request. A later claim using an earlier simulation time cannot reopen it. Identical operator retries still return the current journal record. A reserved command still cannot be handed out again.
+
+Store rejections as append-only metadata. The journal records the operation, a fixed reason code, the configured run and asset, and the server time. It links a command ID only when the service has already resolved a trusted record. Credentials, caller-supplied labels, request contents, and addresses are excluded. The clock and audit tables are added by migration 003. Previous terminal records remain readable. A previously queued request that lacks a clock lease cannot be dispatched by the updated service.
+
+This decision applies to the local simulation path with the coordinator and executor on one Linux boot. The fixture supplies its current simulation state through the executor credential. Qualification covers controlled simulator pauses, acceleration, delayed actuation, and injected clock readings. Distributed clock synchronization and active plant recovery remain separate work. [Reproduction guide](../setup/command-timing-check.md)

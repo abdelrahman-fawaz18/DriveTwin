@@ -1,0 +1,210 @@
+{
+  "date": "2026-11-03",
+  "checkpoint": "P1-E2-B",
+  "passed": true,
+  "scope": "Actual event/attempt/stage/browser/clock/resource collectors and short two-concurrent-source rehearsals in Edge and Chromium",
+  "full_E2_passed": false,
+  "phase_1_complete": false,
+  "W0_passed": false,
+  "W1_passed": false,
+  "Q04_at_W1_passed": false,
+  "Q12_at_W1_passed": false,
+  "events": {
+    "latency_method": "same-Linux-clock upper bound from sample-ready to server receipt of post-DOM witness",
+    "witness_confirmation_overhead_bound_max_s": 0.1370999999046394,
+    "local_elapsed_clock_resolution_s": 1e-06,
+    "cross_domain_timestamp_subtraction": false,
+    "unique_generated": 360,
+    "accepted": 360,
+    "quarantined": 0,
+    "dropped": 0,
+    "pending": 0,
+    "measured_events": 120,
+    "warmup_events": 240,
+    "publish_attempts": 360,
+    "receiver_deliveries": 360,
+    "duplicate_deliveries": 0,
+    "source_to_dom_upper": {
+      "count": 120,
+      "min_s": 0.5089973220000016,
+      "max_s": 1.4048752070000343,
+      "p95_s": 1.283613258000005,
+      "p99_s": 1.3746038600000385
+    },
+    "stages": {
+      "sample_to_enqueue": {
+        "count": 120,
+        "min_s": 0.003801944000002777,
+        "max_s": 0.011044195000010859,
+        "p95_s": 0.007609784999999647,
+        "p99_s": 0.010326270000007298
+      },
+      "queue_to_first_publish": {
+        "count": 120,
+        "min_s": 0.09499279800002114,
+        "max_s": 0.41369163400000275,
+        "p95_s": 0.40467317300002037,
+        "p99_s": 0.4125813889999961
+      },
+      "publish_to_receive": {
+        "count": 120,
+        "min_s": 0.00045729499998969914,
+        "max_s": 0.0011975369999959184,
+        "p95_s": 0.000724921999989192,
+        "p99_s": 0.000987581999993381
+      },
+      "receive_to_projection_staged": {
+        "count": 120,
+        "min_s": 0.022642619000009745,
+        "max_s": 0.03901639299999715,
+        "p95_s": 0.03371644200001356,
+        "p99_s": 0.03865344400003323
+      },
+      "projection_staged_to_commit_return": {
+        "count": 120,
+        "min_s": 0.002930104999990135,
+        "max_s": 0.011278099999969982,
+        "p95_s": 0.006009234000003971,
+        "p99_s": 0.011230205999993359
+      },
+      "source_to_receive": {
+        "count": 120,
+        "min_s": 0.10365892100003293,
+        "max_s": 0.41879882000000634,
+        "p95_s": 0.4104404859999988,
+        "p99_s": 0.41862346299998876
+      },
+      "receive_to_commit_return": {
+        "count": 120,
+        "min_s": 0.026100554999999304,
+        "max_s": 0.044557015000009415,
+        "p95_s": 0.03856768700001112,
+        "p99_s": 0.04236820800002761
+      },
+      "commit_return_to_dom_upper": {
+        "count": 120,
+        "min_s": 0.34050673699999834,
+        "max_s": 1.0125689890000444,
+        "p95_s": 0.875691076999999,
+        "p99_s": 0.9516156140000476
+      }
+    }
+  },
+  "clock_diagnostics": {
+    "bus-001": {
+      "exchanges": 24,
+      "constant_offset": "inconclusive",
+      "reason": "Clock uncertainty exceeds 50 ms"
+    },
+    "bus-002": {
+      "exchanges": 23,
+      "constant_offset": "inconclusive",
+      "reason": "Clock uncertainty exceeds 50 ms"
+    },
+    "bus-003": {
+      "exchanges": 24,
+      "constant_offset": "inconclusive",
+      "reason": "Clock uncertainty exceeds 50 ms"
+    },
+    "bus-004": {
+      "exchanges": 24,
+      "constant_offset": "inconclusive",
+      "reason": "Clock uncertainty exceeds 50 ms"
+    }
+  },
+  "linux_resources": {
+    "samples": 250,
+    "core_peak_bytes": 639729664,
+    "rolling_60s_swap_max_bytes": 0,
+    "consecutive_excessive_rolling_windows": 0,
+    "swap_window_method": "60-second rolling windows sampled each second; three consecutive excessive windows fail Q-12",
+    "short_run_budget_conditions_met": true,
+    "whole_linux_available_min_bytes": 6887165952,
+    "oom_events": 0
+  },
+  "windows_resources": {
+    "samples": 263,
+    "available_min_bytes": 351580160,
+    "sampled_longest_below_2GiB_s": 261.9632073000539,
+    "short_run_host_conditions_met": false,
+    "browser_name_total_peak_bytes": 1014771712,
+    "wsl_name_total_peak_bytes": 2406080512,
+    "unreadable_browser_process_samples": 0,
+    "process_scope": "name totals may include other sessions; not isolated browser/WSL overhead",
+    "paging_peak_pages_input_s": 116641.57412706166,
+    "paging_peak_pages_output_s": 1008.9844616392907
+  },
+  "clock_method_notes": [
+    "No Windows/Linux timestamp subtraction in the primary bound.",
+    "Same qualified Linux monotonic/boot domain; conservative 1 microsecond timing resolution allowance.",
+    "Confirmation overhead is included in the upper delay and reported separately; it is not silently subtracted or relabeled as clock synchronization.",
+    "Strict constant-offset diagnostic remains inconclusive for all four assets."
+  ],
+  "shared_checks": {
+    "python_tests": 154,
+    "frontend_tests": 12,
+    "original_contract_cases_per_language": 339,
+    "operational_contract_cases_per_language": 81,
+    "strict_typescript": true,
+    "strict_python_scoped_modules": 4,
+    "privacy_and_secrets_passed": true
+  },
+  "shared_core": {
+    "unchanged_historical_files": 47,
+    "historical_D2_and_E2A_guards_preserved": true,
+    "reviewed_instrumentation_core_files": 5,
+    "earlier_policy_parser_change_retained": true,
+    "migrations_001_through_006_unchanged": true,
+    "contract_catalog_and_queue_schema_unchanged": true
+  },
+  "rehearsal": {
+    "warmup_events_per_asset": 60,
+    "measured_events_per_asset": 30,
+    "assets_total": 4,
+    "concurrent_sources_per_browser": 2,
+    "browsers": [
+      "Windows Edge visible",
+      "Chromium automated"
+    ],
+    "scalar_readings_total": 7200,
+    "source_recipe_and_database_bytes_match": true,
+    "witness_protocol": "clock-exchange/1.1.0",
+    "trace_protocol": "event-trace/1.1.0",
+    "publish_attempts_and_broker_acks_complete": true,
+    "queue_receipt_applications_complete": true,
+    "endpoint_negative_checks": {
+      "missing_credential": 401,
+      "outside_reader_scope": 403,
+      "incomplete_witness": 422,
+      "invalid_event_identity": 422
+    }
+  },
+  "cleanup": {
+    "containers_remaining": 0,
+    "volumes_remaining": 0
+  },
+  "original_monitoring_and_replay_regression": {
+    "passed": true,
+    "browsers": [
+      "Windows Edge visible",
+      "Chromium automated"
+    ],
+    "scope": "Original monitoring/map/history/export/quality/clock/roles/old-byte SQL/replay and full repeated plant missions",
+    "earlier_failed_attempt_preserved": true
+  },
+  "private_evidence": [
+    "evidence/p1/2026-11-03-e2b-05/qualification.json",
+    "evidence/p1/2026-11-03-e2b-05/services/qualification.json",
+    "evidence/p1/2026-11-03-e2b-05/clock-authorization.json",
+    ".runtime/dev-checks/c2db5f9556e44d00a6f91b0c562a1bcb/report.json",
+    "evidence/p1/2026-11-03-e2b-regression-02/qualification.json",
+    "evidence/p1/2026-11-03-e2b-regression-02/services/qualification.json"
+  ],
+  "remaining": [
+    "Investigate host headroom before E2-C full wall-time W0/W1",
+    "W2 history/query/restore and E4/E5 phase gates",
+    "No exact screen-paint, multi-host synchronization, full fleet throughput or physical-bus validation claim"
+  ],
+  "source_fingerprint_sets_rechecked": 6,
+  "visual_review": "Representative final measurement screenshots from both browsers reviewed; formal pixel baseline remains E4"
+}

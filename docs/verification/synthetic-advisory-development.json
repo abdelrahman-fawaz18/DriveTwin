@@ -1,0 +1,167 @@
+{
+  "checkpoint": "P5-C1 and P5-C2 synthetic fixture and timing qualification",
+  "development_report_sha256": "b2674104fe01a97baa3016a91526f718bacdf75889545d8c6666cf7ede55e515",
+  "temporal_report_sha256": "76d3da9bf9f86ffd885007c78861dc8598a0e694239501dc8c3f66baa558fdc9",
+  "scientific_runtime": {
+    "python": "3.13.7",
+    "numpy": "2.4.3",
+    "scipy": "1.17.1"
+  },
+  "selected": {
+    "name": "sensitive",
+    "hot_residual_k": 3.5,
+    "case_residual_k": 2.5,
+    "persistence_s": 20
+  },
+  "development_candidates": [
+    {
+      "candidate": {
+        "name": "sensitive",
+        "hot_residual_k": 3.5,
+        "case_residual_k": 2.5,
+        "persistence_s": 20
+      },
+      "passed": true,
+      "checks": {
+        "false_alert_rate": true,
+        "prefault_alerts": true,
+        "missed_cooling": true,
+        "cooling_delay": true,
+        "thermal_lead": true,
+        "attribution": true,
+        "sensor_and_ambiguity": true,
+        "unavailable": true
+      },
+      "metrics": {
+        "case_count": 48,
+        "healthy_hours": 8.266666666666667,
+        "healthy_alert_episodes": 0,
+        "healthy_alerts_per_hour": 0.0,
+        "prefault_alert_episodes": 0,
+        "dual_cooling_cases": 8,
+        "missed_dual_cooling": 0,
+        "maximum_cooling_delay_s": 237,
+        "fault_induced_threshold_crossings": 12,
+        "warnings_before_crossing": 12,
+        "minimum_thermal_warning_lead_s": 94,
+        "unexpected_cooling_attribution_samples": 0,
+        "missed_sensor_or_ambiguity_cases": 0,
+        "unavailable_window_violations": 0,
+        "ambiguous_case_count": 8,
+        "ambiguity_by_case": {
+          "healthy": 0,
+          "cooling_loss": 0,
+          "step_bias": 0,
+          "slow_bias": 4,
+          "dropout": 0,
+          "stale": 0,
+          "cooling_dropout": 0,
+          "cooling_bias": 0,
+          "single_probe_cooling": 4
+        }
+      }
+    },
+    {
+      "candidate": {
+        "name": "balanced",
+        "hot_residual_k": 4.0,
+        "case_residual_k": 3.0,
+        "persistence_s": 25
+      },
+      "passed": true,
+      "checks": {
+        "false_alert_rate": true,
+        "prefault_alerts": true,
+        "missed_cooling": true,
+        "cooling_delay": true,
+        "thermal_lead": true,
+        "attribution": true,
+        "sensor_and_ambiguity": true,
+        "unavailable": true
+      },
+      "metrics": {
+        "case_count": 48,
+        "healthy_hours": 8.266666666666667,
+        "healthy_alert_episodes": 0,
+        "healthy_alerts_per_hour": 0.0,
+        "prefault_alert_episodes": 0,
+        "dual_cooling_cases": 8,
+        "missed_dual_cooling": 0,
+        "maximum_cooling_delay_s": 252,
+        "fault_induced_threshold_crossings": 12,
+        "warnings_before_crossing": 12,
+        "minimum_thermal_warning_lead_s": 76,
+        "unexpected_cooling_attribution_samples": 0,
+        "missed_sensor_or_ambiguity_cases": 0,
+        "unavailable_window_violations": 0,
+        "ambiguous_case_count": 8,
+        "ambiguity_by_case": {
+          "healthy": 0,
+          "cooling_loss": 0,
+          "step_bias": 0,
+          "slow_bias": 4,
+          "dropout": 0,
+          "stale": 0,
+          "cooling_dropout": 0,
+          "cooling_bias": 0,
+          "single_probe_cooling": 4
+        }
+      }
+    },
+    {
+      "candidate": {
+        "name": "conservative",
+        "hot_residual_k": 4.5,
+        "case_residual_k": 3.5,
+        "persistence_s": 30
+      },
+      "passed": true,
+      "checks": {
+        "false_alert_rate": true,
+        "prefault_alerts": true,
+        "missed_cooling": true,
+        "cooling_delay": true,
+        "thermal_lead": true,
+        "attribution": true,
+        "sensor_and_ambiguity": true,
+        "unavailable": true
+      },
+      "metrics": {
+        "case_count": 48,
+        "healthy_hours": 8.266666666666667,
+        "healthy_alert_episodes": 0,
+        "healthy_alerts_per_hour": 0.0,
+        "prefault_alert_episodes": 0,
+        "dual_cooling_cases": 8,
+        "missed_dual_cooling": 0,
+        "maximum_cooling_delay_s": 274,
+        "fault_induced_threshold_crossings": 12,
+        "warnings_before_crossing": 12,
+        "minimum_thermal_warning_lead_s": 58,
+        "unexpected_cooling_attribution_samples": 0,
+        "missed_sensor_or_ambiguity_cases": 0,
+        "unavailable_window_violations": 0,
+        "ambiguous_case_count": 8,
+        "ambiguity_by_case": {
+          "healthy": 0,
+          "cooling_loss": 0,
+          "step_bias": 0,
+          "slow_bias": 4,
+          "dropout": 0,
+          "stale": 0,
+          "cooling_dropout": 0,
+          "cooling_bias": 0,
+          "single_probe_cooling": 4
+        }
+      }
+    }
+  ],
+  "checks": {
+    "advisory_unit_tests_passed": 9,
+    "thermal_core_tests_passed": 8,
+    "rtamt_version": "0.4.10",
+    "rtamt_comparison_traces_passed": 5,
+    "rtamt_formula": "historically[0,20] (eligible >= 0.5)"
+  },
+  "reserved_scenarios_generated": false
+}

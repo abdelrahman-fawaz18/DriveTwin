@@ -1,0 +1,53 @@
+{
+  "checkpoint": "P6-04",
+  "status": "passed",
+  "scope": "Supported local simulation wire contracts and monitoring SQL upgrades",
+  "guarded_sql_fixture": {
+    "private_report": "evidence/p6/compatibility-schema-01/qualification.json",
+    "sha256": "6cf3cb9f78d2596be08ee5254f4f233714cbd7560348a54117bdac44553f97f3",
+    "matching_source_inventory": {
+      "profile_sha256": "559c8b241e55129d3039f4910733b9aca62a9c37f12059967d4c85b46a3a4d5c",
+      "inventory": {
+        "files": 334,
+        "sha256": "f4289fd8bc3e87bffc4fa4949054c480e68900ccbc10c3642ff0de22a38060f2"
+      }
+    },
+    "checks": {
+      "passed": true,
+      "original_wire_bytes_and_payload_preserved": true,
+      "history_sample_backfill_preserved": true,
+      "unsupported_schema_rejected": true,
+      "sql_migrations": [
+        "001_observations.sql",
+        "002_registry.sql",
+        "003_dashboard.sql",
+        "004_context_and_events.sql",
+        "005_quality_recovery.sql",
+        "006_replay_read_views.sql",
+        "007_energy_forecasts.sql"
+      ]
+    },
+    "cleanup_passed": true,
+    "minimum_runtime_windows_available_bytes": 2002481152,
+    "runtime_below_2gib_upper_s": 11.504
+  },
+  "locked_engineering_checks": {
+    "private_report": ".runtime/dev-checks/1f87cc06d7b04ae98975fa5ba3ae560a/report.json",
+    "sha256": "65d0ea0815ea8f5bc74b250a5f83d9d37b7d72af7ebee6a3429170026ce990fd",
+    "current_product_and_contract_source_files_compared": 186,
+    "python_tests": 819,
+    "dashboard_component_tests": 29,
+    "portable_contract_cases": 339,
+    "portable_contract_mismatches": 0,
+    "monitoring_cases_per_language": 81,
+    "versions": {
+      "python": "3.12.16",
+      "node": "v24.22.2",
+      "pytest": "9.2.0",
+      "ruff": "0.17.3",
+      "jsonschema": "4.26.0",
+      "typescript": "6.0.3"
+    }
+  },
+  "limits": "Fresh schema in an owned PostgreSQL fixture. Broader live deployment migration and current large-history reader qualification are separate."
+}

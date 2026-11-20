@@ -1,0 +1,39 @@
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 0;
+}
+.section-heading > div {
+  min-width: 0;
+}
+.section-heading h2 {
+  margin: 0;
+}
+.section-heading .eyebrow {
+  margin: 0 0 0.3rem;
+}
+.section-icon-tile {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.7rem;
+  color: #fff;
+}
+.section-icon-tile.teal {
+  background: #067161;
+}
+.section-icon-tile.raspberry {
+  background: #a02761;
+}
+.section-icon-tile.indigo {
+  background: #4e4597;
+}
+.section-icon-tile.blue {
+  background: #496a9c;
+}
+.section-icon-tile.slate {
+  background: #344d69;
+}

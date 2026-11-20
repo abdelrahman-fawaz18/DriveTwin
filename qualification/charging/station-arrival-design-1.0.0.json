@@ -1,0 +1,31 @@
+{
+  "version": "station-arrival-design/1.0.0",
+  "catalog": "simulation/montreal/charging-stations-1.0.0.json",
+  "scenario": "simulation/montreal",
+  "reserve_soc": 0.1,
+  "domain": {
+    "simulator_version": "1.28.0",
+    "battery_capacity_kwh": 350,
+    "loaded_mass_kg": 18000,
+    "auxiliary_power_w": [8000, 12000],
+    "initial_soc": [0.101, 0.16],
+    "stationary_wait_sim_s": [0, 45],
+    "traffic": "one bus; road limits and existing traffic signals; no traffic or injected failures",
+    "motion": "from rest on a reviewed mission edge, directed path to one specified lane stop",
+    "maximum_sim_s": 1200
+  },
+  "drives": [
+    {"id": "dev-depot-nominal", "partition": "development", "station": "depot-a", "departure_edge": "107583310#8", "departure_m": 13, "seed": 42101, "initial_soc": 0.16, "auxiliary_power_w": 8000, "wait_s": 0},
+    {"id": "dev-depot-reserve", "partition": "development", "station": "depot-a", "departure_edge": "274693147#1", "departure_m": 13, "seed": 42102, "initial_soc": 0.101, "auxiliary_power_w": 12000, "wait_s": 30},
+    {"id": "dev-opportunity-nominal", "partition": "development", "station": "opportunity-b", "departure_edge": "107583310#8", "departure_m": 13, "seed": 42103, "initial_soc": 0.16, "auxiliary_power_w": 8000, "wait_s": 0},
+    {"id": "dev-opportunity-reserve", "partition": "development", "station": "opportunity-b", "departure_edge": "107583310#9", "departure_m": 13, "seed": 42104, "initial_soc": 0.1015, "auxiliary_power_w": 12000, "wait_s": 0},
+    {"id": "dev-west-nominal", "partition": "development", "station": "west-c", "departure_edge": "107583310#8", "departure_m": 13, "seed": 42105, "initial_soc": 0.16, "auxiliary_power_w": 8000, "wait_s": 0},
+    {"id": "dev-west-reserve", "partition": "development", "station": "west-c", "departure_edge": "107583310#9", "departure_m": 13, "seed": 42106, "initial_soc": 0.101, "auxiliary_power_w": 12000, "wait_s": 30},
+    {"id": "reserved-depot-nominal", "partition": "reserved", "station": "depot-a", "departure_edge": "41258630#1", "departure_m": 13, "seed": 42201, "initial_soc": 0.145, "auxiliary_power_w": 9000, "wait_s": 15},
+    {"id": "reserved-depot-reserve", "partition": "reserved", "station": "depot-a", "departure_edge": "1454074839#1", "departure_m": 13, "seed": 42202, "initial_soc": 0.102, "auxiliary_power_w": 11000, "wait_s": 45},
+    {"id": "reserved-opportunity-nominal", "partition": "reserved", "station": "opportunity-b", "departure_edge": "1387482802", "departure_m": 13, "seed": 42203, "initial_soc": 0.145, "auxiliary_power_w": 9000, "wait_s": 0},
+    {"id": "reserved-opportunity-reserve", "partition": "reserved", "station": "opportunity-b", "departure_edge": "562481862#0", "departure_m": 13, "seed": 42204, "initial_soc": 0.102, "auxiliary_power_w": 11000, "wait_s": 0},
+    {"id": "reserved-west-nominal", "partition": "reserved", "station": "west-c", "departure_edge": "1387200659#1", "departure_m": 13, "seed": 42205, "initial_soc": 0.145, "auxiliary_power_w": 9000, "wait_s": 15},
+    {"id": "reserved-west-reserve", "partition": "reserved", "station": "west-c", "departure_edge": "465384272#0", "departure_m": 13, "seed": 42206, "initial_soc": 0.102, "auxiliary_power_w": 11000, "wait_s": 45}
+  ]
+}

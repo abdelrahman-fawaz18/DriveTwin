@@ -1,0 +1,88 @@
+{
+  "checkpoint": "P3-A1 first local simulation command",
+  "date": "2026-11-05",
+  "passed": true,
+  "scope": "One operator-issued speed reduction and independent sampled-speed comparison in a bounded local SUMO motion exercise",
+  "private_evidence": "evidence/p3/2026-11-05-speed-limit-01",
+  "request_version": "evdt-command/1.0.0",
+  "result_version": "evdt-command-execution/1.0.0",
+  "focused_command_tests_passed": 16,
+  "shared_checks": {
+    "python_tests_passed": 797,
+    "dashboard_tests_passed": 29,
+    "original_contract_cases": 339,
+    "monitoring_contract_cases": 81,
+    "source_fingerprints_verified": 376,
+    "candidate_privacy_findings": 0,
+    "candidate_secret_findings": 0
+  },
+  "phase_2_evidence_reverified": true,
+  "sumo_version": "SUMO 1.28.0",
+  "command_sim_time_s": 4,
+  "limit_m_s": 4.0,
+  "execution_status": "acknowledged",
+  "observed_effect": {
+    "confirmed": true,
+    "signal_id": "motion.speed",
+    "unit": "m/s",
+    "matching_pre_command_samples": 4,
+    "post_command_pairs": 11,
+    "pairs_showing_lower_speed": 2,
+    "maximum_baseline_m_s": 8.33,
+    "maximum_commanded_m_s": 4.0
+  },
+  "source_files": [
+    {
+      "path": "scripts/p3/run_speed_limit.py",
+      "sha256": "d1b203917020fbf3b808cab95709a80b4566b95b7bf3734433909550ecba46a2"
+    },
+    {
+      "path": "simulation/montreal/mission.json",
+      "sha256": "6fac46aa281b97672b255d59758a2f44b406baa3644de50ae1d4d0808ef0682d"
+    },
+    {
+      "path": "simulation/montreal/bus-parameters.json",
+      "sha256": "2018dca5649076ccddb91a5802ddd9fc9c4260459ecf01d728836543f6fff6f7"
+    },
+    {
+      "path": "simulation/montreal/import-review.json",
+      "sha256": "f578854337d9baa454fa81724066160d03b10310f36b6615dc48e884b1801724"
+    },
+    {
+      "path": "data/public/montreal-core-v1/roads.osm.xml",
+      "sha256": "2bc98528975cd2dcb68cb123d32083c50305d8d9c1c13f0f42a2326b0747a420"
+    },
+    {
+      "path": "catalog/monitoring-signals.json",
+      "sha256": "e54709fa3c44bee3decb8339961f5f0c3059f17d8da9b3a195fff4f7c55a0daa"
+    },
+    {
+      "path": "src/evdt/commands.py",
+      "sha256": "74737be60ec8716fb4616fdd76d685033e0da2edb6483147fa0aa413d4b035db"
+    },
+    {
+      "path": "src/evdt/contract_profile.py",
+      "sha256": "7be400c14efdc7e5db221a7c371c60c2ce2d7c6846058682ba88ceee0a2fc7f1"
+    },
+    {
+      "path": "src/evdt/monitoring/network.py",
+      "sha256": "3fb15a30349ecead402b095cb4bd921525749db3b87885f0bb77799f4cf41979"
+    },
+    {
+      "path": "src/evdt/monitoring/sensors.py",
+      "sha256": "548943e8814a2bb70a4d8ee88f8f2cbe8aa154eecbc41b1efbe153532c2056dc"
+    },
+    {
+      "path": "contracts/commands/execution-result-1.0.0.schema.json",
+      "sha256": "4200bca02d86e5bf04af1ea8ad103f93fee56ce30104f180b937a752eadae840"
+    },
+    {
+      "path": "contracts/commands/speed-limit-1.0.0.schema.json",
+      "sha256": "9db3203570de32b5a438e0c381b22215705ef19d3a40c206bb128c2d7c770946"
+    }
+  ],
+  "temporary_container_removed": true,
+  "connected_command_chain_qualified": false,
+  "durable_restart_recovery_qualified": false,
+  "phase_3_complete": false
+}

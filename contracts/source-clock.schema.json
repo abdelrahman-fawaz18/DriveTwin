@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:evdt:source-clock:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "asset_id",
+    "source_id",
+    "session_id",
+    "source_epoch",
+    "schema_version",
+    "event_id",
+    "revision",
+    "manifest_sha256",
+    "state",
+    "sim_time_s",
+    "observed_at"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "asset_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{0,63}(?![\\s\\S])"
+    },
+    "source_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{0,63}(?![\\s\\S])"
+    },
+    "session_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "source_epoch": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "schema_version": {
+      "const": "source-clock/1.0.0"
+    },
+    "event_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}(?![\\s\\S])"
+    },
+    "state": {
+      "enum": [
+        "running",
+        "paused",
+        "finished"
+      ]
+    },
+    "sim_time_s": {
+      "type": "number",
+      "minimum": 0
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    }
+  }
+}

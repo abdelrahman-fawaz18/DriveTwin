@@ -1,0 +1,67 @@
+# Explicit operator-only charging overlay. Requires the monitoring and Phase 3 command files.
+x-charging-volumes: &charging-volumes
+  - ./scripts/charging:/workspace/scripts/charging:ro
+  - ./scripts/known_route_energy/build_station_navigation.py:/workspace/scripts/known_route_energy/build_station_navigation.py:ro
+  - ./qualification/charging:/workspace/qualification/charging:ro
+  - ./simulation/montreal:/workspace/simulation/montreal:ro
+  - ./data/public/montreal-core-v1:/workspace/data/public/montreal-core-v1:ro
+  - ./docs/verification:/workspace/docs/verification:ro
+  - ${CHARGING_NETWORK_FILE:?}:/workspace/evidence/p4/station-arrivals-02/network.net.xml:ro
+
+services:
+  charging-migrate:
+    extends: {file: ops/compose/compose.commands.yaml, service: command-migrate}
+    environment:
+      PYTHONPATH: /workspace/src:/workspace
+    volumes:
+      - ./src:/workspace/src:ro
+      - ./contracts:/workspace/contracts:ro
+      - ./migrations/commands:/workspace/migrations/commands:ro
+      - ./simulation/montreal/stations.json:/workspace/scenario/stations.json:ro
+      - ./scripts/charging:/workspace/scripts/charging:ro
+      - ./scripts/known_route_energy/build_station_navigation.py:/workspace/scripts/known_route_energy/build_station_navigation.py:ro
+      - ./qualification/charging:/workspace/qualification/charging:ro
+      - ./simulation/montreal:/workspace/simulation/montreal:ro
+      - ./data/public/montreal-core-v1:/workspace/data/public/montreal-core-v1:ro
+      - ./docs/verification:/workspace/docs/verification:ro
+      - ${CHARGING_NETWORK_FILE:?}:/workspace/evidence/p4/station-arrivals-02/network.net.xml:ro
+    command: [python, -m, evdt.charging_api]
+    depends_on:
+      command-migrate: {condition: service_completed_successfully}
+
+  command-api:
+    environment:
+      PYTHONPATH: /workspace/src:/workspace
+    volumes: *charging-volumes
+    secrets: [command_station_writer]
+    command: [uvicorn, evdt.charging_api:app, --host, 0.0.0.0, --port, "8000", --limit-concurrency, "16"]
+    depends_on:
+      charging-migrate: {condition: service_completed_successfully}
+
+  charging-fixture:
+    profiles: [charging-fixture]
+    image: ${COMMAND_IMAGE:-evdt-energy-collector:p2}
+    pull_policy: never
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 512m
+    pids_limit: 48
+    tmpfs: ["/tmp:size=32m,mode=1777"]
+    working_dir: /workspace
+    networks: [fixture]
+    environment:
+      PYTHONPATH: /workspace/src:/workspace
+    volumes:
+      - ./src:/workspace/src:ro
+      - ./contracts:/workspace/contracts:ro
+      - ./scripts/charging:/workspace/scripts/charging:ro
+      - ./scripts/known_route_energy/build_station_navigation.py:/workspace/scripts/known_route_energy/build_station_navigation.py:ro
+      - ./qualification/charging:/workspace/qualification/charging:ro
+      - ./simulation/montreal:/workspace/simulation/montreal:ro
+      - ./data/public/montreal-core-v1:/workspace/data/public/montreal-core-v1:ro
+      - ./docs/verification:/workspace/docs/verification:ro
+      - ${CHARGING_NETWORK_FILE:?}:/workspace/evidence/p4/station-arrivals-02/network.net.xml:ro
+
+secrets:
+  command_station_writer: {file: "${SECRET_DIRECTORY:?}/command_station_writer"}

@@ -1,0 +1,34 @@
+{
+  "checkpoint": "P6-03",
+  "status": "scalar_extension_passed",
+  "shared_implementation_base_commit": "ece868e39b0946c95c5d61b636d4b50fa59ee08b",
+  "shared_source_changes": 0,
+  "service_check": {
+    "private_report": "evidence/p6/extension-01/qualification.json",
+    "sha256": "e33c3411a340918eaa20c1be4151f359eff6fc7f36282a4b811b0b9d995577f2",
+    "source_inventory_sha256": "86e6761b73ef709569102c102b3d77f0e82b6270888aa8a0dbb55eb971e67856",
+    "source_inventory_files": 338,
+    "mode": "Two accelerated, independently configured SUMO sources in one local monitoring run",
+    "messages_per_asset": 16,
+    "signals_by_asset": {"bus-001": 20, "bus-002": 21},
+    "total_scalar_samples": 648,
+    "coolant_samples": 8,
+    "coolant_period_sim_s": 2,
+    "coolant_quality_exceptions": {"4": "missing", "8": "invalid"},
+    "history_and_current_values_match_originals": true,
+    "replay_packet_bytes_match_source_hashes": true,
+    "scoped_read_denials_passed": true,
+    "queues_empty_and_owned_cleanup_passed": true,
+    "startup_s": 8.904,
+    "runtime_last_below_2gib_window_upper_s": 27.65
+  },
+  "browser_check": {
+    "private_report": "evidence/p6/extension-01/extension-browser.json",
+    "sha256": "8950173e635c7b13115ec678d114c7eaecd266a76278bd6ef755068fdd5375cf",
+    "browser_version": "156.0.8078.4",
+    "scope": "Pinned Chromium rendered the exact built dashboard with offline snapshot projections of both tested source recordings. Live transport was checked separately by the service run.",
+    "metadata_and_event_identity_passed": true,
+    "asset_switch_clears_other_asset_signal": true
+  },
+  "alternate_adapter_and_experiment_result": "docs/verification/p6-recorded-experiment.json"
+}

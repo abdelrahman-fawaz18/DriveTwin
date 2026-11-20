@@ -1,0 +1,486 @@
+{
+  "scope": "Installed Python metadata and the Windows-only test dependency declared in the lock",
+  "packages": [
+    {
+      "name": "annotated-doc",
+      "version": "0.0.5",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "annotated_doc-0.0.5.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/annotated-doc/0.0.5/"
+    },
+    {
+      "name": "annotated-types",
+      "version": "0.8.0",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "annotated_types-0.8.0.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/annotated-types/0.8.0/"
+    },
+    {
+      "name": "anyio",
+      "version": "4.16.0",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "anyio-4.16.0.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/anyio/4.16.0/"
+    },
+    {
+      "name": "arrow",
+      "version": "1.4.0",
+      "declared_terms": "Apache Software License",
+      "license_expression": null,
+      "installed_notice_paths": [
+        "arrow-1.4.0.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/arrow/1.4.0/"
+    },
+    {
+      "name": "ast_serialize",
+      "version": "0.13.1",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "ast_serialize-0.13.1.dist-info/licenses/LICENSE",
+        "ast_serialize-0.13.1.dist-info/licenses/crates/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/ast_serialize/0.13.1/"
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "attrs-26.1.0.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/attrs/26.1.0/"
+    },
+    {
+      "name": "click",
+      "version": "8.5.0",
+      "declared_terms": "BSD-3-Clause",
+      "license_expression": "BSD-3-Clause",
+      "installed_notice_paths": [
+        "click-8.5.0.dist-info/licenses/LICENSE.txt"
+      ],
+      "metadata_source": "https://pypi.org/project/click/8.5.0/"
+    },
+    {
+      "name": "colorama",
+      "version": "0.4.6",
+      "declared_terms": "BSD-3-Clause",
+      "license_expression": null,
+      "installed_notice_paths": [],
+      "metadata_source": "https://pypi.org/project/colorama/0.4.6/",
+      "upstream_license": "https://raw.githubusercontent.com/tartley/colorama/0.4.6/LICENSE.txt",
+      "scope": "Windows-only pytest dependency. License checked against the versioned upstream notice."
+    },
+    {
+      "name": "fastapi",
+      "version": "0.162.0",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "fastapi-0.162.0.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/fastapi/0.162.0/"
+    },
+    {
+      "name": "fqdn",
+      "version": "1.6.0",
+      "declared_terms": "MPL-2.0",
+      "license_expression": "MPL-2.0",
+      "installed_notice_paths": [
+        "fqdn-1.6.0.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/fqdn/1.6.0/"
+    },
+    {
+      "name": "h11",
+      "version": "0.16.0",
+      "declared_terms": "MIT License",
+      "license_expression": null,
+      "installed_notice_paths": [
+        "h11-0.16.0.dist-info/licenses/LICENSE.txt"
+      ],
+      "metadata_source": "https://pypi.org/project/h11/0.16.0/"
+    },
+    {
+      "name": "idna",
+      "version": "3.20",
+      "declared_terms": "BSD-3-Clause",
+      "license_expression": "BSD-3-Clause",
+      "installed_notice_paths": [
+        "idna-3.20.dist-info/licenses/LICENSE.md"
+      ],
+      "metadata_source": "https://pypi.org/project/idna/3.20/"
+    },
+    {
+      "name": "iniconfig",
+      "version": "2.3.1",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "iniconfig-2.3.1.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/iniconfig/2.3.1/"
+    },
+    {
+      "name": "isoduration",
+      "version": "20.11.0",
+      "declared_terms": "ISC License (ISCL)",
+      "license_expression": null,
+      "installed_notice_paths": [
+        "isoduration-20.11.0.dist-info/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/isoduration/20.11.0/"
+    },
+    {
+      "name": "jsonpointer",
+      "version": "3.8",
+      "declared_terms": "BSD License",
+      "license_expression": null,
+      "installed_notice_paths": [
+        "jsonpointer-3.8.dist-info/licenses/AUTHORS",
+        "jsonpointer-3.8.dist-info/licenses/LICENSE.txt"
+      ],
+      "metadata_source": "https://pypi.org/project/jsonpointer/3.8/"
+    },
+    {
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "jsonschema-4.26.0.dist-info/licenses/COPYING"
+      ],
+      "metadata_source": "https://pypi.org/project/jsonschema/4.26.0/"
+    },
+    {
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "jsonschema_specifications-2025.9.1.dist-info/licenses/COPYING"
+      ],
+      "metadata_source": "https://pypi.org/project/jsonschema-specifications/2025.9.1/"
+    },
+    {
+      "name": "lark",
+      "version": "1.3.1",
+      "declared_terms": "MIT License",
+      "license_expression": null,
+      "installed_notice_paths": [
+        "lark-1.3.1.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/lark/1.3.1/"
+    },
+    {
+      "name": "librt",
+      "version": "0.16.0",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "librt-0.16.0.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/librt/0.16.0/"
+    },
+    {
+      "name": "mypy",
+      "version": "2.4.1",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "mypy-2.4.1.dist-info/licenses/LICENSE",
+        "mypy-2.4.1.dist-info/licenses/mypy/typeshed/LICENSE",
+        "mypy/typeshed/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/mypy/2.4.1/"
+    },
+    {
+      "name": "mypy_extensions",
+      "version": "1.2.0",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "mypy_extensions-1.2.0.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/mypy_extensions/1.2.0/"
+    },
+    {
+      "name": "opentelemetry-api",
+      "version": "1.45.2",
+      "declared_terms": "Apache-2.0",
+      "license_expression": "Apache-2.0",
+      "installed_notice_paths": [
+        "opentelemetry_api-1.45.2.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/opentelemetry-api/1.45.2/"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "declared_terms": "Apache-2.0 OR BSD-2-Clause",
+      "license_expression": "Apache-2.0 OR BSD-2-Clause",
+      "installed_notice_paths": [
+        "packaging-26.3.dist-info/licenses/LICENSE",
+        "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+        "packaging-26.3.dist-info/licenses/LICENSE.BSD",
+        "packaging/licenses/__init__.py",
+        "packaging/licenses/_spdx.py"
+      ],
+      "metadata_source": "https://pypi.org/project/packaging/26.3/"
+    },
+    {
+      "name": "paho-mqtt",
+      "version": "2.1.0",
+      "declared_terms": "OSI Approved",
+      "license_expression": null,
+      "installed_notice_paths": [
+        "paho_mqtt-2.1.0.dist-info/licenses/LICENSE.txt"
+      ],
+      "metadata_source": "https://pypi.org/project/paho-mqtt/2.1.0/"
+    },
+    {
+      "name": "pathspec",
+      "version": "1.1.1",
+      "declared_terms": "Mozilla Public License 2.0 (MPL 2.0)",
+      "license_expression": null,
+      "installed_notice_paths": [
+        "pathspec-1.1.1.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/pathspec/1.1.1/"
+    },
+    {
+      "name": "pluggy",
+      "version": "1.7.0",
+      "declared_terms": "MIT License",
+      "license_expression": null,
+      "installed_notice_paths": [
+        "pluggy-1.7.0.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/pluggy/1.7.0/"
+    },
+    {
+      "name": "psycopg",
+      "version": "3.3.7",
+      "declared_terms": "LGPL-3.0-only",
+      "license_expression": "LGPL-3.0-only",
+      "installed_notice_paths": [
+        "psycopg-3.3.7.dist-info/licenses/LICENSE.txt"
+      ],
+      "metadata_source": "https://pypi.org/project/psycopg/3.3.7/"
+    },
+    {
+      "name": "psycopg-binary",
+      "version": "3.3.7",
+      "declared_terms": "LGPL-3.0-only",
+      "license_expression": "LGPL-3.0-only",
+      "installed_notice_paths": [
+        "psycopg_binary-3.3.7.dist-info/licenses/LICENSE.txt"
+      ],
+      "metadata_source": "https://pypi.org/project/psycopg-binary/3.3.7/"
+    },
+    {
+      "name": "pydantic",
+      "version": "2.14.2",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "pydantic-2.14.2.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/pydantic/2.14.2/"
+    },
+    {
+      "name": "pydantic_core",
+      "version": "2.50.2",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "pydantic_core-2.50.2.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/pydantic_core/2.50.2/"
+    },
+    {
+      "name": "Pygments",
+      "version": "2.21.0",
+      "declared_terms": "BSD-2-Clause",
+      "license_expression": "BSD-2-Clause",
+      "installed_notice_paths": [
+        "pygments-2.21.0.dist-info/licenses/AUTHORS",
+        "pygments-2.21.0.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/Pygments/2.21.0/"
+    },
+    {
+      "name": "pytest",
+      "version": "9.2.0",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "pytest-9.2.0.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/pytest/9.2.0/"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "4.0.0",
+      "declared_terms": "BSD-3-Clause",
+      "license_expression": "BSD-3-Clause",
+      "installed_notice_paths": [
+        "python_dateutil-4.0.0.dist-info/licenses/AUTHORS.md",
+        "python_dateutil-4.0.0.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/python-dateutil/4.0.0/"
+    },
+    {
+      "name": "referencing",
+      "version": "0.37.0",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "referencing-0.37.0.dist-info/licenses/COPYING"
+      ],
+      "metadata_source": "https://pypi.org/project/referencing/0.37.0/"
+    },
+    {
+      "name": "rfc3339-validator",
+      "version": "0.1.4",
+      "declared_terms": "MIT License",
+      "license_expression": null,
+      "installed_notice_paths": [
+        "rfc3339_validator-0.1.4.dist-info/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/rfc3339-validator/0.1.4/"
+    },
+    {
+      "name": "rfc3986-validator",
+      "version": "0.1.1",
+      "declared_terms": "MIT License",
+      "license_expression": null,
+      "installed_notice_paths": [
+        "rfc3986_validator-0.1.1.dist-info/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/rfc3986-validator/0.1.1/"
+    },
+    {
+      "name": "rfc3987-syntax",
+      "version": "1.1.0",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "rfc3987_syntax-1.1.0.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/rfc3987-syntax/1.1.0/"
+    },
+    {
+      "name": "rpds-py",
+      "version": "2026.9.1",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "rpds_py-2026.9.1.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/rpds-py/2026.9.1/"
+    },
+    {
+      "name": "ruff",
+      "version": "0.17.3",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "ruff-0.17.3.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/ruff/0.17.3/"
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "declared_terms": "MIT License",
+      "license_expression": null,
+      "installed_notice_paths": [
+        "six-1.17.0.dist-info/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/six/1.17.0/"
+    },
+    {
+      "name": "starlette",
+      "version": "1.10.0",
+      "declared_terms": "BSD-3-Clause",
+      "license_expression": "BSD-3-Clause",
+      "installed_notice_paths": [
+        "starlette-1.10.0.dist-info/licenses/LICENSE.md"
+      ],
+      "metadata_source": "https://pypi.org/project/starlette/1.10.0/"
+    },
+    {
+      "name": "typing-inspection",
+      "version": "0.4.4",
+      "declared_terms": "MIT",
+      "license_expression": "MIT",
+      "installed_notice_paths": [
+        "typing_inspection-0.4.4.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/typing-inspection/0.4.4/"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "declared_terms": "PSF-2.0",
+      "license_expression": "PSF-2.0",
+      "installed_notice_paths": [
+        "typing_extensions-4.16.0.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/typing_extensions/4.16.0/"
+    },
+    {
+      "name": "tzdata",
+      "version": "2026.6",
+      "declared_terms": "Apache-2.0",
+      "license_expression": null,
+      "installed_notice_paths": [
+        "tzdata-2026.6.dist-info/licenses/LICENSE",
+        "tzdata-2026.6.dist-info/licenses/licenses/LICENSE_APACHE"
+      ],
+      "metadata_source": "https://pypi.org/project/tzdata/2026.6/"
+    },
+    {
+      "name": "uri-template",
+      "version": "1.3.0",
+      "declared_terms": "MIT License",
+      "license_expression": null,
+      "installed_notice_paths": [
+        "uri_template-1.3.0.dist-info/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/uri-template/1.3.0/"
+    },
+    {
+      "name": "uvicorn",
+      "version": "0.54.0",
+      "declared_terms": "BSD-3-Clause",
+      "license_expression": "BSD-3-Clause",
+      "installed_notice_paths": [
+        "uvicorn-0.54.0.dist-info/licenses/LICENSE.md"
+      ],
+      "metadata_source": "https://pypi.org/project/uvicorn/0.54.0/"
+    },
+    {
+      "name": "webcolors",
+      "version": "25.10.0",
+      "declared_terms": "BSD License",
+      "license_expression": null,
+      "installed_notice_paths": [
+        "webcolors-25.10.0.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/webcolors/25.10.0/"
+    }
+  ]
+}

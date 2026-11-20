@@ -1,0 +1,54 @@
+{
+  "scope": "Installed metadata or exact npm lock; not complete binary redistribution clearance",
+  "packages": [
+    {
+      "name": "eclipse-sumo",
+      "version": "1.28.0",
+      "declared_terms": "EPL-2.0 OR GPL-2.0-or-later",
+      "license_expression": "EPL-2.0 OR GPL-2.0-or-later",
+      "installed_notice_paths": [
+        "eclipse_sumo-1.28.0.dist-info/licenses/AUTHORS",
+        "eclipse_sumo-1.28.0.dist-info/licenses/LICENSE",
+        "eclipse_sumo-1.28.0.dist-info/licenses/NOTICE.md",
+        "sumo/tools/game/sounds/license.txt"
+      ],
+      "metadata_source": "https://pypi.org/project/eclipse-sumo/1.28.0/"
+    },
+    {
+      "name": "sumo-data",
+      "version": "1.28.0",
+      "declared_terms": "EPL-2.0 OR GPL-2.0-or-later",
+      "license_expression": "EPL-2.0 OR GPL-2.0-or-later",
+      "installed_notice_paths": [
+        "sumo_data-1.28.0.dist-info/licenses/AUTHORS",
+        "sumo_data-1.28.0.dist-info/licenses/LICENSE",
+        "sumo_data-1.28.0.dist-info/licenses/NOTICE.md"
+      ],
+      "metadata_source": "https://pypi.org/project/sumo-data/1.28.0/"
+    },
+    {
+      "name": "sumolib",
+      "version": "1.28.0",
+      "declared_terms": "EPL-2.0 OR GPL-2.0-or-later",
+      "license_expression": "EPL-2.0 OR GPL-2.0-or-later",
+      "installed_notice_paths": [
+        "sumolib-1.28.0.dist-info/licenses/AUTHORS",
+        "sumolib-1.28.0.dist-info/licenses/LICENSE",
+        "sumolib-1.28.0.dist-info/licenses/NOTICE.md"
+      ],
+      "metadata_source": "https://pypi.org/project/sumolib/1.28.0/"
+    },
+    {
+      "name": "traci",
+      "version": "1.28.0",
+      "declared_terms": "EPL-2.0 OR GPL-2.0-or-later",
+      "license_expression": "EPL-2.0 OR GPL-2.0-or-later",
+      "installed_notice_paths": [
+        "traci-1.28.0.dist-info/licenses/AUTHORS",
+        "traci-1.28.0.dist-info/licenses/LICENSE",
+        "traci-1.28.0.dist-info/licenses/NOTICE.md"
+      ],
+      "metadata_source": "https://pypi.org/project/traci/1.28.0/"
+    }
+  ]
+}

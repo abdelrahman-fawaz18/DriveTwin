@@ -1,0 +1,192 @@
+{
+  "checkpoint": "P6-C1",
+  "scope": "Isolated local single-bus simulation with operator charging and fixture-scoped synthetic cooling",
+  "review_date_local": "2026-11-06",
+  "passed": true,
+  "source_compatibility": {
+    "release_sha256": "ba3f256c0673db611dee6e411635100b078b6856a4df6d4337c92f1ceb969011",
+    "inventory": {
+      "files": 357,
+      "sha256": "60116fd05d222424d78bbcdabce097222b07a0ca663f793bc620e4b013547475"
+    }
+  },
+  "original_w1_30_release_verified": {
+    "passed": true,
+    "release_sha256": "d30f350187ba0255b0d5b501d9dfb2479e07ac1b0ae18ab94aef9741290932bd",
+    "input_inventory": {
+      "files": 315,
+      "sha256": "1d4cea0c8e0bc7cde2c2d97f093dca922399d4f0ad2b1d9366d1bce267b120d0"
+    }
+  },
+  "case_count": 5,
+  "distinct_run_count": 5,
+  "reconciled_unique_messages": 11,
+  "focused_checks_passed": {
+    "phase6_monitoring_harness_tests": 17,
+    "phase5_thermal_intervention_tests": 16,
+    "phase4_charging_dispatch_tests": 3
+  },
+  "registered_signals": [
+    "motion.speed",
+    "traction.motor.temperature"
+  ],
+  "image_ids": {
+    "COMMAND_IMAGE": "sha256:4334958c68c76796c79099bffdb48e5c9ee422b65856a17db7c9e6bdd4616b90",
+    "POSTGRES_IMAGE": "sha256:10a5c69a83035ab5239f5620d708520e8b28f5aa1f2b20143e6024532edadfb5",
+    "MOSQUITTO_IMAGE": "sha256:09b62ff32c2e7b64d4b431b9a89236073289b68db273de2b089edeb9b0d92b5c"
+  },
+  "cases": {
+    "charge": {
+      "evidence_directory": "evidence/p6/combined-03-charge",
+      "passed": true,
+      "accepted_messages": 1,
+      "role_isolation": true,
+      "charge_delivered_kwh": 35.15000000000148,
+      "motion_resumed": true,
+      "effect_reconciled": true,
+      "cleanup_passed": true,
+      "windows_launch_min_available_bytes": 2240516096,
+      "windows_run_min_available_bytes": 2043625472,
+      "windows_run_below_2gib_upper_s": 13.002,
+      "private_evidence_sha256": {
+        "qualification.json": "87a4b1450e8d9d651da364338169efe769fd6e3f8c4b412f2e0249c9f3f0d9bb",
+        "windows-resources.jsonl": "9d829bd6874fa3d5a817f91afb63cf889ce8caa1aae2fc4ba3f55aa38b3a4007",
+        "charge/qualification.json": "9762b23cdee597d6f78edf5b5864ed9c4d38a6167af206689ec90645e3dd6cd3",
+        "charge/case.json": "6a5d1ea51c9e6d41ff9b573e7ae66855d284f70701aa71db2307050d499a846e",
+        "charge/accepted-observations.json": "9a156f53db7c56a94d16ef3845c66d7aa0a6a1578c49fb977ab80c9b7d6ce0ac",
+        "charge/mission/measurements.jsonl": "c0f04ca7b34ce04667efac3662cc8188aa6dc2569fd8690a9330b47eca4743b1",
+        "charge/independent-charge-effect.json": "fb0677f8c871d3c901535aea7381a51b885b19dfb1100c53f7c770112250ce0d"
+      }
+    },
+    "cool": {
+      "evidence_directory": "evidence/p6/combined-03-cool",
+      "passed": true,
+      "accepted_messages": 2,
+      "role_isolation": true,
+      "motor_effect_k": 2.594036524792955,
+      "pump_power_w": 1200,
+      "measured_window_s": 120,
+      "cleanup_passed": true,
+      "windows_launch_min_available_bytes": 2280927232,
+      "windows_run_min_available_bytes": 2005118976,
+      "windows_run_below_2gib_upper_s": 14.002,
+      "private_evidence_sha256": {
+        "qualification.json": "f1728873959523e8195285abcc675db6a827bfc2731136ea4b8bd0a17d3154a4",
+        "windows-resources.jsonl": "7f942ea0d83f0050f95442ad3aef259c3a8360fce975d4bb3c06bbaf307bb08a",
+        "cool/qualification.json": "c2bdae53b680a55e7393792649ef8d045a902c88cef5919da1f48a5a917bf743",
+        "cool/case.json": "b0ef2621666d3742ce520f5b3ed5c7957864731dff733f975be321a5e1dd9786",
+        "cool/accepted-observations.json": "154ee28481f55ce64d167104fe34a4c43492dd1454e37cfc99c4459f104d6327",
+        "cool/cooling-trace.jsonl": "f13cf9d308fdacfeaaa700b96bb442ad03612f5794d0759f3d87666aacb5883e"
+      }
+    },
+    "protected": {
+      "evidence_directory": "evidence/p6/combined-03-protected",
+      "passed": true,
+      "accepted_messages": 2,
+      "role_isolation": true,
+      "no_effect": true,
+      "refusal": "local_protection",
+      "cleanup_passed": true,
+      "windows_launch_min_available_bytes": 2237390848,
+      "windows_run_min_available_bytes": 1978667008,
+      "windows_run_below_2gib_upper_s": 14.004,
+      "private_evidence_sha256": {
+        "qualification.json": "77b01c6d5f13216ef3b4358d4aff05b1bb6ced6c4844a7185816a174cefb1253",
+        "windows-resources.jsonl": "ae29eb9f9ede01d3ba1b341d786b8450d883d9dccff5cbe64275ebbbe75b7a28",
+        "protected/qualification.json": "7fa60baad6f14e4a6ddd1ebf02e79618c63e8cd74caf94a3427fdd3ba0dd4ab6",
+        "protected/case.json": "bcec838dccb50265395e2aabea7a5627b9f2deb892594ef4a5a2a3a892e08650",
+        "protected/accepted-observations.json": "1487e8cc8ed5dfa1bb97167cbe35e394bbdee0f82f220a34e2fa8e3fac2e7b88"
+      }
+    },
+    "stale-outage": {
+      "evidence_directory": "evidence/p6/combined-03-stale-outage",
+      "passed": true,
+      "broker_stopped_and_ingest_restarted": true,
+      "accepted_messages": 3,
+      "role_isolation": true,
+      "no_effect": true,
+      "refusal": "charging_observation_stale_or_future",
+      "recovery_refusal": "charging_lineage_mismatch",
+      "stale_snapshot_verified": true,
+      "ordered_fault_timeline_verified": true,
+      "cleanup_passed": true,
+      "persisted_during_outage": 1,
+      "broker_stop_to_stale_wall_s": 6.082,
+      "previous_command_state": "queued",
+      "windows_launch_min_available_bytes": 2835910656,
+      "windows_run_min_available_bytes": 2082140160,
+      "windows_run_below_2gib_upper_s": 18.015,
+      "private_evidence_sha256": {
+        "qualification.json": "c94a9a480bcd46b7910dd303f45b8f0dd0995cbc2b586304792d5126914b2ad1",
+        "windows-resources.jsonl": "b8b5008fdf358955d61ef55e8b67a59ab517b83c0011569c332e73724a23ea34",
+        "stale-outage/qualification.json": "078dd8e597dbfd299a5bd1c36bf4e0829020906a41260264a671d05d5fdde560",
+        "stale-outage/case.json": "e6c4f12f708eec7d776b69f3e6bfb6be70857b87e701b6dae08464781cb2f310",
+        "stale-outage/accepted-observations.json": "b36297380ac43fa90683a18bb5cabf1427e83cc183f60e4503dd98896b6397ee"
+      }
+    },
+    "interrupted-outage": {
+      "evidence_directory": "evidence/p6/combined-03-interrupted-outage",
+      "passed": true,
+      "broker_stopped_and_ingest_restarted": true,
+      "accepted_messages": 3,
+      "role_isolation": true,
+      "no_effect": true,
+      "refusal": "physical_station_unavailable",
+      "recovery_refusal": "charging_already_reserved",
+      "stale_snapshot_verified": true,
+      "ordered_fault_timeline_verified": true,
+      "cleanup_passed": true,
+      "persisted_during_outage": 1,
+      "broker_stop_to_stale_wall_s": 6.071,
+      "previous_command_state": "reserved_unknown",
+      "windows_launch_min_available_bytes": 2158379008,
+      "windows_run_min_available_bytes": 1952681984,
+      "windows_run_below_2gib_upper_s": 23.99,
+      "private_evidence_sha256": {
+        "qualification.json": "5bcccc8c0910bdac0bac961e1933ac67ab045d84b1d97aa368a5389a3f0cd24f",
+        "windows-resources.jsonl": "fd8e40ed0870d42defde6ac8b18473ae11895a3558e8487b7f82ad29714b29e7",
+        "interrupted-outage/qualification.json": "1dc26bf20886aadf45353fce6cb7c0ec9fb3675af1e58c727ec2b4249bc5f8e8",
+        "interrupted-outage/case.json": "7bf86037a7a8e07522c89d207c6154a5bf2d7cc7de7d81a4bae70f000643a6ad",
+        "interrupted-outage/accepted-observations.json": "98bbee0bbda34194b39356c07b864d753aefb89c10df7c43f47116689b469f44"
+      }
+    }
+  },
+  "incomplete_attempts": [
+    {
+      "evidence_directory": "evidence/p6/combined-faults-01",
+      "status": "incomplete_windows_memory_guard",
+      "fallback_cleanup_passed": true,
+      "private_report_sha256": "bf279406ce3e3f5efc4778b7197a00eff200321d84538ee8b2428533669029a4"
+    },
+    {
+      "evidence_directory": "evidence/p6/combined-02-stale-outage",
+      "status": "incomplete_windows_memory_guard",
+      "fallback_cleanup_passed": true,
+      "private_report_sha256": "c6ef85abcd70777299f469f6b82eeb3aefa75f21f089a7a90a64cdc986534abd"
+    }
+  ],
+  "host_policy": {
+    "launch_available_floor_bytes": 2147483648,
+    "runtime_available_floor_bytes": 2147483648,
+    "maximum_seconds_below_runtime_floor": 30,
+    "final_cases_run_individually": true,
+    "fleet_host_capacity_qualified": false
+  },
+  "independent_cleanup_review": {
+    "containers_remaining": 0,
+    "p6c_labeled_volumes_remaining": 0,
+    "p6c_networks_remaining": 0,
+    "anonymous_volumes_created_during_incomplete_attempts": 2,
+    "anonymous_volumes_attributable_from_retained_docker_metadata": false,
+    "anonymous_volumes_removed": false
+  },
+  "limitations": [
+    "Short deterministic outage and single registered simulated bus.",
+    "Two-node synthetic thermal integration model and local housing probe.",
+    "Automatic charging dispatch disabled. Physical hardware, fleet load, and individual service restart qualification are separate."
+  ],
+  "next_checkpoint": {
+    "id": "P6-02",
+    "name": "Individual service restart recovery"
+  }
+}

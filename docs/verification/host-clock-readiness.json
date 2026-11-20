@@ -1,0 +1,30 @@
+{
+  "checkpoint": "P6-A2 clock readiness after Ubuntu time-service change",
+  "date_local": "2026-11-06",
+  "scope": "Clock-only verification after the user stopped Ubuntu's separate network time service. The live smoke test is pending.",
+  "prior_diagnosis": "docs/verification/p6-a2-clock-diagnosis.json",
+  "configuration_verified_before_and_after_probe": {
+    "ubuntu_network_time_service_state": "inactive",
+    "ubuntu_network_time_service_startup": "disabled",
+    "windows_to_ubuntu_time_sync_enabled": true
+  },
+  "clock_probe": {
+    "passed": true,
+    "duration_seconds": 150,
+    "paired_samples": 151,
+    "per_clock_departure_limit_ms": 10,
+    "max_windows_departure_ms": 0.00845,
+    "max_ubuntu_departure_ms": 0.000379,
+    "max_windows_sample_gap_ms": 1000.60735,
+    "max_ubuntu_sample_gap_ms": 1000.848956,
+    "ubuntu_minus_windows_utc_interval_ms": [-1.306667, 0.800644],
+    "result_sha256": "e366d9f21ab46967260e847efef1a170aefdd84fc242f45bcc75980cf2e83937",
+    "samples_sha256": "677ff3cb2e02d7fb1a17a96d8ed3d784f8311e675de977641fa1a21ad2075abe"
+  },
+  "external_launcher_check_only_passed": true,
+  "running_docker_containers_at_followup": 0,
+  "smoke_started_during_verification": false,
+  "ready_for_another_manual_smoke_attempt": true,
+  "checkpoint_complete": false,
+  "next": "Run one external P6-A2 smoke attempt from a dedicated PowerShell session and the existing preflight and runtime guards."
+}

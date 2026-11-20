@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 431" role="img" aria-labelledby="title desc" font-family="Segoe UI,Arial,sans-serif">
+<title id="title">Measured battery energy during the automatic diversion</title><desc id="desc">The bus starts at 54 kilowatt-hours, reaches the charger with about 52.35, charges to 87.5, then resumes and finishes. The 35 kilowatt-hour reserve is never crossed.</desc>
+<rect x="0" y="0" width="920" height="431" rx="0" fill="#ffffff"/>
+<text x="30" y="40" fill="#10263b" font-size="27" font-weight="700" text-anchor="start">Battery energy during the automatic charging mission</text>
+<text x="30" y="66" fill="#456078" font-size="16" font-weight="400" text-anchor="start">Measured simulated battery energy · one qualified run</text>
+<rect x="221.41" y="107" width="615.23" height="225" rx="0" fill="#f2f8fb"/>
+<text x="82" y="96" fill="#456078" font-size="14" font-weight="400" text-anchor="start">Energy (kWh)</text>
+<text x="233.41" y="130" fill="#087a6b" font-size="15" font-weight="700" text-anchor="start">Charging at Depot A</text>
+<line x1="86" y1="314.69" x2="876" y2="314.69" stroke="#087a6b" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="75" y="319.69" fill="#456078" font-size="13" font-weight="400" text-anchor="end">35</text>
+<line x1="86" y1="262.77" x2="876" y2="262.77" stroke="#d9e5ed" stroke-width="1" stroke-dasharray="none"/>
+<text x="75" y="267.77" fill="#456078" font-size="13" font-weight="400" text-anchor="end">50</text>
+<line x1="86" y1="210.85" x2="876" y2="210.85" stroke="#d9e5ed" stroke-width="1" stroke-dasharray="none"/>
+<text x="75" y="215.85" fill="#456078" font-size="13" font-weight="400" text-anchor="end">65</text>
+<line x1="86" y1="158.92" x2="876" y2="158.92" stroke="#d9e5ed" stroke-width="1" stroke-dasharray="none"/>
+<text x="75" y="163.92" fill="#456078" font-size="13" font-weight="400" text-anchor="end">80</text>
+<line x1="86" y1="107.0" x2="876" y2="107.0" stroke="#d9e5ed" stroke-width="1" stroke-dasharray="none"/>
+<text x="75" y="112.0" fill="#456078" font-size="13" font-weight="400" text-anchor="end">95</text>
+<line x1="86.0" y1="332" x2="86.0" y2="338" stroke="#d9e5ed" stroke-width="1" stroke-dasharray="none"/>
+<text x="86.0" y="357" fill="#456078" font-size="13" font-weight="400" text-anchor="middle">0</text>
+<line x1="210.74" y1="332" x2="210.74" y2="338" stroke="#d9e5ed" stroke-width="1" stroke-dasharray="none"/>
+<text x="210.74" y="357" fill="#456078" font-size="13" font-weight="400" text-anchor="middle">3</text>
+<line x1="335.47" y1="332" x2="335.47" y2="338" stroke="#d9e5ed" stroke-width="1" stroke-dasharray="none"/>
+<text x="335.47" y="357" fill="#456078" font-size="13" font-weight="400" text-anchor="middle">6</text>
+<line x1="460.21" y1="332" x2="460.21" y2="338" stroke="#d9e5ed" stroke-width="1" stroke-dasharray="none"/>
+<text x="460.21" y="357" fill="#456078" font-size="13" font-weight="400" text-anchor="middle">9</text>
+<line x1="584.95" y1="332" x2="584.95" y2="338" stroke="#d9e5ed" stroke-width="1" stroke-dasharray="none"/>
+<text x="584.95" y="357" fill="#456078" font-size="13" font-weight="400" text-anchor="middle">12</text>
+<line x1="709.68" y1="332" x2="709.68" y2="338" stroke="#d9e5ed" stroke-width="1" stroke-dasharray="none"/>
+<text x="709.68" y="357" fill="#456078" font-size="13" font-weight="400" text-anchor="middle">15</text>
+<line x1="834.42" y1="332" x2="834.42" y2="338" stroke="#d9e5ed" stroke-width="1" stroke-dasharray="none"/>
+<text x="834.42" y="357" fill="#456078" font-size="13" font-weight="400" text-anchor="middle">18</text>
+<polyline points="86.14,248.92 96.26,249.86 106.65,249.75 117.05,249.86 127.44,251.14 137.84,250.86 148.23,251.0 158.62,252.49 169.02,252.8 179.41,253.18 189.81,253.73 200.2,254.29 210.6,254.74 220.99,254.63 221.41,254.6 231.39,252.63 241.78,250.55 252.18,248.51 262.57,246.47 272.97,244.39 283.36,242.35 293.76,240.3 304.15,238.23 314.55,236.18 324.94,234.11 335.34,232.07 345.73,230.02 356.12,227.95 366.52,225.9 376.91,223.86 387.31,221.78 397.7,219.74 408.1,217.67 418.49,215.62 428.89,213.58 439.28,211.5 449.68,209.46 460.07,207.42 470.47,205.34 480.86,203.3 491.26,201.22 501.65,199.18 512.05,197.14 522.44,195.06 532.84,193.02 543.23,190.98 553.62,188.9 564.02,186.86 574.41,184.78 584.81,182.74 595.2,180.7 605.6,178.62 615.99,176.58 626.39,174.53 636.78,172.46 647.18,170.42 657.57,168.34 667.97,166.3 678.36,164.25 688.76,162.18 699.15,160.13 709.55,158.09 719.94,156.02 730.34,153.97 740.73,151.9 751.12,149.85 761.52,147.81 771.91,145.73 782.31,143.69 792.7,141.65 803.1,139.57 813.49,137.53 823.89,135.45 834.28,133.41 836.64,132.96 838.99,133.1" fill="none" stroke="#245ab2" stroke-width="3.5" stroke-linejoin="round"/>
+<text x="860" y="306.69" fill="#087a6b" font-size="14" font-weight="700" text-anchor="end">35 kWh reserve</text>
+<text x="828.64" y="123.96000000000001" fill="#245ab2" font-size="14" font-weight="700" text-anchor="end">87.5 kWh target reached</text>
+<text x="97" y="279.63" fill="#456078" font-size="13" font-weight="400" text-anchor="start">52.35 kWh before charge</text>
+<text x="481" y="383" fill="#456078" font-size="15" font-weight="400" text-anchor="middle">Simulated time (minutes)</text>
+<text x="30" y="413" fill="#456078" font-size="13" font-weight="400" text-anchor="start">Last measured sample per 15-second bin, plus event samples. The bus resumes and finishes near minute 18.1.</text>
+</svg>

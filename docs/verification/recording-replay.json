@@ -1,0 +1,223 @@
+{
+  "date": "2026-11-03",
+  "checkpoint": "P1-D1",
+  "passed": true,
+  "phase_1_complete": false,
+  "full_release_acceptance_passed": false,
+  "scope": "Bounded local recording replay with browser-local time and independent read-only service; no operational executor exists",
+  "formats": {
+    "package": "1.0.0",
+    "source_recipe": "source-run/2.0.0",
+    "source_envelope": "3.0.0",
+    "catalog": "1.2.0",
+    "map_context": "1.0.0"
+  },
+  "shared_checks": {
+    "python_tests": 83,
+    "frontend_logic_tests": 12,
+    "strict_typescript": true,
+    "format_and_production_build": true,
+    "strict_python_modules": [
+      "spool",
+      "plant",
+      "sensors",
+      "run_policy"
+    ],
+    "original_contract_outcomes_per_language": 339,
+    "simulation_contract_outcomes_per_language": 60
+  },
+  "replay_service": {
+    "passed": true,
+    "packets_compared": 19,
+    "seed_packets": 1,
+    "scoped_discovery": true,
+    "scope_run_limits_mutation_routes": true,
+    "database_write_denials": 3,
+    "broker_publish_denials": 2,
+    "real_recording_resource_branches": [
+      "MAX_PACKETS",
+      "MAX_RAW_BYTES",
+      "MAX_PACKAGE_BYTES"
+    ],
+    "original_bytes_and_times": true,
+    "operational_state_unchanged": true
+  },
+  "replay_container_network": {
+    "passed": true,
+    "broker_dns_and_tcp_isolated": true
+  },
+  "browsers": [
+    {
+      "passed": true,
+      "project": "chromium-automated",
+      "browser": "156.0.8078.4",
+      "package_packets": 25,
+      "checks": [
+        "separate credentials and asset scope",
+        "original bytes/hash/UTC provenance",
+        "seed age, past-only map and no future reading",
+        "play/pause/rate/step/seek/end/offline",
+        "no playback network requests",
+        "frozen during actual later ingress",
+        "new session identity and updated source",
+        "no credential persistence",
+        "inner hash tampering rejected",
+        "desktop/mobile layout",
+        "no external requests"
+      ]
+    },
+    {
+      "passed": true,
+      "project": "windows-edge-visible",
+      "browser": "156.0.4314.58",
+      "package_packets": 25,
+      "checks": [
+        "separate credentials and asset scope",
+        "original bytes/hash/UTC provenance",
+        "seed age, past-only map and no future reading",
+        "play/pause/rate/step/seek/end/offline",
+        "no playback network requests",
+        "frozen during actual later ingress",
+        "new session identity and updated source",
+        "no credential persistence",
+        "inner hash tampering rejected",
+        "desktop/mobile layout",
+        "no external requests"
+      ]
+    }
+  ],
+  "session_semantics": {
+    "new_analysis_namespace_per_session": true,
+    "frozen_copy_survives_later_real_ingress": true,
+    "original_bytes_timestamps_and_quality_retained": true,
+    "before_window_seeds_retain_age": true,
+    "retrospective_simulation_time_not_delivery_chronology": true,
+    "play_pause_rates_seek_step_restart_end": true,
+    "hidden_or_interrupted_clock_pauses": "implemented with elapsed-clock branch tests; no host-suspend qualification claimed",
+    "no_playback_network_requests": true,
+    "past_only_map_and_trend": true,
+    "zero_missing_invalid_unknown_and_stale": true,
+    "no_credentials_in_browser_storage": true,
+    "inner_packet_tampering_rejected_even_with_new_outer_digest": true
+  },
+  "configured_limits": {
+    "window_s": 86400,
+    "packets_including_seeds": 10000,
+    "original_packet_bytes": 8388608,
+    "serialized_package_bytes": 16777216,
+    "resource_testing": "All three copy-size branches exercised against real recordings using lowered probe-local caps; full-cap throughput is not qualified"
+  },
+  "live_regression": {
+    "events": 18,
+    "scalar_samples": 360,
+    "sampled_outage_pending": 2,
+    "final_pending": 0,
+    "healthy_pause_s": 7,
+    "historical_byte_preserving_sql_upgrade": true,
+    "monitoring_browsers": [
+      {
+        "passed": true,
+        "browser": "156.0.4314.58",
+        "project": "windows-edge-visible",
+        "raw_readings": 18,
+        "signals": 20,
+        "external_requests": 0,
+        "checks": [
+          "catalog/filter",
+          "real history",
+          "disconnect/stale",
+          "resynchronize",
+          "asset isolation",
+          "mobile layout",
+          "memory-only credential",
+          "map/trajectory/layers/stations",
+          "synchronized signals",
+          "metadata JSON/CSV export",
+          "explicit summaries",
+          "activity/system views"
+        ]
+      },
+      {
+        "passed": true,
+        "browser": "156.0.8078.4",
+        "project": "chromium-automated",
+        "raw_readings": 18,
+        "signals": 20,
+        "external_requests": 0,
+        "checks": [
+          "catalog/filter",
+          "real history",
+          "disconnect/stale",
+          "resynchronize",
+          "asset isolation",
+          "mobile layout",
+          "memory-only credential",
+          "map/trajectory/layers/stations",
+          "synchronized signals",
+          "metadata JSON/CSV export",
+          "explicit summaries",
+          "activity/system views"
+        ]
+      }
+    ],
+    "controlled_events_total": 12,
+    "c2_quality_clock_events": 10,
+    "additional_replay_freeze_test_events": 2,
+    "second_asset_scope": "Controlled protocol fixture, not a second qualified physical model",
+    "dashboard_read_models": {
+      "passed": true,
+      "checks": [
+        "consistent 20-signal snapshot",
+        "scoped authentication/cursors",
+        "18 raw readings across nine pages",
+        "query bounds and malformed continuation",
+        "uncommitted data invisible",
+        "concurrent writer serialization",
+        "rollback restores revision and 360-sample projection"
+      ]
+    },
+    "analysis_views": {
+      "passed": true,
+      "checks": [
+        "scoped immutable local map context",
+        "longitude/latitude conversion and hypothetical stations",
+        "18 coherent navigation points across six pages",
+        "36-row raw JSON and CSV exports with metadata",
+        "good-only summary accounting",
+        "recorded events",
+        "analysis authentication/query bounds",
+        "unavailable sender and unknown drops are explicit"
+      ]
+    }
+  },
+  "plant_regression": {
+    "repeat_runs": 2,
+    "sample_events_each": 864,
+    "physical_intervals_each": 4322,
+    "heading_and_energy_checks": true,
+    "scope": "Assumed plant consistency/repeatability, not real-bus accuracy"
+  },
+  "visual_review": {
+    "desktop_and_mobile_reviewed": true,
+    "formal_visual_regression_baseline": false
+  },
+  "owned_cleanup": {
+    "containers_remaining": 0,
+    "volumes_remaining": 0
+  },
+  "source_input_count": 104,
+  "source_set_sha256": "1adc7ac28888de9ebfba2d6c942731edb2563ebf91a46aabed4718ce5185d6c8",
+  "browser_source_set_sha256": "8273eeedfe6b7077f90ddce134369eadade7ad6f8a5629f08e1236f79b90a4df",
+  "privacy_and_secret_findings": 0,
+  "remaining": [
+    "P1-D2 held-back sensor and genuine second modeled asset",
+    "P1-D3 backup and isolated application restore",
+    "full workload/latency/history-volume/capacity/retention and five-minute outage gates",
+    "formal visual baseline, host suspend and full-cap playback performance",
+    "archival historical-catalog recovery, package import and persistent replay sessions are future scope",
+    "physical calibration, remote clocks/TLS and P3 command/executor effect safety",
+    "persistent developer/demo launcher"
+  ],
+  "private_evidence": "evidence/p1/2026-11-03-d1-03",
+  "private_source_checks": ".runtime/dev-checks/b42d058dba1242d08e9315423d41f3c5/report.json"
+}

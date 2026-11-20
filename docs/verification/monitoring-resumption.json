@@ -1,0 +1,143 @@
+{
+  "policy_version": "phase1-short-run/1.2.0",
+  "status": "blocked",
+  "passed": false,
+  "phase_1_monitoring_milestone_complete": false,
+  "session": {
+    "start_utc": "2026-11-04T16:45:37Z",
+    "deadline_utc": "2026-11-04T17:45:37Z",
+    "results_finalized_utc": "2026-11-04T16:57:19.931101+00:00",
+    "authorization": "User closed Brave, requested a RAM check, then explicitly said to proceed. Separate from the closed earlier session.",
+    "goal_state": "The old goal was initially left paused; the user cleared it during this session. No goal was created or resumed."
+  },
+  "configuration": {
+    "architecture_and_features_frozen": true,
+    "application_source_unchanged": true,
+    "optional_bounded_storage_enabled": false,
+    "thresholds_unchanged": true,
+    "browser": "chromium-automated"
+  },
+  "W0": {
+    "first_attempt": {
+      "result": "Failed overall: Windows host-memory reserve; complete data and latency checks passed.",
+      "warmup_s": 60,
+      "measured_s": 120,
+      "buses": 1,
+      "signals_per_bus": 20,
+      "events_per_bus_s": 1,
+      "events": {
+        "unique_generated": 180,
+        "accepted": 180,
+        "quarantined": 0,
+        "dropped": 0,
+        "pending": 0,
+        "measured_events": 120,
+        "warmup_events": 60,
+        "publish_attempts": 180,
+        "receiver_deliveries": 180,
+        "duplicate_deliveries": 0
+      },
+      "total_scalar_readings": 3600,
+      "source_to_DOM_upper_s": {
+        "count": 120,
+        "min_s": 0.0602341300000003,
+        "max_s": 0.7605224410000088,
+        "p95_s": 0.7143258799999924,
+        "p99_s": 0.7557719379999835
+      },
+      "latency_passed": true,
+      "linux_resources": {
+        "samples": 197,
+        "core_peak_bytes": 497258496,
+        "rolling_60s_swap_max_bytes": 0,
+        "consecutive_excessive_rolling_windows": 0,
+        "swap_window_method": "60-second rolling windows sampled each second; three consecutive excessive windows fail Q-12",
+        "short_run_budget_conditions_met": true,
+        "whole_linux_available_min_bytes": 7013449728,
+        "oom_events": 0
+      },
+      "windows_resources": {
+        "samples": 225,
+        "available_min_bytes": 684478464,
+        "sampled_longest_below_2GiB_s": 221.99020220013335,
+        "short_run_host_conditions_met": false,
+        "browser_name_total_peak_bytes": 841580544,
+        "wsl_name_total_peak_bytes": 2364162048,
+        "unreadable_wsl_process_samples": 225,
+        "unreadable_browser_process_samples": 0,
+        "process_scope": "name totals may include other sessions; not isolated browser/WSL overhead",
+        "paging_peak_pages_input_s": 121027.7920937127,
+        "paging_peak_pages_output_s": 30641.484042675904,
+        "below_2GiB_conservative_sampled_upper_s": 224.48787520010956
+      },
+      "services_passed": true,
+      "owned_cleanup_passed": true
+    },
+    "targeted_correction": "Single clean Linux file-cache release, after first attempt cleanup. No code, allocation, assertion, process lifetime or threshold change.",
+    "rerun": {
+      "result": "Failed memory precheck; no second live workload started.",
+      "preflight": {
+        "passed": false,
+        "scope": "active Ubuntu host preflight; not a workload result",
+        "windows_resources": {
+          "samples": 34,
+          "available_min_bytes": 1835134976,
+          "sampled_longest_below_2GiB_s": 33.01299379998818,
+          "short_run_host_conditions_met": false,
+          "browser_name_total_peak_bytes": 155230208,
+          "wsl_name_total_peak_bytes": 1387876352,
+          "unreadable_wsl_process_samples": 34,
+          "unreadable_browser_process_samples": 0,
+          "process_scope": "name totals may include other sessions; not isolated browser/WSL overhead",
+          "paging_peak_pages_input_s": 16214.728537623723,
+          "paging_peak_pages_output_s": 0.0
+        },
+        "conservative_low_headroom_upper_s": 34.51299379998818
+      },
+      "original_failures_preserved": true
+    }
+  },
+  "W1": {
+    "result": "Not launched because W0 remained failed after its permitted correction/rerun.",
+    "buses": 10,
+    "warmup_s": 60,
+    "measured_s": 300,
+    "signals_per_bus": 20,
+    "events_per_bus_s": 1
+  },
+  "shared_checks_reused": {
+    "passed": true,
+    "source_hashes_matched": 310,
+    "python_tests": 506,
+    "frontend_tests": 22,
+    "original_contract_cases_per_language": 339,
+    "monitoring_contract_cases_per_language": 81,
+    "reason": "No implementation, runner, configuration or test source changed; only documentation/results changed."
+  },
+  "evidence_compatibility": "Earlier 88-file full-history integrity review and 108-runtime-hash outage compatibility review remain applicable; no source or configuration changes, guard bypass or dataset regeneration.",
+  "pending": [
+    "W0 host-memory reserve and overall acceptance",
+    "W1 overall acceptance",
+    "Current selected-configuration readings/history/map/reconnect/stale/access/replay smoke",
+    "Current startup and normal-queue backup integration"
+  ],
+  "deferred_to_phase_6": [
+    "Former 30-minute qualification",
+    "Sustained-load/soak",
+    "Comprehensive visual regression",
+    "Broader reboot/deployment/storage lifecycle",
+    "Automatic retention deletion",
+    "Production hardening beyond active monitoring"
+  ],
+  "cleanup": {
+    "first_attempt_owned_containers_and_volumes_removed": true,
+    "rerun_application_services_started": false,
+    "sleep_prevention_released": true,
+    "ubuntu_stopped": false,
+    "codex_restarted": false
+  },
+  "blocker": "The unchanged Windows reserve forbids more than 30 continuous seconds below 2 GiB. The completed run fell to 684,478,464 available bytes; the retry precheck fell to 1,835,134,976 bytes. Linux/application memory and Linux swap/OOM conditions passed in the completed run.",
+  "no_further_automatic_retries": true,
+  "operator_guide": "docs/setup/monitoring-start-view-stop.md",
+  "publication": "Local commit only; no publication or Phase 2."
+}

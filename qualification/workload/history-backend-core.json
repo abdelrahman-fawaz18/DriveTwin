@@ -1,0 +1,8 @@
+{
+  "src/evdt/monitoring/api.py": {
+    "baseline_sha256": "e71ba16b6d177bfdc25076da0be6fe2ae1645154f1a6010cf9078cb21af8153e",
+    "previous_reviewed_sha256": "55ed90ddbffadca41cbac94f91f9a0c0203e4d9d95539092c1c9bc05741016c3",
+    "reviewed_sha256": "997e8f55e3846bf4c072ceed76d1ba55453897c915fdbb6b36ffc98cb1e4d725",
+    "reason": "ADR-0024: three additive read-only, asset-scoped five-signal history routes; existing API responses and mutation authority unchanged."
+  }
+}

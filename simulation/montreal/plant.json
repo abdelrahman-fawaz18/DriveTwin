@@ -1,0 +1,46 @@
+{
+  "model_version": "synthetic-bus-plant/1.0.0",
+  "evidence_class": "assumed",
+  "scope": "Monitoring plant; no real bus calibration or independent prediction accuracy claim",
+  "energy": {
+    "air_drag_coefficient": 0.65,
+    "front_area_m2": 8.16,
+    "rotating_mass_kg": 250.0,
+    "radial_drag_coefficient": 0.1,
+    "rolling_drag_coefficient": 0.008,
+    "propulsion_efficiency": 0.9,
+    "recuperation_efficiency": 0.65,
+    "non_hvac_power_w": 3000.0,
+    "hvac_power_w": 5000.0
+  },
+  "electrical": {
+    "constant_voltage_v": 650.0
+  },
+  "drivetrain": {
+    "wheel_radius_m": 0.5,
+    "final_drive_ratio": 6.0,
+    "torque_min_angular_speed_rad_s": 1.0
+  },
+  "thermal": {
+    "pack_heat_fraction": 0.2,
+    "pack_capacity_j_per_k": 500000.0,
+    "motor_capacity_j_per_k": 100000.0,
+    "pack_conductance_w_per_k": 80.0,
+    "motor_conductance_w_per_k": 150.0,
+    "initial_pack_temperature_k": 298.15,
+    "initial_motor_temperature_k": 298.15
+  },
+  "brake_proxy": {
+    "full_scale_deceleration_m_s2": 4.5,
+    "full_scale_pressure_pa": 1000000.0
+  },
+  "sampling": {
+    "default_period_s": 1.0,
+    "period_overrides_s": {}
+  },
+  "source_references": [
+    "https://sumo.dlr.de/docs/Models/Electric.html",
+    "https://sumo.dlr.de/docs/TraCI/Vehicle_Value_Retrieval.html"
+  ],
+  "parameter_policy": "All numeric plant constants are independent project hypotheses, not copied vehicle specifications. See ADR-0011 for equations and limitations."
+}

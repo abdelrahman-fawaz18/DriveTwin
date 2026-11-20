@@ -1,0 +1,38 @@
+{
+  "checkpoint": "User-approved Phase 1 duration revision",
+  "date": "2026-11-04",
+  "configuration_revision_verified": true,
+  "workload_spec_version": "1.1.0",
+  "phase_1_policy_version": "phase1-wall-time/1.1.0",
+  "warmup_s": 60,
+  "measured_duration_s": 1800,
+  "W0": {"assets": 1, "measured_events": 1800, "measured_scalar_readings": 36000},
+  "W1": {"assets": 10, "measured_events": 18000, "measured_scalar_readings": 360000},
+  "W1_warmup": {"events": 600, "scalar_readings": 12000},
+  "other_requirements_unchanged": true,
+  "protected_configuration_sha256": "9adf818b8ba8908bef9a5abb209ba8bf48217c1da18f742e428c2c95f73cd2fc",
+  "protected_hash_scope": "Canonical preceding specification with only the authorized version/duration fields removed; new policy metadata checked separately",
+  "checks": {
+    "python_tests": 202,
+    "frontend_logic_tests": 12,
+    "original_contract_outcomes_per_language": 339,
+    "operational_contract_outcomes_per_language": 81,
+    "strict_typescript": true,
+    "scoped_strict_python_modules": 4,
+    "format_build_privacy_secrets": true,
+    "legacy_hour_and_unapproved_duration_profiles_rejected": true,
+    "legacy_hour_report_profile_rejected_before_evidence_read": true,
+    "source_fingerprints_match": true
+  },
+  "running_benchmark_inventory": {
+    "benchmark_controllers": 0,
+    "application_containers": 0,
+    "one_hour_attempt_to_stop": false,
+    "existing_failed_attempts_preserved": true
+  },
+  "revised_app_goal_confirmed_active": true,
+  "W0_passed": false,
+  "W1_passed": false,
+  "phase_1_complete": false,
+  "limits": "This verifies the requested scope/configuration change, not a live workload or performance result. Current-source live fleet and affected functional regressions remain required."
+}

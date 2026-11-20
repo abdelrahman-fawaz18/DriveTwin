@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "checkpoints": [
+    "P4-B1",
+    "P4-B2",
+    "P4-B3",
+    "P4-B4"
+  ],
+  "scope": "offline advisory on the pinned network",
+  "phase_4b_complete": true,
+  "phase_4c1_ready": true,
+  "release_sha256": "4f2ae5a1366347853e7e4c78163919a5c8802113e793e4a4ff41a0b718858dfc",
+  "source_sha256": {
+    "scripts/p4/run_charging_advisor.py": "7d2f1bd36c412e846602f00eecd964b0fb5fc2ef8b5035ba07d392f946bd21aa",
+    "src/evdt/energy/charging_advisor.py": "c5ad7eca61230753e11c7cbedb373fdc6721fee0fddc94fb1a23a92d083d7040",
+    "tests/p4/test_charging_advisor.py": "c5bc334a8e68c295fcd6c244c2e7cf61c68b9fd760647d0d94f2ac743933615b",
+    "qualification/charging/advisory-scenario-1.0.0.json": "eb8b7d1b41b3610610ea4901b2f3a747f7ce949d5b72052be548288ad3ace5b8",
+    "contracts/charging/advisory-scenario-1.0.0.schema.json": "004f09accc9e9bc0d3a8e7fb39c710ddb0e809074b2bc9a3f1ffdbbb247b76ae"
+  },
+  "private_replay": "evidence/p4/station-advisor-replay-01.json",
+  "private_replay_sha256": "1207f537e54b6c91b9fdca5135d683280a4640d7caf6f270eff4de6f246883f2",
+  "private_test_log": "evidence/p4/station-advisor-regressions-02.txt",
+  "private_test_log_sha256": "b80b55c54e604aa404ac594c5f61196b26a8ecb0a502738cd95a327aba275d9c",
+  "regression_tests_passed": 9,
+  "decision_count": 10,
+  "initial_time_choice": "opportunity-b",
+  "initial_nearest_reference": "west-c",
+  "switch_policy": {
+    "minimum_gain_s": 30,
+    "persistence_s": 20,
+    "cooldown_s": 60,
+    "maximum_sample_gap_s": 10
+  },
+  "timeline": [
+    {
+      "sim_s": 0,
+      "recommended_station": "opportunity-b",
+      "reason": "initial_recommendation"
+    },
+    {
+      "sim_s": 10,
+      "recommended_station": "opportunity-b",
+      "reason": "await_sustained_improvement"
+    },
+    {
+      "sim_s": 20,
+      "recommended_station": "opportunity-b",
+      "reason": "await_sustained_improvement"
+    },
+    {
+      "sim_s": 30,
+      "recommended_station": "opportunity-b",
+      "reason": "cooldown"
+    },
+    {
+      "sim_s": 40,
+      "recommended_station": "opportunity-b",
+      "reason": "cooldown"
+    },
+    {
+      "sim_s": 50,
+      "recommended_station": "opportunity-b",
+      "reason": "cooldown"
+    },
+    {
+      "sim_s": 60,
+      "recommended_station": "depot-a",
+      "reason": "sustained_improvement"
+    },
+    {
+      "sim_s": 70,
+      "recommended_station": "opportunity-b",
+      "reason": "incumbent_ineligible"
+    },
+    {
+      "sim_s": 80,
+      "recommended_station": null,
+      "reason": "no_feasible_station"
+    },
+    {
+      "sim_s": 90,
+      "recommended_station": "depot-a",
+      "reason": "initial_recommendation"
+    }
+  ],
+  "initial_regression_attempt": {
+    "passed": false,
+    "cause": "The route test expected a station behind the departure on the same edge to be unreachable. The pinned network provides a legal forward loop.",
+    "correction": "Verify the forward loop and inject independently disconnected approaches and rejoins."
+  },
+  "prior_phase_2_and_3_verified": true,
+  "runtime_model_qualified": false,
+  "automatic_dispatch_approved": false,
+  "next_checkpoint": "P4-C1, Simulated charging and matched mission fixtures"
+}

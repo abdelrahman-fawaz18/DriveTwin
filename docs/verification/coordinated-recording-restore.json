@@ -1,0 +1,166 @@
+{
+  "date": "2026-11-03",
+  "checkpoint": "P1-D3",
+  "passed": true,
+  "phase_1_complete": false,
+  "scope": "Coordinated stopped development recording and queues, restored into an independent deployment using the matching application image",
+  "requirements": {
+    "P1-07": "passed for this development recording",
+    "Q-10": "pending W2-sized restore within 15 minutes"
+  },
+  "backup": {
+    "format": "evdt-backup/1.0.0",
+    "postgres": "18.6",
+    "payload_files": 39,
+    "manifest_additional_files": 1,
+    "payload_bytes": 2832765,
+    "seconds": 16.455,
+    "contents": [
+      "complete application database/schema/ACLs/sequences",
+      "both SQLite queues including original pending bytes and identity/version state",
+      "exact contracts/catalogs/migrations",
+      "run policy and both map contexts",
+      "generated packet fingerprints and representative expected reads",
+      "file integrity/version/runtime/source metadata"
+    ],
+    "configured_credential_files_included": false
+  },
+  "recovery": {
+    "checkpoint": {
+      "bus-001": {
+        "events": 25,
+        "scalars": 500
+      },
+      "bus-002": {
+        "events": 25,
+        "scalars": 512
+      }
+    },
+    "checkpoint_queues": {
+      "bus-001": {
+        "accepted": 25,
+        "pending": 5
+      },
+      "bus-002": {
+        "accepted": 25,
+        "pending": 5
+      }
+    },
+    "final": {
+      "bus-001": {
+        "events": 30,
+        "scalars": 600
+      },
+      "bus-002": {
+        "events": 30,
+        "scalars": 615
+      }
+    },
+    "final_queues": {
+      "bus-001": {
+        "accepted": 30,
+        "pending": 0
+      },
+      "bus-002": {
+        "accepted": 30,
+        "pending": 0
+      }
+    },
+    "query_ready_seconds": 39.125,
+    "through_backlog_and_retry_seconds": 60.717,
+    "timing_scope": "cumulative from final checkpoint through fresh configuration/credentials, target startup, restore and verification; excludes image build/source generation; not W2",
+    "inventory_equal": true,
+    "application_queries_equal": true,
+    "different_cluster": true,
+    "source_stopped_before_reads": true,
+    "source_and_nonempty_refused": true,
+    "seal": {
+      "readonly_write_denied": true
+    },
+    "empty_target_guards": {
+      "nonempty_refused": [
+        "type",
+        "schema"
+      ],
+      "test_objects_rolled_back": true
+    },
+    "roles": {
+      "evdt_read": "SELECT works; UPDATE/CREATE denied",
+      "evdt_replay": "SELECT works; UPDATE/CREATE denied",
+      "old_database_password": "denied"
+    },
+    "old_reader_denied": true,
+    "duplicate_retry": {
+      "retried_originals": 2
+    },
+    "table_row_counts": {
+      "m_clock_events": 62,
+      "m_current": 41,
+      "m_dashboard_events": 10,
+      "m_dashboard_heads": 2,
+      "m_map_contexts": 2,
+      "m_migrations": 6,
+      "m_observations": 50,
+      "m_quarantine": 0,
+      "m_receipts": 50,
+      "m_registrations": 2,
+      "m_retired_sources": 0,
+      "m_run_definitions": 1,
+      "m_sample_history": 1012,
+      "m_sessions": 2,
+      "m_source_clocks": 2,
+      "m_source_heads": 2
+    }
+  },
+  "checks": {
+    "python_tests": 97,
+    "frontend_tests": 12,
+    "strict_typescript": true,
+    "strict_python_modules": 4,
+    "original_contract_cases_per_language": 339,
+    "simulation_contract_cases_per_language": 68,
+    "format_build_privacy_secrets": true,
+    "corruption_and_compatibility_negatives": [
+      "truncated and same-length changed file",
+      "missing/extra files",
+      "unsupported backup version",
+      "application image mismatch",
+      "unsafe path",
+      "symlink",
+      "incomplete unsealed checkpoint",
+      "changed SQLite packet detected"
+    ],
+    "shared_core_unchanged": {
+      "passed": true,
+      "baseline_commit": "d2edc5292b6ac3812c5ee2afc3c6e03ff71d9c64",
+      "frozen_files": 54,
+      "text_normalization": "CRLF to LF only; all other content is frozen",
+      "sha256": "6acf8dcd4b5da6b264ffb433700a94e11cbb64c495058a12af9ed311577b291f"
+    },
+    "source_bytes_rechecked": true,
+    "browser_requalification_this_checkpoint": false,
+    "why_no_new_browser_run": "No dashboard, existing monitoring core, wire artifact or migration was changed; restored production read APIs and replay bytes were checked against the checkpoint"
+  },
+  "cleanup": {
+    "source": {
+      "containers": "",
+      "volumes": ""
+    },
+    "restored": {
+      "containers": "",
+      "volumes": ""
+    }
+  },
+  "private_evidence": {
+    "services": "evidence/p1/2026-11-03-d3-03/qualification.json",
+    "shared_checks": ".runtime/dev-checks/2c9c521e654546369c9bcf5292761482/report.json"
+  },
+  "remaining": [
+    "full W0/W1 workloads, five-minute outage, latency/capacity/retention",
+    "W2 volume and 15-minute Q-10 gate",
+    "scheduled/encrypted/offsite backup and host/disk disaster recovery",
+    "online distributed edge checkpoint coordination",
+    "physical SUMO state resumption and software-version migration recovery",
+    "formal visual baseline, physical calibration and future command effects"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "version": "energy-advisory-cases/1.0.0",
+  "scope": "Hand-calculable observation views and optional reused recorded simulation packets; no forecast accuracy or runtime isolation claim",
+  "policy": {
+    "policy_id": "synthetic-reference-window/1",
+    "min_window_s": 10,
+    "max_window_s": 300,
+    "min_distance_m": 10,
+    "max_gap_s": 60,
+    "max_input_age_s": 5,
+    "max_points": 100
+  },
+  "mission": {
+    "request_id": "analytic-request",
+    "mission_id": "assumed-mission",
+    "plan_version": "assumed-plan/1",
+    "remaining_distance_m": 1000,
+    "declared_capacity_kwh": 10,
+    "capacity_assumption_id": "analytic-capacity/1",
+    "reserve_soc": 0.05,
+    "external_charging_state": "absent"
+  },
+  "parameters": {
+    "declared_capacity_kwh": 10,
+    "loaded_mass_kg": 1000,
+    "equivalent_rotating_mass_kg": 0,
+    "frontal_area_m2": 2,
+    "air_drag_coefficient": 0,
+    "rolling_resistance_coefficient": 0,
+    "air_density_kg_m3": 1,
+    "propulsion_efficiency": 1,
+    "regeneration_efficiency": 1,
+    "max_electrical_regeneration_power_w": 100000,
+    "max_battery_discharge_power_w": 100000,
+    "gravity_m_s2": 10
+  },
+  "points": [
+    {"sim_time_s": 0, "distance_m": 0, "energy_kwh": 3, "soc": 0.3, "speed_m_s": 10},
+    {"sim_time_s": 50, "distance_m": 500, "energy_kwh": 2.5, "soc": 0.25, "speed_m_s": 10},
+    {"sim_time_s": 100, "distance_m": 1000, "energy_kwh": 2, "soc": 0.2, "speed_m_s": 10}
+  ],
+  "checks": [
+    {"id": "reference", "method": "reference", "expected_status": "advisory", "expected_values": {"net_mission_energy_kwh": 1, "projected_final_soc": 0.1, "conditional_distance_to_reserve_m": 1500, "conditional_time_to_reserve_s": 150, "reserve_feasible": true}},
+    {"id": "stale", "method": "reference", "as_of": 106, "expected_status": "unavailable", "expected_reason": "stale_observation"},
+    {"id": "future", "method": "reference", "as_of": 99, "expected_status": "unavailable", "expected_reason": "future_observation"},
+    {"id": "missing", "method": "reference", "mutation": "missing_energy", "expected_status": "unavailable", "expected_reason": "required_signal_missing"},
+    {"id": "invalid", "method": "reference", "mutation": "invalid_quality", "expected_status": "unavailable", "expected_reason": "required_signal_not_good"},
+    {"id": "mixed-asset", "method": "reference", "mutation": "mixed_asset", "expected_status": "unavailable", "expected_reason": "observation_scope_mismatch"},
+    {"id": "charging-unknown", "method": "reference", "mission_overrides": {"external_charging_state": "unknown"}, "expected_status": "unavailable", "expected_reason": "external_charging_not_excluded"},
+    {"id": "zero-net-consumption", "method": "reference", "mutation": "zero_net", "expected_status": "unavailable", "expected_reason": "nonpositive_recent_net_consumption"},
+    {"id": "odometer-reset", "method": "reference", "mutation": "odometer_reset", "expected_status": "unavailable", "expected_reason": "odometer_regression"},
+    {"id": "planned", "method": "planned", "plan": [{"duration_s": 100, "start_speed_m_s": 10, "end_speed_m_s": 10, "grade_ratio": 0, "auxiliary_power_w": 36000}], "expected_status": "advisory", "expected_values": {"projected_final_soc": 0.1, "minimum_projected_energy_kwh": 1, "reserve_feasible": true}},
+    {"id": "plan-distance-mismatch", "method": "planned", "mission_overrides": {"remaining_distance_m": 2000}, "plan": [{"duration_s": 100, "start_speed_m_s": 10, "end_speed_m_s": 10, "grade_ratio": 0, "auxiliary_power_w": 36000}], "expected_status": "unavailable", "expected_reason": "plan_distance_mismatch"},
+    {"id": "intermediate-reserve-breach", "method": "planned", "mutation": "lower_charge", "mission_overrides": {"remaining_distance_m": 1200}, "parameter_overrides": {"loaded_mass_kg": 10000}, "plan": [{"duration_s": 60, "start_speed_m_s": 10, "end_speed_m_s": 10, "grade_ratio": 0, "auxiliary_power_w": 36000}, {"duration_s": 60, "start_speed_m_s": 10, "end_speed_m_s": 10, "grade_ratio": -0.1, "auxiliary_power_w": 0}], "expected_status": "advisory", "expected_values": {"minimum_projected_energy_kwh": 0.4, "energy_plan_feasible": true, "reserve_feasible": false}, "final_energy_must_exceed_kwh": 0.5}
+  ],
+  "recorded_policy": {
+    "policy_id": "recorded-1Hz-reference/1",
+    "min_window_s": 10,
+    "max_window_s": 300,
+    "min_distance_m": 10,
+    "max_gap_s": 1.5,
+    "max_input_age_s": 5,
+    "max_points": 1000
+  },
+  "recorded_sources": [
+    {"folder": "source", "asset_id": "bus-001", "capacity_kwh": 350, "loaded_mass_kg": 18000, "auxiliary_power_w": 8000},
+    {"folder": "source2", "asset_id": "bus-002", "capacity_kwh": 300, "loaded_mass_kg": 15000, "auxiliary_power_w": 6500}
+  ],
+  "recorded_declared_parameters": {
+    "equivalent_rotating_mass_kg": 200,
+    "frontal_area_m2": 8.16,
+    "air_drag_coefficient": 0.7,
+    "rolling_resistance_coefficient": 0.009,
+    "air_density_kg_m3": 1.2,
+    "propulsion_efficiency": 0.88,
+    "regeneration_efficiency": 0.55,
+    "max_electrical_regeneration_power_w": 75000,
+    "max_battery_discharge_power_w": 250000,
+    "gravity_m_s2": 9.81
+  },
+  "recorded_future_assumption": {"transition_s": 10, "target_speed_m_s": 8, "cruise_s": 100, "grade_ratio": 0, "reserve_soc": 0.1},
+  "recorded_assumption_notice": "Illustrative declared estimator and reserve assumptions; not approved operating limits or access to actual future motion/hidden capacity."
+}

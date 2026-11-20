@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-03",
+  "checkpoint": "P1-B2",
+  "passed": true,
+  "p1_b_complete_within_documented_local_scope": true,
+  "phase_1_complete": false,
+  "phase_gates": {
+    "P1-02": "passed for current local scalar admission"
+  },
+  "scope": "Registered simulated source recipes, quality and clock semantics; bounded local qualification",
+  "contracts": {
+    "current_envelope": "3.0.0",
+    "current_catalog": "1.2.0",
+    "historical_readers_preserved": [
+      "2.0.0 / 1.0.0",
+      "2.1.0 / 1.1.0"
+    ],
+    "qualification_family_unchanged": true,
+    "metadata_formats": [
+      "source-run/2.0.0",
+      "source-clock/1.0.0"
+    ]
+  },
+  "registry": {
+    "recipes_registered": 3,
+    "immutable_policy_and_recipe_checks": true,
+    "exact_recipe_bytes_returned": true,
+    "registry_restart_persistence": true,
+    "concurrent_registration_idempotence": true,
+    "producer_reader_and_database_roles_checked": true,
+    "tampered_hash_version_cadence_identity_rejected": true,
+    "historical_sql_upgrade_preserved_bytes": true,
+    "hidden_sensor_seed_schedule_excluded": true
+  },
+  "clock_and_quality": {
+    "real_local_pause_s": 7,
+    "heartbeat_deadline_s": 5,
+    "healthy_pause_after_stale_deadline": true,
+    "missing_invalid_recovery_from_sensor_layer_through_ingress": true,
+    "heartbeat_loss_becomes_disconnected_stale": true,
+    "clock_replay_does_not_renew_liveness": true,
+    "resume_does_not_refresh_old_values": true,
+    "session_time_reset_retirement_and_ordering_checked": true,
+    "ahead_clock_and_predating_registration_rejected": true
+  },
+  "delivery": {
+    "live_events": 18,
+    "live_scalar_readings": 360,
+    "accepted_events_including_controlled_cases": 28,
+    "terminal_rejection_counts": {
+      "identity_conflict": 1,
+      "manifest_mismatch": 1,
+      "source_not_registered": 1,
+      "session_mismatch": 1,
+      "ahead_of_declared_clock": 1,
+      "simulation_time_reset": 1,
+      "observation_predates_registration": 1,
+      "future_timestamp": 2,
+      "envelope_schema": 1,
+      "wrong_unit": 1,
+      "registered_format_required": 1,
+      "retired_source_time": 1,
+      "sequence_time_conflict": 1
+    },
+    "outage_backlog_observed": 2,
+    "final_live_spool_pending": 0,
+    "exact_source_bytes_reconciled": true,
+    "concurrent_rejected_retry_idempotence": true,
+    "owned_resources_removed": true
+  },
+  "shared_checks": {
+    "tests": 75,
+    "qualification_cases_per_language": 339,
+    "simulation_cases_per_language": 60,
+    "expected_outcome_mismatches": 0,
+    "strict_typescript": true,
+    "strict_python_modules": [
+      "spool.py",
+      "plant.py",
+      "sensors.py",
+      "run_policy.py"
+    ],
+    "historical_contract_bytes_guarded": true
+  },
+  "complete_plant_regression": {
+    "runs": 2,
+    "repeatable_numeric_traces": true,
+    "scalar_readings_per_run": 17280,
+    "checked_physical_intervals_per_run": 4322,
+    "maximum_energy_residual_j": 2.384185791015625e-07
+  },
+  "phase_0_regressions": {
+    "dataflow_two_starts_and_persistence": true,
+    "synthetic_sumo_repeatability": true,
+    "visible_windows_edge": true,
+    "automated_chromium": true,
+    "scope": "Original qualification fixtures, not a product dashboard"
+  },
+  "remaining_limits": [
+    "Product UI/history streaming/reconnect/export acceptance is P1-C.",
+    "Replay, held-back sensor integration and backup restoration retain later P1 gates.",
+    "Controlled session continuation and second-asset input, not restored plant state or a validated second plant.",
+    "Short bounded delivery outage, not full five-minute outage or W0/W1/physical quota acceptance.",
+    "Aligned local clocks only; no distributed clock, suspend/resume or remote TLS qualification.",
+    "Registry restart persistence, not automatic plant-state recovery after metadata failure.",
+    "Default plant sensors remain ideal; configured imperfections are synthetic and uncalibrated.",
+    "SQL byte preservation, not an uninterrupted live deployment upgrade.",
+    "No physical calibration, actuation, hosted CI or publication."
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "apps/dashboard/src/model.ts": {
+    "baseline_sha256": "de5578df0662ad81877dd03018e2332fccf5d5b57a76d906148b0606efc37d32",
+    "previous_reviewed_sha256": "de5578df0662ad81877dd03018e2332fccf5d5b57a76d906148b0606efc37d32",
+    "reviewed_sha256": "8a1cbd116e2fb296c0d0c74396689ba510beb2148935a1e20af21e31d021e5ac",
+    "reason": "Reuse immutable en-US number/UTC time formatting objects instead of per-cell construction; preserve prior display output including missing/invalid inputs. Observation parsing, values, units, quality and freshness remain unchanged."
+  }
+}

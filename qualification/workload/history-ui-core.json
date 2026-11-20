@@ -1,0 +1,14 @@
+{
+  "apps/dashboard/src/HistoryExplorer.tsx": {
+    "baseline_sha256": "225af82ae4324484f93c360f944b3594d21a576daaa0d7caac155cd489ccd17c",
+    "previous_reviewed_sha256": "225af82ae4324484f93c360f944b3594d21a576daaa0d7caac155cd489ccd17c",
+    "reviewed_sha256": "768e40240d0cd6ecad031500ff7749c8776544f596c65557d3bce01841ec1e63",
+    "reason": "ADR-0024: consume and validate bounded five-signal history; preserve live raw trend behavior, explicit continuity and complete frozen raw downloads."
+  },
+  "apps/dashboard/src/Trend.tsx": {
+    "baseline_sha256": "10143dce1b19078db13ca48d89ca80eaf4dac5ce9f92d6ef6963b4574f6a5070",
+    "previous_reviewed_sha256": "10143dce1b19078db13ca48d89ca80eaf4dac5ce9f92d6ef6963b4574f6a5070",
+    "reviewed_sha256": "2add7124f72ec3b977933258de7538376d75dfc92acc11dc4e9c96b9497668f6",
+    "reason": "ADR-0024: consume and validate bounded five-signal history; preserve live raw trend behavior, explicit continuity and complete frozen raw downloads."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "version": "moving-bus-charging-acceptance/1.0.0",
+  "released": false,
+  "domain": "One local SUMO bus with route-bound simulated station offers, confirmed road elevations, at 1x pace.",
+  "reserve_soc": 0.1,
+  "development_margin_soc": 0.0,
+  "tolerance_soc": 0.000001,
+  "maximum_false_safe_plans": 0,
+  "maximum_unauthorized_or_duplicate_effects": 0,
+  "maximum_missed_or_reordered_passenger_stops": 0,
+  "maximum_wrong_bay_transfers": 0,
+  "maximum_ledger_residual_j": 0.01,
+  "maximum_error_soc_fraction": 0.01,
+  "maximum_charge_duration_error": {
+    "working_seconds_floor": 20,
+    "fraction_of_measured_transfer_duration": 0.25
+  },
+  "maximum_first_decision_real_life_s": 30,
+  "require_before_commit_point": true,
+  "comparison": {
+    "baseline": "Earliest reachable compatible bay with the same stop rules, status information and tested charge targets",
+    "measure": ["added_working_s", "lowest_soc", "correct_bay", "energy_delivered_j"],
+    "report_unavailable_separately": true
+  },
+  "independent_route": "ottawa-lansdowne-hunt-club",
+  "scoring": "Apply tolerances only after recording a complete result. A development repeat does not replace the reserved outcome. Report unsupported inputs separately from failed supported cases."
+}

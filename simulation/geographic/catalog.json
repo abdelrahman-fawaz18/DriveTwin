@@ -1,0 +1,613 @@
+{
+  "version": "launch-trip-catalog/1.0.0",
+  "trips": [
+    {
+      "id": "montreal-central-lafontaine",
+      "title": "Gare Centrale to Parc La Fontaine",
+      "region": "Montréal",
+      "distance_km": 3.51,
+      "minutes": 8.6,
+      "stops": 4,
+      "initial_charge_percent": 80.0,
+      "equipment_kw": 8.0,
+      "mass_kg": 18000,
+      "conditions": "Urban local service, regular passenger stops",
+      "available_services": [
+        "charging",
+        "energy",
+        "replay"
+      ],
+      "energy_unavailable_reason": null,
+      "profile": {
+        "version": "live-geographic-profile/1.0.0",
+        "journey_id": "montreal-central-lafontaine",
+        "title": "Gare Centrale to Parc La Fontaine",
+        "region": "Montréal",
+        "prepared": ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/standard/prepared",
+        "reference": ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/standard/reference",
+        "inputs": {
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/standard/prepared/heights.json": "edaa8eddc67f2ac7c0c7ec10b5a23f8769b61c5cfbb8dc1f518eb1d196feecd0",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/standard/prepared/mission.json": "b633bbdea5272990eda80a8b2735b6243b77ac5d1ca9a9fcf6cbd37149c5c684",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/standard/prepared/stops.json": "83a5b42dba1aaf700bb674f039b7c98f654814ca8e94972278afd88ed60e9b0b",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/standard/prepared/roads.json": "5a8109a17b6e528d26c0a3ac75502bd9a431f932596fe6e0f5f9bfc2d5d56c52",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/standard/prepared/geometry.json": "d8de735160e4b3f320b3647f48df3c5e06dc9caef7a96e86a7f7ddcb590b8f44",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/standard/prepared/roads.osm.xml": "dda7fd00e49d135f7dc14f067fd582d2d4723c7e2c788d499a8684ef214d4945",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/standard/prepared/elevated-route.net.xml": "f780c93113d13131e1d696baec0445483e00b5cc6ab8fab888247fdbf54aff12",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/standard/prepared/elevated-plant.net.xml": "2e9ced7f50c1a07456524ba6ee31bdad006212f74bb87f1e28c7e8e9288e34b3",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/standard/reference/run-input.json": "ddf68380d88f03c99b8ece430d336ba5f7ae887169e650830b8cb01abd123ed2",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/standard/reference/reference-network.net.xml": "9c6b377b3eac9b7790388cccc0a6c8bff5a3501bd6264bd98a4ed5220dcdf42c",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/standard/reference/routes.xml": "7903a975c60f4d939ad74396177513e7ea162d64b99635a7ed6caa8712c87803",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/standard/stations/moving-charge-live-spec.json": "0a9d9d705b86d2cfdeddaa1cd90c050c2dcb77751e52421bc8d8c708dccedad4"
+        },
+        "expected_working_minutes": 8.586666666666668,
+        "maximum_real_life_s": 1270,
+        "services": [
+          "energy"
+        ],
+        "time_scale": 1.0,
+        "initial_charge_percent": 80.0,
+        "charging_assignment": ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/standard/stations/moving-charge-live-spec.json"
+      },
+      "charging_variant": {
+        "version": "live-geographic-profile/1.0.0",
+        "journey_id": "montreal-central-lafontaine",
+        "title": "Gare Centrale to Parc La Fontaine",
+        "region": "Montréal",
+        "prepared": ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/charging/prepared",
+        "reference": ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/charging/reference",
+        "inputs": {
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/charging/prepared/mission.json": "b633bbdea5272990eda80a8b2735b6243b77ac5d1ca9a9fcf6cbd37149c5c684",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/charging/prepared/stops.json": "83a5b42dba1aaf700bb674f039b7c98f654814ca8e94972278afd88ed60e9b0b",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/charging/prepared/geometry.json": "0fee0ba9e3b0cdf35930dbba80367c42325fd0059b9f500bf319a10c9d5325b4",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/charging/prepared/heights.json": "5587bbfb4dcb760eaf8d4edb53934ce20630d061f36bba80fd7f34972408a457",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/charging/prepared/roads.osm.xml": "dda7fd00e49d135f7dc14f067fd582d2d4723c7e2c788d499a8684ef214d4945",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/charging/prepared/elevated-route.net.xml": "0b285799be71f7cd91a0116e2356ff79d3157212fa11bac84cfcaf6f48ee439f",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/charging/prepared/elevated-plant.net.xml": "b7b1a2ada9a0178efa507373319744460d7f58b034e6b19dc01840501c53490e",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/charging/reference/reference-network.net.xml": "95c5232249fc29db17e623b65ad968b563aaefa48898f16bf87ff3a2a38bf42c",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/charging/reference/routes.xml": "7903a975c60f4d939ad74396177513e7ea162d64b99635a7ed6caa8712c87803",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/charging/reference/run-input.json": "afdae573d21391165511ffc6bcb5f628e125617681ade59c0aaf18e0917d3dd4",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/charging/prepared/charging-assignment.json": "9092c6b3c8bf7e32eb5e5e124c226ffe06d3ca8068e78f3b9c88859e9d877738",
+          ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/charging/prepared/detour-corridor.json": "75a6bca051a5613a92c1b59dc933c652bdd37888ec11df894bb0d310a89ef767"
+        },
+        "expected_working_minutes": 8.586666666666668,
+        "maximum_real_life_s": 1270,
+        "services": [
+          "charging",
+          "energy"
+        ],
+        "time_scale": 1.0,
+        "initial_charge_percent": 80.0,
+        "charging_assignment": ".private/operator/scenarios/geographic-v1/montreal-central-lafontaine/charging/prepared/charging-assignment.json"
+      },
+      "charging_layout": "mixed"
+    },
+    {
+      "id": "montreal-mount-royal",
+      "title": "Mount Royal: east approach to Remembrance / Côte-des-Neiges",
+      "region": "Montréal",
+      "distance_km": 3.96,
+      "minutes": 8.5,
+      "stops": 4,
+      "initial_charge_percent": 80.0,
+      "equipment_kw": 8.0,
+      "mass_kg": 23000,
+      "conditions": "Uphill and downhill, loaded bus",
+      "available_services": [
+        "charging",
+        "energy",
+        "replay"
+      ],
+      "energy_unavailable_reason": null,
+      "profile": {
+        "version": "live-geographic-profile/1.0.0",
+        "journey_id": "montreal-mount-royal",
+        "title": "Mount Royal: east approach to Remembrance / Côte-des-Neiges",
+        "region": "Montréal",
+        "prepared": ".private/operator/scenarios/geographic-v1/montreal-mount-royal/standard/prepared",
+        "reference": ".private/operator/scenarios/geographic-v1/montreal-mount-royal/standard/reference",
+        "inputs": {
+          ".private/operator/scenarios/geographic-v1/montreal-mount-royal/standard/prepared/heights.json": "078f521342f87da4b2dde8a33ff496545cd85ef3de274298629887909a62a789",
+          ".private/operator/scenarios/geographic-v1/montreal-mount-royal/standard/prepared/mission.json": "a0c6657828e604e735fb69a3ca9ac94f551b447838cefa08f7c00efdf345df3f",
+          ".private/operator/scenarios/geographic-v1/montreal-mount-royal/standard/prepared/stops.json": "c71749240f24907c65059694879e8d69767ab3089ccebcdcf0e27bbf173093e8",
+          ".private/operator/scenarios/geographic-v1/montreal-mount-royal/standard/prepared/roads.json": "7f324f7d6f52c4a7709d5a12857e90e9ce743d1b094a24ea7ab6a7448166d9b7",
+          ".private/operator/scenarios/geographic-v1/montreal-mount-royal/standard/prepared/geometry.json": "713931c4c37f02b51d841dce16cbff5c1849929e0fe1a5a9b69bd8be5de7f843",
+          ".private/operator/scenarios/geographic-v1/montreal-mount-royal/standard/prepared/roads.osm.xml": "4a4cbc28450554801315f42a4f8decf3859914a696b9e2848fc71e5607d43e7e",
+          ".private/operator/scenarios/geographic-v1/montreal-mount-royal/standard/prepared/elevated-route.net.xml": "8f5b399b2255c9d40dfe7f0609715552e9b357d451dfb9dbdd4011ef923d0714",
+          ".private/operator/scenarios/geographic-v1/montreal-mount-royal/standard/prepared/elevated-plant.net.xml": "90c35fba4a361d60843a020440bb6f40c02fe84e6145d11c3c5d17865c87ce13",
+          ".private/operator/scenarios/geographic-v1/montreal-mount-royal/standard/reference/run-input.json": "4e247465af64bc025a7cfe0fa02f87aa4c02aca60ebf188ae0b0375cf8f417cd",
+          ".private/operator/scenarios/geographic-v1/montreal-mount-royal/standard/reference/reference-network.net.xml": "3baaa4e80775e71991646b3b3939bd2ce9b3f7823e0a54255753f79b2e9513d5",
+          ".private/operator/scenarios/geographic-v1/montreal-mount-royal/standard/reference/routes.xml": "68ca61453d1f65164f17a564ec0e1935031ed6211c06cbaf106a53e9bd3d3b29",
+          ".private/operator/scenarios/geographic-v1/montreal-mount-royal/standard/stations/montreal-mount-royal.json": "d385526aeff53a2295c5920557857089d6c33889892e9c87582fc6d1ff376740"
+        },
+        "expected_working_minutes": 8.473333333333333,
+        "maximum_real_life_s": 1261,
+        "services": [
+          "energy"
+        ],
+        "time_scale": 1.0,
+        "initial_charge_percent": 80.0,
+        "charging_assignment": ".private/operator/scenarios/geographic-v1/montreal-mount-royal/standard/stations/montreal-mount-royal.json"
+      }
+    },
+    {
+      "id": "montreal-lakeshore",
+      "title": "Lachine to Sainte-Anne-de-Bellevue",
+      "region": "Montréal",
+      "distance_km": 24.79,
+      "minutes": 45.3,
+      "stops": 15,
+      "initial_charge_percent": 80.0,
+      "equipment_kw": 8.0,
+      "mass_kg": 18000,
+      "conditions": "Long lakeshore service, declared higher rolling resistance",
+      "available_services": [
+        "charging",
+        "energy",
+        "replay"
+      ],
+      "energy_unavailable_reason": null,
+      "profile": {
+        "version": "live-geographic-profile/1.0.0",
+        "journey_id": "montreal-lakeshore",
+        "title": "Lachine to Sainte-Anne-de-Bellevue",
+        "region": "Montréal",
+        "prepared": ".private/operator/scenarios/geographic-v1/montreal-lakeshore/standard/prepared",
+        "reference": ".private/operator/scenarios/geographic-v1/montreal-lakeshore/standard/reference",
+        "inputs": {
+          ".private/operator/scenarios/geographic-v1/montreal-lakeshore/standard/prepared/heights.json": "a4853bcb56480ceacd7421ce57acb932dfb2b4c25f097918c19466943391eaa6",
+          ".private/operator/scenarios/geographic-v1/montreal-lakeshore/standard/prepared/mission.json": "0be288c1a8dfead801f265e74b2d10df6d26f1bd54ee9b29bc4cc8050e10d445",
+          ".private/operator/scenarios/geographic-v1/montreal-lakeshore/standard/prepared/stops.json": "eac96f2d2193c259587d7679c679a5f05f4d5af9777fa457254db819b2aa7709",
+          ".private/operator/scenarios/geographic-v1/montreal-lakeshore/standard/prepared/roads.json": "b01020afc505dabad0f6adc0add5b6fc56289ef6823831e770febb8202bd04c8",
+          ".private/operator/scenarios/geographic-v1/montreal-lakeshore/standard/prepared/geometry.json": "0f2200e3a60a3aef6e7275ded685a8f0178803c4d983bc4bda94fa0e4605ed11",
+          ".private/operator/scenarios/geographic-v1/montreal-lakeshore/standard/prepared/roads.osm.xml": "c79b92e9a6a7da33b57b1951b6815e233d33d95206f16c2fe18c03e7e7ee1416",
+          ".private/operator/scenarios/geographic-v1/montreal-lakeshore/standard/prepared/elevated-route.net.xml": "5e8d25130a0d91926ca86afe9d248898dc78d03c09d6c2736d8cbf6165f72d69",
+          ".private/operator/scenarios/geographic-v1/montreal-lakeshore/standard/prepared/elevated-plant.net.xml": "d3cbf98ba107e64f212072d042ca9886b69321ed16d52071137599302d1ef1a5",
+          ".private/operator/scenarios/geographic-v1/montreal-lakeshore/standard/reference/run-input.json": "e171223564c4bb7514c63a943f16478ab426fd28d4efa3eba706f7de73d82fc4",
+          ".private/operator/scenarios/geographic-v1/montreal-lakeshore/standard/reference/reference-network.net.xml": "9f4c041dcec87c969ef37809c1793b579af258c4c8763d001d8fecc29f96419d",
+          ".private/operator/scenarios/geographic-v1/montreal-lakeshore/standard/reference/routes.xml": "c3c8935af314fbd806283895499c40f6e59fa1e7ad9d855acde33d26a46e4cf6",
+          ".private/operator/scenarios/geographic-v1/montreal-lakeshore/standard/stations/montreal-lakeshore.json": "8e6f58a5be5af0e4a8522780579e118dc02049ddb5fd4239c9653275edfc163d"
+        },
+        "expected_working_minutes": 45.28333333333333,
+        "maximum_real_life_s": 4133,
+        "services": [
+          "energy"
+        ],
+        "time_scale": 1.0,
+        "initial_charge_percent": 80.0,
+        "charging_assignment": ".private/operator/scenarios/geographic-v1/montreal-lakeshore/standard/stations/montreal-lakeshore.json"
+      }
+    },
+    {
+      "id": "ottawa-parliament-carleton",
+      "title": "Parliament Hill to Carleton University",
+      "region": "Ottawa",
+      "distance_km": 4.76,
+      "minutes": 14.4,
+      "stops": 5,
+      "initial_charge_percent": 10.5,
+      "equipment_kw": 8.0,
+      "mass_kg": 18000,
+      "conditions": "Short urban trip with a low-charge reserve warning",
+      "available_services": [
+        "charging",
+        "energy",
+        "replay"
+      ],
+      "energy_unavailable_reason": null,
+      "profile": {
+        "version": "live-geographic-profile/1.0.0",
+        "journey_id": "ottawa-parliament-carleton",
+        "title": "Parliament Hill to Carleton University",
+        "region": "Ottawa",
+        "prepared": ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/standard/prepared",
+        "reference": ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/standard/reference",
+        "inputs": {
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/standard/prepared/heights.json": "d2c8d4c7dd0b3a3d9527a4897cadcbe203d7fffee1dc19bd1afebd9ac1a3c970",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/standard/prepared/mission.json": "403a2533765c80ba469a6325740a0cd8a5e72e66fa96d50a217e9893b95b0bf2",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/standard/prepared/stops.json": "ec2134271e42bd9dd5644110437bd0875bd92772233e968a819eddfd7f77f30b",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/standard/prepared/roads.json": "429b342389a3aeebcf2277d07b39af7e79d5cf377e306f672a86923dcee7bafe",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/standard/prepared/geometry.json": "2eb4cb9526a055801b55ee6663e54243cfe79ef31e8fbf9804c11a10665378da",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/standard/prepared/roads.osm.xml": "c5adce736eabd5c25dbe183076039cf6f69e5abd59c22e7e722917b77595f747",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/standard/prepared/elevated-route.net.xml": "f1a142d5cc74669971f48e240c2eb0f94f5b4c703011c76c823f7dca0d0f5da9",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/standard/prepared/elevated-plant.net.xml": "b1f2cf59b28d4a4b462694cffc5d0fe7b84a47c5b8b082571493dd90bafa8b24",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/standard/reference/run-input.json": "ddb648e5d8360f731a1b1a7ee99af8352c27220de92dcce7b81e6368a1427dba",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/standard/reference/reference-network.net.xml": "1f9238580ca6a58f752c2ddf2d5781a312f1cc4eba0061b7f7af8dff236e9ddb",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/standard/reference/routes.xml": "da738e7608fb93091bd553d393b04229a7bb44b6fc37e17a22ce5000a1ffdce0",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/standard/stations/ottawa-parliament-carleton.json": "d6ff778a55c6b4eeb7b4e6768159497a37685e4c02e5a34f1c449fb495c6996e"
+        },
+        "expected_working_minutes": 14.4,
+        "maximum_real_life_s": 1724,
+        "services": [
+          "energy"
+        ],
+        "time_scale": 1.0,
+        "initial_charge_percent": 10.5,
+        "charging_assignment": ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/standard/stations/ottawa-parliament-carleton.json"
+      },
+      "charging_variant": {
+        "version": "live-geographic-profile/1.0.0",
+        "journey_id": "ottawa-parliament-carleton",
+        "title": "Parliament Hill to Carleton University",
+        "region": "Ottawa",
+        "prepared": ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/charging/prepared",
+        "reference": ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/charging/reference",
+        "inputs": {
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/charging/prepared/mission.json": "403a2533765c80ba469a6325740a0cd8a5e72e66fa96d50a217e9893b95b0bf2",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/charging/prepared/stops.json": "ec2134271e42bd9dd5644110437bd0875bd92772233e968a819eddfd7f77f30b",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/charging/prepared/geometry.json": "afa35c55dc4684052e4e409e094fe51c7ce921de097d4e3d9bb03593a8087991",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/charging/prepared/heights.json": "1ea1a31a50ca45ad5f4db4b792c9b7fcc7a5fd015608bb3c66539a5ee44200ad",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/charging/prepared/roads.osm.xml": "c5adce736eabd5c25dbe183076039cf6f69e5abd59c22e7e722917b77595f747",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/charging/prepared/elevated-route.net.xml": "3fd2691311ba640bee271cf19828c82bb378132737bcb74dd1125a4decabdaee",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/charging/prepared/elevated-plant.net.xml": "593bc575346d9fc4c46d01ecc8ed450f7e94b56fdebb96cab6c04bb98f3a8a28",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/charging/reference/reference-network.net.xml": "a8a40d08559ddbeffd6a59a66905b858c85794baeceb099497000527b1255119",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/charging/reference/routes.xml": "da738e7608fb93091bd553d393b04229a7bb44b6fc37e17a22ce5000a1ffdce0",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/charging/reference/run-input.json": "7c0e580d9911dc3720ba6ebb6ea508dbc106d99588182d1dc5b799a449530abe",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/charging/prepared/charging-assignment.json": "1388a11b640fd58e49f6c1be17d21f62870537cfcebf109d323f67ae19c60d44",
+          ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/charging/prepared/detour-corridor.json": "8a51df65c714ff8fb9f94f532bc7a8622d3f5aaebdad496f9f6d3e8c762dcb45"
+        },
+        "expected_working_minutes": 14.4,
+        "maximum_real_life_s": 1724,
+        "services": [
+          "charging",
+          "energy"
+        ],
+        "time_scale": 1.0,
+        "initial_charge_percent": 10.5,
+        "charging_assignment": ".private/operator/scenarios/geographic-v1/ottawa-parliament-carleton/charging/prepared/charging-assignment.json"
+      },
+      "charging_layout": "mixed"
+    },
+    {
+      "id": "ottawa-orleans",
+      "title": "ByWard Market to Place d'Orléans",
+      "region": "Ottawa",
+      "distance_km": 16.04,
+      "minutes": 38.4,
+      "stops": 13,
+      "initial_charge_percent": 80.0,
+      "equipment_kw": 8.0,
+      "mass_kg": 18000,
+      "conditions": "Suburban service, declared construction speed restriction",
+      "available_services": [
+        "charging",
+        "energy",
+        "replay"
+      ],
+      "energy_unavailable_reason": null,
+      "profile": {
+        "version": "live-geographic-profile/1.0.0",
+        "journey_id": "ottawa-orleans",
+        "title": "ByWard Market to Place d'Orléans",
+        "region": "Ottawa",
+        "prepared": ".private/operator/scenarios/geographic-v1/ottawa-orleans/standard/prepared",
+        "reference": ".private/operator/scenarios/geographic-v1/ottawa-orleans/standard/reference",
+        "inputs": {
+          ".private/operator/scenarios/geographic-v1/ottawa-orleans/standard/prepared/heights.json": "185815c7db9448059b13c7c52ab87f61d431092d1a7e356d29e20933b7e3188b",
+          ".private/operator/scenarios/geographic-v1/ottawa-orleans/standard/prepared/mission.json": "c4c2b244d3a7a1f7b05361bb509a69ef9779c21e783353109d43cdefc6a039d2",
+          ".private/operator/scenarios/geographic-v1/ottawa-orleans/standard/prepared/stops.json": "f174b7a6b65db64af8e1e54b3db33a6cc3d3e08541e074248388edff2fc98168",
+          ".private/operator/scenarios/geographic-v1/ottawa-orleans/standard/prepared/roads.json": "84566a52a2f5526682fc9a668bef6051a20311d567661d07154c853e2733f029",
+          ".private/operator/scenarios/geographic-v1/ottawa-orleans/standard/prepared/geometry.json": "6684e78a51d4f7f75305bb7c5179eb67127367df728fed6beb1ba8878e8cbb63",
+          ".private/operator/scenarios/geographic-v1/ottawa-orleans/standard/prepared/roads.osm.xml": "e69948e8a258ee2cf51b1c7fb97d97358d5b09ae632d70968ff91322ad4ff864",
+          ".private/operator/scenarios/geographic-v1/ottawa-orleans/standard/prepared/elevated-route.net.xml": "946ff615e0a2af49666eee30670ba728585d32bd3fe1a82ca1563b8c60181673",
+          ".private/operator/scenarios/geographic-v1/ottawa-orleans/standard/prepared/elevated-plant.net.xml": "3c7bbeacdeb32db62d44bdd9780d1a31e3b03f2d32202227f323ab3c6e717c99",
+          ".private/operator/scenarios/geographic-v1/ottawa-orleans/standard/reference/run-input.json": "3f9f534d2e9b0a97415fba188a665f326ce88bd64d34a12f439455097538666a",
+          ".private/operator/scenarios/geographic-v1/ottawa-orleans/standard/reference/reference-network.net.xml": "0a898dd8c2452bb03b27b1fdece4dbc6342c878ccfbe52d00489c576d1458e69",
+          ".private/operator/scenarios/geographic-v1/ottawa-orleans/standard/reference/routes.xml": "c3f7da1883df1584a0c1839e04526fb12c3eb765d2078f98679ab88bd701da0b",
+          ".private/operator/scenarios/geographic-v1/ottawa-orleans/standard/stations/ottawa-orleans.json": "2c976e072fe3447408094bc6a6a7330655af38d95a6f309e3f8360208999514d"
+        },
+        "expected_working_minutes": 38.39333333333333,
+        "maximum_real_life_s": 3595,
+        "services": [
+          "energy"
+        ],
+        "time_scale": 1.0,
+        "initial_charge_percent": 80.0,
+        "charging_assignment": ".private/operator/scenarios/geographic-v1/ottawa-orleans/standard/stations/ottawa-orleans.json"
+      }
+    },
+    {
+      "id": "ottawa-kanata-centre",
+      "title": "Kanata to Ottawa city center",
+      "region": "Ottawa",
+      "distance_km": 23.05,
+      "minutes": 37.6,
+      "stops": 9,
+      "initial_charge_percent": 80.0,
+      "equipment_kw": 18.0,
+      "mass_kg": 18000,
+      "conditions": "Long regional service, higher equipment demand",
+      "available_services": [
+        "charging",
+        "energy",
+        "replay"
+      ],
+      "energy_unavailable_reason": null,
+      "profile": {
+        "version": "live-geographic-profile/1.0.0",
+        "journey_id": "ottawa-kanata-centre",
+        "title": "Kanata to Ottawa city center",
+        "region": "Ottawa",
+        "prepared": ".private/operator/scenarios/geographic-v1/ottawa-kanata-centre/standard/prepared",
+        "reference": ".private/operator/scenarios/geographic-v1/ottawa-kanata-centre/standard/reference",
+        "inputs": {
+          ".private/operator/scenarios/geographic-v1/ottawa-kanata-centre/standard/prepared/heights.json": "37b52f288357632f6511816016e0a8955f1214a537a15b8ee4db9780b3f1691b",
+          ".private/operator/scenarios/geographic-v1/ottawa-kanata-centre/standard/prepared/mission.json": "3a87a27e677e140a7ad9e6815ab0d0e4a391d325d31666ab88b7ec169dd83bee",
+          ".private/operator/scenarios/geographic-v1/ottawa-kanata-centre/standard/prepared/stops.json": "2e6254920bddebcf691a21ed598cd711e056972410f3202b064a621dba0253a9",
+          ".private/operator/scenarios/geographic-v1/ottawa-kanata-centre/standard/prepared/roads.json": "37ba8dc627f811c5abad602d2db319dff0ce0eee43b9e845784ad270174334c1",
+          ".private/operator/scenarios/geographic-v1/ottawa-kanata-centre/standard/prepared/geometry.json": "85f18af29e969ba8ec33aee7c48ee58991e7e67f9010445568c058e971099dfb",
+          ".private/operator/scenarios/geographic-v1/ottawa-kanata-centre/standard/prepared/roads.osm.xml": "63ec323db508d8c62c9310632d0b8bb742ce7594cf6b0cb55332a29e540ba7c4",
+          ".private/operator/scenarios/geographic-v1/ottawa-kanata-centre/standard/prepared/elevated-route.net.xml": "ec4768cca0db9e9c1f1682c20285ad14c61c19bbbbafa20fcbf043c801e114e6",
+          ".private/operator/scenarios/geographic-v1/ottawa-kanata-centre/standard/prepared/elevated-plant.net.xml": "810b727034a351905a962fa0ea0aa14f42832e11f5fa4d38b550a4ddee151683",
+          ".private/operator/scenarios/geographic-v1/ottawa-kanata-centre/standard/reference/run-input.json": "bd1615570327b01daf5658e163da43c9c49486a96dfa438f04b53e90e4990faa",
+          ".private/operator/scenarios/geographic-v1/ottawa-kanata-centre/standard/reference/reference-network.net.xml": "95e4312d8b17e4c41f80a461fb717c240697d885241c6c17840bed166f724f1d",
+          ".private/operator/scenarios/geographic-v1/ottawa-kanata-centre/standard/reference/routes.xml": "490bf9096027eca092167362f0c32b154eb609e84bd990cb3d3c1ab054fb669b",
+          ".private/operator/scenarios/geographic-v1/ottawa-kanata-centre/standard/stations/ottawa-kanata-centre.json": "1c6624713be1f8b10962ab4640da35acf08b68b2232b5d617d08b2d1186671b7"
+        },
+        "expected_working_minutes": 37.63333333333333,
+        "maximum_real_life_s": 3536,
+        "services": [
+          "energy"
+        ],
+        "time_scale": 1.0,
+        "initial_charge_percent": 80.0,
+        "charging_assignment": ".private/operator/scenarios/geographic-v1/ottawa-kanata-centre/standard/stations/ottawa-kanata-centre.json"
+      }
+    },
+    {
+      "id": "vancouver-waterfront-ubc",
+      "title": "Waterfront Station to UBC",
+      "region": "Metro Vancouver",
+      "distance_km": 11.13,
+      "minutes": 27.6,
+      "stops": 12,
+      "initial_charge_percent": 80.0,
+      "equipment_kw": 8.0,
+      "mass_kg": 18000,
+      "conditions": "Coastal urban service, declared higher rolling resistance and lower driving speed",
+      "available_services": [
+        "charging",
+        "energy",
+        "replay"
+      ],
+      "energy_unavailable_reason": null,
+      "profile": {
+        "version": "live-geographic-profile/1.0.0",
+        "journey_id": "vancouver-waterfront-ubc",
+        "title": "Waterfront Station to UBC",
+        "region": "Metro Vancouver",
+        "prepared": ".private/operator/scenarios/geographic-v1/vancouver-waterfront-ubc/standard/prepared",
+        "reference": ".private/operator/scenarios/geographic-v1/vancouver-waterfront-ubc/standard/reference",
+        "inputs": {
+          ".private/operator/scenarios/geographic-v1/vancouver-waterfront-ubc/standard/prepared/heights.json": "a80c4d07d7bf911414eb68571885325132267da6eae46f0359f17787353c8a37",
+          ".private/operator/scenarios/geographic-v1/vancouver-waterfront-ubc/standard/prepared/mission.json": "5b1a1de8ae66a9791495848ec1043637f289c6d37cbea98f7759bf83a251e211",
+          ".private/operator/scenarios/geographic-v1/vancouver-waterfront-ubc/standard/prepared/stops.json": "720efc12444c25634acd33592da2e7e867f1fe5f3ab8de72ff7c62e946fee6a0",
+          ".private/operator/scenarios/geographic-v1/vancouver-waterfront-ubc/standard/prepared/roads.json": "28b991cf5cbc5d1af7ccaf14eaad74acdc460724e36bc1e49646757088a986e4",
+          ".private/operator/scenarios/geographic-v1/vancouver-waterfront-ubc/standard/prepared/geometry.json": "0ebb84acfc3d118d73397e2573542d15d17b706c9cddac5d7d092334c2b629a3",
+          ".private/operator/scenarios/geographic-v1/vancouver-waterfront-ubc/standard/prepared/roads.osm.xml": "bc282ac10bd5a970cb6d4283f9098305826409133823690842789e9ebca41c24",
+          ".private/operator/scenarios/geographic-v1/vancouver-waterfront-ubc/standard/prepared/elevated-route.net.xml": "7702a331b9ef19fb2a8b43e8e52e824471a0d8ecebd0ace22c6a434fc85d38f3",
+          ".private/operator/scenarios/geographic-v1/vancouver-waterfront-ubc/standard/prepared/elevated-plant.net.xml": "fe7034ed93d3b507bae1d5d8d4bb4fc2a6788cab9c84606d17cb1719da74e0f0",
+          ".private/operator/scenarios/geographic-v1/vancouver-waterfront-ubc/standard/reference/run-input.json": "2c4e15c33cb70a93af5e03ecffe54008407d52032bf12af0691177c4f0d41696",
+          ".private/operator/scenarios/geographic-v1/vancouver-waterfront-ubc/standard/reference/reference-network.net.xml": "a9e43c513d2b9040e9c7d208f874c926fca58f99edd6dbb23ba325f76f84c067",
+          ".private/operator/scenarios/geographic-v1/vancouver-waterfront-ubc/standard/reference/routes.xml": "9e6692d39b2775b578de01b0f4648cbfe025ef5b328a0c694c7335ba9079abc0",
+          ".private/operator/scenarios/geographic-v1/vancouver-waterfront-ubc/standard/stations/vancouver-waterfront-ubc.json": "964cc9479050610be0d1288502fd9a5b0c747370d21eb362412afe65182dfc83"
+        },
+        "expected_working_minutes": 27.59,
+        "maximum_real_life_s": 2753,
+        "services": [
+          "energy"
+        ],
+        "time_scale": 1.0,
+        "initial_charge_percent": 80.0,
+        "charging_assignment": ".private/operator/scenarios/geographic-v1/vancouver-waterfront-ubc/standard/stations/vancouver-waterfront-ubc.json"
+      }
+    },
+    {
+      "id": "vancouver-stanley-park",
+      "title": "Waterfront to Stanley Park and English Bay",
+      "region": "Metro Vancouver",
+      "distance_km": 9.27,
+      "minutes": 17.3,
+      "stops": 3,
+      "initial_charge_percent": 80.0,
+      "equipment_kw": 8.0,
+      "mass_kg": 18000,
+      "conditions": "Short coastal route with frequent stops",
+      "available_services": [
+        "charging",
+        "energy",
+        "replay"
+      ],
+      "energy_unavailable_reason": null,
+      "profile": {
+        "version": "live-geographic-profile/1.0.0",
+        "journey_id": "vancouver-stanley-park",
+        "title": "Waterfront to Stanley Park and English Bay",
+        "region": "Metro Vancouver",
+        "prepared": ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/standard/prepared",
+        "reference": ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/standard/reference",
+        "inputs": {
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/standard/prepared/heights.json": "e0fc853c82b35d215270313f4103c68920018444691e6530ef8ce3772ad968d6",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/standard/prepared/mission.json": "a50abc957c2676649fb0b24838dc7c09e762e455955ed3ca660171d02cefe652",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/standard/prepared/stops.json": "88b28c2d91ed973af166b0ada01f20d4b9e68afc931f3656af722218f69fdad3",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/standard/prepared/roads.json": "08ee9dc37e5c559a8f1ef17d3c2cf1514ead5c7084bc948c33cf7939f4820d34",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/standard/prepared/geometry.json": "44b76e128fdceb8533312ec9075ce53bc29c2fa57cd09a0ed840a3ed53eec252",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/standard/prepared/roads.osm.xml": "8bbb7331c5eed4b7ffeb789e60e464e8309c79be9d615b98f361ba29dab86cb9",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/standard/prepared/elevated-route.net.xml": "9b949003139642ef4c1cc625cb85e230b793f7c67aecaef3fe666b50cd1ed458",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/standard/prepared/elevated-plant.net.xml": "409a13ee8598bd9538d785b7511ed01b42f89974defed9b9449de8ed36fbf2d6",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/standard/reference/run-input.json": "a9a5c4ea9e924d06cc76c8076e7a1818624f9ea5713d2570723a56ba75389896",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/standard/reference/reference-network.net.xml": "19c7de5945e66fc9c31d52b523afacf9281c0d6416ef2be802e90b04ca3e37ba",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/standard/reference/routes.xml": "cf3dd7e9a78e2978f914cc4175771a0d7455019e59de7b58607db55d641fb6db",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/standard/stations/vancouver-stanley-park.json": "113a84e0b206acb57838716b62ec97dfb526cf3b9fa04ef0959b7a9d80863c30"
+        },
+        "expected_working_minutes": 17.276666666666664,
+        "maximum_real_life_s": 1948,
+        "services": [
+          "energy"
+        ],
+        "time_scale": 1.0,
+        "initial_charge_percent": 80.0,
+        "charging_assignment": ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/standard/stations/vancouver-stanley-park.json"
+      },
+      "charging_variant": {
+        "version": "live-geographic-profile/1.0.0",
+        "journey_id": "vancouver-stanley-park",
+        "title": "Waterfront to Stanley Park and English Bay",
+        "region": "Metro Vancouver",
+        "prepared": ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/charging/prepared",
+        "reference": ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/charging/reference",
+        "inputs": {
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/charging/prepared/mission.json": "a50abc957c2676649fb0b24838dc7c09e762e455955ed3ca660171d02cefe652",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/charging/prepared/stops.json": "88b28c2d91ed973af166b0ada01f20d4b9e68afc931f3656af722218f69fdad3",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/charging/prepared/geometry.json": "c81583fd4920d66691f1f0530c116aa4387817b748ed8f28052e93881045e95e",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/charging/prepared/heights.json": "3c380a58b2b9ae65f579c1743ff8e2928c94778805059e367dc258b3b06d65ad",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/charging/prepared/roads.osm.xml": "8bbb7331c5eed4b7ffeb789e60e464e8309c79be9d615b98f361ba29dab86cb9",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/charging/prepared/elevated-route.net.xml": "12d2ed00d989968334a50d0ae879b026738e8a121279dc69c6777337f0d921e3",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/charging/prepared/elevated-plant.net.xml": "044d67bc55353da96532d682fd0bad969bb5d2f54df73b98d45e0d92495b98ec",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/charging/reference/reference-network.net.xml": "c7e9390a1a449718cff01b6daa844f2c67573acd8278ace118b90cf344293b58",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/charging/reference/routes.xml": "cf3dd7e9a78e2978f914cc4175771a0d7455019e59de7b58607db55d641fb6db",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/charging/reference/run-input.json": "51c29c5b6bad0b0966938fb225a131f40403e65e217fb499f1d2331ebca44823",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/charging/prepared/charging-assignment.json": "32360dbec4534ca1c59f8a22a1c43ae8a0d497bac8c60eaca9c73071019553ce",
+          ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/charging/prepared/detour-corridor.json": "c7d38bac6cf770f65518c627c54170d8e650de9899f2539c47591eb970bc1ab8"
+        },
+        "expected_working_minutes": 17.276666666666664,
+        "maximum_real_life_s": 1948,
+        "services": [
+          "charging",
+          "energy"
+        ],
+        "time_scale": 1.0,
+        "initial_charge_percent": 80.0,
+        "charging_assignment": ".private/operator/scenarios/geographic-v1/vancouver-stanley-park/charging/prepared/charging-assignment.json"
+      },
+      "charging_layout": "off-route"
+    },
+    {
+      "id": "vancouver-burnaby-climb",
+      "title": "New Westminster to Burnaby Mountain",
+      "region": "Metro Vancouver",
+      "distance_km": 17.66,
+      "minutes": 32.6,
+      "stops": 8,
+      "initial_charge_percent": 80.0,
+      "equipment_kw": 12.0,
+      "mass_kg": 24000,
+      "conditions": "Sustained climb with a full passenger load",
+      "available_services": [
+        "charging",
+        "energy",
+        "replay"
+      ],
+      "energy_unavailable_reason": null,
+      "profile": {
+        "version": "live-geographic-profile/1.0.0",
+        "journey_id": "vancouver-burnaby-climb",
+        "title": "New Westminster to Burnaby Mountain",
+        "region": "Metro Vancouver",
+        "prepared": ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/standard/prepared",
+        "reference": ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/standard/reference",
+        "inputs": {
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/standard/prepared/heights.json": "645eb300096c6e12b211fb3a0a9a8c9bd8ef881583e10976a324c9469963eb7e",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/standard/prepared/mission.json": "83e77c35e104d03393945a20cdc31f79d99282b6c9aaeaaba4cb41f307c15b1c",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/standard/prepared/stops.json": "e7e378db49e24b8f9e607c3db9501eb799f6bda1d4495ff30b6e83819e664f06",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/standard/prepared/roads.json": "d4b8713d3636bc3d5bf589f99ef5fae6fe5153fac1c49d037f133ce72951f957",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/standard/prepared/geometry.json": "7bbdb7da6c25b7f6945b2550d89f0b4c399f491451def6e761df03ad4259b2a0",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/standard/prepared/roads.osm.xml": "aeff985e4b3c58fcbde9a43471e1bb32cb2f678f54c169441f2342fdad7d0131",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/standard/prepared/elevated-route.net.xml": "222ae595327442fb1976c28476672fa7fbc769730d23ca3b6620e7f45ac9c861",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/standard/prepared/elevated-plant.net.xml": "a3e99379d72f4c82fb6de4fcc958fe229bc152ee29dda69228d4478164838f16",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/standard/reference/run-input.json": "2ac343a083c2e07394d787e2b3d382e018b528f29bbbab2fcb6aaf42e7d19549",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/standard/reference/reference-network.net.xml": "3a202b027a12203432d5d949230b9523a57efcb5eb832f3db0ca88308b13d86c",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/standard/reference/routes.xml": "43820f11f2338a8a179fdd294f050ec12a4771d68b2c2b55d80a8521397ddeaf",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/standard/stations/vancouver-burnaby-climb.json": "14f41d01c7084c61f454678da325da60d4b4fbf3573a317777ae0874acc4f82c"
+        },
+        "expected_working_minutes": 32.593333333333334,
+        "maximum_real_life_s": 3143,
+        "services": [
+          "energy"
+        ],
+        "time_scale": 1.0,
+        "initial_charge_percent": 80.0,
+        "charging_assignment": ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/standard/stations/vancouver-burnaby-climb.json"
+      },
+      "charging_variant": {
+        "version": "live-geographic-profile/1.0.0",
+        "journey_id": "vancouver-burnaby-climb",
+        "title": "New Westminster to Burnaby Mountain",
+        "region": "Metro Vancouver",
+        "prepared": ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/charging/prepared",
+        "reference": ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/charging/reference",
+        "inputs": {
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/charging/prepared/mission.json": "83e77c35e104d03393945a20cdc31f79d99282b6c9aaeaaba4cb41f307c15b1c",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/charging/prepared/stops.json": "e7e378db49e24b8f9e607c3db9501eb799f6bda1d4495ff30b6e83819e664f06",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/charging/prepared/geometry.json": "7864ac48f90a8f6fbec58723d3be5d41d4d2b526ea907fb45473dfee6183d250",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/charging/prepared/heights.json": "3e00eb739b6c10bdbf64a6495ca096aff8ad644301e11e039bafbbb3bd4dec8f",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/charging/prepared/roads.osm.xml": "aeff985e4b3c58fcbde9a43471e1bb32cb2f678f54c169441f2342fdad7d0131",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/charging/prepared/elevated-route.net.xml": "287bd055cd802f6dcb08234220e59b9fe637f743a48642a249f5534f49107d99",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/charging/prepared/elevated-plant.net.xml": "fceba4787cb052efb7475fc885ea6205c9b5c43fccce1ddee44bf4d9ef299eaf",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/charging/reference/reference-network.net.xml": "b781fb97142d9d7c1974d0d1540e0d594175aada8c6ada01f0d50b8ff9dab060",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/charging/reference/routes.xml": "43820f11f2338a8a179fdd294f050ec12a4771d68b2c2b55d80a8521397ddeaf",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/charging/reference/run-input.json": "047fc0247a7110f65df820251a760ccc4c27c613368a33ba5552282acc6fcba0",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/charging/prepared/charging-assignment.json": "2c92ae153c5cd5bbd315a7c1fc26f4542275a3daffd48e8b10b83ed8f06b26f5",
+          ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/charging/prepared/detour-corridor.json": "24e3b9b3d0627c4cf730038ffebe581f2f1a7a5673bcbf0d5952d8f2377a7466"
+        },
+        "expected_working_minutes": 32.593333333333334,
+        "maximum_real_life_s": 3143,
+        "services": [
+          "charging",
+          "energy"
+        ],
+        "time_scale": 1.0,
+        "initial_charge_percent": 80.0,
+        "charging_assignment": ".private/operator/scenarios/geographic-v1/vancouver-burnaby-climb/charging/prepared/charging-assignment.json"
+      },
+      "charging_layout": "off-route"
+    },
+    {
+      "id": "vancouver-regional-tour",
+      "title": "Richmond–Steveston–UBC–Burnaby Mountain",
+      "region": "Metro Vancouver",
+      "distance_km": 58.98,
+      "minutes": 112.1,
+      "stops": 24,
+      "initial_charge_percent": 80.0,
+      "equipment_kw": 12.0,
+      "mass_kg": 18000,
+      "conditions": "Long multi-destination journey: lowlands, crossings, and a final climb",
+      "available_services": [
+        "charging",
+        "energy",
+        "replay"
+      ],
+      "energy_unavailable_reason": null,
+      "profile": {
+        "version": "live-geographic-profile/1.0.0",
+        "journey_id": "vancouver-regional-tour",
+        "title": "Richmond–Steveston–UBC–Burnaby Mountain",
+        "region": "Metro Vancouver",
+        "prepared": ".private/operator/scenarios/geographic-v1/vancouver-regional-tour/standard/prepared",
+        "reference": ".private/operator/scenarios/geographic-v1/vancouver-regional-tour/standard/reference",
+        "inputs": {
+          ".private/operator/scenarios/geographic-v1/vancouver-regional-tour/standard/prepared/heights.json": "2614dba5dc4afbaea1adfb698e81df725843ec28200d297fcee33c642804ac62",
+          ".private/operator/scenarios/geographic-v1/vancouver-regional-tour/standard/prepared/mission.json": "d028afe80738a19c45b52c1f79d8ef317ea0bad353d0cca96d68459c2b61a00c",
+          ".private/operator/scenarios/geographic-v1/vancouver-regional-tour/standard/prepared/stops.json": "000d05642549e76dc7268b0a4b95a91fcea541286ee2937d8d653eec5c2ceee2",
+          ".private/operator/scenarios/geographic-v1/vancouver-regional-tour/standard/prepared/roads.json": "138f39073f89dc0e9eee4a0ad654b3e609fe476aa3a192d57fe877304dc59e29",
+          ".private/operator/scenarios/geographic-v1/vancouver-regional-tour/standard/prepared/geometry.json": "e99ab29c527bdac21d02ad744f7e3b69f5c58e741116d2fd8b9eaeafd10d4f95",
+          ".private/operator/scenarios/geographic-v1/vancouver-regional-tour/standard/prepared/roads.osm.xml": "c03e94e2336adb29f6f43f762b026d3e630b7f8edb940604d75dfee248bcf7a4",
+          ".private/operator/scenarios/geographic-v1/vancouver-regional-tour/standard/prepared/elevated-route.net.xml": "b70fbb3c2446eef5d2588b53fb133e4e1b28b2a04f288e510648239e76e6cca7",
+          ".private/operator/scenarios/geographic-v1/vancouver-regional-tour/standard/prepared/elevated-plant.net.xml": "726019c731eaf279d0f39273e8826ac3e6ffa525d74bbd4c62a41539bf79f372",
+          ".private/operator/scenarios/geographic-v1/vancouver-regional-tour/standard/reference/run-input.json": "fc66782b601a26b544af23595a71592eb28e4dc3d8b3918aa5c56d0be3ecadf2",
+          ".private/operator/scenarios/geographic-v1/vancouver-regional-tour/standard/reference/reference-network.net.xml": "96786f664dcbef2e8ed2427fc2648ea78f9ae1eab474c012706bbc3e27582fab",
+          ".private/operator/scenarios/geographic-v1/vancouver-regional-tour/standard/reference/routes.xml": "e51b860dd8a07bedd0ad641f9d63dd6e5949a89fc8ebd9f65e9577165405991f",
+          ".private/operator/scenarios/geographic-v1/vancouver-regional-tour/standard/stations/vancouver-regional-tour-budget-22.json": "d8087976c1f6eb85e98ced6928233f708b298bb3557f628af7b7460294db1ce3"
+        },
+        "expected_working_minutes": 112.09333333333333,
+        "maximum_real_life_s": 9344,
+        "services": [
+          "energy"
+        ],
+        "time_scale": 1.0,
+        "initial_charge_percent": 80.0,
+        "charging_assignment": ".private/operator/scenarios/geographic-v1/vancouver-regional-tour/standard/stations/vancouver-regional-tour-budget-22.json"
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "version": "energy-development-protocol/1.0.0",
+  "scope": "Synthetic known-route advisory research; no physical-bus or automated-dispatch qualification",
+  "collection": {
+    "partitions": ["train", "validation"],
+    "driver_sigma_urban": 0.35,
+    "driver_sigma_stop_heavy": 0.6,
+    "maximum_samples": 2500,
+    "energy_noise_std_j": 7200,
+    "energy_quantum_j": 3600,
+    "soc_noise_std": 0.0005,
+    "soc_quantum": 0.0005,
+    "soc_bias_magnitude": 0.002,
+    "sensor_seed_offset": 700000
+  },
+  "estimator_parameters": {
+    "declared_capacity_kwh": 350,
+    "loaded_mass_kg": 18000,
+    "equivalent_rotating_mass_kg": 200,
+    "frontal_area_m2": 8.16,
+    "air_drag_coefficient": 0.7,
+    "rolling_resistance_coefficient": 0.009,
+    "air_density_kg_m3": 1.2,
+    "propulsion_efficiency": 0.88,
+    "regeneration_efficiency": 0.55,
+    "max_electrical_regeneration_power_w": 250000,
+    "max_battery_discharge_power_w": 600000,
+    "gravity_m_s2": 9.81
+  },
+  "fit": {
+    "version": "bounded-energy-grid/1.0.0",
+    "rolling_candidates": [0.004, 0.006, 0.008, 0.010, 0.012, 0.014],
+    "efficiency_candidates": [0.78, 0.82, 0.86, 0.90, 0.94, 0.98],
+    "objective": "Equal whole-trip mean squared net-energy error in kWh squared",
+    "step_s": 0.2
+  },
+  "prediction": {
+    "cutoff_sim_s": 120,
+    "history_s": 60,
+    "template_selection": "Training trip nearest median complete duration; stable mission-ID tie break",
+    "remaining_distance": "Median training terminal odometer minus latest observed odometer",
+    "auxiliary_assumption": "Hold latest good observed auxiliary.power constant",
+    "reserve_soc": 0.1,
+    "step_s": 0.2
+  },
+  "sensitivity": {
+    "version": "declared-parameter-envelope/1.0.0",
+    "mass_fraction": 0.2,
+    "capacity_fraction": 0.2,
+    "rolling_absolute": 0.002,
+    "efficiency_absolute": 0.04,
+    "regeneration_absolute": 0.1,
+    "auxiliary_absolute_w": 2000,
+    "soc_absolute": 0.005,
+    "extra_stop_time_s": 120,
+    "probability_guarantee": false
+  },
+  "proposed_D18_targets": {
+    "scope": "One forecast at 120 simulation seconds per complete known-route mission; frozen only after validation review",
+    "all_forecasts_available": true,
+    "energy_mae_kwh_max": 1.0,
+    "energy_absolute_error_kwh_max": 2.0,
+    "soc_mae_percentage_points_max": 0.5,
+    "soc_absolute_error_percentage_points_max": 1.0,
+    "candidate_energy_mae_not_worse_than_baseline": true,
+    "empirical_joint_envelope_coverage_min": 0.8333333333333334,
+    "energy_envelope_width_kwh_max": 6.0,
+    "soc_envelope_width_percentage_points_max": 4.0,
+    "fixed_plan_refinement_relative_energy_max": 0.01,
+    "rationale": "Advisory short-trip error budget: mean energy error at most 1 kWh and maximum 2 kWh; maximum charge error 1 point equals 3.5 kWh of declared capacity, one tenth of the illustrative 35-kWh reserve. Envelope width is capped to prevent vacuous coverage. Five of six whole validation/evaluation missions is an empirical count target, not a confidence guarantee or dispatch approval."
+  }
+}

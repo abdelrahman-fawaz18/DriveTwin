@@ -1,0 +1,133 @@
+{
+  "status": "W1 short-run monitoring acceptance passed; Phase 1 completion pending",
+  "W1_passed": true,
+  "phase_1_monitoring_milestone_complete": false,
+  "review_utc": "2026-11-04T21:55:27.692068+00:00",
+  "policy_version": "phase1-local-monitoring/1.3.1",
+  "host_policy_version": "phase1-local-host/1.0.1",
+  "review_scope": "Read-only saved-evidence, source and live-cleanup audit. No workload or acceptance retry launched.",
+  "private_evidence_directory": "evidence/p1/external-w1-2026-11-04-214055-578aad89",
+  "run": {
+    "started_local": "2026-11-04T16:40:55.7729871-05:00",
+    "finished_local": "2026-11-04T16:49:14.0491793-05:00",
+    "operator_elapsed_s": 498.276192,
+    "browser": "chromium-automated",
+    "codex_closed_by_user": true,
+    "assets": 10,
+    "signals_per_asset": 20,
+    "messages_per_asset_per_s": 1,
+    "warmup_s": 60,
+    "measured_s": 300,
+    "actual_source_elapsed_min_s": 360.17056047,
+    "actual_source_elapsed_max_s": 360.270808472,
+    "synchronized_start_verified": true
+  },
+  "events": {
+    "unique_generated": 3600,
+    "accepted": 3600,
+    "quarantined": 0,
+    "dropped": 0,
+    "pending": 0,
+    "measured_events": 3000,
+    "warmup_events": 600,
+    "publish_attempts": 3600,
+    "receiver_deliveries": 3600,
+    "duplicate_deliveries": 0
+  },
+  "scalar_readings_including_warmup": 72000,
+  "measured_scalar_readings": 60000,
+  "latency": {
+    "method": "same-Linux-clock conservative source-to-displayed-reading confirmation bound",
+    "measured_events": 3000,
+    "p95_s": 0.7438734149999985,
+    "p99_s": 0.8169222429999675,
+    "p95_limit_s": 2,
+    "p99_limit_s": 5,
+    "passed": true
+  },
+  "resources": {
+    "passed": true,
+    "core_peak_bytes": 1952292864,
+    "core_limit_bytes": 6442450944,
+    "linux_rolling_60s_swap_max_bytes": 0,
+    "out_of_memory_events": 0,
+    "windows_available_min_bytes": 2099298304,
+    "commit_headroom_min_bytes": 18691645440,
+    "physical_emergency_upper_s": 0.0,
+    "commit_emergency_upper_s": 0.0,
+    "below_2GiB_upper_s": 2.9841541999485344,
+    "capacity_warning": false,
+    "paging_peak_pages_input_s": 119101.93489450647,
+    "paging_peak_pages_output_s": 1544.6385515737984,
+    "windows_samples": 442,
+    "direct_wsl_process_read_failures": 442,
+    "wsl_counter_method": [
+      "PDH Process(vmmemWSL) Working Set"
+    ],
+    "positive_wsl_counter_coverage": true,
+    "diagnostic_limit": "Protected WSL direct-process reads are reported unavailable; the separate Windows performance-counter working set was positive throughout. Name totals may include other sessions and are not isolated overhead. Paging remains recorded; full capacity is not qualified."
+  },
+  "compatibility": {
+    "source_hashes": {
+      "controller": {
+        "matching_files": 78,
+        "mismatches": []
+      },
+      "service": {
+        "matching_files": 213,
+        "mismatches": []
+      },
+      "shared_checks": {
+        "matching_files": 313,
+        "mismatches": []
+      }
+    },
+    "entire_controller_fingerprint_map_matches": true,
+    "runtime_guard_passed": true,
+    "controller_and_service_guards_before_and_after_passed": true,
+    "source_or_policy_changes_during_review": false,
+    "shared_checks_reused": "520 Python / 22 frontend tests plus strict types, contracts, formatting/build and privacy, with all 313 recorded source hashes unchanged; no new shared run."
+  },
+  "cleanup": {
+    "owned_service_containers_remaining": 0,
+    "owned_service_volumes_remaining": 0,
+    "recorded_inventory_unchanged": true,
+    "live_review_inventory_verified": true,
+    "current_containers": 0,
+    "current_volumes": 13,
+    "preexisting_volumes_preserved": 13,
+    "sleep_request_released": true,
+    "power_plan_changed": false,
+    "ubuntu_shutdown": false
+  },
+  "passing_w1_does_not_claim": [
+    "fresh complete history/map/reconnect/stale/access/replay functional regression",
+    "current active-configuration startup measurement",
+    "current normal-queue backup compatibility integration",
+    "full Phase 1 closeout",
+    "sustained load or production capacity"
+  ],
+  "remaining_phase_1": [
+    "Combined current-configuration readings/history/map/reconnect/stale/access/replay checks using existing small fixture; capture startup within 120 seconds.",
+    "Small backup/restore compatibility check for the current normal queue configuration, retaining compatible W2 history/query/download/restore evidence and image guards.",
+    "Final requirements-to-evidence review, final documentation/privacy review and local closeout commit after the remaining checks."
+  ],
+  "retained_evidence": "W0 complete data/latency/Linux-resource components, full W2 history/query/download/restore, latest successful real five-minute outage and applicable extension/replay/access/storage components remain in their recorded compatible scopes. Old overall failed attempts are not relabeled.",
+  "deferred_to_phase_6": [
+    "Former 30-minute qualification",
+    "Sustained load/soak and full host-capacity qualification",
+    "Comprehensive visual regression",
+    "Broader reboot/deployment/storage lifecycle",
+    "Automatic retention deletion",
+    "Production hardening beyond active monitoring"
+  ],
+  "future_workload_authorization": "No further workload launched or authorized by this review; return the remaining work to the user.",
+  "evidence_file_sha256": {
+    "operator-result.json": "825e9880da12cccf34b9f879884b7481c832fa4e55da6b614c28f4e939a1d702",
+    "inventory-before.json": "1c847992c8576a3d78f820959c2a09f6ab0ae923a9f2edffc06f6051c42e1879",
+    "inventory-after.json": "1c847992c8576a3d78f820959c2a09f6ab0ae923a9f2edffc06f6051c42e1879",
+    "w1/qualification.json": "822360dce8667e4878687f8de0274cfc303c3c9a6780ec4204ddcc4d66e75055",
+    "w1/measurement.json": "493e58a3138f10e2699cf075c33d19f25c8909dc794496b7b282df8db1ad4ef8",
+    "w1/services/qualification.json": "8669b52dc83c85a804f91438e1e10e1e9a5cb9066f9381d772015926af246de1"
+  }
+}

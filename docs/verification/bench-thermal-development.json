@@ -1,0 +1,185 @@
+{
+  "checkpoint": "P5-B1 through P5-B3 and pre-test freeze",
+  "numerical_tests_passed": 8,
+  "runtime": {
+    "python": "3.13.7",
+    "numpy": "2.4.3",
+    "scipy": "1.17.1"
+  },
+  "selected_candidate": {
+    "name": "single",
+    "parameters": {
+      "ambient_rate": 0.0006609051740846547,
+      "coolant_rate": 0.0037788949591904537,
+      "current_gain": 0.5533816358950187,
+      "speed_gain": 0.1556803653460214
+    },
+    "evaluations": 11,
+    "training_profiles": 43,
+    "training_profile_balanced_rmse_k": 4.520968944705427
+  },
+  "validation_candidates": {
+    "single": {
+      "profiles": 13,
+      "samples": 267020,
+      "mean_profile_mae_k": 3.537429901601794,
+      "worst_profile_mae_k": 10.5359536165237,
+      "maximum_absolute_error_k": 17.484466299884218,
+      "mean_profile_interval_coverage": null,
+      "mean_persistence_mae_k": 38.502637937927496
+    },
+    "coupled": {
+      "profiles": 13,
+      "samples": 267020,
+      "mean_profile_mae_k": 3.4227733086267644,
+      "worst_profile_mae_k": 10.724193697911415,
+      "maximum_absolute_error_k": 17.8902424893364,
+      "mean_profile_interval_coverage": null,
+      "mean_persistence_mae_k": 38.502637937927496
+    }
+  },
+  "validation_primary": {
+    "profiles": 13,
+    "samples": 267020,
+    "mean_profile_mae_k": 3.537429901601794,
+    "worst_profile_mae_k": 10.5359536165237,
+    "maximum_absolute_error_k": 17.484466299884218,
+    "mean_profile_interval_coverage": 1.0,
+    "mean_persistence_mae_k": 38.502637937927496
+  },
+  "validation_ambient_start": {
+    "profiles": 13,
+    "samples": 267020,
+    "mean_profile_mae_k": 3.7985305594756174,
+    "worst_profile_mae_k": 10.543797005018765,
+    "maximum_absolute_error_k": 60.93642459756586,
+    "mean_profile_interval_coverage": 0.993782882458762,
+    "mean_persistence_mae_k": 44.23865251044025
+  },
+  "calibration_stability": [
+    {
+      "fit_profiles": 34,
+      "validation_mean_profile_mae_k": 3.45471363111392,
+      "parameters": {
+        "ambient_rate": 0.0006450225395333849,
+        "coolant_rate": 0.003736812652225515,
+        "current_gain": 0.5508021282944427,
+        "speed_gain": 0.14851638171007892
+      }
+    },
+    {
+      "fit_profiles": 34,
+      "validation_mean_profile_mae_k": 3.61962850655504,
+      "parameters": {
+        "ambient_rate": 0.0006351268226242774,
+        "coolant_rate": 0.0038723886718087584,
+        "current_gain": 0.5413358263867559,
+        "speed_gain": 0.1638565188475666
+      }
+    }
+  ],
+  "interval_radius_k": 17.698628338645037,
+  "limits": {
+    "mean_profile_mae_k": 5.306144852402691,
+    "worst_profile_mae_k": 15,
+    "minimum_mean_profile_interval_coverage": 0.85
+  },
+  "validation_passed": true,
+  "synthetic_observer": {
+    "passed": true,
+    "scope": "Synthetic reference networks with winding sensor updates, two states and one input stream",
+    "observability_ranks": {
+      "coupled": 2,
+      "disconnected": 1
+    },
+    "columns": [
+      "winding",
+      "effective_body"
+    ],
+    "measurement_noise_standard_deviation_k": 0.8,
+    "cases": [
+      {
+        "seed": 551,
+        "model_mismatch": false,
+        "open_loop_mae_k": [
+          1.4173678982451114,
+          1.651983885125193
+        ],
+        "corrected_prior_mae_k": [
+          0.0946909598028669,
+          0.09523635247415446
+        ]
+      },
+      {
+        "seed": 551,
+        "model_mismatch": true,
+        "open_loop_mae_k": [
+          4.633732412013025,
+          4.131620098680422
+        ],
+        "corrected_prior_mae_k": [
+          0.25362303680117965,
+          0.23535361842652852
+        ]
+      },
+      {
+        "seed": 552,
+        "model_mismatch": false,
+        "open_loop_mae_k": [
+          1.4173678982451114,
+          1.651983885125193
+        ],
+        "corrected_prior_mae_k": [
+          0.10438298230643257,
+          0.12974013253059583
+        ]
+      },
+      {
+        "seed": 552,
+        "model_mismatch": true,
+        "open_loop_mae_k": [
+          4.633732412013025,
+          4.131620098680422
+        ],
+        "corrected_prior_mae_k": [
+          0.25480816306651927,
+          0.25239027548419823
+        ]
+      },
+      {
+        "seed": 553,
+        "model_mismatch": false,
+        "open_loop_mae_k": [
+          1.4173678982451114,
+          1.651983885125193
+        ],
+        "corrected_prior_mae_k": [
+          0.11534715612864342,
+          0.10699756551483448
+        ]
+      },
+      {
+        "seed": 553,
+        "model_mismatch": true,
+        "open_loop_mae_k": [
+          4.633732412013025,
+          4.131620098680422
+        ],
+        "corrected_prior_mae_k": [
+          0.2693873638903956,
+          0.24194146338837033
+        ]
+      }
+    ],
+    "reserved_bench_mode": "open_loop_after_startup",
+    "physical_hidden_temperatures_qualified": false
+  },
+  "initial_development_attempt": {
+    "observer_passed": false,
+    "finding": "The observer used the row-vector transition in a column-vector update.",
+    "correction": "Use the column-state transition and verify parity with the exact trajectory for unequal heat capacities.",
+    "report_sha256": "8f06eb734e7e6d5188b73378b9bb03200c8ed17cb71b68c76b6678349cb90310"
+  },
+  "development_report_sha256": "d114c6c12c414d714e4c4a44ac5146f63f45e8152413fc3a9eb46edd0eb56b18",
+  "reserved_outcomes_opened": false
+}

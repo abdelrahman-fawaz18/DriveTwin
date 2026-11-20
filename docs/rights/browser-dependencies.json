@@ -1,0 +1,37 @@
+{
+  "scope": "Installed metadata or exact npm lock; not complete binary redistribution clearance",
+  "packages": [
+    {
+      "name": "@playwright/test",
+      "version": "1.64.1",
+      "declared_terms": "Apache-2.0",
+      "installed_notice_files": [
+        "LICENSE",
+        "NOTICE"
+      ],
+      "metadata_source": "https://www.npmjs.com/package/@playwright/test/v/1.64.1"
+    },
+    {
+      "name": "playwright",
+      "version": "1.64.1",
+      "declared_terms": "Apache-2.0",
+      "installed_notice_files": [
+        "LICENSE",
+        "NOTICE",
+        "ThirdPartyNotices.txt"
+      ],
+      "metadata_source": "https://www.npmjs.com/package/playwright/v/1.64.1"
+    },
+    {
+      "name": "playwright-core",
+      "version": "1.64.1",
+      "declared_terms": "Apache-2.0",
+      "installed_notice_files": [
+        "LICENSE",
+        "NOTICE",
+        "ThirdPartyNotices.txt"
+      ],
+      "metadata_source": "https://www.npmjs.com/package/playwright-core/v/1.64.1"
+    }
+  ]
+}

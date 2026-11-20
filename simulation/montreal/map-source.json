@@ -1,0 +1,18 @@
+{
+  "scenario_id": "montreal-core-v1",
+  "label": "Hypothetical urban bus mission on an OSM-derived Montreal road subset",
+  "bbox_wgs84": {
+    "south": 45.505,
+    "west": -73.58,
+    "north": 45.52,
+    "east": -73.56
+  },
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "query_file": "simulation/montreal/roads.overpassql",
+  "artifact": "data/public/montreal-core-v1/roads.osm.xml",
+  "maximum_download_bytes": 10000000,
+  "license": "ODbL-1.0",
+  "attribution": "Ã‚Â© OpenStreetMap contributors",
+  "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "copyright_url": "https://www.openstreetmap.org/copyright"
+}

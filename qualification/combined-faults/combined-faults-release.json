@@ -1,0 +1,8 @@
+{
+  "version": "phase6-combined-faults-release/1.0.0",
+  "reviewed_source_inventory": {
+    "files": 357,
+    "sha256": "60116fd05d222424d78bbcdabce097222b07a0ca663f793bc620e4b013547475"
+  },
+  "network_sha256": "ddddeb7882a45ca69f2ac45ae48549a88b87eb6b54a1d8282f51cb62ce4ed3d3"
+}

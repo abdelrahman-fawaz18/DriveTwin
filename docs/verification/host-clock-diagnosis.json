@@ -1,0 +1,36 @@
+{
+  "checkpoint": "P6-A2 clock stability diagnosis",
+  "date_local": "2026-11-06",
+  "scope": "Time-service and journal inspection, one user-initiated Windows synchronization, and clock-only probes. No monitoring workload.",
+  "interrupted_attempt": "docs/verification/p6-a2-external-review.json",
+  "diagnosis": {
+    "ubuntu_journal_confirmed_repeated_clock_changes": true,
+    "ubuntu_24_04_hyper_v_implicit_time_sync_enabled": true,
+    "ubuntu_independent_network_time_service_active": true,
+    "windows_time_reported_unsynchronized": true,
+    "possible_conflict_between_two_clock_sources": true,
+    "exact_adjustment_process_identified": false
+  },
+  "correction": {
+    "direct_windows_resync_access_denied": true,
+    "user_windows_sync_advanced_last_successful_timestamp": true,
+    "windows_status_still_reported_unsynchronized_afterward": true,
+    "windows_time_server_comparison_samples": 3,
+    "windows_time_server_max_absolute_offset_ms": 1.8982,
+    "ubuntu_sudo_requires_interactive_terminal": true,
+    "ubuntu_time_service_still_active_at_last_check": true
+  },
+  "clock_only_baseline": {
+    "scope": "After Windows sync while the Ubuntu network time service was still active",
+    "passed": true,
+    "duration_seconds": 150,
+    "samples": 151,
+    "max_windows_departure_ms": 0.00185,
+    "max_ubuntu_departure_ms": 0.010122,
+    "max_per_clock_departure_limit_ms": 10,
+    "ubuntu_minus_windows_utc_interval_ms": [-7.53397, 2.868659],
+    "result_sha256": "e5438cc888ce3cf48844ecf8c4d22f07ad6b46f7fc62f7c881a9f185690966d8"
+  },
+  "ready_for_another_smoke": false,
+  "next": "Verify that the Ubuntu service is inactive and disabled, then run a fresh 150-second clock-only probe before the next external smoke attempt."
+}

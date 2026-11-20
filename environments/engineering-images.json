@@ -1,0 +1,7 @@
+{
+  "node": {
+    "discovery_tag": "node:24-bookworm-slim",
+    "digest": "node@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c",
+    "platform": "linux/amd64"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "profile_id": "p0-portable/1.0.0",
+  "current_schema_version": "1.1.0",
+  "schemas": {
+    "1.0.0": "telemetry/1.0.0.schema.json",
+    "1.1.0": "telemetry/1.1.0.schema.json"
+  },
+  "portable_schema": "portable.schema.json",
+  "catalog_schema": "catalog.schema.json",
+  "max_payload_bytes": 65536,
+  "max_depth": 32,
+  "max_safe_integer": 9007199254740991,
+  "encoding": "UTF-8 without BOM",
+  "duplicate_keys": "reject",
+  "unicode": "Unicode scalar values only",
+  "numeric_policy": "Finite binary64-compatible values; integral values within the exact safe-integer range",
+  "compatibility": "Current reader accepts 1.0.0 and 1.1.0 within this explicit portable subset; legacy reader requires an explicit annotation-only downgrade for 1.1.0."
+}

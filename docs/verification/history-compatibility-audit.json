@@ -1,0 +1,58 @@
+{
+  "checkpoint": "P6-01",
+  "scope": "Read-only qualification of the sealed historical input and compatibility audit",
+  "current_reader_live_passed": false,
+  "bundle": {
+    "manifest_sha256": "eff2018c31aae9faf2aa241e3da9b1e3ec604f50079c205dd0b6aea2306fc60c",
+    "files_verified": 88,
+    "verified_bytes": 648477603,
+    "required_original_application_image": "sha256:0387233bb9077aef652f3dcae694f8c59086d63184fe2aa7c052e4811bb96ed3",
+    "asset_count": 10,
+    "events_per_asset": 7200,
+    "archived_artifacts_match_current_bytes": {
+      "catalog": 6,
+      "contracts": 21,
+      "migrations": 6
+    }
+  },
+  "runtime_source_comparison": {
+    "matching": 52,
+    "changed": [
+      "src/evdt/monitoring/adapter.py",
+      "src/evdt/monitoring/analysis_views.py",
+      "src/evdt/monitoring/api.py",
+      "src/evdt/monitoring/database.py",
+      "src/evdt/monitoring/http_readers.py",
+      "src/evdt/monitoring/metrics.py",
+      "src/evdt/monitoring/repository.py",
+      "src/evdt/monitoring/source.py",
+      "src/evdt/monitoring/spool.py",
+      "src/evdt/monitoring/transport.py",
+      "src/evdt/recovery/database.py",
+      "src/evdt/workload/correlation.py",
+      "src/evdt/workload/outage_probe.py"
+    ],
+    "original_claim_scope_unchanged": true
+  },
+  "original_result_files": {
+    "restore": {
+      "private_report": "evidence/p1/2026-11-04-e3c-w2-queries-01/qualification.json",
+      "sha256": "3b9fd88c00adce9627a4882f419bc5c2cb35a0f816d465452b517a52a4f76087"
+    },
+    "queries": {
+      "private_report": "evidence/p1/2026-11-04-e3c-w2-queries-01/history-queries.json",
+      "sha256": "4162228a63dd97e6c966977d8d80c1fe01c4960c3f84c1fe5ba7cb79149505b0"
+    }
+  },
+  "current_reader_attempts": [
+    {
+      "status": "held_before_restore",
+      "private_report": "evidence/p6/history-reader-01/qualification.json",
+      "sha256": "19d364ecdf1406d669810b8f8ad8a07d8d62f716fcb81471d2892f2de8b61a82",
+      "minimum_launch_windows_available_bytes": 1704730624,
+      "required_launch_windows_available_bytes": 2147483648,
+      "running_containers_at_launch_inventory": 0
+    }
+  ],
+  "remaining": "Restore with the required original image, then exercise the current API against the same owned database. Verify current scoped authentication and frozen query comparisons. Preserve the separate timing and source identities."
+}

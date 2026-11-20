@@ -1,0 +1,102 @@
+{
+  "checkpoint": "P6-A2",
+  "review_date_local": "2026-11-06",
+  "attempt_directory": "evidence/p6/external-a2-2026-11-06-060630-b6129164",
+  "passed": true,
+  "scope": "Operator-started one-bus monitoring smoke retry from a dedicated PowerShell session after the Ubuntu time-service change",
+  "review": {
+    "status": "passed_with_saved_evidence_and_cleanup_verified",
+    "read_only_measurement_reconstruction_exact_match": true,
+    "operator_exit_code": 0,
+    "new_workload_started_during_review": false
+  },
+  "source_compatibility": {
+    "passed": true,
+    "commit_at_review": "fd8f4ee6d4b7dd4f164ab0227b7f5c264ea6aab9",
+    "reviewed_input_files": 313,
+    "release_sha256": "7153bb1e3bb963c059af703a043e9c7e4486baa5e93f60a5d26847df459db6bd",
+    "input_inventory_sha256": "ed3a223bb209ea90fa0141505d8f1625154b8047d985c26a8305ad1ded2231cf",
+    "windows_and_ubuntu_before_and_after_match": true,
+    "current_committed_release_check_passed": true,
+    "playwright_version": "1.64.1",
+    "chromium_version": "156.0.8078.4"
+  },
+  "accounting": {
+    "asset_count": 1,
+    "signals_per_asset": 20,
+    "warmup_seconds": 60,
+    "measured_seconds": 30,
+    "source_elapsed_seconds": 90.072967726,
+    "warmup_events": 60,
+    "measured_events": 30,
+    "unique_generated_events": 90,
+    "accepted_events": 90,
+    "browser_observed_events": 90,
+    "stored_readings": 1800,
+    "measured_readings": 600,
+    "dropped_events": 0,
+    "duplicate_deliveries": 0,
+    "quarantined_events": 0,
+    "pending_events": 0
+  },
+  "latency": {
+    "passed": true,
+    "measured_events": 30,
+    "source_to_dashboard_upper_p95_seconds": 0.648689226,
+    "source_to_dashboard_upper_p99_seconds": 0.657642523,
+    "p95_limit_seconds": 2,
+    "p99_limit_seconds": 5
+  },
+  "resources": {
+    "passed": true,
+    "precheck_passed": true,
+    "windows_available_floor_bytes": 2147483648,
+    "windows_precheck_samples": 34,
+    "windows_precheck_min_available_bytes": 4365484032,
+    "windows_runtime_samples": 154,
+    "windows_runtime_min_available_bytes": 2633654272,
+    "windows_runtime_samples_below_floor": 0,
+    "linux_samples": 103,
+    "linux_core_peak_bytes": 493441024,
+    "linux_rolling_60s_swap_max_bytes": 0,
+    "linux_out_of_memory_events": 0,
+    "windows_clock_max_offset_departure_ms": 0.006199,
+    "linux_clock_max_offset_departure_ms": 0.000715,
+    "clock_offset_departure_limit_ms": 10,
+    "host_capacity_qualified": false,
+    "sustained_load_qualified": false
+  },
+  "cleanup": {
+    "passed": true,
+    "before_and_after_inventories_equal": true,
+    "owned_resources_remaining": 0,
+    "live_followup_counts_match": true,
+    "container_count": 0,
+    "preexisting_volume_count": 16,
+    "preexisting_network_count": 3,
+    "sleep_request_released": true,
+    "power_plan_changed": false
+  },
+  "evidence_sha256": {
+    "operator-result.json": "14daf6cb60861ed3842a5846026b955dec43e0047b2ba1eceb1651e33bad7a5f",
+    "inventory-before.json": "8ab5f8ad20e20f4543a7e3bd0246d5d706b10a75d08c891f0febc4e0578c1ca0",
+    "inventory-after.json": "8ab5f8ad20e20f4543a7e3bd0246d5d706b10a75d08c891f0febc4e0578c1ca0",
+    "smoke/qualification.json": "0124d5cc8db75ec11ed3098f4a8d9c9107ada16fdd61b93cca1421f0ca7eb8c9",
+    "smoke/measurement.json": "2a3057dabb51e5736f5b161c554cb8fb025c04e7f50817587982dcec030cfb76",
+    "smoke/phase6-preflight.json": "46ee788f4cdd1c2628ddd6f6196519735d366802308229754351ff13b45e70fa",
+    "smoke/services/qualification.json": "4cc2a9a685b5f109d5f2efe6ecd143211cd7c847edd1625c066eb96ce7c5fddb",
+    "smoke/chromium-automated-measurement-result.json": "3f5e368c822cb484c1dd92db7c64f1861f20be1fabc9a1de2128795806aa7f88",
+    "smoke/services/linux-resources.jsonl": "c24baf96910800690b7fb8956ef4d95308fe43456e00894afd1afcf57619d928",
+    "smoke/windows-resources.jsonl": "3080f0c9a59110ddb5259f3215d481e3d4247d91f6f30ddb9d765f24459f79fa"
+  },
+  "preserved_prior_records": [
+    "docs/verification/p6-a2-smoke.json",
+    "docs/verification/p6-a2-external-review.json",
+    "docs/verification/p6-a2-clock-readiness.json"
+  ],
+  "next": {
+    "checkpoint": "P6-B1",
+    "name": "30-minute monitoring and host capacity qualification",
+    "scope": "Prepare and verify the one-bus and ten-bus release profiles, each with 60 seconds of warmup and 1800 measured seconds. Require fresh passing source and host checks before execution."
+  }
+}

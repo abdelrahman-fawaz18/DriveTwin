@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-03",
+  "checkpoint": "P1-B1",
+  "passed": true,
+  "p1_b_complete": false,
+  "phase_1_complete": false,
+  "scope": "Assumed 20-signal plant, numerical consistency, versioned source recipes and actual durable delivery",
+  "source": {
+    "sumo_version": "1.28.0",
+    "model_version": "synthetic-bus-plant/1.0.0",
+    "evidence_class": "assumed; not calibrated to a real bus",
+    "current_envelope": "2.1.0",
+    "current_catalog": "1.1.0",
+    "previous_envelope_catalog": ["2.0.0", "1.0.0"],
+    "initial_signal_count": 20,
+    "held_back_coolant_signal_included": false,
+    "battery_energy_authority": "SUMO battery device",
+    "power_source": "device.battery.energyConsumed Wh per completed interval times 3600 divided by interval seconds",
+    "emission_rate_query_use": "diagnostic only; not substituted for actual battery-device accounting",
+    "step_s": 0.2,
+    "default_sampling_hz": 1,
+    "source_run_manifest_reference_verified": true
+  },
+  "paced_delivery": {
+    "live_events": 18,
+    "scalar_samples": 360,
+    "original_bytes_reconciled": true,
+    "outage_backlog_observed": 5,
+    "sender_restarted_during_outage": true,
+    "final_pending": 0,
+    "controlled_late_and_second_asset_inputs_accepted": 2,
+    "controlled_conflicting_or_invalid_inputs_rejected": 4,
+    "access_and_late_stale_checks_passed": true,
+    "owned_test_containers_and_volumes_removed": true
+  },
+  "complete_accelerated_missions": {
+    "runs": 2,
+    "numeric_traces_identical": true,
+    "recipe_fingerprints_identical_for_identical_inputs": true,
+    "events_per_run": 864,
+    "sampled_scalar_readings_per_run": 17280,
+    "checked_physical_intervals_per_run": 4322,
+    "mission_completion_sim_s": 864.8,
+    "stopped_intervals_per_run": 1280,
+    "regenerative_intervals_per_run": 411,
+    "initial_usable_energy_j": 1008000000,
+    "last_checked_usable_energy_j": 977762472.0738673,
+    "per_step_energy_residual_limit_j": 0.01,
+    "maximum_observed_energy_residual_j": 0.0000002384185791015625,
+    "insertion_initialization_sim_s": 0.2,
+    "stopped_auxiliary_draw_verified": true,
+    "soc_power_current_consistency_verified": true
+  },
+  "shared_checks": {
+    "tests": 64,
+    "qualification_cases_per_language": 339,
+    "simulation_cases_per_language": 44,
+    "expected_outcome_mismatches": 0,
+    "strict_typescript": true,
+    "strict_python_modules": ["spool.py", "plant.py", "sensors.py"],
+    "original_qualification_fixtures_unchanged": true,
+    "historical_monitoring_contract_bytes_unchanged": true,
+    "sampling_override_and_invalid_parameter_tests": true
+  },
+  "remaining": [
+    "P1-B2 central immutable run registration, discovery and binding enforcement.",
+    "Complete paused-clock, source-conflict, restart, missing/invalid quality and noise policies.",
+    "Product dashboard, map/history/stream/reconnect/export acceptance.",
+    "Full five-minute outage, physical quota/overflow/retention, W0/W1 and restore.",
+    "Physical calibration, convergence/sensitivity, charging/depletion and predictive services.",
+    "No actuation, hosted CI or publication."
+  ]
+}

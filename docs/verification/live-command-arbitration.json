@@ -1,0 +1,190 @@
+{
+  "checkpoint": "P3-B3 Live command arbitration",
+  "date": "2026-11-05",
+  "passed": true,
+  "scope": "One paced SUMO bus and one sealed decision per test run. Thermal and energy proposals were qualification inputs.",
+  "reference": {
+    "private_report": "evidence/p3/2026-11-05-live-authority-baseline-01/qualification.json",
+    "sha256": "215b56055e85bc801c2aa6e9c87ea10324700370152fab74966e5a8b5bc8f00a",
+    "passed": true,
+    "cleanup_passed": true,
+    "source_files_match": true,
+    "accepted_originals": 16,
+    "accepted_readings": 320,
+    "maximum_post_command_speed_m_s": 7.800000000000004
+  },
+  "cases": {
+    "operator_wins": {
+      "private_report": "evidence/p3/2026-11-05-live-authority-operator_wins-01/qualification.json",
+      "sha256": "c069b5d8e630adeff158ca4f6a76d5757446970afdd11b3ad8663ff952e48740",
+      "passed": true,
+      "cleanup_passed": true,
+      "source_files_match": true,
+      "selected_proposer": "operator",
+      "selected_cap_m_s": 4,
+      "selection_reasons": {
+        "operator": "selected",
+        "thermal": "lower_precedence",
+        "energy": "lower_precedence"
+      },
+      "generation": 1,
+      "decision_preserved": true,
+      "losing_proposals_never_queued": true,
+      "journal_counts": {
+        "proposals": 3,
+        "decisions": 1,
+        "requests": 1,
+        "deadlines": 1,
+        "attempts": 1,
+        "results": 1,
+        "effects": 1
+      },
+      "accepted_originals": 16,
+      "accepted_readings": 320,
+      "execution_state": "acknowledged",
+      "attempt_sim_s": 4.0,
+      "maximum_post_command_speed_m_s": 4.0,
+      "second_handoff_refused": true,
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "confirmed",
+        "confirmed": true,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 7.800000000000004,
+        "maximum_commanded_m_s": 4.0,
+        "pairs_showing_lower_speed": 4,
+        "matching_pre_command_samples": 4
+      }
+    },
+    "thermal_fallback": {
+      "private_report": "evidence/p3/2026-11-05-live-authority-thermal_fallback-01/qualification.json",
+      "sha256": "80c4c1aaabca74d745748d1dc028edfc0b2ee06a0203e1b35a01380902ba6527",
+      "passed": true,
+      "cleanup_passed": true,
+      "source_files_match": true,
+      "selected_proposer": "thermal",
+      "selected_cap_m_s": 3,
+      "selection_reasons": {
+        "operator": "elapsed_deadline",
+        "thermal": "selected",
+        "energy": "lower_precedence"
+      },
+      "generation": 1,
+      "decision_preserved": true,
+      "losing_proposals_never_queued": true,
+      "journal_counts": {
+        "proposals": 3,
+        "decisions": 1,
+        "requests": 1,
+        "deadlines": 1,
+        "attempts": 1,
+        "results": 1,
+        "effects": 1
+      },
+      "accepted_originals": 16,
+      "accepted_readings": 320,
+      "execution_state": "acknowledged",
+      "attempt_sim_s": 4.0,
+      "maximum_post_command_speed_m_s": 3.0,
+      "second_handoff_refused": true,
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "confirmed",
+        "confirmed": true,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 7.800000000000004,
+        "maximum_commanded_m_s": 3.0,
+        "pairs_showing_lower_speed": 5,
+        "matching_pre_command_samples": 4
+      }
+    },
+    "stale_fence": {
+      "private_report": "evidence/p3/2026-11-05-live-authority-stale_fence-01/qualification.json",
+      "sha256": "0bf70b449e6ee3727f3a522359c3fea9d9891632615791728ce126fc2549b4b1",
+      "passed": true,
+      "cleanup_passed": true,
+      "source_files_match": true,
+      "selected_proposer": "operator",
+      "selected_cap_m_s": 4,
+      "selection_reasons": {
+        "operator": "selected",
+        "thermal": "lower_precedence",
+        "energy": "lower_precedence"
+      },
+      "generation": 1,
+      "decision_preserved": true,
+      "losing_proposals_never_queued": true,
+      "journal_counts": {
+        "proposals": 3,
+        "decisions": 1,
+        "requests": 1,
+        "deadlines": 1,
+        "attempts": 1,
+        "results": 0,
+        "effects": 0
+      },
+      "accepted_originals": 16,
+      "accepted_readings": 320,
+      "execution_state": "rejected_before_actuation",
+      "attempt_sim_s": 4.0,
+      "maximum_post_command_speed_m_s": 7.800000000000004,
+      "second_handoff_refused": true,
+      "independent_speed_effect": null,
+      "stale_generation_tested": 0,
+      "refusal_reason": "authority_fence_refused",
+      "unchanged_speed_trace": true
+    }
+  },
+  "regressions": {
+    "direct-regression": {
+      "private_report": "evidence/p3/2026-11-05-live-authority-direct-regression-01/qualification.json",
+      "sha256": "8493d532b023cb2cb3818e211272488b2b21f04956c45b002f5d04fe57cb62ae",
+      "passed": true,
+      "cleanup_passed": true,
+      "source_files_match": true,
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "confirmed",
+        "confirmed": true,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 7.800000000000004,
+        "maximum_commanded_m_s": 4.0,
+        "pairs_showing_lower_speed": 4,
+        "matching_pre_command_samples": 4
+      }
+    },
+    "standalone-regression": {
+      "private_report": "evidence/p3/2026-11-05-live-authority-standalone-regression-01/qualification.json",
+      "sha256": "b9412c32e6ec2abfe3cc64fa13b4c9056a2da8d6f80270a2ef95fb43db2557b2",
+      "passed": true,
+      "cleanup_passed": true,
+      "source_files_match": true,
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "confirmed",
+        "confirmed": true,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 8.33,
+        "maximum_commanded_m_s": 4.0,
+        "pairs_showing_lower_speed": 2,
+        "matching_pre_command_samples": 4
+      }
+    }
+  },
+  "reference_compatibility": {
+    "private_previous_source_report": "evidence/p3/2026-11-05-live-restart-regression-baseline/source-report.json",
+    "sha256": "2afdce1051b8548f1cc69bbba99767282f78b4abf8ae925f0beb2b8545dec17b",
+    "matching_readings": 320
+  },
+  "stale_case_all_readings_match_reference": true,
+  "matched_source_fingerprints": 155,
+  "next_step": {
+    "id": "P3-B4",
+    "name": "Safe command cancellation and replacement"
+  },
+  "phase_3_complete": false
+}

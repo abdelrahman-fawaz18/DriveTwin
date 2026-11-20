@@ -1,0 +1,16 @@
+{
+  "version": "energy-worker-sandbox/1.0.0",
+  "user": "10001:10001",
+  "network": "none",
+  "read_only": true,
+  "cap_drop": ["ALL"],
+  "no_new_privileges": true,
+  "memory_bytes": 268435456,
+  "memory_swap_bytes": 268435456,
+  "cpus": 1,
+  "pids_limit": 32,
+  "timeout_s": 30,
+  "mounts": [],
+  "published_ports": [],
+  "scope": "Local one-request advisory worker; host/engine administrators remain trusted; no live API authorization or model accuracy claim"
+}

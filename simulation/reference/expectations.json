@@ -1,0 +1,15 @@
+{
+  "scope": "Synthetic P0 movement/TraCI qualification, not Montreal or a calibrated EV model",
+  "vehicle_id": "bus-001",
+  "route_edges": ["road-a", "road-b"],
+  "step_s": 0.2,
+  "seed": 42,
+  "deadline_sim_s": 180,
+  "speed_limit_m_s": 10,
+  "minimum_distance_m": 950,
+  "maximum_distance_m": 1005,
+  "minimum_stopped_s": 4.8,
+  "maximum_stopped_s": 5.4,
+  "numeric_tolerance": 0.000001,
+  "coordinates": "Local Cartesian meters; no geographic projection or GPS accuracy model"
+}

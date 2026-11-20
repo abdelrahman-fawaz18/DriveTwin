@@ -1,0 +1,17 @@
+# Optional overlay for the one-decision authority profile.
+services:
+  command-migrate:
+    environment:
+      COMMAND_ARBITRATION: "1"
+  command-api:
+    secrets: [command_thermal, command_energy]
+  command-simulator:
+    environment:
+      COMMAND_ARBITRATION: "1"
+  source:
+    environment:
+      EVDT_SPEED_COMMAND_PROFILE: arbitration/1.0.0
+
+secrets:
+  command_thermal: {file: "${SECRET_DIRECTORY:?}/command_thermal"}
+  command_energy: {file: "${SECRET_DIRECTORY:?}/command_energy"}

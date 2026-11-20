@@ -1,0 +1,59 @@
+{
+  "inventory_version": "1.0.0",
+  "review_date": "2026-11-03",
+  "incorporated": [
+    {
+      "id": "montreal-roads-v1",
+      "kind": "geographic-database",
+      "artifact": "data/public/montreal-core-v1/roads.osm.xml",
+      "source_record": "data/public/montreal-core-v1/source.json",
+      "terms": "ODbL-1.0",
+      "terms_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "attribution": "OpenStreetMap contributors",
+      "scope": "reviewed road subset and derived geographic route fields",
+      "current_use": "offline fictional movement fixture",
+      "limitations": "Known import warnings; not operationally certified routing"
+    },
+    {
+      "id": "independent-source-and-design",
+      "kind": "project-authored",
+      "artifacts": [
+        "src/",
+        "scripts/",
+        "tests/",
+        "benchmarks/",
+        "simulation/montreal/bus-parameters.json",
+        "simulation/montreal/stations.json"
+      ],
+      "source": "Independent implementation and explicit assumed design values",
+      "project_license": "owner decision before publication",
+      "current_use": "local development"
+    },
+    {
+      "id": "language-dependencies",
+      "kind": "installed-software",
+      "inventories": [
+        "docs/rights/python-dependencies.json",
+        "docs/rights/simulation-dependencies.json",
+        "docs/rights/typescript-dependencies.json",
+        "docs/rights/browser-dependencies.json"
+      ],
+      "source": "Exact locks and installed package metadata",
+      "current_use": "local development; no vendored implementation",
+      "redistribution_status": "Versioned notices and bundled binary/system-library review required before distribution"
+    }
+  ],
+  "not_incorporated": [
+    "real vehicle telemetry",
+    "transit schedules",
+    "motor/battery calibration datasets",
+    "private company/other-project files",
+    "map tiles or imagery"
+  ],
+  "publication_gate": [
+    "Owner selects original code license",
+    "Retain OSM attribution and applicable data/derived-database terms",
+    "Review exact distribution SBOM, native/bundled components, notices and source availability duties",
+    "Recheck ownership/privacy/secrets and receive publication authorization"
+  ]
+}

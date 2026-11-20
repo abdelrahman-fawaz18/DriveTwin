@@ -1,0 +1,23 @@
+{
+  "version": "phase2-advisory-release/1.0.0",
+  "date": "2026-11-05",
+  "scope": "Completed simulated advisory Energy milestone; independent accuracy applies only to known-route end-of-trip forecasts at the 120-s simulation cutoff. Station reachability is a functional assumed-plan road-approach assessment.",
+  "runtime_model_qualified": false,
+  "station_endpoint_accuracy_qualified": false,
+  "automatic_dispatch_approved": false,
+  "phase3_authorized": false,
+  "checklist_sha256": "3c34b589e9cbdbf85cc2afc1c4ffd85646fb928aad3e292e4d34717f70d9eb7d",
+  "product_profile_sha256": "4d7c4339850f0175e8480ada6a68ee04a4ab02cd683f55a521a43471aa6b0dfd",
+  "held_out_release_sha256": "ce3f18a038a9ccde385b11645380c5a0bd6c0557c10e12178c2440b32fcae9df",
+  "private_integration_evidence": "evidence/p2/2026-11-04-energy-e1-02",
+  "integration_artifact_sha256": {
+    "qualification.json": "26b3766d42ff7ff2c9f08653c5d534c78825312916f3d8e8b9650a982209bf1f",
+    "browser/result.json": "3bba61e73cba8b8695e8ec5637a0e64e71245afdd05d133bae17ffa3c5078ab2",
+    "cleanup-inventory.json": "8104ebd021faa1986a8eeed433f10ac973c3d4e705bb0f3c63224b02511492b6",
+    "database.dump": "bb38ddbdf4fd3c460999f8957402cba061af275d3aa2545c5a4323f5ca430009",
+    "legacy-read.json": "b1b067d08597fd5a0fd79454477033c61a4bd3e569883878ddfe9b3f4080827a",
+    "prediction/record.json": "2bd831803befb6ab6e5d62c022de898f4899b394b8dcf8d06d7ecf179e7fd5e8",
+    "recovery-prediction/record.json": "d431ba96d273d3daf85b3bea15089f424feb23a95abfd6924bd469f58f3e523e",
+    "unavailable/record.json": "994750df2350af6b385cdb06bb481fdca00dd8c943ffc9a1ea10dcbf434f0086"
+  }
+}

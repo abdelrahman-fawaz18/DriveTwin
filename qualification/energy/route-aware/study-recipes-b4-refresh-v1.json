@@ -1,0 +1,42 @@
+{
+  "version": "route-aware-b4-refresh/1.0.0",
+  "trips": [
+    {
+      "id": "r2-market-zigzag",
+      "partition": "reserved",
+      "family": "market-grid-offset-streets",
+      "seed": 5101,
+      "points": [[0,0,3],[290,15,4],[320,245,6],[580,270,9],[605,510,8],[890,560,5],[920,820,4],[1230,850,7],[1400,1010,12]],
+      "visits": [0,1,2,3,4,5,6,7,8],
+      "stop_indices": [0,1,2,4,6,7],
+      "speed_m_s": 10,
+      "dwell_s": 24,
+      "auxiliary_w": 12500
+    },
+    {
+      "id": "r2-escarpment-traverse",
+      "partition": "reserved",
+      "family": "escarpment-two-ascents",
+      "seed": 5102,
+      "points": [[0,0,20],[1050,140,61],[2200,450,119],[3700,850,151],[5100,600,92],[6500,950,49],[8200,1300,106],[10200,1120,166],[12200,1470,112],[14800,1820,61]],
+      "visits": [0,1,2,3,4,5,6,7,8,9],
+      "stop_indices": [1,4,6,8],
+      "plant_mass_kg": 22500,
+      "plant_capacity_kwh": 320,
+      "initial_soc": 0.133,
+      "auxiliary_w": 10000
+    },
+    {
+      "id": "r2-three-pass-junction",
+      "partition": "reserved",
+      "family": "shared-road-with-two-return-arms",
+      "seed": 5103,
+      "points": [[0,0,7],[480,0,10],[780,340,21],[20,480,18],[750,-300,12],[80,-400,6],[1150,100,12],[1600,160,17]],
+      "visits": [0,1,2,3,0,1,4,5,0,1,6,7],
+      "stop_indices": [0,2,4,6,8,10],
+      "speed_m_s": 9,
+      "dwell_s": 18,
+      "auxiliary_w": 10500
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "review_date": "2026-11-12",
+  "scope": "Dashboard build preparation; live connected acceptance remains pending",
+  "original_attempt": {
+    "evidence": "evidence/p6/demo-dashboard-20261112-060215-c720c8c3",
+    "passed": false,
+    "failure_stage": "runtime image frontend compilation",
+    "cause": "The dashboard stage did not copy catalog/monitoring-signals.json required by the preview source type check.",
+    "build_preflight_passed": true,
+    "minimum_available_windows_gib": 6.797,
+    "vehicle_started": false,
+    "screenshots_produced": false,
+    "saved_source_matched_before_correction": true,
+    "source": {
+      "profile_sha256": "559c8b241e55129d3039f4910733b9aca62a9c37f12059967d4c85b46a3a4d5c",
+      "inventory": {
+        "files": 370,
+        "sha256": "77e5ee0ac0f6c768f11747b2a5baabac335b826927bf21620e9f3813d6e96030"
+      }
+    },
+    "cleanup_verified": true,
+    "cleanup_independently_rechecked": true,
+    "sleep_request_released": true
+  },
+  "correction": {
+    "monitoring_recipe": "Copy the reviewed signal catalog before the frontend build.",
+    "checks_recipe": "Copy the signal catalog before compilation and include the dashboard review profile for its offline tests.",
+    "checks_source_inventory": "Include qualification/dashboard JSON inputs.",
+    "privacy_guard_change": "Formatting only; rules unchanged.",
+    "runtime_image_build": {
+      "passed": true,
+      "exit_code": 0,
+      "source": {
+        "profile_sha256": "559c8b241e55129d3039f4910733b9aca62a9c37f12059967d4c85b46a3a4d5c",
+        "inventory": {
+          "files": 370,
+          "sha256": "68e9ad697062474061a5786a46fe4b6e1be69c9c4a608a4aff041f70ec4c2cda"
+        }
+      },
+      "source_unchanged": true,
+      "scope": "runtime image build only; no services or bus launched"
+    },
+    "workload_policy_changed": false,
+    "live_retry_started": false
+  },
+  "initial_offline_checks": {
+    "evidence": ".runtime/dev-checks/9de665eeae1146a1abb1594fa4dbf554/report.json",
+    "passed": false,
+    "failure": "Ruff formatting check rejected one statement in scripts/privacy_guard.py.",
+    "correction": "Applied the pinned formatter without changing behavior."
+  },
+  "final_offline_checks": {
+    "passed": true,
+    "evidence": ".runtime/dev-checks/0de4c5c93e414a20add15794080c2cd2/report.json",
+    "image_id": "sha256:830c594e9a398ba569ef0f1c14dc4501e053da71a6efadd468eef444a7685a34",
+    "contracts": {
+      "cases": 339,
+      "valid": 116,
+      "rejected": 223,
+      "adaptation_cases": 3,
+      "mismatches": 0
+    },
+    "frontend_tests_passed": 35,
+    "monitoring_contract_cases": 81,
+    "python_test_summary": [
+      "834 passed, 9 subtests passed in 28.22s"
+    ],
+    "report_sha256": "e495dded8172e6fe591929eafdbec90815ba326f36ee9c84090075396ec55747"
+  }
+}

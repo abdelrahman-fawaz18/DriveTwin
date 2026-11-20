@@ -1,0 +1,32 @@
+{
+  "version": "synthetic-thermal-intervention/1.0.0",
+  "frozen_utc": "2026-11-06T03:45:25.229067+00:00",
+  "source_sha256": {
+    "qualification/thermal/synthetic-intervention-protocol-1.0.0.json": "35235637ee5ad212222d575b9bbeb3a3c6f92e2b217a14e15dd45d8c1fbba879",
+    "qualification/thermal/synthetic-advisory-release-1.0.0.json": "92f40ecac4ce9211db8e7dbdec996f6f39888e41bf354b231bac71f22e411eef",
+    "docs/verification/p5-synthetic-advisory.json": "577925e84f84726246b22f8d108536f4fca4fd3674b04c4051272c39b96ed9fd",
+    "docs/verification/p5-bench-thermal.json": "c749708e9d06c410686bdb9f088a10ce57af977b4999255e10eb047dbb4b852c",
+    "qualification/thermal/synthetic-fault-protocol-1.0.0.json": "7d896ba4ac07473129872748e422e2291232f8e59e176830c3efd0c78fbfc362",
+    "scripts/p5/thermal_network.py": "5b3266f538f69ee84ee5ddec3407a6ef96139e35c9e6569f00b16612a131100f",
+    "scripts/p5/thermal_advisory.py": "8a49eb62de59340b484113057fccdee8dc44d83c4cf56afe0831c6fd6e25974f",
+    "scripts/p5/thermal_intervention.py": "455771315c8c2455ab0d418d123f29a761a7248340ca485c9dfab737a1255f58",
+    "scripts/p5/thermal_missions.py": "d0e679bc51cd471786c4f0658efe7b276413d01310b78b0609c05b827cc805eb",
+    "scripts/p5/qualify_thermal_intervention.py": "a418f8ec18ebe72e43f77fb9b608c6fd55c1eb4c4bfcc59cdd92c5c0848f0a79",
+    "src/evdt/command_timing.py": "f24048eeb5a54e89178db90576c01a0d1a1d8d2a6c8ffd088ede3108983e977e",
+    "src/evdt/contract_profile.py": "7be400c14efdc7e5db221a7c371c60c2ce2d7c6846058682ba88ceee0a2fc7f1",
+    "src/evdt/config.py": "5cdbe52e9a229a78ad838cc27c1ace0b288d16235e79b64ebae5f99b27987184",
+    "src/evdt/energy/charging_dispatch.py": "a8380c2021476808be58334e7599074659831f1aad0cd2c0c2b4da1272d8c8fc",
+    "contracts/profile.json": "82fbfecfcbec71afcc3223777cccdcea84539e321084953f8ec0f1d31d5b4084",
+    "tests/p5/test_thermal_intervention.py": "d0ceefa9c76599ee3f082025e544f6c3c73d32b62dbbd15d3d4273cc956178a1",
+    "tests/p4/test_charging_dispatch.py": "31ff0fd257b19b1ebce569662521d4219688606b3c20007673036d2b934b0294",
+    "uv.lock": "0caa907da4ee4e37435ac90b521e9fe183c5984c3ab1606f9de73c2753f5b0bc"
+  },
+  "runtime": {
+    "python": "3.13.7",
+    "numpy": "2.4.3",
+    "scipy": "1.17.1",
+    "jsonschema": "4.26.0"
+  },
+  "development_report_sha256": "ec00860cb70bc6d45463db886d5ad338612780834fa02c8a95a52fc00e863f5f",
+  "reserved_case_count": 24
+}

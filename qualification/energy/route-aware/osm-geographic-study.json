@@ -1,0 +1,311 @@
+{
+  "version": "osm-geographic-study/1.0.0",
+  "scope": "Real OSM roads, named destinations, public elevation. Operating conditions are declared test scenarios on those roads, not claims about current weather or construction.",
+  "partition_policy": "Develop numerical behavior on retained Montreal and Ottawa journeys. Freeze common numerical source, inputs, and criteria before collecting evaluation outcomes. Montreal and Ottawa include consumed development trips and new trips in known regions; Vancouver is a geographically held-out region. Report the groups separately. Any inspected outcome consumes its claim. Corrections preserve earlier outcomes; repeated known trips are regression evidence, not a fresh independent evaluation.",
+  "defaults": {
+    "capacity_kwh": 350,
+    "mass_kg": 18000,
+    "initial_soc": 0.8,
+    "auxiliary_w": 8000,
+    "dwell_s": 20,
+    "stop_spacing_m": 450,
+    "surface_multiplier": 1,
+    "speed_factor": 1
+  },
+  "routes": [
+    {
+      "id": "montreal-central-lafontaine",
+      "extract": "montreal",
+      "title": "Gare Centrale to Parc La Fontaine",
+      "bounds": [
+        -73.59,
+        45.49,
+        -73.55,
+        45.54
+      ],
+      "anchors_lon_lat": [
+        [
+          -73.5668,
+          45.4998
+        ],
+        [
+          -73.5696,
+          45.526
+        ]
+      ],
+      "conditions": "Urban local service, regular passenger stops"
+    },
+    {
+      "id": "montreal-mount-royal",
+      "extract": "montreal",
+      "title": "Mount Royal: east approach to Remembrance / C\u00f4te-des-Neiges",
+      "bounds": [
+        -73.63,
+        45.48,
+        -73.57,
+        45.54
+      ],
+      "anchors_lon_lat": [
+        [
+          -73.5878,
+          45.5192
+        ],
+        [
+          -73.598,
+          45.5125
+        ],
+        [
+          -73.6049778,
+          45.4953641
+        ]
+      ],
+      "destination_osm_stop": "14294013659",
+      "conditions": "Uphill and downhill, loaded bus",
+      "mass_kg": 23000,
+      "stop_spacing_m": 700
+    },
+    {
+      "id": "montreal-lakeshore",
+      "extract": "montreal",
+      "title": "Lachine to Sainte-Anne-de-Bellevue",
+      "bounds": [
+        -73.97,
+        45.38,
+        -73.64,
+        45.48
+      ],
+      "anchors_lon_lat": [
+        [
+          -73.675,
+          45.435
+        ],
+        [
+          -73.824,
+          45.431
+        ],
+        [
+          -73.951,
+          45.403
+        ]
+      ],
+      "conditions": "Long lakeshore service, declared higher rolling resistance",
+      "surface_multiplier": 1.25,
+      "stop_spacing_m": 900
+    },
+    {
+      "id": "ottawa-parliament-carleton",
+      "extract": "ottawa",
+      "title": "Parliament Hill to Carleton University",
+      "bounds": [
+        -75.73,
+        45.37,
+        -75.67,
+        45.43
+      ],
+      "anchors_lon_lat": [
+        [
+          -75.7,
+          45.421
+        ],
+        [
+          -75.696,
+          45.385
+        ]
+      ],
+      "conditions": "Short urban trip with a low-charge reserve warning",
+      "initial_soc": 0.105
+    },
+    {
+      "id": "ottawa-orleans",
+      "extract": "ottawa",
+      "title": "ByWard Market to Place d'Orl\u00e9ans",
+      "bounds": [
+        -75.71,
+        45.4,
+        -75.48,
+        45.5
+      ],
+      "anchors_lon_lat": [
+        [
+          -75.692,
+          45.427
+        ],
+        [
+          -75.515,
+          45.478
+        ]
+      ],
+      "conditions": "Suburban service, declared construction speed restriction",
+      "speed_factor": 1,
+      "stop_spacing_m": 800,
+      "speed_zones": [
+        {
+          "start_fraction": 0.3,
+          "end_fraction": 0.5,
+          "speed_factor": 0.65
+        }
+      ]
+    },
+    {
+      "id": "ottawa-kanata-centre",
+      "extract": "ottawa",
+      "title": "Kanata to Ottawa city center",
+      "bounds": [
+        -75.95,
+        45.29,
+        -75.68,
+        45.44
+      ],
+      "anchors_lon_lat": [
+        [
+          -75.918,
+          45.312
+        ],
+        [
+          -75.792,
+          45.36
+        ],
+        [
+          -75.7,
+          45.421
+        ]
+      ],
+      "conditions": "Long regional service, higher equipment demand",
+      "auxiliary_w": 18000,
+      "stop_spacing_m": 1200
+    },
+    {
+      "id": "vancouver-waterfront-ubc",
+      "extract": "vancouver",
+      "title": "Waterfront Station to UBC",
+      "bounds": [
+        -123.28,
+        49.24,
+        -123.1,
+        49.3
+      ],
+      "anchors_lon_lat": [
+        [
+          -123.111,
+          49.286
+        ],
+        [
+          -123.17,
+          49.268
+        ],
+        [
+          -123.244852,
+          49.2665918
+        ]
+      ],
+      "conditions": "Coastal urban service, declared higher rolling resistance and lower driving speed",
+      "surface_multiplier": 1.15,
+      "speed_factor": 0.8,
+      "stop_spacing_m": 600,
+      "destination_osm_stop": "729440560"
+    },
+    {
+      "id": "vancouver-stanley-park",
+      "extract": "vancouver",
+      "title": "Waterfront to Stanley Park and English Bay",
+      "bounds": [
+        -123.17,
+        49.27,
+        -123.1,
+        49.32
+      ],
+      "anchors_lon_lat": [
+        [
+          -123.111,
+          49.286
+        ],
+        [
+          -123.144,
+          49.302
+        ],
+        [
+          -123.148,
+          49.29
+        ],
+        [
+          -123.142,
+          49.287
+        ]
+      ],
+      "conditions": "Short coastal route with frequent stops",
+      "stop_spacing_m": 350
+    },
+    {
+      "id": "vancouver-burnaby-climb",
+      "extract": "vancouver",
+      "title": "New Westminster to Burnaby Mountain",
+      "bounds": [
+        -122.98,
+        49.19,
+        -122.89,
+        49.29
+      ],
+      "anchors_lon_lat": [
+        [
+          -122.912,
+          49.201
+        ],
+        [
+          -122.948,
+          49.248
+        ],
+        [
+          -122.923,
+          49.279
+        ]
+      ],
+      "conditions": "Sustained climb with a full passenger load",
+      "mass_kg": 24000,
+      "auxiliary_w": 12000,
+      "stop_spacing_m": 1000
+    },
+    {
+      "id": "vancouver-regional-tour",
+      "extract": "vancouver",
+      "title": "Richmond\u2013Steveston\u2013UBC\u2013Burnaby Mountain",
+      "bounds": [
+        -123.28,
+        49.11,
+        -122.89,
+        49.3
+      ],
+      "anchors_lon_lat": [
+        [
+          -123.136,
+          49.166
+        ],
+        [
+          -123.184,
+          49.127
+        ],
+        [
+          -123.136,
+          49.207
+        ],
+        [
+          -123.244852,
+          49.2665918
+        ],
+        [
+          -123.1,
+          49.263
+        ],
+        [
+          -122.923,
+          49.279
+        ]
+      ],
+      "corridor_m": 1800,
+      "conditions": "Long multi-destination journey: lowlands, crossings, and a final climb",
+      "auxiliary_w": 12000,
+      "stop_spacing_m": 1500,
+      "waypoint_note": "Arthur Laing Bridge approach and Broadway crossing retain legal road connectivity in the corridor."
+    }
+  ],
+  "traffic_signals": "Native SUMO signals remain active. Complex signal-phase prediction and optimization are deferred."
+}

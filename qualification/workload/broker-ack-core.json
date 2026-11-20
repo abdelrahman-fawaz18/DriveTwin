@@ -1,0 +1,8 @@
+{
+  "src/evdt/monitoring/transport.py": {
+    "baseline_sha256": "6e4e84882e7946290eb7379189230a2c1217740c40b9ef0350761ec449eabf22",
+    "previous_reviewed_sha256": "de3842773a656672da1c74faed4f559f19ecc92df869b79bda9fa45ace291a7b",
+    "reviewed_sha256": "04f2088e12f5c6f12aac430ff560074dc428feea69b709aa839ded8d57f8809b",
+    "reason": "Remove the publisher/callback lock-order inversion using a bounded acknowledgment handoff with exact callback timestamps and correlation. Bound duplicate-original pressure using a configurable default 32-original application-receipt window and five-second retry, without retiring originals on broker acknowledgments or pausing acquisition. Retain disconnected QoS-1 attempt correlation. Packet bytes, QoS, durable server-receipt retirement, polling and all quality thresholds stay unchanged."
+  }
+}

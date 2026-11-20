@@ -1,0 +1,40 @@
+.loading-spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex: none;
+  vertical-align: -0.12em;
+  border: 2px solid #d9277f40;
+  border-top-color: #d9277f;
+  border-right-color: #d9277f;
+  border-radius: 50%;
+  animation: loading-rotate 750ms linear infinite;
+}
+
+.loading-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+}
+
+button > .loading-spinner {
+  margin-right: 0.45em;
+}
+
+.primary > .loading-spinner {
+  border-color: #ffffff55;
+  border-top-color: white;
+  border-right-color: white;
+}
+
+@keyframes loading-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner {
+    animation: none;
+  }
+}

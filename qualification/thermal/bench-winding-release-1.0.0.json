@@ -1,0 +1,77 @@
+{
+  "version": "bench-thermal-winding/1.0.0",
+  "frozen_utc": "2026-11-06T03:10:29.591692+00:00",
+  "scope": "Offline Paderborn winding prediction with one measured startup value and observed forcing",
+  "candidate": {
+    "name": "single",
+    "parameters": {
+      "ambient_rate": 0.0006609051740846547,
+      "coolant_rate": 0.0037788949591904537,
+      "current_gain": 0.5533816358950187,
+      "speed_gain": 0.1556803653460214
+    },
+    "evaluations": 11,
+    "training_profiles": 43,
+    "training_profile_balanced_rmse_k": 4.520968944705427
+  },
+  "interval_radius_k": 17.698628338645037,
+  "limits": {
+    "mean_profile_mae_k": 5.306144852402691,
+    "worst_profile_mae_k": 15,
+    "minimum_mean_profile_interval_coverage": 0.85
+  },
+  "training_input_ranges": {
+    "ambient_k": [
+      287.2506892717215,
+      303.864204788208
+    ],
+    "coolant_k": [
+      288.17723496631237,
+      374.74851208096163
+    ],
+    "speed_rad_s": [
+      -0.002166236955900427,
+      628.3150536948394
+    ],
+    "current_squared_a2": [
+      2.6541026983386658e-08,
+      130693.33875243389
+    ]
+  },
+  "validation_mean_profile_mae_k": 3.537429901601794,
+  "validation_mean_profile_interval_coverage": 1.0,
+  "development_report_sha256": "d114c6c12c414d714e4c4a44ac5146f63f45e8152413fc3a9eb46edd0eb56b18",
+  "source_sha256": {
+    "qualification/thermal/bench-development-1.0.0.json": "482aee762d1a02f801c92afba6c6d3c4d1bbe5fa71bb7235ee61bc30ef1297fc",
+    "qualification/thermal/motor-profile-split-1.0.0.json": "8289678cdfddf669f42265ed7dfc5087d089f7658c9082033c3acba028a43a2a",
+    "qualification/thermal/motor-input-contract-1.0.0.json": "db42f5bfb524f08986dcac8177f537e83af71afc0eb7bf45cc5e1103b53a4729",
+    "docs/verification/p5-motor-profile-split.json": "b65740b92df2fcb7d589467dd198ff3e0c7522ac92a9b652d043e2acdb0f15d1",
+    "scripts/p5/bench_thermal.py": "574524f015fff44600da63664525d6164f7cc77c15bf9e011f75671e8b0b0e9f",
+    "scripts/p5/thermal_network.py": "5b3266f538f69ee84ee5ddec3407a6ef96139e35c9e6569f00b16612a131100f",
+    "scripts/p5/qualify_bench_thermal.py": "afe2ce022cd6cffc83b28579f44e5652c90bc4269f5514db4187ccb2687fcf99",
+    "scripts/p5/bench_observability.py": "85e2f6f9d758ea80b84daae9740700cf56e31eef3dfac1fdbf8cd8a6418d4dc6",
+    "scripts/p5/freeze_motor_profile_split.py": "4c062c1381cbf3df89779c479dca71b84b6ec74168df2ead3ee286dc71720f3f",
+    "scripts/p5/audit_motor_data.py": "103403e977dcafa4d8650c76ae51fd82deb050ac23777542ac8714e07f319c1f",
+    "tests/p5/test_thermal_network.py": "952df35b07541fcdb6ccc7f4bf506930e6c90babdc23b509f08ece058afc9f72"
+  },
+  "runtime": {
+    "python": "3.13.7",
+    "numpy": "2.4.3",
+    "scipy": "1.17.1"
+  },
+  "test_profile_ids": [
+    8,
+    10,
+    26,
+    27,
+    32,
+    44,
+    45,
+    48,
+    60,
+    64,
+    65,
+    67,
+    80
+  ]
+}

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 235" role="img" aria-labelledby="title desc" font-family="Segoe UI,Arial,sans-serif">
+<title id="title">Two different checks: prediction error and physical response</title><desc id="desc">Route-energy mean absolute error fell from 2.384 to 0.285 kilowatt-hours on six synthetic trips. Peak speed fell from 7.80 to 4.00 meters per second in the speed-cap case.</desc>
+<rect x="0" y="0" width="920" height="235" rx="0" fill="#ffffff"/>
+<text x="30" y="36" fill="#10263b" font-size="21" font-weight="700" text-anchor="start">Route-energy forecast error</text>
+<text x="30" y="62" fill="#456078" font-size="14" font-weight="400" text-anchor="start">Mean absolute error across six reserved trips · kWh</text>
+<text x="30" y="100" fill="#10263b" font-size="15" font-weight="600" text-anchor="start">Reference</text>
+<rect x="30" y="109" width="316" height="11" rx="5" fill="#f2f8fb"/>
+<rect x="30" y="109" width="301.3419923558729" height="11" rx="5" fill="#456078"/>
+<text x="360" y="120" fill="#456078" font-size="16" font-weight="700" text-anchor="start">2.384</text>
+<text x="30" y="158" fill="#10263b" font-size="15" font-weight="600" text-anchor="start">DriveTwin model</text>
+<rect x="30" y="167" width="316" height="11" rx="5" fill="#f2f8fb"/>
+<rect x="30" y="167" width="36.027150866677985" height="11" rx="5" fill="#245ab2"/>
+<text x="360" y="178" fill="#245ab2" font-size="16" font-weight="700" text-anchor="start">0.285</text>
+<text x="30" y="211" fill="#456078" font-size="13" font-weight="400" text-anchor="start">0</text>
+<text x="346" y="211" fill="#456078" font-size="13" font-weight="400" text-anchor="end">2.5</text>
+<text x="475" y="36" fill="#10263b" font-size="21" font-weight="700" text-anchor="start">Observed peak speed after command</text>
+<text x="475" y="62" fill="#456078" font-size="14" font-weight="400" text-anchor="start">Same simulated drive setup · meters per second</text>
+<text x="475" y="100" fill="#10263b" font-size="15" font-weight="600" text-anchor="start">Reference</text>
+<rect x="475" y="109" width="316" height="11" rx="5" fill="#f2f8fb"/>
+<rect x="475" y="109" width="308.1000000000002" height="11" rx="5" fill="#456078"/>
+<text x="805" y="120" fill="#456078" font-size="16" font-weight="700" text-anchor="start">7.80</text>
+<text x="475" y="158" fill="#10263b" font-size="15" font-weight="600" text-anchor="start">With speed cap</text>
+<rect x="475" y="167" width="316" height="11" rx="5" fill="#f2f8fb"/>
+<rect x="475" y="167" width="158.0" height="11" rx="5" fill="#245ab2"/>
+<text x="805" y="178" fill="#245ab2" font-size="16" font-weight="700" text-anchor="start">4.00</text>
+<text x="475" y="211" fill="#456078" font-size="13" font-weight="400" text-anchor="start">0</text>
+<text x="791" y="211" fill="#456078" font-size="13" font-weight="400" text-anchor="end">8</text>
+<line x1="446" y1="24" x2="446" y2="217" stroke="#d9e5ed" stroke-width="1" stroke-dasharray="none"/>
+</svg>

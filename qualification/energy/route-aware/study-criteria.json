@@ -1,0 +1,18 @@
+{
+  "version": "route-aware-study-criteria/2.0.1",
+  "availability": "All selected supported input cutoffs must return available or explicitly infeasible; unavailable is an acceptance failure and remains reported.",
+  "trip_mean_normalized_absolute_error_max": 1.0,
+  "mean_error_denominator_j": "max(3600000, 0.10 * remaining_reference_battery_draw_j) per cutoff, then arithmetic mean within trip and equal trip weight",
+  "worst_normalized_absolute_error_max": 1.0,
+  "worst_error_denominator_j": "max(7200000, 0.20 * remaining_reference_battery_draw_j) per cutoff",
+  "false_safe_reserve_count_max": 0,
+  "reserve_definition": "Minimum reference SOC over every 0.2-working-second plant step in the remaining horizon, including the cutoff and endpoint, below vehicle reserve minus 1e-6 while prediction minimum SOC >= reserve and motion feasible",
+  "numerical_convergence_max_relative": 0.01,
+  "numerical_convergence_denominator_j": "max(36000, abs(0.1-second fixed-plan net energy))",
+  "worker_limit_real_life_s": 30,
+  "worker_target_p95_real_life_s": 5,
+  "worker_memory_limit_bytes": 268435456,
+  "baseline": "Previous 30 working seconds net energy per traveled meter multiplied by remaining assigned road distance; unavailable before 30 seconds or when distance < 1 meter; never use future realized distance, energy or speed. Common-cutoff MAE is cutoff-weighted and reported separately from trip-balanced acceptance metrics.",
+  "cutoffs": "First eligible recorded state at or after departure, 30, 60, 120 working seconds and 25%, 50%, 75% elapsed trip time. Junction states and SUMO stop-entry steps with residual speed are ineligible. Fractional cutoff selection is evaluation-only and conveys no future duration to the worker.",
+  "claim_scope": "Nine synthetic route families with declared vehicle/equipment inputs. Neither real-vehicle accuracy nor unobserved future traffic/weather is established. Wind, equipment details, scenario restrictions, and battery curves have separate factor/domain tests."
+}

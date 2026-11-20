@@ -1,0 +1,74 @@
+__pycache__/
+*.py[cod]
+.runtime/
+.venv/
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+node_modules/
+packages/contracts-ts/.build/
+
+# Local operations, raw evidence, conversations, and account-specific settings.
+/.private/
+/evidence/
+/docs/handoffs/
+/docs/migration/
+/docs/references/
+/environments/dev.toml
+/environments/*.local.*
+
+# Credentials and local environment files. Templates must contain placeholders only.
+.env
+.env.*
+!.env.example
+!.env.template
+**/.aws/
+**/.azure/
+**/.ssh/
+**/credentials.json
+**/secrets.json
+**/service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+
+# Private/unreviewed data and generated reports.
+/data/raw/
+/data/private/
+/data/downloads/
+/artifacts/
+/test-results/
+/playwright-report/
+.coverage*
+htmlcov/
+coverage/
+*.log
+# Generated local databases and recovery files; never stage live vehicle data.
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.bak
+*.tmp
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+# Generated dashboard bundles are rebuilt from the dependency lock.
+apps/dashboard/dist/
+apps/dashboard/dist-preview/
+apps/dashboard/dist-demo/
+# Downloaded observation exports are private data, even if saved into the workspace.
+exports/
+evdt-*.csv
+evdt-*.json
+# Browser network archives can contain credential headers and private diagnostics.
+*.har

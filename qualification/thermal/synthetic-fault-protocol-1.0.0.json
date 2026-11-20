@@ -1,0 +1,45 @@
+{
+  "version": "synthetic-thermal-faults/1.0.0",
+  "scope": "Independent synthetic bus thermal fixture with a primary motor reading and optional simulated housing probe",
+  "sample_period_s": 1,
+  "duration_s": 2100,
+  "warmup_s": 240,
+  "reference_hot_limit_k": 354,
+  "seeds": {"development": 65100, "reserved": 79100},
+  "cases_per_partition": {
+    "healthy": 16,
+    "cooling_loss": 4,
+    "step_bias": 4,
+    "slow_bias": 4,
+    "dropout": 4,
+    "stale": 4,
+    "cooling_dropout": 4,
+    "cooling_bias": 4,
+    "single_probe_cooling": 4
+  },
+  "development_candidates": [
+    {"name": "sensitive", "hot_residual_k": 3.5, "case_residual_k": 2.5, "persistence_s": 20},
+    {"name": "balanced", "hot_residual_k": 4.0, "case_residual_k": 3.0, "persistence_s": 25},
+    {"name": "conservative", "hot_residual_k": 4.5, "case_residual_k": 3.5, "persistence_s": 30}
+  ],
+  "common_rules": {
+    "maximum_age_s": 5,
+    "sensor_step_k": 3.0,
+    "max_positive_hot_case_disagreement_k": 3.8,
+    "clear_residual_k": 2.0,
+    "clear_persistence_s": 30
+  },
+  "limits": {
+    "maximum_healthy_alerts_per_hour": 0.2,
+    "maximum_pre_fault_alerts": 0,
+    "maximum_missed_dual_cooling": 0,
+    "maximum_cooling_delay_s": 390,
+    "minimum_thermal_warning_lead_s": 45,
+    "minimum_fault_induced_threshold_crossings": 4,
+    "maximum_unexpected_cooling_attributions": 0,
+    "maximum_missed_sensor_or_ambiguity_cases": 0,
+    "maximum_unavailable_window_violations": 0
+  },
+  "selection": "Use passing development candidates. Prefer fewest healthy alert episodes, then greatest minimum warning lead, then listed order.",
+  "lead_definition": "Seconds from the first eligible advisory to the first latent motor temperature at or above the reference limit, only when the matched healthy trace stays below that limit."
+}

@@ -1,0 +1,38 @@
+{
+  "version": "synthetic-thermal-advisory/1.0.0",
+  "frozen_utc": "2026-11-06T03:26:15.713844+00:00",
+  "selected": {
+    "name": "sensitive",
+    "hot_residual_k": 3.5,
+    "case_residual_k": 2.5,
+    "persistence_s": 20
+  },
+  "limits": {
+    "maximum_healthy_alerts_per_hour": 0.2,
+    "maximum_pre_fault_alerts": 0,
+    "maximum_missed_dual_cooling": 0,
+    "maximum_cooling_delay_s": 390,
+    "minimum_thermal_warning_lead_s": 45,
+    "minimum_fault_induced_threshold_crossings": 4,
+    "maximum_unexpected_cooling_attributions": 0,
+    "maximum_missed_sensor_or_ambiguity_cases": 0,
+    "maximum_unavailable_window_violations": 0
+  },
+  "runtime": {
+    "python": "3.13.7",
+    "numpy": "2.4.3",
+    "scipy": "1.17.1"
+  },
+  "source_sha256": {
+    "qualification/thermal/synthetic-fault-protocol-1.0.0.json": "7d896ba4ac07473129872748e422e2291232f8e59e176830c3efd0c78fbfc362",
+    "scripts/p5/qualify_thermal_faults.py": "9fdb61a967fc24f72cf3f18a83c7f53721e518068325a7d95ed3cf96166fdfff",
+    "scripts/p5/thermal_network.py": "5b3266f538f69ee84ee5ddec3407a6ef96139e35c9e6569f00b16612a131100f",
+    "scripts/p5/thermal_advisory.py": "8a49eb62de59340b484113057fccdee8dc44d83c4cf56afe0831c6fd6e25974f",
+    "scripts/p5/synthetic_thermal_faults.py": "20ca151297cd86a40807c79bc6cc2ccfc1ff48fa54f09251519918560dd055d0",
+    "scripts/p5/check_rtamt_thermal_rule.py": "6a8c607f9cfa0f3144415b98741b95b6aedfeeb40d837e9229b36d9e996662c0",
+    "tests/p5/test_thermal_advisory.py": "0dbbbafd0c4a9204909888c4bc09c844cb858fe056238e7888f24b792e7864cb"
+  },
+  "development_report_sha256": "b2674104fe01a97baa3016a91526f718bacdf75889545d8c6666cf7ede55e515",
+  "temporal_report_sha256": "76d3da9bf9f86ffd885007c78861dc8598a0e694239501dc8c3f66baa558fdc9",
+  "reserved_case_count": 48
+}

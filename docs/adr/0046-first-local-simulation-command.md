@@ -1,0 +1,11 @@
+# ADR 0046. First local simulation command
+
+The Phase 3 plan assumed a completed Phase 0 command contract. Phase 0 documented the command lifecycle and qualified telemetry schemas. Phase 3 starts by turning that design into a validated message format, then exercising one operator command through an isolated simulator entry point.
+
+Use a speed limit as the first capability. The operator enters a limit between 2 and 5 meters per second. The local runner uses the process operator's authority to issue one command for its own simulation run and bus. It sends the same encoded message through the coordinator and executor checks. The executor can only lower the current maximum. The applied cap lasts for the remainder of the bounded test drive.
+
+The request carries command, run and asset identity, a capability and its parameters, issuer and reason, and separate wall-clock and simulation validity windows. Both windows include their start and exclude their deadline. The wall clock limits how long a request is valid in real time. The simulation clock ties the request to a point in the modeled drive. The local executor keeps the first attempt in memory. It can return the same result for an exact duplicate within the validity window. A call that fails while awaiting a response returns `unknown_outcome` and consumes the attempt.
+
+The command runner owns the simulation step. It uses the SUMO Traffic Control Interface (TraCI) to lower the maximum speed between completed steps. The effect check independently compares `motion.speed` readings from two runs of the same reviewed route prefix. It verifies that the readings matched before the command and diverged afterward. The execution response and the observed effect are separate records. [SUMO vehicle control](https://sumo.dlr.de/docs/TraCI/Change_Vehicle_State.html) · [SUMO speed observations](https://sumo.dlr.de/docs/TraCI/Vehicle_Value_Retrieval.html)
+
+This increment uses local process authority and an in-memory attempt record. The connected command chain still needs authenticated operator access, durable command and result storage, broker routing, recovery and replay isolation across service boundaries, and an operator-facing command history. [Local command guide](../setup/local-speed-limit-command.md)

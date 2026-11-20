@@ -1,0 +1,66 @@
+{
+  "checkpoint": "P4-A1, Charging requirements and station profiles",
+  "passed": true,
+  "scope": "Static schema, mapped stop intervals and directed bus paths",
+  "sumo_version": "1.28.0",
+  "catalog": "simulation/montreal/charging-stations-1.0.0.json",
+  "catalog_sha256": "9941a23a2e4069ecaa8b1b0b1eba9289b7386be15e14454ba434805008950525",
+  "road_extract_sha256": "2bc98528975cd2dcb68cb123d32083c50305d8d9c1c13f0f42a2326b0747a420",
+  "source_sha256": {
+    "scripts/p4/check_station_profiles.py": "c0cb031205818221ee023bc419dcb5d4ab55ab9db3e91006a11f20595b818d2c",
+    "contracts/charging/station-catalog-1.0.0.schema.json": "4086adc35220f7ef10e76324d7eb0af20c233572d79903d8d82d165f7dff1cd7",
+    "contracts/profile.json": "82fbfecfcbec71afcc3223777cccdcea84539e321084953f8ec0f1d31d5b4084",
+    "scripts/p2/build_station_navigation.py": "0da893f4c2e7fb8b9230ad45e0f1acc571c5b8f5d3ed79e87679c05b1f14ee81",
+    "src/evdt/contract_profile.py": "7be400c14efdc7e5db221a7c371c60c2ce2d7c6846058682ba88ceee0a2fc7f1",
+    "src/evdt/monitoring/network.py": "3fb15a30349ecead402b095cb4bd921525749db3b87885f0bb77799f4cf41979",
+    "simulation/montreal/bus-parameters.json": "2018dca5649076ccddb91a5802ddd9fc9c4260459ecf01d728836543f6fff6f7"
+  },
+  "private_report": ".runtime/p4-station-checks/station-check-02.json",
+  "private_report_sha256": "bd8fb998e13de232f91d88a25e384192737a2bcacaecc55b0ad660c4830cee5c",
+  "vehicles": 0,
+  "physical_steps": 0,
+  "stations": [
+    {
+      "station_id": "depot-a",
+      "lane_id": "107583310#8_0",
+      "lane_length_m": 32.9,
+      "stop_length_m": 22,
+      "map_pin_to_lane_m": 13.551,
+      "origin_to_stop_m": 26.0,
+      "stop_to_finish_m": 6.9
+    },
+    {
+      "station_id": "opportunity-b",
+      "lane_id": "465380604#1_0",
+      "lane_length_m": 32.05,
+      "stop_length_m": 22,
+      "map_pin_to_lane_m": 15.875,
+      "origin_to_stop_m": 1531.22,
+      "stop_to_finish_m": 1270.7
+    },
+    {
+      "station_id": "west-c",
+      "lane_id": "1295964571#2_0",
+      "lane_length_m": 128.3,
+      "stop_length_m": 36,
+      "map_pin_to_lane_m": 0.3,
+      "origin_to_stop_m": 1700.66,
+      "stop_to_finish_m": 1065.96
+    }
+  ],
+  "invalid_configurations_refused": [
+    "duplicate_station",
+    "empty_connectors",
+    "reversed_stop",
+    "off_lane_stop"
+  ],
+  "lint_and_format_passed": true,
+  "phase_4_entry": {
+    "command_integrity_passed": true,
+    "advisory_release_verified": true,
+    "runtime_model_qualified": false,
+    "station_endpoint_accuracy_qualified": false,
+    "automatic_dispatch_approved": false
+  },
+  "next_checkpoint": "P4-A2, Station-arrival qualification design and reference drives"
+}

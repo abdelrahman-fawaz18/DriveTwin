@@ -1,0 +1,39 @@
+{
+  "checkpoint": "P1-E3-C2 bounded source/loading/history-checkpoint pilot",
+  "date": "2026-11-04",
+  "pilot_passed": true,
+  "assets": 2,
+  "simulated_events_per_asset": 60,
+  "events": 120,
+  "scalar_rows": 2400,
+  "accepted_receipts": 120,
+  "quarantine": 0,
+  "verified": [
+    "Actual original source values versus physical steps",
+    "Registered recipe before generation and completed offline clock",
+    "Normal restricted-ingest-role repository storage",
+    "Every stored original byte and scalar/provenance field",
+    "Complete current, recipe and persistence-receipt contents",
+    "Scoped reads and unchanged full durable inventory across original retries",
+    "Explicit source/loader zero exit and no OOM",
+    "Source sealed read-only and unchanged full inventory across binary dump",
+    "Private history checkpoint, 56 files and 7802909 bytes, four frozen representative query results",
+    "Matching exact source fingerprints and empty owned cleanup"
+  ],
+  "format": "evdt-history-backup/1.0.0",
+  "python_tests": 302,
+  "frontend_tests": 18,
+  "contract_outcomes_per_language": [
+    339,
+    81
+  ],
+  "new_dependencies": 0,
+  "changed_wire_contracts_or_migrations": 0,
+  "legacy_development_queue_backup_format_unchanged": true,
+  "W2_database_passed": false,
+  "checkpoint_restore_passed": false,
+  "Q05_passed": false,
+  "Q10_passed": false,
+  "live_delivery_claim": false,
+  "phase_1_complete": false
+}

@@ -1,0 +1,137 @@
+{
+  "date": "2026-11-03",
+  "checkpoint": "P1-E1",
+  "passed": true,
+  "phase_1_complete": false,
+  "scope": "One active actual paced bus; sustained broker/receiver outage and bounded offline storage-capacity/failure cases",
+  "outage": {
+    "wall_seconds": 300.29,
+    "minimum_wall_seconds": 300,
+    "source_events": 480,
+    "signals": 20,
+    "warmup_accepted": 60,
+    "pending_at_measured_outage_end": 301,
+    "receiver_ready_confirmed": true,
+    "first_observed_empty_queue_seconds": 102.094,
+    "drain_limit_seconds": 120,
+    "monitor_period_s": 1,
+    "controller_poll_s": 0.25,
+    "timing_scope": "controller monotonic start of restoration to first sampled empty queue, including receiver readiness and controlled reorder; not per-event latency or W4 fleet performance",
+    "drained_while_source_running": true,
+    "generated_after_receiver_ready": 102,
+    "out_of_order": {
+      "passed": true,
+      "promoted_seq": 379,
+      "older_seq": 71,
+      "original_packets_only": true,
+      "older_preserved_in_history": true
+    },
+    "final": {
+      "passed": true,
+      "generated": 480,
+      "accepted": 480,
+      "scalars": 9600,
+      "quarantined": 0,
+      "dropped": 0,
+      "pending": 0,
+      "original_packets_and_recipe_equal": true,
+      "current_last_seq": 479
+    },
+    "monitor": {
+      "passed": true,
+      "samples": 486,
+      "current_nonregressing": true,
+      "period_s": 1
+    },
+    "metadata_channel": "registry/clock HTTP remains available; this is not a complete vehicle network disconnect"
+  },
+  "storage": {
+    "capacity": {
+      "passed": true,
+      "scope": "one asset; burst insertion, not 30 wall minutes or fleet throughput",
+      "minimum_horizon": {
+        "events": 1800,
+        "encoded_bytes": 14745600,
+        "database_bytes": 15814656
+      },
+      "capacity_events": 4096,
+      "encoded_bytes": 33554432,
+      "database_bytes": 35938304,
+      "blocked_attempts": 1,
+      "prior_bytes_and_sequence_preserved": true
+    },
+    "container_reopen": {
+      "passed": true,
+      "reopened_originals": 4096,
+      "generated": 4100,
+      "final_counts": {
+        "pending": 4096,
+        "accepted": 4
+      },
+      "original_bytes_preserved": true,
+      "receipt_scope": "schema-valid local receipt fixture; no server delivery claim"
+    },
+    "filesystem_full": {
+      "passed": true,
+      "sqlite_full": true,
+      "pending_at_fault": 456,
+      "blocked_attempts": 1,
+      "prior_packets_preserved": true,
+      "reopen_and_recovery": true,
+      "scope": "controlled 4 MiB tmpfs; no host disk exhaustion or power-loss claim"
+    },
+    "physical_quota_enforced": false,
+    "critical_status_reserve_qualified": false,
+    "journal_peak_qualified": false
+  },
+  "checks": {
+    "python_tests": 103,
+    "frontend_tests": 12,
+    "strict_typescript": true,
+    "strict_python_modules": 4,
+    "original_contract_cases_per_language": 339,
+    "simulation_contract_cases_per_language": 68,
+    "format_build_privacy_secrets": true,
+    "shared_core_unchanged": {
+      "passed": true,
+      "baseline_commit": "d2edc5292b6ac3812c5ee2afc3c6e03ff71d9c64",
+      "frozen_files": 54,
+      "text_normalization": "CRLF to LF only; all other content is frozen",
+      "sha256": "6acf8dcd4b5da6b264ffb433700a94e11cbb64c495058a12af9ed311577b291f"
+    },
+    "source_bytes_rechecked": true,
+    "control_file_tests": [
+      "transient missing/locked/partial data recovers within retry budget",
+      "persistent missing file fails",
+      "persistent malformed JSON fails"
+    ],
+    "browser_run_this_checkpoint": false,
+    "independent_trace_review": {
+      "passed": true,
+      "samples": 486,
+      "longest_positive_observation_count_plateau_s": 308.981,
+      "final_generated_accepted_stored": 480,
+      "final_pending": 0,
+      "current_monotonic": true
+    }
+  },
+  "cleanup": {
+    "compose": {
+      "containers": "",
+      "volumes": ""
+    },
+    "separate_capacity_volume_removed": true
+  },
+  "private_evidence": {
+    "services": "evidence/p1/2026-11-03-e1-04/qualification.json",
+    "shared_checks": ".runtime/dev-checks/c8f4bf5f42b041a5950fd21e09765725/report.json"
+  },
+  "remaining": [
+    "full W0/W1/W4 fleet rates/durations/isolation/recovery",
+    "per-event attempt counters and source-to-browser clock/latency correlation",
+    "W2-volume five-signal history and timed restore",
+    "hard physical quotas, critical storage and unpausable-source loss policy",
+    "retention/startup/host-cgroup-paging budgets/formal visual baseline",
+    "physical calibration, producer-state resumption and future command effects"
+  ]
+}

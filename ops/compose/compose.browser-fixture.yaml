@@ -1,0 +1,11 @@
+# Add only the diagnostic page; retain the qualified data-flow services.
+services:
+  api:
+    command: [python, /app/p0_browser_app.py]
+    networks: [fixture, browser-access]
+    volumes:
+      - ./scripts/platform/browser_app.py:/app/p0_browser_app.py:ro
+      - ./qualification/browser/index.html:/app/p0_browser.html:ro
+
+networks:
+  browser-access: {}

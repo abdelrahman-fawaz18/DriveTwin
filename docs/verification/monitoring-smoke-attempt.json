@@ -1,0 +1,57 @@
+{
+  "checkpoint": "P6-A2 Monitoring qualification harness and smoke test",
+  "date_local": "2026-11-05",
+  "harness_commit": "acb4ac4ccc4aa814fb84a9b839a48ecf26fca1d7",
+  "release_sha256": "7153bb1e3bb963c059af703a043e9c7e4486baa5e93f60a5d26847df459db6bd",
+  "offline_preparation_passed": true,
+  "live_smoke_status": "blocked_at_preflight",
+  "checkpoint_complete": false,
+  "offline_checks": {
+    "new_smoke_policy_tests_passed": 10,
+    "existing_workload_and_resource_regressions_passed": 60,
+    "python_lint_and_format_passed": true,
+    "reviewed_runtime_input_files": 313,
+    "reviewed_source_inventory_sha256": "ed3a223bb209ea90fa0141505d8f1625154b8047d985c26a8305ad1ded2231cf",
+    "windows_and_ubuntu_input_inventories_agreed": true,
+    "source_guard_passed_before_and_after_preflight": true,
+    "installed_playwright_matches_lock": true,
+    "application_runtime_and_schema_unchanged_from_P6_A1": true
+  },
+  "planned_smoke": {
+    "assets": 1,
+    "signals_per_asset": 20,
+    "warmup_s": 60,
+    "measured_s": 30,
+    "expected_measured_events": 30,
+    "expected_measured_scalar_readings": 600
+  },
+  "attempt": {
+    "qualification_sha256": "6ddcf876993489c6997a0b8194a38dfd7b06354d52e5fc240cad1ee0cd7ff55a",
+    "preflight_sha256": "72c48e51b1430405ba1adf64685f07bdab511b03f7420c5231335410063c3784",
+    "docker_inventory_and_disk_passed": true,
+    "required_disk_free_bytes": 25769803776,
+    "windows_free_disk_bytes": 327062511616,
+    "ubuntu_free_disk_bytes": 1005977636864,
+    "memory_precheck_passed": false,
+    "failed_precheck": "Windows available physical RAM",
+    "windows_samples": 34,
+    "windows_samples_below_required_ram": 34,
+    "windows_required_available_ram_bytes": 2147483648,
+    "windows_min_available_ram_bytes": 1516265472,
+    "windows_max_available_ram_bytes": 1632133120,
+    "windows_min_commit_headroom_bytes": 13681061888,
+    "observed_span_s": 33.001570,
+    "conservative_below_2gib_upper_bound_s": 34.501570,
+    "existing_emergency_guard_passed": true,
+    "service_worker_started": false,
+    "browser_started": false,
+    "measurement_report_created": false,
+    "running_containers_at_independent_followup": 0
+  },
+  "next_required_action": "Repeat P6-A2 with a fresh passing Windows precheck, then qualify the one-bus live smoke test.",
+  "next_checkpoint_after_A2": {
+    "id": "P6-B1",
+    "name": "30-minute monitoring and host capacity qualification",
+    "ready": false
+  }
+}

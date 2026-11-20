@@ -1,0 +1,7 @@
+# ADR 0055. Scope operator controls to the dashboard's active run
+
+Add the operator gateway through an explicit Compose overlay. The browser uses the dashboard's own address, and the gateway forwards a bounded set of JSON requests to the local command service. The request path identifies the run and bus. The gateway checks that scope before forwarding, and the command service checks the operator credential and command scope again. The gateway has no command service credentials of its own.
+
+The browser holds the operator credential separately from the monitoring reader credential in page memory. Changing the selected run or vehicle ends that operator session. The replay service uses its existing read paths. The operator timeline returns recent commands and mission intents with their registered station choices. It displays request state, handoff, execution, and independently measured effect as separate fields.
+
+The direct profile exposes pending speed requests, replacements, cancellations, and station intents. The arbitration profile shows the sealed decision and allows cancellation before handoff. The operator may retry the identical request after a lost response, preserving the command or intent ID. Conflicts refresh the timeline so a claim that already succeeded remains visible. A saved station intent remains an operator request for review. [Run guide](../setup/operator-dashboard-check.md)

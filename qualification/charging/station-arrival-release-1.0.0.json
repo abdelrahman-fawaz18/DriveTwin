@@ -1,0 +1,107 @@
+{
+  "version": "station-arrival-release/1.0.0",
+  "model": {
+    "baseline": {
+      "traction_kwh_per_km": 1.3034782649178531,
+      "radius_kwh": 1.2
+    },
+    "candidate": {
+      "traction_kwh_per_km": 1.1064739706025841,
+      "radius_kwh": 1.2
+    }
+  },
+  "targets": {
+    "count": 6,
+    "arrival_mae_kwh": 0.9,
+    "minimum_mae_kwh": 0.9,
+    "max_absolute_error_kwh": 1.5,
+    "max_optimistic_minimum_error_kwh": 1.2,
+    "arrival_soc_mae_pp": 0.26,
+    "max_interval_width_kwh": 3.5,
+    "minimum_joint_coverage_count": 5,
+    "minimum_correct_feasible_count": 2,
+    "maximum_false_exclusions": 1
+  },
+  "domain": {
+    "simulator_version": "1.28.0",
+    "battery_capacity_kwh": 350,
+    "loaded_mass_kg": 18000,
+    "auxiliary_power_w": [
+      8000,
+      12000
+    ],
+    "initial_soc": [
+      0.101,
+      0.16
+    ],
+    "stationary_wait_sim_s": [
+      0,
+      45
+    ],
+    "traffic": "one bus; road limits and existing traffic signals; no traffic or injected failures",
+    "motion": "from rest on a reviewed mission edge, directed path to one specified lane stop",
+    "maximum_sim_s": 1200
+  },
+  "reserve_kwh": 35.0,
+  "reserved_ids": [
+    "reserved-depot-nominal",
+    "reserved-depot-reserve",
+    "reserved-opportunity-nominal",
+    "reserved-opportunity-reserve",
+    "reserved-west-nominal",
+    "reserved-west-reserve"
+  ],
+  "input_fields": [
+    "initial_energy_kwh",
+    "auxiliary_power_w",
+    "distance_m",
+    "free_flow_s",
+    "traffic_signals",
+    "expected_wait_s"
+  ],
+  "development_report_sha256": "6568adb796faa18a760b3f2dc2b073571a42c9569ac032a676627a5e666e76b1",
+  "network_sha256": "ddddeb7882a45ca69f2ac45ae48549a88b87eb6b54a1d8282f51cb62ce4ed3d3",
+  "source_sha256": {
+    "scripts/p4/collect_station_arrivals.py": "415f43f41634cc956df4b491ee3ad0940f64b7a767ae91998d2b4c64a2fd0d92",
+    "qualification/charging/station-arrival-design-1.0.0.json": "b707f4b83b1efc0af0ec1a72fa486d2b1a80d32f243433d855b4a7545083dc5b",
+    "simulation/montreal/charging-stations-1.0.0.json": "9941a23a2e4069ecaa8b1b0b1eba9289b7386be15e14454ba434805008950525",
+    "data/public/montreal-core-v1/roads.osm.xml": "2bc98528975cd2dcb68cb123d32083c50305d8d9c1c13f0f42a2326b0747a420",
+    "src/evdt/monitoring/network.py": "3fb15a30349ecead402b095cb4bd921525749db3b87885f0bb77799f4cf41979",
+    "src/evdt/monitoring/plant.py": "747f4a7b7e5f91089fa679fd51d9c28972fc6c58142277e1f4073cfa4be4a7b5",
+    "simulation/montreal/mission.json": "6fac46aa281b97672b255d59758a2f44b406baa3644de50ae1d4d0808ef0682d",
+    "simulation/montreal/bus-parameters.json": "2018dca5649076ccddb91a5802ddd9fc9c4260459ecf01d728836543f6fff6f7",
+    "simulation/montreal/plant.json": "645eb0de5a662d8aa27a6349b688f2732fc95365479782068d827bc04a647103",
+    "simulation/montreal/import-review.json": "f578854337d9baa454fa81724066160d03b10310f36b6615dc48e884b1801724",
+    "src/evdt/energy/station_arrival.py": "cdb9b3050c0d7c348007270327bd81cbad9c72b722208b824db9ba82fc5d86de",
+    "scripts/p4/qualify_station_arrival_forecast.py": "aa4d84a5217e6bbf125b297142cbb94baa3244468db20a71c2c1cc14b72fa326",
+    "docs/verification/p4-station-arrival-references.json": "45d7d862ce4791e021ac381042e0830d1b7ec24d49aad2891fa02a0b70055f83"
+  },
+  "development_metrics": {
+    "baseline": {
+      "available": 6,
+      "arrival_mae_kwh": 0.050392490935556346,
+      "minimum_mae_kwh": 0.0782323422880656,
+      "max_absolute_error_kwh": 0.22124813626055584,
+      "max_optimistic_minimum_error_kwh": 0.22124813626055584,
+      "arrival_soc_mae_pp": 0.014397854553017156,
+      "max_interval_width_kwh": 2.4000000000000057,
+      "joint_coverage_count": 6,
+      "correct_feasible_count": 3,
+      "false_feasible_count": 0,
+      "false_exclusion_count": 0
+    },
+    "candidate": {
+      "available": 6,
+      "arrival_mae_kwh": 0.07622499673996568,
+      "minimum_mae_kwh": 0.086419014759142,
+      "max_absolute_error_kwh": 0.16471406807807654,
+      "max_optimistic_minimum_error_kwh": 0.16471406807807654,
+      "arrival_soc_mae_pp": 0.02177857049713457,
+      "max_interval_width_kwh": 2.4000000000000057,
+      "joint_coverage_count": 6,
+      "correct_feasible_count": 3,
+      "false_feasible_count": 0,
+      "false_exclusion_count": 0
+    }
+  }
+}

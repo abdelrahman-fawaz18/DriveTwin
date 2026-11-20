@@ -1,0 +1,308 @@
+{
+  "checkpoint": "P4-D3 Bounded automatic dispatch and Phase 4 closeout",
+  "phase_4_complete": true,
+  "phase_5_ready": true,
+  "scope": "Local single-bus, stationary-departure, isolated simulation qualification",
+  "automatic_dispatch_approval": "Explicit approval for the isolated profile only; see ADR 0063",
+  "automatic_cases": {
+    "mission": {
+      "completed": true,
+      "approach_forecast": {
+        "measured_arrival_kwh": 52.35427944226766,
+        "measured_minimum_kwh": 52.25395402629054,
+        "predicted_drive_s": 232.94693053531046,
+        "arrival_kwh": 52.234171127088025,
+        "arrival_soc_pct": 14.924048893453723,
+        "minimum_kwh": 52.146171127088024,
+        "arrival_interval_kwh": [
+          51.03417112708802,
+          53.43417112708803
+        ],
+        "minimum_interval_kwh": [
+          50.94617112708802,
+          53.34617112708803
+        ],
+        "reserve_feasible": true
+      },
+      "station_charged": "depot-a",
+      "charge_delivered_kwh": 35.15000000000335,
+      "minimum_kwh": 52.25395402629054,
+      "target_observed_kwh": 87.50427944227708,
+      "terminal_sim_s": 1086.8,
+      "physical_steps_reconciled": 5432,
+      "max_balance_residual_j": 5.960464477539063e-08
+    },
+    "interrupted": {
+      "denial": null,
+      "actuation_granted": false,
+      "recovery_denial": "charging_reservation_epoch_changed",
+      "no_measured_effect": true
+    },
+    "lost-grant": {
+      "denial": null,
+      "actuation_granted": true,
+      "recovery_denial": "charging_actuation_already_granted",
+      "no_measured_effect": true
+    },
+    "override": {
+      "denial": "operator_override",
+      "actuation_granted": false,
+      "recovery_denial": "charging_reservation_epoch_changed",
+      "no_measured_effect": true
+    },
+    "thermal": {
+      "denial": "local_protection",
+      "actuation_granted": false,
+      "recovery_denial": null,
+      "no_measured_effect": true
+    },
+    "local": {
+      "denial": "local_protection",
+      "actuation_granted": false,
+      "recovery_denial": null,
+      "no_measured_effect": true
+    },
+    "stale": {
+      "denial": "charging_observation_stale_or_future",
+      "actuation_granted": false,
+      "recovery_denial": null,
+      "no_measured_effect": true
+    },
+    "wall-expiry": {
+      "denial": "elapsed_deadline",
+      "actuation_granted": false,
+      "recovery_denial": null,
+      "no_measured_effect": true
+    },
+    "simulation-expiry": {
+      "denial": "charging_expired_or_early",
+      "actuation_granted": false,
+      "recovery_denial": null,
+      "no_measured_effect": true
+    },
+    "changed-station": {
+      "denial": "charging_lineage_mismatch",
+      "actuation_granted": false,
+      "recovery_denial": null,
+      "no_measured_effect": true
+    }
+  },
+  "operator_mode_requalified_and_automatic_default_off": true,
+  "matched_departure": {
+    "reserve_kwh": 35,
+    "stationfinder_settings": {
+      "rescueAction": "none",
+      "emptyThreshold": "0.1",
+      "needToChargeLevel": "0.20",
+      "saturatedChargeLevel": "0.25",
+      "radius": "1200",
+      "waitForCharge": "45",
+      "checkEnergyForRoute": "false",
+      "replacePlannedStop": "0",
+      "charging.knowledge": "0"
+    },
+    "reference_terminal_sim_s": 594.8,
+    "outcomes": {
+      "departure-outage": {
+        "advisor": {
+          "completed": true,
+          "terminal_reason": "mission_arrived",
+          "delay_vs_reference_s": 1242.2,
+          "station_charged": "opportunity-b",
+          "charge_delivered_kwh": 35.213333333333466,
+          "minimum_kwh": 52.16513612627724,
+          "reserve_violation": false,
+          "depleted": false,
+          "target_reached": true,
+          "replans": 0,
+          "operator_fixture_interventions": 1,
+          "external_rescue_interventions": 0
+        },
+        "nearest": {
+          "completed": true,
+          "terminal_reason": "mission_arrived",
+          "delay_vs_reference_s": 1308.0,
+          "station_charged": "west-c",
+          "charge_delivered_kwh": 33.64583333332571,
+          "minimum_kwh": 53.75730548711023,
+          "reserve_violation": false,
+          "depleted": false,
+          "target_reached": true,
+          "replans": 0,
+          "operator_fixture_interventions": 1,
+          "external_rescue_interventions": 0
+        },
+        "stationfinder": {
+          "completed": true,
+          "terminal_reason": "mission_arrived",
+          "delay_vs_reference_s": 1260.0,
+          "station_charged": "opportunity-b",
+          "charge_delivered_kwh": 33.45055555555461,
+          "minimum_kwh": 52.03889283064942,
+          "reserve_violation": false,
+          "depleted": false,
+          "target_reached": false,
+          "replans": 0,
+          "operator_fixture_interventions": 0,
+          "external_rescue_interventions": 0
+        }
+      },
+      "in-service-outage": {
+        "advisor": {
+          "completed": true,
+          "terminal_reason": "mission_arrived",
+          "delay_vs_reference_s": 1038.6,
+          "station_charged": "depot-a",
+          "charge_delivered_kwh": 34.82541666667012,
+          "minimum_kwh": 52.57771818581498,
+          "reserve_violation": false,
+          "depleted": false,
+          "target_reached": true,
+          "replans": 0,
+          "operator_fixture_interventions": 1,
+          "external_rescue_interventions": 0
+        },
+        "nearest": {
+          "completed": true,
+          "terminal_reason": "mission_arrived",
+          "delay_vs_reference_s": 1308.0,
+          "station_charged": "west-c",
+          "charge_delivered_kwh": 33.64583333332571,
+          "minimum_kwh": 53.75730548711023,
+          "reserve_violation": false,
+          "depleted": false,
+          "target_reached": true,
+          "replans": 0,
+          "operator_fixture_interventions": 1,
+          "external_rescue_interventions": 0
+        },
+        "stationfinder": {
+          "completed": true,
+          "terminal_reason": "mission_arrived",
+          "delay_vs_reference_s": 851.0,
+          "station_charged": "depot-a",
+          "charge_delivered_kwh": 27.39958333333659,
+          "minimum_kwh": 48.37134437603436,
+          "reserve_violation": false,
+          "depleted": false,
+          "target_reached": false,
+          "replans": 1,
+          "operator_fixture_interventions": 0,
+          "external_rescue_interventions": 0
+        }
+      }
+    }
+  },
+  "shared_engineering_passed": true,
+  "private_report_sha256": {
+    "evidence/p4/automatic-charging-01/qualification.json": "a8730a1d86c918fcd9611ccf7696934c6f195bf0d1efa72e26da135e9c39a091",
+    "evidence/p4/registered-charging-d3-regression-01/qualification.json": "1b36135a53efbe5ca6bc509d70ca504daef0fade8f7ba6baefda52477202f9c1",
+    "evidence/p4/dynamic-matched-departure-01/qualification.json": "9b72ec98cf9e40ba4abc45fb272ece93690ee3c8a13199c37e8d0508b8a11de5",
+    "evidence/p4/automatic-charging-01/mission/qualification.json": "947b2323bb96478ba5159d8c7d218b41e3abb4378c821d3505e6348302bf7335",
+    "evidence/p4/automatic-charging-01/interrupted/qualification.json": "2b1e276de142cfd47b5d8061ee95b3c8195afdb3e12293cec54fdbd1ca9aad70",
+    "evidence/p4/automatic-charging-01/lost-grant/qualification.json": "76cd69ccb39ea3f25de4860a13d1a3cac3ceb09823a9f081cebd040e8780332a",
+    "evidence/p4/automatic-charging-01/override/qualification.json": "8f92a3ea9f5dab7836fdf4b8727632aa6463f01beee7570c5128cd90bec429db",
+    "evidence/p4/automatic-charging-01/thermal/qualification.json": "3749acfaecf6ad92069039870fd1081b5b8ea8bc72a7bc8b0aecd693a084b8f6",
+    "evidence/p4/automatic-charging-01/local/qualification.json": "47dcd8b7de73cce322e9841f34a41569dfb69fe24c4eee827ad5181315cf0add",
+    "evidence/p4/automatic-charging-01/stale/qualification.json": "b7cd277768ccaed481e2a418357b610aa15a0f1ec1bf9fa4517475c81da9a748",
+    "evidence/p4/automatic-charging-01/wall-expiry/qualification.json": "1e31f31cf33f1e41a78e5ff293f901e3e8900f75e6d33d53b6a095c952d0584e",
+    "evidence/p4/automatic-charging-01/simulation-expiry/qualification.json": "6ea23641f3dfa743e356188410e3deefce7acf6981b60db0a5256888aa38157f",
+    "evidence/p4/automatic-charging-01/changed-station/qualification.json": "5d7e68aa50acd82a96d10378b0a232504f2231f36d3bf6bec585d7521d1936e4"
+  },
+  "shared_engineering_report_sha256": "0969efc1504f9f8d2d807048ebf91cbf077f2438050315aaf12d15eb04ed035f",
+  "source_files": [
+    {
+      "path": "compose.p1-uplink.yaml",
+      "sha256": "54fa1c4256c4033fbcf70a518751387e3df90e9053ef490afc888f35b4b4f9aa"
+    },
+    {
+      "path": "compose.p3-commands.yaml",
+      "sha256": "f7ac89bef4397c973fcc3931518e9aed61cd48f5f23940da23c466970ed8a232"
+    },
+    {
+      "path": "compose.p4-charging.yaml",
+      "sha256": "9529b7185a5a87d99890cca9f7d8359bc283c64f87793595b06835c5a6406aee"
+    },
+    {
+      "path": "compose.p4-automatic.yaml",
+      "sha256": "67f6aa8983a884a561386faa91e7457decf408735e58f776948eb4aaa4be61e5"
+    },
+    {
+      "path": "migrations/commands/007_charging_diversions.sql",
+      "sha256": "05ad889486550655fcef5147a482658e494a2467873af151ce6598fc731e9d9f"
+    },
+    {
+      "path": "migrations/commands/008_charging_automatic.sql",
+      "sha256": "8de7ebc50369b947e3aa2452f822bd605e5dc581a35c22f61e427cb64fd36c65"
+    },
+    {
+      "path": "src/evdt/charging_api.py",
+      "sha256": "c1f05da6e165ce51e59749e0088939bd2a54cf07bd66da12f56aa1c62110fac5"
+    },
+    {
+      "path": "src/evdt/charging_wire.py",
+      "sha256": "1a07772bab83b8b5ea80e12fcb50f71efd0aa7368df0bc58082822f53a74024f"
+    },
+    {
+      "path": "src/evdt/command_api.py",
+      "sha256": "11e0e76e3956676ad14346d94a63a17904a88aeffaff754ebd1a9db94a31075f"
+    },
+    {
+      "path": "src/evdt/command_journal.py",
+      "sha256": "d6aff93ff4634873efd4d0ad0ec85578dac30e1c00938941c683063f32dea690"
+    },
+    {
+      "path": "src/evdt/energy/charging_dispatch.py",
+      "sha256": "a8380c2021476808be58334e7599074659831f1aad0cd2c0c2b4da1272d8c8fc"
+    },
+    {
+      "path": "scripts/p3/qualify_connected_speed_limit.py",
+      "sha256": "2e8afc0686f5b8a64a691198ffa178ac23e45d8fe11aaa4ef611ded2364fa817"
+    },
+    {
+      "path": "scripts/p4/qualify_registered_charging.py",
+      "sha256": "9b85d662719ac107afeb051b2341fa0f4ac0f1fd75ea8531d5ae01e70e9bf1c9"
+    },
+    {
+      "path": "scripts/p4/registered_charging_actor.py",
+      "sha256": "2b109b22c32dd5153f8e0fab11df04ccdef6b59c986c1e6f9a217b8d686b2c1e"
+    },
+    {
+      "path": "scripts/p4/automatic_charging_cases.py",
+      "sha256": "143a518e4a23c17ea6dfa315f8343340c7a9ddc8eb7e78ec7d9f1fcb9df9bee0"
+    },
+    {
+      "path": "scripts/p4/run_charging_missions.py",
+      "sha256": "5fcac8c68010b67eff785a3636bd6a51c73fc9d20ba6753ee5f6365a6f299d45"
+    },
+    {
+      "path": "scripts/p4/run_charging_advisor.py",
+      "sha256": "7d2f1bd36c412e846602f00eecd964b0fb5fc2ef8b5035ba07d392f946bd21aa"
+    },
+    {
+      "path": "qualification/charging/station-arrival-release-1.0.0.json",
+      "sha256": "4f2ae5a1366347853e7e4c78163919a5c8802113e793e4a4ff41a0b718858dfc"
+    },
+    {
+      "path": "qualification/charging/automatic-departure-1.0.0.json",
+      "sha256": "724f0a48e0c5e9ddcbb1ae9025802c201b3bbdeb94c2d5402faee2b165801a63"
+    },
+    {
+      "path": "simulation/montreal/charging-stations-1.0.0.json",
+      "sha256": "9941a23a2e4069ecaa8b1b0b1eba9289b7386be15e14454ba434805008950525"
+    },
+    {
+      "path": "scripts/p4/run_dynamic_charging_comparison.py",
+      "sha256": "3df4193c7f9386ef79b41b172020516641cb724bdfd3db21a8b5795946b47812"
+    },
+    {
+      "path": "qualification/charging/advisory-scenario-1.0.0.json",
+      "sha256": "eb8b7d1b41b3610610ea4901b2f3a747f7ce949d5b72052be548288ad3ace5b8"
+    },
+    {
+      "path": "src/evdt/energy/charging_advisor.py",
+      "sha256": "c5ad7eca61230753e11c7cbedb373fdc6721fee0fddc94fb1a23a92d083d7040"
+    }
+  ],
+  "next_checkpoint": "P5-A1 Motor data audit and thermal qualification design"
+}

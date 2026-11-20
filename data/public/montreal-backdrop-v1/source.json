@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "source": "https://download.bbbike.org/osm/bbbike/Montreal/",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors; extract by BBBike",
+  "extract_sha256": "7e7771aba1688bd37a77f7ad62d9dd60883c0dfc4ba991244d8853ba9e9546dd",
+  "roads_sha256": "dda7fd00e49d135f7dc14f067fd582d2d4723c7e2c788d499a8684ef214d4945",
+  "derivation": "Road paths and names from the central Montreal import; park/water polygons and place labels selected by intersection with its display viewport. Whole intersecting polygons may extend beyond the road import bounds. Contributor metadata and runtime measurements excluded.",
+  "backdrop_sha256": "c0c2e04b372da58be2327f775ef19bc99179fc8c3197eee4aac37720465f1e53",
+  "context_sha256": "1d677899c1a3faac5955012cff90c0dedadc09aa4d3a5fd32b9241e97fb6b5d8",
+  "context_source_sha256": "7e7771aba1688bd37a77f7ad62d9dd60883c0dfc4ba991244d8853ba9e9546dd",
+  "road_import_bounds": [
+    -73.59,
+    45.49,
+    -73.55,
+    45.54
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "version": "evdt-local-simulation-release/1.0.0",
+  "supersedes_release_entry_scope_from": "docs/adr/0068-defer-fleet-capacity-and-reorder-integration.md",
+  "unchanged_historical_baseline": "benchmarks/release-monitoring-baseline.json",
+  "scope": {
+    "monitoring_and_control": "One registered simulated bus in local, explicitly configured profiles",
+    "isolation_exercise": "Two vehicles with distinct run identities and live, replay, and experiment permissions",
+    "default_charging": "Operator controlled",
+    "optional_bounded_storage_enabled": false,
+    "automatic_retention_enabled": false
+  },
+  "deferred_workloads": ["W1-30", "W3", "W4", "W1-queue-capacity", "W2"],
+  "excluded_claims": ["fleet throughput and endurance", "fleet outage recovery and queue capacity", "production deployment", "physical-vehicle validation", "adaptive model promotion"],
+  "gate_requirements": {
+    "Q-01": "Verify current one-bus scalar coverage in data intake, current readings, history, and the dashboard.",
+    "Q-02": "Account for every event in the selected runs and across independent service restarts. Require zero unexplained loss and no pending events after recovery.",
+    "Q-03": "Verify original readings survive disk-queue and service interruptions in the selected profile. Fleet payload-capacity measurement is deferred.",
+    "Q-04": "Retain the W0-30 display measurement. Verify affected browser paths after changes. Full-duration fleet display latency is deferred.",
+    "Q-05": "Use compatible sealed history data to verify the current history path against existing query limits.",
+    "Q-06": "Verify freshness and resumed, disconnected, and paused states using existing limits.",
+    "Q-07": "Verify selected recovery cases and preserve compatible real five-minute single-bus recovery evidence. Fleet outage drain qualification is deferred.",
+    "Q-08": "Verify no repeated effect after duplicate handoff or restart, including unresolved outcomes, using independent simulated effect evidence.",
+    "Q-09": "Verify access and actuation isolation across scoped roles, assets, and run modes.",
+    "Q-10": "Verify the selected local restore path, permission equivalence, and existing restore limits with compatible evidence.",
+    "Q-11": "Verify selected local startup readiness with available images under the existing limit and document the clean-start workflow.",
+    "Q-12": "Keep the current launch and runtime resource guards for live checks. Retain W0-30 results. Fleet resource and endurance qualification is deferred."
+  },
+  "additional_release_checks": [
+    "Individual service restart matrix",
+    "Documented signal and adapter extension",
+    "Supported upgrade and explicit incompatibility checks",
+    "Two-asset live, replay, and experiment isolation",
+    "Local retention preview and affected storage safeguards",
+    "Current dashboard and packaged demo checks",
+    "Clean-start reproduction and restoration",
+    "Independent acceptance and claims review",
+    "Source, package, and Git history privacy and rights review"
+  ]
+}

@@ -1,0 +1,29 @@
+# ADR-0021: Full wall-time monitoring workloads
+
+Status: selected for E2-C implementation; duration amended by [ADR-0022](0022-monitoring-duration.md). No full workload is passed by this decision.
+
+W0 retains one asset, 60 wall seconds of warmup and 1,800 measured seconds. Following the user's explicit revision, W1 retains ten independently stepped assets, the same warmup and 1,800 measured seconds. Every asset produces one original 20-scalar observation per second through its normal durable queue, publisher, broker, receiver and database. Short ten-asset rehearsals have a separate name and cannot satisfy W0/W1. Run each qualified browser as a separately identified attempt; never merge partial or failed attempts into a passing run. Historical one-hour targets/results keep their original version and are not relabeled as current-policy acceptance.
+
+## Shared workload start
+
+Starting ten containers is not an instantaneous action. Each source first prepares its model and registers its recipe, then reaches an optional qualification barrier. A barrier is a waiting point: all sources must be ready before any begins its timed motion. The fixture releases them against one future Linux monotonic-clock deadline after the browser collectors and resources are ready. Bind the release to the run, exact asset set and Linux boot identity. Refuse reused readiness files, wrong identities, expired deadlines and missing participants. Normal operation without this option retains its existing start behavior.
+
+For a shared start T, observations have scheduled ticks T+1 through T+60 for warmup and T+61 through T+60+D for the D-second measured window. The measured interval is (T+60, T+60+D]. Record actual source readiness, elapsed completion, achieved rate and every tick's scheduling lag; never replace actual timestamps with scheduled ones. A source that catches up from a delayed run does not establish a nominal one-per-second workload: reject a sample at or beyond its next scheduled period. Include all actual events in conservation and browser verification, including warmup. Keep final collector coverage through the last DOM witness.
+
+## Browsers, traces and memory
+
+Use independent browser contexts for the simultaneous asset views. A context is an isolated browser session, including its own connection pool; this avoids a shared HTTP connection limit serializing ten live streams. Verify every actual rendered row/value/unit and post-DOM witness using the unchanged ADR-0020 method. Keep periodic clock checks and the inconclusive strict cross-clock diagnostic when applicable. Preserve partial records on failure.
+
+Bound measurement memory as well as output: verify one asset's originals at a time and store per-asset browser records separately. Join complete event distributions before calculating fleet percentiles; averaging per-asset percentiles is invalid. Resource traces still include all owned sources/senders and application services. Report the full target verdict separately from instrumentation correctness. Host headroom, OOM, swap, complete event coverage, duration, rate and latency remain mandatory; no shortcut run, accelerated source or seeded database can pass them.
+
+The optional barrier and reporting metadata do not alter observation/schema/catalog/queue formats, SQL migrations, source physics or command authority. Preserve historical extension and instrumentation guards. Requalify affected source/collector and existing monitoring behavior against matching source bytes before acceptance.
+
+## Bounded database concurrency after the first fleet attempt
+
+The first actual ten-source attempt reached the common start but PostgreSQL refused three concurrent clock updates because its 20 connection slots were exhausted. Preserve this failed attempt. A transient HTTP 500 must not be confused with semantic metadata rejection. Retry the exact same bytes for bounded transient server errors; retain immediate failure for authorization/schema/conflict errors.
+
+Select per-process connection admission with standard-library bounded semaphores. A semaphore is a counter of available slots: a caller waits for a slot before opening a database connection and returns it only after the transaction commits/rolls back and the connection closes. Limit the reader and registry processes to four each, receiver and replay to two each, and trusted development helpers to two each. Keep one instance of each service; replicas require a reviewed deployment-wide budget. The normal deployment uses at most 12 application connections, leaving ordinary helper/health headroom within the existing 20-slot database and its reserved administrative connections. Waiting is bounded at five seconds; never leak a slot on connection, transaction or close failure.
+
+Retain connection context-manager commit/rollback/close behavior. Do not increase the database's connection limit or memory cap to hide unbounded clients. No new library, schema or migration is needed. An exact successor guard records the repository connection-factory change against the preceding E2-B bytes; previous guards/manifests remain untouched. Requalify transaction/error paths, actual fleet behavior and original monitoring/replay/recovery behavior before acceptance.
+
+The connection factory must return a real Psycopg connection, preserving both direct `execute`/`commit`/`close` callers and `with connection()` callers. Bind one idempotent admission ticket to a driver subclass; return the ticket when the connection closes, including context exit and failures. Repeated close must not return two slots. A lifecycle mixin is exercised against a controlled driver in unit tests; the original real-service setup's direct connection call and ordinary transactional paths must also pass. A context-manager-only factory is incompatible with existing callers and cannot qualify this change.

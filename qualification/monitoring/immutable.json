@@ -1,0 +1,16 @@
+{
+  "contracts/telemetry/2.0.0.schema.json": "36cd5a1856c2bb0dcc99e1b52414dd622359eeff80dd0bdab50a5a68896cadfe",
+  "contracts/monitoring.catalog.schema.json": "71be7d4ccdb0edee2d76af2e1241b1bc360a7cfed3b016e40b870ce0342edb5f",
+  "catalog/monitoring-motion-1.0.0.json": "0d43b3aad6abd31276281075e54d2da2399b11b82bb16354693c98c69df99155",
+  "contracts/telemetry/2.1.0.schema.json": "b97f31cafe3e0a775e0551db80867ec2b96564efd5f7242421967b03bc17d6e6",
+  "contracts/monitoring.catalog-1.1.schema.json": "b14b23c1024ff41b043e8dce992a909b27129604e3782968d81c9dce7694c9cd",
+  "catalog/monitoring-plant-1.1.0.json": "e086a9d45b1e4c93ff48d66fbec4046b52a7956e102bddc4c2bb346d34d60f34",
+  "contracts/telemetry/3.0.0.schema.json": "dfb7c6fafbe1d74d612c1414c8c7b9b480db81b5c28cacac780717f60c936e5f",
+  "catalog/monitoring-signals.json": "e54709fa3c44bee3decb8339961f5f0c3059f17d8da9b3a195fff4f7c55a0daa",
+  "contracts/monitoring.catalog-1.2.schema.json": "2d5feee52437ab496569d1d639703dba6f27fa9fb16507cfe2cba4f6a3b7a4e0",
+  "contracts/run-manifest.schema.json": "98632c139e926ef4dbe49a00b6fbd91c68af4b9f6e08b6e541ec27f06879fb16",
+  "catalog/monitoring-fleet-1.4.0.json": "72cbc634ccdab045400d77823af9afb840a83e3b32cd3f5a5acf8671b3d699d0",
+  "contracts/monitoring.catalog-1.4.schema.json": "f91d6d82658edda02e4790e4350729111a1d3a1c514d45149c7d587822c7ec0a",
+  "contracts/telemetry/3.2.0.schema.json": "fc86fe2a655dae4f7bbfc8f0bc1633cec8a844a4818b5a3cc4be9c8b8114d12b",
+  "contracts/run-manifest-2.2.schema.json": "d1f989d3c0ced66a897b62e2fb68c550129675ab8d0d7f954acafbe06c9d6a56"
+}

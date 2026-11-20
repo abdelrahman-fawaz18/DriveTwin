@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <!-- All parameters are synthetic qualification assumptions, not calibrated bus specifications. -->
+    <vType id="qualification-bus" vClass="bus" length="12" maxSpeed="10"
+           accel="1.2" decel="4.5" sigma="0" speedFactor="1" speedDev="0"/>
+    <route id="qualification-route" edges="road-a road-b"/>
+    <vehicle id="bus-001" type="qualification-bus" route="qualification-route"
+             depart="0" departSpeed="0" departPos="base">
+        <stop lane="road-a_0" endPos="250" duration="5"/>
+    </vehicle>
+</routes>

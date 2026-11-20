@@ -1,0 +1,359 @@
+{
+  "date": "2026-11-03",
+  "checkpoint": "P1-C2",
+  "passed": true,
+  "phase_1_complete": false,
+  "scope": "Local simulated map, historical query/export, event/operational views and real browser quality/clock cases",
+  "p1_c_local_functional_scope_passed": true,
+  "full_release_acceptance_passed": false,
+  "shared_checks": {
+    "python_tests": 80,
+    "frontend_logic_tests": 8,
+    "strict_typescript": true,
+    "format_and_production_build": true,
+    "original_contract_outcomes_per_language": 339,
+    "simulation_contract_outcomes_per_language": 60,
+    "strict_python_scope": [
+      "spool",
+      "plant",
+      "sensors",
+      "run_policy"
+    ],
+    "internal_metrics_actual_http_authentication_and_failed_provider": true
+  },
+  "map": {
+    "leaflet": "1.9.4",
+    "leaflet_types": "1.9.21",
+    "geojson_types": "7946.0.16",
+    "geojson_standard": "RFC 7946",
+    "context_version": "1.0.0",
+    "features": {
+      "roads": 1154,
+      "route": 1,
+      "stops": 1,
+      "stations": 2
+    },
+    "external_tiles": false,
+    "source_coordinate_conversion": "SUMO/TraCI 1.28.0; longitude/latitude degrees",
+    "coherent_same_event_pairing": true,
+    "raw_trajectory_points_qualified": 18,
+    "pagination_pages_qualified": 6,
+    "source_epoch_and_missing_gaps": true,
+    "context_scope_hash_and_assignment_checked": true,
+    "hypothetical_stations_unverified": true,
+    "camera_scale_and_responsive_checks": true
+  },
+  "history": {
+    "selected_signal_limit": 4,
+    "maximum_window_simulation_seconds": 86400,
+    "raw_export_limit": 10000,
+    "per_plot_limit": 5000,
+    "metadata_json_csv_export": true,
+    "actual_export_sample_rows_qualified": 36,
+    "csv_metadata_rows": 1,
+    "summary_counts_qualified": 36,
+    "summary_buckets_qualified": 8,
+    "empty_bucket_and_good_zero_extrema_checks": true,
+    "shared_time_cursor": true,
+    "obsolete_summary_response_ignored_in_real_browser": true,
+    "raw_versions_recipes_and_units_preserved": true,
+    "csv_formula_text_escaping": true
+  },
+  "operations": {
+    "authenticated_live_sender_metrics": true,
+    "authenticated_live_receiver_metrics": true,
+    "live_pending_at_sampling": 0,
+    "volume_usage_observed_without_publishing_machine_values": true,
+    "asset_scope_and_unavailable_metrics": true,
+    "dropped_counter_instrumented": false,
+    "physical_quota_enforced": false,
+    "event_tracking_migrations": [
+      "004_context_and_events.sql",
+      "005_quality_recovery.sql"
+    ],
+    "declared_state_quality_recovery_rejection_events": true,
+    "activity_revision_fixed_until_manual_refresh": true,
+    "activity_view_row_cap": 500,
+    "browser_connection_events": "page-local, explicitly labeled"
+  },
+  "browser_projects": [
+    {
+      "passed": true,
+      "browser": "156.0.4314.58",
+      "project": "windows-edge-visible",
+      "raw_readings": 18,
+      "signals": 20,
+      "external_requests": 0,
+      "checks": [
+        "catalog/filter",
+        "real history",
+        "disconnect/stale",
+        "resynchronize",
+        "asset isolation",
+        "mobile layout",
+        "memory-only credential",
+        "map/trajectory/layers/stations",
+        "synchronized signals",
+        "metadata JSON/CSV export",
+        "explicit summaries",
+        "activity/system views"
+      ]
+    },
+    {
+      "passed": true,
+      "browser": "156.0.8078.4",
+      "project": "chromium-automated",
+      "raw_readings": 18,
+      "signals": 20,
+      "external_requests": 0,
+      "checks": [
+        "catalog/filter",
+        "real history",
+        "disconnect/stale",
+        "resynchronize",
+        "asset isolation",
+        "mobile layout",
+        "memory-only credential",
+        "map/trajectory/layers/stations",
+        "synchronized signals",
+        "metadata JSON/CSV export",
+        "explicit summaries",
+        "activity/system views"
+      ]
+    }
+  ],
+  "controlled_browser_projects": [
+    {
+      "passed": true,
+      "project": "chromium-automated",
+      "browser": "156.0.8078.4",
+      "checks": [
+        "real zero/missing/invalid/recovery",
+        "coherent location and historical fallback",
+        "healthy pause beyond freshness deadline",
+        "lost heartbeat stale",
+        "resume does not freshen old readings",
+        "finished expires",
+        "real MQTT persisted quality",
+        "operational scope/unavailability"
+      ]
+    },
+    {
+      "passed": true,
+      "project": "windows-edge-visible",
+      "browser": "156.0.4314.58",
+      "checks": [
+        "real zero/missing/invalid/recovery",
+        "coherent location and historical fallback",
+        "healthy pause beyond freshness deadline",
+        "lost heartbeat stale",
+        "resume does not freshen old readings",
+        "finished expires",
+        "real MQTT persisted quality",
+        "operational scope/unavailability"
+      ]
+    }
+  ],
+  "controlled_producer": {
+    "passed": true,
+    "accepted_controlled_events": 10,
+    "stages": [
+      "setup",
+      "good-zero",
+      "missing",
+      "invalid",
+      "recover",
+      "pause",
+      "heartbeat-loss",
+      "resume",
+      "recover",
+      "finish",
+      "setup",
+      "good-zero",
+      "missing",
+      "invalid",
+      "recover",
+      "pause",
+      "heartbeat-loss",
+      "resume",
+      "recover",
+      "finish"
+    ],
+    "scope": "Controlled test producer, not a second physical vehicle model"
+  },
+  "read_models": {
+    "passed": true,
+    "checks": [
+      "consistent 20-signal snapshot",
+      "scoped authentication/cursors",
+      "18 raw readings across nine pages",
+      "query bounds and malformed continuation",
+      "uncommitted data invisible",
+      "concurrent writer serialization",
+      "rollback restores revision and 360-sample projection"
+    ]
+  },
+  "analysis_api": {
+    "passed": true,
+    "checks": [
+      "scoped immutable local map context",
+      "longitude/latitude conversion and hypothetical stations",
+      "18 coherent navigation points across six pages",
+      "36-row raw JSON and CSV exports with metadata",
+      "good-only summary accounting",
+      "recorded events",
+      "analysis authentication/query bounds",
+      "unavailable sender and unknown drops are explicit"
+    ]
+  },
+  "actual_source": {
+    "live_source_events": 18,
+    "live_source_scalar_samples": 360,
+    "historical_sql_upgrade_preserved_bytes": true,
+    "sensor_layer_quality_through_ingress": true,
+    "accepted_events_including_controlled_cases": 28,
+    "terminal_rejections": {
+      "identity_conflict": 1,
+      "manifest_mismatch": 1,
+      "source_not_registered": 1,
+      "session_mismatch": 1,
+      "ahead_of_declared_clock": 1,
+      "simulation_time_reset": 1,
+      "observation_predates_registration": 1,
+      "future_timestamp": 2,
+      "envelope_schema": 1,
+      "wrong_unit": 1,
+      "registered_format_required": 1,
+      "retired_source_time": 1,
+      "sequence_time_conflict": 1
+    }
+  },
+  "sampled_outage_pending": 2,
+  "final_spool": {
+    "pending": 0,
+    "accepted": 18
+  },
+  "healthy_seven_second_pause": true,
+  "complete_plant_missions": [
+    {
+      "sample_events": 864,
+      "scalar_samples": 17280,
+      "trace_steps": 4322,
+      "trace_sha256": "5fc21dc3194143e80e31890d1da4a5a531bc455d7f46f216f654c59bdadc6549",
+      "manifest_sha256": "b0d8a72400043b7e1142f241ade9cafb77a6d0f740086295a95c91722167d57a",
+      "stopped_steps": 1280,
+      "regenerative_steps": 411,
+      "heading_conversion_checked_steps": 4322,
+      "energy_ledger": {
+        "previous_j": 977762472.0738673,
+        "capacity_j": 1260000000,
+        "tolerance_j": 0.01,
+        "steps": 4322,
+        "maximum_residual_j": 2.384185791015625e-07,
+        "net_consumed_j": 30237527.926138565,
+        "clipped_j": 0.0
+      },
+      "mission_finished": true,
+      "completed_sim_time_s": 864.8,
+      "sensor_period_ticks": {
+        "location.latitude": 5,
+        "location.longitude": 5,
+        "motion.speed": 5,
+        "motion.distance": 5,
+        "motion.heading": 5,
+        "motion.acceleration": 5,
+        "battery.pack.soc": 5,
+        "battery.pack.voltage": 5,
+        "battery.pack.current": 5,
+        "battery.pack.power": 5,
+        "battery.pack.energy": 5,
+        "battery.pack.temperature": 5,
+        "traction.motor.speed": 5,
+        "traction.motor.torque": 5,
+        "traction.motor.temperature": 5,
+        "ambient.temperature": 5,
+        "auxiliary.power": 5,
+        "hvac.power": 5,
+        "location.horizontal_accuracy": 5,
+        "braking.pressure": 5
+      },
+      "insertion": {
+        "sim_time_s": 0.2,
+        "energy_j": 1008000000.0,
+        "device_step_j": 0.0,
+        "emission_rate_query_w": 8000.0
+      },
+      "maximum_emission_rate_difference_w": 44774.94379850681
+    },
+    {
+      "sample_events": 864,
+      "scalar_samples": 17280,
+      "trace_steps": 4322,
+      "trace_sha256": "5fc21dc3194143e80e31890d1da4a5a531bc455d7f46f216f654c59bdadc6549",
+      "manifest_sha256": "b0d8a72400043b7e1142f241ade9cafb77a6d0f740086295a95c91722167d57a",
+      "stopped_steps": 1280,
+      "regenerative_steps": 411,
+      "heading_conversion_checked_steps": 4322,
+      "energy_ledger": {
+        "previous_j": 977762472.0738673,
+        "capacity_j": 1260000000,
+        "tolerance_j": 0.01,
+        "steps": 4322,
+        "maximum_residual_j": 2.384185791015625e-07,
+        "net_consumed_j": 30237527.926138565,
+        "clipped_j": 0.0
+      },
+      "mission_finished": true,
+      "completed_sim_time_s": 864.8,
+      "sensor_period_ticks": {
+        "location.latitude": 5,
+        "location.longitude": 5,
+        "motion.speed": 5,
+        "motion.distance": 5,
+        "motion.heading": 5,
+        "motion.acceleration": 5,
+        "battery.pack.soc": 5,
+        "battery.pack.voltage": 5,
+        "battery.pack.current": 5,
+        "battery.pack.power": 5,
+        "battery.pack.energy": 5,
+        "battery.pack.temperature": 5,
+        "traction.motor.speed": 5,
+        "traction.motor.torque": 5,
+        "traction.motor.temperature": 5,
+        "ambient.temperature": 5,
+        "auxiliary.power": 5,
+        "hvac.power": 5,
+        "location.horizontal_accuracy": 5,
+        "braking.pressure": 5
+      },
+      "insertion": {
+        "sim_time_s": 0.2,
+        "energy_j": 1008000000.0,
+        "device_step_j": 0.0,
+        "emission_rate_query_w": 8000.0
+      },
+      "maximum_emission_rate_difference_w": 44774.94379850681
+    }
+  ],
+  "privacy_and_secret_findings": 0,
+  "owned_cleanup": {
+    "containers_remaining": 0,
+    "volumes_remaining": 0
+  },
+  "source_input_count": 93,
+  "source_set_sha256": "69631350a17196137f4700a9538d8383180872cae39e95b7cf95a1ec367ac265",
+  "remaining": [
+    "replay sessions and isolation",
+    "held-back sensor and genuine second modeled asset integration",
+    "backup/isolated restore",
+    "full W0/W1/W2 and five-minute outage/capacity/retention gates",
+    "source-to-browser latency and history-volume performance",
+    "formal visual-regression baseline",
+    "dropped-record instrumentation and physical quota/disk-pressure acceptance",
+    "calibrated physical models, remote clock/TLS qualification and vehicle control",
+    "persistent local developer/demo launcher"
+  ],
+  "private_evidence": "evidence/p1/2026-11-03-c2-05",
+  "private_source_checks": ".runtime/dev-checks/f601c9fc0c9f4fbb9a8f6ea1a8673c00/report.json"
+}

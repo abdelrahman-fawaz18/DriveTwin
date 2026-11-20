@@ -1,0 +1,151 @@
+{
+  "checkpoint": "P6-A1 Integrated qualification baseline",
+  "date_local": "2026-11-05",
+  "baseline_frozen": true,
+  "baseline_version": "phase6-local-integration/1.0.0",
+  "baseline_sha256": "7cfda7f24976aba66b6d0362a3e321cc3f41d346745402362703de3368e95a9b",
+  "basis_commit": "087069297ad27bb476c01a9377be977d61fb0383",
+  "release_workloads_started": false,
+  "q01_through_q12_release_qualification": "pending",
+  "host_launch_precheck": {
+    "passed": false,
+    "scope": "Active Ubuntu with a lightweight helper. No application containers or benchmark traffic started. Recheck before any live workload.",
+    "preflight_report_sha256": "b30111c2ac65b4678e87149ef91fcd86e97a3e031eabe21c8f0f7b70bfac2fe9",
+    "checks": {
+      "sample_span": true,
+      "sample_gap": true,
+      "windows_available_ram": false,
+      "windows_commit_headroom": true,
+      "wsl_working_set_positive": true,
+      "idle_disk_reserve": true,
+      "native_engine_responded": true,
+      "running_containers_zero_at_inventory": true
+    },
+    "windows_samples": 34,
+    "observed_sample_span_s": 32.999932,
+    "maximum_sample_interval_s": 1.015288,
+    "windows_total_physical_bytes": 16886128640,
+    "windows_minimum_available_physical_bytes": 1192808448,
+    "windows_minimum_commit_headroom_bytes": 13608239104,
+    "windows_below_2gib_upper_bound_s": 34.499932,
+    "existing_emergency_guard_passed": true,
+    "linux_available_memory_bytes_at_inventory": 7490969600,
+    "linux_swap_capacity_bytes_at_inventory": 2147483648,
+    "linux_root_available_bytes_at_inventory": 1005985202176,
+    "windows_project_volume_available_bytes_at_inventory": 327097016320,
+    "running_containers_at_inventory": 0,
+    "engine_version": "29.9.2",
+    "compose_version": "5.7.0",
+    "cgroup_version": 2
+  },
+  "compatibility": {
+    "phase1_w1_controller": {
+      "original_passed": true,
+      "report_sha256": "822360dce8667e4878687f8de0274cfc303c3c9a6780ec4204ddcc4d66e75055",
+      "matching": 75,
+      "changed": 3,
+      "changed_paths": [
+        "apps/dashboard/src/main.tsx",
+        "apps/dashboard/src/style.css",
+        "qualification/browser/dashboard.config.mjs"
+      ]
+    },
+    "phase1_w1_service": {
+      "original_passed": true,
+      "report_sha256": "8669b52dc83c85a804f91438e1e10e1e9a5cb9066f9381d772015926af246de1",
+      "matching": 201,
+      "changed": 12,
+      "changed_paths": [
+        "src/evdt/monitoring/adapter.py",
+        "src/evdt/monitoring/api.py",
+        "src/evdt/monitoring/database.py",
+        "src/evdt/monitoring/http_readers.py",
+        "src/evdt/monitoring/repository.py",
+        "src/evdt/monitoring/source.py",
+        "src/evdt/monitoring/spool.py",
+        "src/evdt/recovery/database.py",
+        "scripts/p1/recovery_fixture.py",
+        "containers/monitoring.Dockerfile",
+        "apps/dashboard/src/main.tsx",
+        "apps/dashboard/src/style.css"
+      ]
+    },
+    "phase1_single_bus_outage_controller": {
+      "original_passed": true,
+      "report_sha256": "a411e90eedb23994dfa6aff6afcba194f9d1c1ed66a2437ded7ee58318ef5cbc",
+      "matching": 170,
+      "changed": 20,
+      "changed_paths": [
+        "src/evdt/monitoring/adapter.py",
+        "src/evdt/monitoring/api.py",
+        "src/evdt/monitoring/database.py",
+        "src/evdt/monitoring/http_readers.py",
+        "src/evdt/monitoring/repository.py",
+        "src/evdt/monitoring/source.py",
+        "src/evdt/monitoring/spool.py",
+        "src/evdt/recovery/database.py",
+        "scripts/p1/extension_fixture.py",
+        "scripts/p1/full_measurement_report.py",
+        "scripts/p1/measurement_preflight.py",
+        "scripts/p1/qualify_extension.py",
+        "scripts/p1/qualify_sustained_measurement.py",
+        "scripts/p1/recovery_fixture.py",
+        "scripts/p1/windows_resources.py",
+        "scripts/p1/workload_profile.py",
+        "apps/dashboard/src/main.tsx",
+        "apps/dashboard/src/style.css",
+        "containers/monitoring.Dockerfile",
+        "benchmarks/workloads.json"
+      ]
+    },
+    "phase1_single_bus_outage_service": {
+      "original_passed": true,
+      "report_sha256": "38d68e4e5eb089fd78bccd4a01f94b0a682429925be304035286c197eda0ad16",
+      "matching": 192,
+      "changed": 19,
+      "changed_paths": [
+        "src/evdt/monitoring/adapter.py",
+        "src/evdt/monitoring/api.py",
+        "src/evdt/monitoring/database.py",
+        "src/evdt/monitoring/http_readers.py",
+        "src/evdt/monitoring/repository.py",
+        "src/evdt/monitoring/source.py",
+        "src/evdt/monitoring/spool.py",
+        "src/evdt/recovery/database.py",
+        "scripts/p1/recovery_fixture.py",
+        "scripts/p1/full_measurement_report.py",
+        "scripts/p1/measurement_preflight.py",
+        "scripts/p1/qualify_sustained_measurement.py",
+        "scripts/p1/workload_profile.py",
+        "scripts/p1/windows_resources.py",
+        "benchmarks/workloads.json",
+        "containers/monitoring.Dockerfile",
+        "scripts/p1/extension_fixture.py",
+        "apps/dashboard/src/main.tsx",
+        "apps/dashboard/src/style.css"
+      ]
+    },
+    "original_phase1_runtime_guard_passed_current_revision": false,
+    "first_guard_rejection": "Unreviewed runtime bytes: apps/dashboard/src/main.tsx",
+    "historical_results_reclassified": false,
+    "history_bundle": {
+      "manifest_sha256": "eff2018c31aae9faf2aa241e3da9b1e3ec604f50079c205dd0b6aea2306fc60c",
+      "files_verified": 88,
+      "bytes_verified": 648477603,
+      "original_required_application_image_present": true,
+      "restore_launched": false
+    },
+    "phase5_component_verifier": {
+      "passed": true,
+      "bench_profiles": 13,
+      "advisory_scenarios": 48,
+      "intervention_traces": 72
+    }
+  },
+  "next_checkpoint": {
+    "id": "P6-A2",
+    "name": "Monitoring qualification harness and smoke test",
+    "offline_preparation_ready": true,
+    "live_smoke_launch_ready": false
+  }
+}

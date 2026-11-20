@@ -1,0 +1,133 @@
+{
+  "version": "phase2-readiness-checklist/1.1.0",
+  "review_date": "2026-11-05",
+  "authority": "Original PROJECT_PLAN.md Phase 2 work, deliverables and acceptance; no scope reduction",
+  "scope": "Known-route synthetic advisory implementation; no automatic-control or physical-bus approval",
+  "items": [
+    {
+      "id": "P2-W01",
+      "status": "passed",
+      "description": "Energy ownership, equations, units and assumptions documented",
+      "gaps": []
+    },
+    {
+      "id": "P2-W02",
+      "status": "passed",
+      "description": "Reference and route-dependent forecasts with immutable derived records",
+      "gaps": []
+    },
+    {
+      "id": "P2-W03",
+      "status": "passed",
+      "description": "Route energy, final charge, conditional time/range, reserve and station reachability",
+      "gaps": []
+    },
+    {
+      "id": "P2-W04",
+      "status": "passed",
+      "description": "Explicit uncertainty assumptions, observed coverage and width limits",
+      "gaps": []
+    },
+    {
+      "id": "P2-W05",
+      "status": "passed",
+      "description": "Whole-mission train/validation/held-out separation and designated-data fitting",
+      "gaps": []
+    },
+    {
+      "id": "P2-W06",
+      "status": "passed",
+      "description": "Forecast display includes input age, horizon, versions, assumptions, uncertainty and explanations",
+      "gaps": []
+    },
+    {
+      "id": "P2-01",
+      "status": "passed",
+      "description": "Numerical energy balance, bounds, limiting cases and refinement",
+      "gaps": []
+    },
+    {
+      "id": "P2-02",
+      "status": "passed",
+      "description": "Selected isolated worker denies private plant/truth access; trusted host/controller boundary remains explicit",
+      "gaps": []
+    },
+    {
+      "id": "P2-03",
+      "status": "passed",
+      "description": "Frozen known-route cutoff study reports every regime/count/failure against unchanged criteria",
+      "gaps": []
+    },
+    {
+      "id": "P2-04",
+      "status": "passed",
+      "description": "Stale, missing, unsupported-domain and disconnected inputs suppress current estimates; actual browser and legitimate recovery passed.",
+      "gaps": []
+    },
+    {
+      "id": "P2-05",
+      "status": "passed",
+      "description": "Identical calculation inputs/settings reproduce outputs in the declared scope",
+      "gaps": []
+    },
+    {
+      "id": "P2-06",
+      "status": "passed",
+      "description": "Input lineage, model/uncertainty identity and separate immutable observations",
+      "gaps": []
+    },
+    {
+      "id": "P2-D01",
+      "status": "passed",
+      "description": "Current model cards distinguish foundation, calibrated study and product integration",
+      "gaps": []
+    },
+    {
+      "id": "P2-D02",
+      "status": "passed",
+      "description": "Calibration/validation and held-out reports preserved",
+      "gaps": []
+    },
+    {
+      "id": "P2-D03",
+      "status": "passed",
+      "description": "Actual complete dataset manifests and exact file inventories retained",
+      "gaps": []
+    },
+    {
+      "id": "P2-D04",
+      "status": "passed",
+      "description": "Asset-scoped forecast read API exists for the documented route/cutoff",
+      "gaps": []
+    },
+    {
+      "id": "P2-D05",
+      "status": "passed",
+      "description": "Complete private evidence, source compatibility and original-requirement closeout verified.",
+      "gaps": []
+    }
+  ],
+  "open_gaps": [],
+  "next_part": null,
+  "promotion_withheld_until_all_items_pass": true,
+  "automatic_dispatch_approved": false,
+  "phase3_authorized": false,
+  "phase6_deferrals_changed": false,
+  "resolved_gaps": [
+    {
+      "id": "G-01",
+      "part": "P2-E1b",
+      "closure_evidence": "Reviewed bus-road approaches and bound assumed-motion station jobs; actual browser shows both hypothetical stations and focused checks cover refusal and shortfall."
+    },
+    {
+      "id": "G-02",
+      "part": "P2-E1a",
+      "closure_evidence": "Actual Energy page shows input age, horizon, conditional range/time and assumptions. Restored legacy rows retain original content."
+    },
+    {
+      "id": "G-03",
+      "part": "P2-E1c",
+      "closure_evidence": "Actual Chromium distinguishes missing required input, unsupported cutoff, staleness and disconnection; verified new registered run recovery."
+    }
+  ]
+}

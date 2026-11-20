@@ -1,0 +1,15 @@
+# Use consistent source line endings when Windows and Linux share this folder.
+* text=auto eol=lf
+*.png -text
+# Release metadata is fingerprinted byte-for-byte. Preserve the exact qualified
+# JSON bytes instead of converting Windows/Linux line endings during staging.
+docs/models/*-release.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Preserve exact legacy bytes already bound by qualification/source fingerprints.
+# No working-file content is rewritten by these storage rules.
+contracts/telemetry/1.1.0.schema.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+qualification/contracts/immutable.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+qualification/energy/mission-design.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/monitoring/qualify_dashboard.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/monitoring/qualify_uplink.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Keep the existing deployment recipe bytes bound by the D1/E1 evidence.
+ops/compose/compose.monitoring.yaml -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

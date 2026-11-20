@@ -1,0 +1,57 @@
+{
+  "checkpoint": "P7-02",
+  "scope": "Release monitoring and replay demonstration",
+  "status": "automated_service_and_asset_checks_passed",
+  "attempts": [
+    {
+      "private_report": "evidence/p6/demo-monitoring-01/qualification.json",
+      "sha256": "eacf5605a96844fbbbdd378ecafcc734f0a9d7357c9d3b025741227f9602ade9",
+      "status": "stopped_on_windows_runtime_memory_limit",
+      "partial_functional_checks": {
+        "passed": true,
+        "signals_checked": 20,
+        "accepted_originals": 16,
+        "history_signals_checked": 20,
+        "map_features": 1158,
+        "replay_packets": 16,
+        "replay_isolated": true,
+        "startup_s": 10.816784586000011,
+        "built_dashboard_assets_served": true,
+        "dashboard_image_id": "sha256:31cb89c463f18589ffa1f57c9f8aeaeb77537e36b280c1dd0e01ed0227fb3ed7"
+      },
+      "minimum_runtime_windows_available_bytes": 1473818624,
+      "runtime_below_2gib_upper_s": 33.487,
+      "fallback_cleanup_passed": true
+    }
+  ],
+  "verified_demo": {
+    "private_report": "evidence/p6/demo-monitoring-02/qualification.json",
+    "sha256": "4db76e04c3d6544cc17e692fdf9ddeaf17bb4c6744c0b93603584b0253f9b35a",
+    "source": {
+      "profile_sha256": "559c8b241e55129d3039f4910733b9aca62a9c37f12059967d4c85b46a3a4d5c",
+      "inventory": {
+        "files": 336,
+        "sha256": "ab5c54ed51455e4fcf33df0f21386547f93c6eb6c2d84b0b3d58490e6b21284e"
+      }
+    },
+    "checks": {
+      "passed": true,
+      "signals_checked": 20,
+      "accepted_originals": 16,
+      "history_signals_checked": 20,
+      "map_features": 1158,
+      "replay_packets": 16,
+      "replay_isolated": true,
+      "startup_s": 9.234562851999996,
+      "pending_at_end": 0,
+      "built_dashboard_assets_served": true,
+      "dashboard_image_id": "sha256:de7e52b4b3b79aba72a98b75d76b9821d8f8530d4cdd9b609e13fdd73cf5680d"
+    },
+    "cleanup_passed": true,
+    "minimum_runtime_windows_available_bytes": 1583091712,
+    "generic_runtime_below_2gib_upper_s": 27.509,
+    "runtime_final_below_floor_upper_s": 26.168,
+    "live_memory_guard_replay_passed": true
+  },
+  "remaining": "Verify interactive browser workflow and selected commands from a clean checkout. Preserve the isolated simulation evidence for command effects and matched comparisons."
+}

@@ -1,0 +1,30 @@
+{
+  "checkpoint": "P7-02",
+  "status": "comparison_reproduced_and_saved_command_effect_verified",
+  "comparison": {
+    "tested_clean_commit": "c5614e1f14caf9480e6d766ba8a22f01ed65e500",
+    "private_report_sha256": "c506cd4b48508915f89dd7e01fea79ebd88dbcef4c6da800f3198a7952e3f7c9",
+    "reference": "docs/verification/p4-phase4-closeout.json",
+    "matched_arms": 6,
+    "reference_terminal_sim_s": 594.8,
+    "shared_departure_power_verified": true,
+    "all_completed_above_reserve": true
+  },
+  "command_effect": {
+    "reference": "docs/verification/p6-c1-combined-faults.json",
+    "scope": "Read-only review of the retained authorized operator command and independent simulator measurements",
+    "verified_private_files": 7,
+    "observed_charge_kwh": 35.15000000000148,
+    "observed_at_target_kwh": 87.50427944227708,
+    "motion_resumed": true,
+    "command_and_trace_identity_match": true
+  },
+  "release_facing_document_review": {
+    "documents_checked": 6,
+    "local_links_to_package_candidates_verified": 110,
+    "readme_measurements_match_scoped_verification_reports": true,
+    "python_lock_inventory_entries_verified": 51,
+    "javascript_lock_inventory_entries_verified": 62
+  },
+  "interactive_browser_from_clean_source": "Open. Both clean-start attempts stopped at the Windows memory precheck."
+}

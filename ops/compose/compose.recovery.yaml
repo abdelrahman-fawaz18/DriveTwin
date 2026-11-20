@@ -1,0 +1,26 @@
+# Restored application reads the archived dictionaries; canonical source stays in place.
+services:
+  api:
+    volumes:
+      - ${BACKUP_DIRECTORY:?}/artifacts/contracts:/app/contracts:ro
+      - ${BACKUP_DIRECTORY:?}/artifacts/catalog:/app/catalog:ro
+  replay:
+    volumes:
+      - ${BACKUP_DIRECTORY:?}/artifacts/contracts:/app/contracts:ro
+      - ${BACKUP_DIRECTORY:?}/artifacts/catalog:/app/catalog:ro
+  ingest:
+    volumes:
+      - ${BACKUP_DIRECTORY:?}/artifacts/contracts:/app/contracts:ro
+      - ${BACKUP_DIRECTORY:?}/artifacts/catalog:/app/catalog:ro
+  sender:
+    volumes:
+      - ${BACKUP_DIRECTORY:?}/artifacts/contracts:/app/contracts:ro
+      - ${BACKUP_DIRECTORY:?}/artifacts/catalog:/app/catalog:ro
+  sender2:
+    volumes:
+      - ${BACKUP_DIRECTORY:?}/artifacts/contracts:/app/contracts:ro
+      - ${BACKUP_DIRECTORY:?}/artifacts/catalog:/app/catalog:ro
+  probe:
+    volumes:
+      - ${BACKUP_DIRECTORY:?}/artifacts/contracts:/app/contracts:ro
+      - ${BACKUP_DIRECTORY:?}/artifacts/catalog:/app/catalog:ro

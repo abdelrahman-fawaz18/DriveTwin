@@ -1,0 +1,9 @@
+{
+  "version": "training-joint-grid-envelope/1.0.0",
+  "relative_training_mse_slack": 0.1,
+  "absolute_training_mse_slack_kwh2": 0.0025,
+  "include_all_leave_one_trip_out_pairs": true,
+  "keep_mass_capacity_regeneration_auxiliary_soc_and_stop_assumptions": true,
+  "probability_guarantee": false,
+  "rationale": "The validation review rejected independent resistance/efficiency boxes as too wide. Preserve the joint training tradeoff, retaining candidates within 10% plus 0.0025 kWh squared of best whole-trip MSE and every leave-one-trip-out selection. Other sensitivity assumptions and every D-18 threshold stay unchanged. This is empirical scenario selection, not a confidence region."
+}

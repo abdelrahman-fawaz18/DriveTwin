@@ -1,0 +1,447 @@
+{
+  "version": "energy-mission-design/1.0.0",
+  "design_id": "montreal-energy-missions/1.0.0",
+  "status": "planned_not_collected",
+  "regimes": [
+    "nominal",
+    "high_load",
+    "stop_heavy",
+    "cold_auxiliary",
+    "capacity_mismatch",
+    "low_charge_auxiliary"
+  ],
+  "missions": [
+    {
+      "mission_id": "nominal-01",
+      "family_id": "nominal-01",
+      "regime": "nominal",
+      "partition": "train",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21001,
+        "initial_soc": 0.8,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 8000,
+        "ambient_temperature_k": 293.15,
+        "actual_capacity_kwh": 350,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "urban",
+        "scheduled_stop_s": 10
+      }
+    },
+    {
+      "mission_id": "nominal-02",
+      "family_id": "nominal-02",
+      "regime": "nominal",
+      "partition": "train",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21002,
+        "initial_soc": 0.805,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 8000,
+        "ambient_temperature_k": 293.15,
+        "actual_capacity_kwh": 350,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "urban",
+        "scheduled_stop_s": 11
+      }
+    },
+    {
+      "mission_id": "nominal-03",
+      "family_id": "nominal-03",
+      "regime": "nominal",
+      "partition": "validation",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21003,
+        "initial_soc": 0.81,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 8000,
+        "ambient_temperature_k": 293.15,
+        "actual_capacity_kwh": 350,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "urban",
+        "scheduled_stop_s": 12
+      }
+    },
+    {
+      "mission_id": "nominal-04",
+      "family_id": "nominal-04",
+      "regime": "nominal",
+      "partition": "held_out",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21004,
+        "initial_soc": 0.815,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 8000,
+        "ambient_temperature_k": 293.15,
+        "actual_capacity_kwh": 350,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "urban",
+        "scheduled_stop_s": 13
+      }
+    },
+    {
+      "mission_id": "high_load-01",
+      "family_id": "high_load-01",
+      "regime": "high_load",
+      "partition": "train",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21101,
+        "initial_soc": 0.7,
+        "loaded_mass_kg": 21000,
+        "auxiliary_power_w": 8000,
+        "ambient_temperature_k": 293.15,
+        "actual_capacity_kwh": 350,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "urban",
+        "scheduled_stop_s": 10
+      }
+    },
+    {
+      "mission_id": "high_load-02",
+      "family_id": "high_load-02",
+      "regime": "high_load",
+      "partition": "train",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21102,
+        "initial_soc": 0.705,
+        "loaded_mass_kg": 21000,
+        "auxiliary_power_w": 8000,
+        "ambient_temperature_k": 293.15,
+        "actual_capacity_kwh": 350,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "urban",
+        "scheduled_stop_s": 11
+      }
+    },
+    {
+      "mission_id": "high_load-03",
+      "family_id": "high_load-03",
+      "regime": "high_load",
+      "partition": "validation",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21103,
+        "initial_soc": 0.71,
+        "loaded_mass_kg": 21000,
+        "auxiliary_power_w": 8000,
+        "ambient_temperature_k": 293.15,
+        "actual_capacity_kwh": 350,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "urban",
+        "scheduled_stop_s": 12
+      }
+    },
+    {
+      "mission_id": "high_load-04",
+      "family_id": "high_load-04",
+      "regime": "high_load",
+      "partition": "held_out",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21104,
+        "initial_soc": 0.715,
+        "loaded_mass_kg": 21000,
+        "auxiliary_power_w": 8000,
+        "ambient_temperature_k": 293.15,
+        "actual_capacity_kwh": 350,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "urban",
+        "scheduled_stop_s": 13
+      }
+    },
+    {
+      "mission_id": "stop_heavy-01",
+      "family_id": "stop_heavy-01",
+      "regime": "stop_heavy",
+      "partition": "train",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21201,
+        "initial_soc": 0.6,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 8000,
+        "ambient_temperature_k": 293.15,
+        "actual_capacity_kwh": 350,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "stop_heavy",
+        "scheduled_stop_s": 30
+      }
+    },
+    {
+      "mission_id": "stop_heavy-02",
+      "family_id": "stop_heavy-02",
+      "regime": "stop_heavy",
+      "partition": "train",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21202,
+        "initial_soc": 0.605,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 8000,
+        "ambient_temperature_k": 293.15,
+        "actual_capacity_kwh": 350,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "stop_heavy",
+        "scheduled_stop_s": 31
+      }
+    },
+    {
+      "mission_id": "stop_heavy-03",
+      "family_id": "stop_heavy-03",
+      "regime": "stop_heavy",
+      "partition": "validation",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21203,
+        "initial_soc": 0.61,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 8000,
+        "ambient_temperature_k": 293.15,
+        "actual_capacity_kwh": 350,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "stop_heavy",
+        "scheduled_stop_s": 32
+      }
+    },
+    {
+      "mission_id": "stop_heavy-04",
+      "family_id": "stop_heavy-04",
+      "regime": "stop_heavy",
+      "partition": "held_out",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21204,
+        "initial_soc": 0.615,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 8000,
+        "ambient_temperature_k": 293.15,
+        "actual_capacity_kwh": 350,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "stop_heavy",
+        "scheduled_stop_s": 33
+      }
+    },
+    {
+      "mission_id": "cold_auxiliary-01",
+      "family_id": "cold_auxiliary-01",
+      "regime": "cold_auxiliary",
+      "partition": "train",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21301,
+        "initial_soc": 0.6,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 16000,
+        "ambient_temperature_k": 263.15,
+        "actual_capacity_kwh": 350,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "urban",
+        "scheduled_stop_s": 10
+      }
+    },
+    {
+      "mission_id": "cold_auxiliary-02",
+      "family_id": "cold_auxiliary-02",
+      "regime": "cold_auxiliary",
+      "partition": "train",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21302,
+        "initial_soc": 0.605,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 16000,
+        "ambient_temperature_k": 263.15,
+        "actual_capacity_kwh": 350,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "urban",
+        "scheduled_stop_s": 11
+      }
+    },
+    {
+      "mission_id": "cold_auxiliary-03",
+      "family_id": "cold_auxiliary-03",
+      "regime": "cold_auxiliary",
+      "partition": "validation",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21303,
+        "initial_soc": 0.61,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 16000,
+        "ambient_temperature_k": 263.15,
+        "actual_capacity_kwh": 350,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "urban",
+        "scheduled_stop_s": 12
+      }
+    },
+    {
+      "mission_id": "cold_auxiliary-04",
+      "family_id": "cold_auxiliary-04",
+      "regime": "cold_auxiliary",
+      "partition": "held_out",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21304,
+        "initial_soc": 0.615,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 16000,
+        "ambient_temperature_k": 263.15,
+        "actual_capacity_kwh": 350,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "urban",
+        "scheduled_stop_s": 13
+      }
+    },
+    {
+      "mission_id": "capacity_mismatch-01",
+      "family_id": "capacity_mismatch-01",
+      "regime": "capacity_mismatch",
+      "partition": "train",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21401,
+        "initial_soc": 0.7,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 8000,
+        "ambient_temperature_k": 293.15,
+        "actual_capacity_kwh": 280,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "urban",
+        "scheduled_stop_s": 10
+      }
+    },
+    {
+      "mission_id": "capacity_mismatch-02",
+      "family_id": "capacity_mismatch-02",
+      "regime": "capacity_mismatch",
+      "partition": "train",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21402,
+        "initial_soc": 0.705,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 8000,
+        "ambient_temperature_k": 293.15,
+        "actual_capacity_kwh": 280,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "urban",
+        "scheduled_stop_s": 11
+      }
+    },
+    {
+      "mission_id": "capacity_mismatch-03",
+      "family_id": "capacity_mismatch-03",
+      "regime": "capacity_mismatch",
+      "partition": "validation",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21403,
+        "initial_soc": 0.71,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 8000,
+        "ambient_temperature_k": 293.15,
+        "actual_capacity_kwh": 280,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "urban",
+        "scheduled_stop_s": 12
+      }
+    },
+    {
+      "mission_id": "capacity_mismatch-04",
+      "family_id": "capacity_mismatch-04",
+      "regime": "capacity_mismatch",
+      "partition": "held_out",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21404,
+        "initial_soc": 0.715,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 8000,
+        "ambient_temperature_k": 293.15,
+        "actual_capacity_kwh": 280,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "urban",
+        "scheduled_stop_s": 13
+      }
+    },
+    {
+      "mission_id": "low_charge_auxiliary-01",
+      "family_id": "low_charge_auxiliary-01",
+      "regime": "low_charge_auxiliary",
+      "partition": "train",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21501,
+        "initial_soc": 0.12,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 16000,
+        "ambient_temperature_k": 273.15,
+        "actual_capacity_kwh": 315,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "stop_heavy",
+        "scheduled_stop_s": 20
+      }
+    },
+    {
+      "mission_id": "low_charge_auxiliary-02",
+      "family_id": "low_charge_auxiliary-02",
+      "regime": "low_charge_auxiliary",
+      "partition": "train",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21502,
+        "initial_soc": 0.125,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 16000,
+        "ambient_temperature_k": 273.15,
+        "actual_capacity_kwh": 315,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "stop_heavy",
+        "scheduled_stop_s": 21
+      }
+    },
+    {
+      "mission_id": "low_charge_auxiliary-03",
+      "family_id": "low_charge_auxiliary-03",
+      "regime": "low_charge_auxiliary",
+      "partition": "validation",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21503,
+        "initial_soc": 0.13,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 16000,
+        "ambient_temperature_k": 273.15,
+        "actual_capacity_kwh": 315,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "stop_heavy",
+        "scheduled_stop_s": 22
+      }
+    },
+    {
+      "mission_id": "low_charge_auxiliary-04",
+      "family_id": "low_charge_auxiliary-04",
+      "regime": "low_charge_auxiliary",
+      "partition": "held_out",
+      "recipe": {
+        "route_id": "montreal-core-loop-v1",
+        "realization_seed": 21504,
+        "initial_soc": 0.135,
+        "loaded_mass_kg": 18000,
+        "auxiliary_power_w": 16000,
+        "ambient_temperature_k": 273.15,
+        "actual_capacity_kwh": 315,
+        "declared_capacity_kwh": 350,
+        "traffic_regime": "stop_heavy",
+        "scheduled_stop_s": 23
+      }
+    }
+  ]
+}

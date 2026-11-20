@@ -1,0 +1,34 @@
+{
+  "version": "phase6-combined-faults/1.0.0",
+  "checkpoint": "P6-C1",
+  "asset_id": "bus-001",
+  "source_id": "sumo-adapter",
+  "automatic_dispatch": false,
+  "cases": {
+    "charge": {"effect": "charge_and_resume"},
+    "cool": {"effect": "measured_cooling"},
+    "protected": {"before_effect_refusal": "local_protection"},
+    "stale-outage": {
+      "before_effect_refusal": "charging_observation_stale_or_future",
+      "recovery_refusal": "charging_lineage_mismatch"
+    },
+    "interrupted-outage": {
+      "before_effect_refusal": "physical_station_unavailable",
+      "recovery_refusal": "charging_already_reserved"
+    }
+  },
+  "outage_wait_s": 6,
+  "thermal": {
+    "degradation_tick": 241,
+    "maximum_trigger_tick": 550,
+    "effect_window_s": 120,
+    "minimum_motor_effect_k": 1,
+    "initial_k": [342, 332],
+    "ambient_k": 295,
+    "heat_w": [2500, 1100],
+    "capacity_j_k": [36000, 64000],
+    "coupling_w_k": 250,
+    "healthy_housing_w_k": 100,
+    "degraded_housing_w_k": 30
+  }
+}

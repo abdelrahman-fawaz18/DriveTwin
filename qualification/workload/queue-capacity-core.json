@@ -1,0 +1,8 @@
+{
+  "src/evdt/monitoring/spool.py": {
+    "baseline_sha256": "fe9e413dadda57522481ac85c0c40e5e15e0c3234194c8daaa5676d655a1f4ee",
+    "previous_reviewed_sha256": "fe9e413dadda57522481ac85c0c40e5e15e0c3234194c8daaa5676d655a1f4ee",
+    "reviewed_sha256": "26e3e522bc6e3821d74081b9e6770a865740833fd2c052451c8da83d910d45f3",
+    "reason": "Add an explicit new-queue-only immutable oldest-first capacity policy with atomic per-event eviction evidence, honest unresolved accounting, late receipt reconciliation and trusted local loss confirmation. Default legacy refusal/receipt behavior and all existing queue/schema contracts remain unchanged. No physical quota or transport integration claim."
+  }
+}

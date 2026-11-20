@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-03",
+  "checkpoint": "P1-A",
+  "passed": true,
+  "phase_1_complete": false,
+  "scope": "Live simulated motion through durable authenticated uplink to history/current read API",
+  "source": {
+    "simulator": "SUMO 1.28.0",
+    "signals": ["location.latitude", "location.longitude", "motion.speed", "motion.distance"],
+    "sampling_hz": 1,
+    "live_events": 18,
+    "live_scalar_samples": 72,
+    "provenance": "simulated-observation"
+  },
+  "delivery": {
+    "exact_original_bytes_reconciled": true,
+    "outage_backlog_observed": 5,
+    "sender_restarted_during_outage": true,
+    "broker_and_ingest_restored": true,
+    "final_pending": 0,
+    "application_receipts_required": true,
+    "owned_test_containers_and_volumes_removed": true
+  },
+  "integration_checks": [
+    "unknown initial state",
+    "authenticated asset-scoped API",
+    "exact duplicate without duplicate history",
+    "identity conflict quarantine",
+    "invalid unit rejection",
+    "replay-mode rejection",
+    "future timestamp rejection",
+    "late history without current regression",
+    "observer cannot forge a receipt through the broker",
+    "second-asset controlled input isolation",
+    "read-only database role",
+    "stale state",
+    "no command endpoint"
+  ],
+  "controlled_fixture_accounting": {
+    "accepted_including_late_and_second_asset": 20,
+    "quarantined_conflicting_or_invalid_inputs": 4,
+    "bus_001_spool_lifetime_accepted_including_late_input": 19
+  },
+  "shared_checks": {
+    "unit_foundation_and_queue_tests": 43,
+    "existing_qualification_cases_per_language": 339,
+    "new_simulation_cases_per_language": 39,
+    "expected_outcome_mismatches": 0,
+    "strict_typescript": true,
+    "strict_python_scope": "src/evdt/monitoring/spool.py",
+    "original_schema_and_reader_unchanged": true,
+    "committed_queue_survives_abrupt_process_exit": true,
+    "terminal_detail_pruning_preserves_lifetime_counts": true
+  },
+  "phase_0_regressions": {
+    "actual_dataflow_two_cycles_and_persistence": true,
+    "synthetic_sumo_repeatability": true,
+    "visible_windows_edge": true,
+    "automated_chromium": true,
+    "source_fingerprints_verified": true
+  },
+  "limits": [
+    "Four motion signals, not the complete 20-signal plant or product dashboard.",
+    "Short stopped-service interval and process restart, not the required five-minute outage or W0/W1.",
+    "Queue byte backpressure, not qualified physical disk quotas, storage-full recovery or full retention.",
+    "Process-exit recovery, not actual power-loss or media-failure qualification.",
+    "Local authentication/permissions, not TLS or remote-deployment security qualification.",
+    "Controlled second-asset input, not a second validated plant.",
+    "Replay observation rejection, not complete replay support or P1-06 acceptance.",
+    "No actuation, calibrated battery/thermal model, backup restoration or hosted CI claim."
+  ]
+}

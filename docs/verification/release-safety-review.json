@@ -1,0 +1,167 @@
+{
+  "checkpoint": "P7-03",
+  "release_acceptance": "passed",
+  "scope": "Review current command, queue and protection boundaries for the bounded local simulation release",
+  "release_profile_sha256": "559c8b241e55129d3039f4910733b9aca62a9c37f12059967d4c85b46a3a4d5c",
+  "offline_checks": {
+    "preserved_setup_failure": {
+      "private_report": "evidence/p7/release-safety-offline-01/qualification.json",
+      "sha256": "cde5221e6a8c74b4b9c68d669e9ae1262b18ae312b52cf31ce1b4cbffe3c2ba8",
+      "reason": "The general test image lacks NumPy. The thermal checks require the separate recorded scientific runtime."
+    },
+    "command_queue_replay_and_charging": {
+      "private_report": "evidence/p7/release-safety-offline-02/qualification.json",
+      "sha256": "b4b7b73b618c293dff6748b87ebb9d48224213b0d40e6289e9878184c761a313",
+      "tests_passed": 53,
+      "subtests_passed": 10,
+      "source_files_matched_before_and_after": 105
+    },
+    "thermal_intervention_and_frozen_evidence": {
+      "private_report": "evidence/p7/release-safety-thermal-01/qualification.json",
+      "sha256": "99d34f56bf88d4c315b9d62419857a591f21294feea13ee5eb9618106a5d26bd",
+      "tests_passed": 16,
+      "source_files_matched_before_and_after": 113,
+      "retained_bench_profiles_verified": 13,
+      "retained_advisory_cases_verified": 48,
+      "retained_intervention_traces_verified": 72
+    }
+  },
+  "reviewed_controls": {
+    "durable_reservation": "The journal commits a unique attempt before returning an actuation handoff. An attempt without a result stays unknown and the service refuses a repeat claim.",
+    "credential_boundary": "Operator, executor and observer secrets must be distinct. Replay and telemetry readers have separate service and database paths.",
+    "queue_identity": "Only a matching application receipt can retire an original. Fresh source startup with a used queue is refused before the source can change its owner."
+  },
+  "guide_review": {
+    "figures_rebuilt_and_rendered": 4,
+    "browser_version": "156.0.8078.4",
+    "overview": "docs/learning/quick-overview.md",
+    "walkthrough": "docs/learning/technical-walkthrough.md"
+  },
+  "current_host_readiness": {
+    "private_report": "evidence/p6/host-readiness-review-01/phase6-preflight.json",
+    "sha256": "3ccebea869534cb05e9173258f76720524b870870b0310c25fea41a61a0943b5",
+    "result": "Held before services",
+    "windows_memory_samples": 34,
+    "minimum_available_bytes": 2120171520,
+    "required_available_bytes": 2147483648,
+    "disk_checks_passed": true,
+    "running_containers_before_check": 0,
+    "current_and_prepared_clean_source_inventory_match": true,
+    "resume_guide": "docs/release/verify-on-host.md"
+  },
+  "current_reader_preparation": {
+    "status": "Prepared for a manual run. Live restore and reader checks remain open.",
+    "sealed_files_verified": 88,
+    "recorded_messages": 72000,
+    "archived_schema_catalog_and_migration_files_matched": 33,
+    "original_image_identity_verified": true,
+    "required_original_credentials_available": true,
+    "current_image_id": "sha256:32c50a9c546391ff087df070fe7476921a9ec7c651d96e855c33067b6402c61f",
+    "current_image_source_inventory_sha256": "c3338407c248624664b0bd6328124160f986065643e4c0189164851f6411da5f",
+    "replacement_monitor_dispatch_verified_offline": true
+  },
+  "current_reader_manual_attempt": {
+    "status": "Incomplete after the restore passed. The direct export audit used the browser download metadata rules.",
+    "private_report": "evidence/p6/history-reader-20261106-140245/qualification.json",
+    "sha256": "1e4615e6c1167ad193c8a33cca08b9585183b08742f0d0fe2157a1c777360e62",
+    "private_restore_report": "evidence/p6/history-reader-20261106-140245/restore/qualification.json",
+    "restore_report_sha256": "8eeed8b564c00c5772eb0053f9e752baf1fd85e44b6e81c7a2cdfe70776e75ee",
+    "source_inventory_sha256": "c3338407c248624664b0bd6328124160f986065643e4c0189164851f6411da5f",
+    "launch_minimum_windows_available_bytes": 4613525504,
+    "restored_messages": 72000,
+    "restored_readings": 1440000,
+    "complete_database_inventory_matched": true,
+    "original_image_restore_with_representative_queries_s": 109.593,
+    "rotated_credentials_and_scope_checked": true,
+    "owned_resources_remaining": 0,
+    "correction": "Verify the direct export format, snapshot, policy fingerprint, row limit, and original values. Keep the browser download checks separate.",
+    "focused_tests_passed": 78,
+    "corrected_reader_image_id": "sha256:632c53144fb463f8ed854ad25678b7591667239e24a6307aa7b7b935fd923909",
+    "corrected_source_inventory_sha256": "cc6f2ca7ace33b57ccbce7868e540cf29d4296959ba52ae729c3a54af84dfeb9",
+    "corrected_live_check": "The manual retry completed the corrected export audit and reached cold query timing. See current_reader_manual_retry."
+  },
+  "current_reader_manual_retry": {
+    "status": "Incomplete during the second planned database restart in cold query timing.",
+    "private_report": "evidence/p6/history-reader-20261106-141326/qualification.json",
+    "sha256": "36b6bab219c9d4c3f332b2b888d7c9e8b41675ab88c8539132afa22bdbdb1231",
+    "private_restore_report": "evidence/p6/history-reader-20261106-141326/restore/qualification.json",
+    "restore_report_sha256": "4826007096bfc02250d77d9a2cc3863aac47fd2067069c4794bd24471e37fd3b",
+    "private_query_report": "evidence/p6/history-reader-20261106-141326/restore/history-queries.json",
+    "query_report_sha256": "20fbcb8ac317d1f9f807f8355502beb2aa3f384f9a54d02ae6273866a4f04a56",
+    "source_inventory_sha256": "cc6f2ca7ace33b57ccbce7868e540cf29d4296959ba52ae729c3a54af84dfeb9",
+    "minimum_runtime_windows_available_bytes": 4550356992,
+    "complete_database_inventory_matched": true,
+    "original_image_restore_with_representative_queries_s": 104.755,
+    "corrected_direct_json_and_csv_audits_reached_query_stage": true,
+    "cold_queries_passed": 1,
+    "warm_queries_passed": 0,
+    "query_timing_qualification_passed": false,
+    "linux_guard_error": "Cgroup counter reset",
+    "database_memory_limit_event_counter_before_and_after": [108791, 0],
+    "owned_resources_remaining": 0,
+    "correction": "For the history database only, compare cumulative Linux counters within the same Docker process start identity. Keep timing, memory, and out-of-memory guards active.",
+    "focused_tests_passed": 77,
+    "focused_subtests_passed": 12,
+    "isolated_probe_same_cgroup_path_new_start_identity_passed": true,
+    "corrected_source_inventory_sha256": "ff3245b0cfffd685a1a608cb6bde8ceb423cdbb660e62bb425442b5f8f1d1385",
+    "corrected_reader_image_id": "sha256:2a30b83772312630492b6eb7248dfa93f8f9d927f4bd33f7d3c0875c1b274bf2",
+    "full_live_check_with_counter_correction": "Passed in the subsequent manual run. See current_reader_pass."
+  },
+  "current_reader_pass": {
+    "private_report": "evidence/p6/history-reader-20261106-142900/qualification.json",
+    "sha256": "b8e385985ba4b93f4350c28cd775edd8d852bf6a585952500cddc4669f051285",
+    "private_restore_report": "evidence/p6/history-reader-20261106-142900/restore/qualification.json",
+    "restore_report_sha256": "c8ea7a3cdeaca0f6412d4b35824bd5a7136b7672e72323ba80b3671c46262f61",
+    "private_query_report": "evidence/p6/history-reader-20261106-142900/restore/history-queries.json",
+    "query_report_sha256": "4408a39c04e767db1bd9244614a9182c37ab4176ef12384eed5a41e6bb10304a",
+    "tested_commit": "dddac4572fe98d8aabb686b76c080e2d99ed3060",
+    "source_inventory_sha256": "ff3245b0cfffd685a1a608cb6bde8ceb423cdbb660e62bb425442b5f8f1d1385",
+    "windows_ubuntu_and_final_source_match": true,
+    "current_reader_image_id": "sha256:2a30b83772312630492b6eb7248dfa93f8f9d927f4bd33f7d3c0875c1b274bf2",
+    "restored_messages": 72000,
+    "restored_readings": 1440000,
+    "complete_database_inventory_matched": true,
+    "matching_archived_artifacts": 33,
+    "rotated_credentials_and_current_scope_checked": true,
+    "representative_queries_matched": 4,
+    "direct_export_rows_per_format": 15,
+    "restore_and_current_reader_checks_s": 115.85218097,
+    "cold_queries_passed": 20,
+    "cold_p95_s": 0.408805760000007,
+    "warm_queries_passed": 20,
+    "warm_p95_s": 0.39588661400000547,
+    "resource_guard_replay_passed": true,
+    "observed_database_process_starts": 21,
+    "owned_resources_remaining": 0,
+    "release_gates_passed": ["Q-05", "Q-10"]
+  },
+  "five_minute_recovery": {
+    "evidence": "docs/verification/p6-outage-compatibility.json",
+    "delivery_outage_seconds": 300.548,
+    "restoration_to_observed_empty_seconds": 19.839,
+    "original_messages_reconciled": 480,
+    "gates_closed": ["Q-07"]
+  },
+  "final_engineering_checks": {
+    "preserved_format_check_failure": {
+      "report_sha256": "d5a6b21da0e4df1767df1623034c7910c2a7eba57dfb25385c3c3734785b4cde",
+      "reason": "The formatter flagged one long line in the Linux resource sampler test.",
+      "correction": "Reflowed the test call. Release workload source fingerprints are unaffected."
+    },
+    "report_sha256": "c5478ba641948e469ff8f44fc03cefa9e085736fe0f7cdb2ce2f954d1195643d",
+    "source_fingerprints_matched": 460,
+    "python_tests_passed": 829,
+    "dashboard_tests_passed": 29,
+    "portable_contract_cases_passed": 339,
+    "operational_contract_cases_passed": 81,
+    "release_guide_local_links_verified": 127,
+    "history_secret_findings_before_closeout_commit": 0
+  },
+  "local_acceptance": {
+    "evidence_index": "docs/release/verification.md",
+    "gates_passed": ["Q-01", "Q-02", "Q-03", "Q-04", "Q-05", "Q-06", "Q-07", "Q-08", "Q-09", "Q-10", "Q-11", "Q-12"],
+    "artifact_scope": "Source-only local handoff with scoped results and reproduction instructions",
+    "publication": "Separate maintainer decision on authorization and licensing"
+  },
+  "open_acceptance": []
+}

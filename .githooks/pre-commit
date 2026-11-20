@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+if command -v python >/dev/null 2>&1; then
+  PYTHON=python
+else
+  PYTHON=python3
+fi
+"$PYTHON" scripts/privacy_guard.py --staged
+"$PYTHON" scripts/secrets.py scan --staged

@@ -1,0 +1,223 @@
+{
+  "baseline_commit": "d2edc5292b6ac3812c5ee2afc3c6e03ff71d9c64",
+  "boundary": "Shared contract engine, existing monitoring modules except adapter/source/recipe inputs, all frontend source, TypeScript validator and migrations; new adapter/model/test modules and reviewed metadata are allowed",
+  "files": [
+    {
+      "path": "apps/dashboard/src/env.d.ts",
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "apps/dashboard/src/HistoryExplorer.tsx",
+      "sha256": "225af82ae4324484f93c360f944b3594d21a576daaa0d7caac155cd489ccd17c"
+    },
+    {
+      "path": "apps/dashboard/src/main.tsx",
+      "sha256": "fcfed83569d2f87dcb0f28ca2b5aa23c24aa934564fc49e143d526daa8f2c10a"
+    },
+    {
+      "path": "apps/dashboard/src/mapModel.ts",
+      "sha256": "45b17723f8286224177c89a829e3f7309535bd59d3565d9ef4aa0c3226516137"
+    },
+    {
+      "path": "apps/dashboard/src/MapPanel.tsx",
+      "sha256": "f57eba650b2a4351076355a0ec611d22a2bb12790bdd5ca7c7a37a2e4cfd4517"
+    },
+    {
+      "path": "apps/dashboard/src/model.ts",
+      "sha256": "de5578df0662ad81877dd03018e2332fccf5d5b57a76d906148b0606efc37d32"
+    },
+    {
+      "path": "apps/dashboard/src/Operations.tsx",
+      "sha256": "66ec1aa37c1c1075383063d8f04f7ce9eb238ba812aee034cb8a7d28879bb5b4"
+    },
+    {
+      "path": "apps/dashboard/src/overview.ts",
+      "sha256": "52e2046ff4c9803804ce1a3241572c7ff9c3df499092ff13e46a8b7abfffb64a"
+    },
+    {
+      "path": "apps/dashboard/src/replay.css",
+      "sha256": "ae3dcf3c821a18d24c016edafda7a4a34099fa9185d4ad87804e3d689708cf11"
+    },
+    {
+      "path": "apps/dashboard/src/replayMain.tsx",
+      "sha256": "d2285c37ee0de92a5d2053ad6027b83c581f21b85375663531fdd22efb244f95"
+    },
+    {
+      "path": "apps/dashboard/src/replayModel.ts",
+      "sha256": "cedf66d6d2d799093fb8c23fad455a042e592d8dcc7d74b39706b2af9418f99a"
+    },
+    {
+      "path": "apps/dashboard/src/style.css",
+      "sha256": "72c175bed0acb87563af43ed99c00bd6c9cd4844da61418029c5f1aff9a6c8b0"
+    },
+    {
+      "path": "apps/dashboard/src/Trend.tsx",
+      "sha256": "10143dce1b19078db13ca48d89ca80eaf4dac5ce9f92d6ef6963b4574f6a5070"
+    },
+    {
+      "path": "apps/dashboard/src/useLive.ts",
+      "sha256": "36c68d0b133c355e9d675102feef8335d1bfe70a05751ac0904ba69bcf4b444f"
+    },
+    {
+      "path": "apps/dashboard/src/useMapScene.ts",
+      "sha256": "02627875b7707545433823e96811d51042ec77bf4ccab352f79797aebd84d376"
+    },
+    {
+      "path": "migrations/monitoring/001_observations.sql",
+      "sha256": "6fbba83cd6af381065134d9426cfcabce680369672ceb2fd081e2a3dc56d11ce"
+    },
+    {
+      "path": "migrations/monitoring/002_registry.sql",
+      "sha256": "88e5725d51bff73a151c03434d60213db7a026358960b45b947c9c91c683e830"
+    },
+    {
+      "path": "migrations/monitoring/003_dashboard.sql",
+      "sha256": "a27d8515bfef96bbfec3f6dc2514622653bce207def91e3cb778e6516939f61a"
+    },
+    {
+      "path": "migrations/monitoring/004_context_and_events.sql",
+      "sha256": "09ed7823fbc9f1a8062a4cc05407b1d5ef54dcce28ccfd9a02d31b41d21e3b3a"
+    },
+    {
+      "path": "migrations/monitoring/005_quality_recovery.sql",
+      "sha256": "0daee9a4b115ed889a690dd5a94a3969e6303b8b604865d04d662713134f0bbf"
+    },
+    {
+      "path": "migrations/monitoring/006_replay_read_views.sql",
+      "sha256": "9f3361ee46d7bb16f401347d2f0f9527148826dd9acde8d3d563fae297b31830"
+    },
+    {
+      "path": "packages/contracts-ts/src/index.ts",
+      "sha256": "1dac59d4609800f40eaa451459b61ef5349f3e031d20a1d52d8af034d3d98eb3"
+    },
+    {
+      "path": "src/evdt/contract_profile.py",
+      "sha256": "7be400c14efdc7e5db221a7c371c60c2ce2d7c6846058682ba88ceee0a2fc7f1"
+    },
+    {
+      "path": "src/evdt/monitoring/__init__.py",
+      "sha256": "7908a60723cd51dd9e0e29e0c66dbab3188768d63f60174d5265d8dc5a6b5438"
+    },
+    {
+      "path": "src/evdt/monitoring/analysis_probe.py",
+      "sha256": "ce33ad616c8c211cf174aaa40f3c8b1332995637d86b686ebef71aeac83c928b"
+    },
+    {
+      "path": "src/evdt/monitoring/analysis_views.py",
+      "sha256": "33511070454abe35220a34356096ac46c9c65f662d04e0de1080e3a67d2775cc"
+    },
+    {
+      "path": "src/evdt/monitoring/api.py",
+      "sha256": "e71ba16b6d177bfdc25076da0be6fe2ae1645154f1a6010cf9078cb21af8153e"
+    },
+    {
+      "path": "src/evdt/monitoring/asset_catalog.py",
+      "sha256": "38bec86bb2c9b06caadb94adf944f21a6ac095361e29f96756ef7216ca5cbb38"
+    },
+    {
+      "path": "src/evdt/monitoring/contracts.py",
+      "sha256": "dd02d8e1fcd9ccc83263646b7dcdebd86e6ad7b8dc89a85fc3a9421cf0ddf021"
+    },
+    {
+      "path": "src/evdt/monitoring/dashboard.py",
+      "sha256": "59623a4462a77bc5d5a4c1018d355668db3c4c30960296e9fbf5ed83baf61017"
+    },
+    {
+      "path": "src/evdt/monitoring/dashboard_probe.py",
+      "sha256": "5e84db6c47e52297a5770ac480d1c722c9fc30dc1514925106334b01b2137c46"
+    },
+    {
+      "path": "src/evdt/monitoring/dashboard_scenarios.py",
+      "sha256": "ec78d224a1a7517f1ac41738add12e2e1e6168fc9ad8ac60d3b3bb5600076285"
+    },
+    {
+      "path": "src/evdt/monitoring/formats.py",
+      "sha256": "5636d9d3926bed219578b18e77d7ee753e3a82976ba482a887634ec7ee8a881a"
+    },
+    {
+      "path": "src/evdt/monitoring/http_readers.py",
+      "sha256": "fd2d5a246bc3aa85424aa9be5b0a599c942e5695966d3741cb3db56056ed45bc"
+    },
+    {
+      "path": "src/evdt/monitoring/ingest.py",
+      "sha256": "356fea49e04dd55b04aef85f69d9d5881cfbea9f6e3b6970a7f0332f4eae469e"
+    },
+    {
+      "path": "src/evdt/monitoring/map_context.py",
+      "sha256": "70f730933438e8bd9200fc62bce03fd916712a8f13a65886f6e98a59ca7ff517"
+    },
+    {
+      "path": "src/evdt/monitoring/metrics.py",
+      "sha256": "e615db48ff1f2c94f391daab326de45e9202396b40d8ef334048efcc6b1b389a"
+    },
+    {
+      "path": "src/evdt/monitoring/network.py",
+      "sha256": "3fb15a30349ecead402b095cb4bd921525749db3b87885f0bb77799f4cf41979"
+    },
+    {
+      "path": "src/evdt/monitoring/plant.py",
+      "sha256": "747f4a7b7e5f91089fa679fd51d9c28972fc6c58142277e1f4073cfa4be4a7b5"
+    },
+    {
+      "path": "src/evdt/monitoring/probe.py",
+      "sha256": "0c088b38cacbe922da3fca57e6b8819d8bd274d7ab372361d3cbd5362efabc92"
+    },
+    {
+      "path": "src/evdt/monitoring/probe_support.py",
+      "sha256": "2175305611f9277b77a7694e821218128ebf35bb89fe88b091eff08a6cf2051b"
+    },
+    {
+      "path": "src/evdt/monitoring/provision_policy.py",
+      "sha256": "5ea6cef925128982f7eefee9e9eda2c162d623f2358b597d7511aefd631d79fc"
+    },
+    {
+      "path": "src/evdt/monitoring/registration_api.py",
+      "sha256": "d04b9e53f2c676a98eb837d177ab0721034e3d8736bc7bfc577f9590bdc1f307"
+    },
+    {
+      "path": "src/evdt/monitoring/registration_client.py",
+      "sha256": "f55144d97cd5a76d3b80d58546af592df6ff2f68a53e137c57157e27e2d151b5"
+    },
+    {
+      "path": "src/evdt/monitoring/registry.py",
+      "sha256": "f363843553b7db95e8e734ca3030167ec0201ccae69cd98bd05543aee2920d2f"
+    },
+    {
+      "path": "src/evdt/monitoring/registry_probe.py",
+      "sha256": "e8ee8696e2d9d9620663ec568cec5c713beadcbcfb2e581e3fa15e3d8b840457"
+    },
+    {
+      "path": "src/evdt/monitoring/replay_api.py",
+      "sha256": "86ae294ab7644486e713349503e7b131984d1465703b4146530b1948ca2bf509"
+    },
+    {
+      "path": "src/evdt/monitoring/replay_probe.py",
+      "sha256": "2fec011456e98fbf68e24ec472685e97c0d630e87dbc0984c63fc96c64e2d160"
+    },
+    {
+      "path": "src/evdt/monitoring/replay_repository.py",
+      "sha256": "27c13bfc6480763d12cb9bef8b604125d6e70ffaf208827f7e6b608ce887a2e6"
+    },
+    {
+      "path": "src/evdt/monitoring/repository.py",
+      "sha256": "74b2b9097545f66d984965d11e1a5f05107ed82a084425085eba3ff14ae9e801"
+    },
+    {
+      "path": "src/evdt/monitoring/run_policy.py",
+      "sha256": "2a55b4d476555b116a751835108185273ccce470acb1208d0081d08334ec37e4"
+    },
+    {
+      "path": "src/evdt/monitoring/sensors.py",
+      "sha256": "548943e8814a2bb70a4d8ee88f8f2cbe8aa154eecbc41b1efbe153532c2056dc"
+    },
+    {
+      "path": "src/evdt/monitoring/spool.py",
+      "sha256": "fe9e413dadda57522481ac85c0c40e5e15e0c3234194c8daaa5676d655a1f4ee"
+    },
+    {
+      "path": "src/evdt/monitoring/transport.py",
+      "sha256": "6e4e84882e7946290eb7379189230a2c1217740c40b9ef0350761ec449eabf22"
+    }
+  ],
+  "text_normalization": "CRLF to LF only; all other content is frozen"
+}

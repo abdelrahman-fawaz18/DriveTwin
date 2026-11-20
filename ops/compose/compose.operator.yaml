@@ -1,0 +1,8 @@
+# Add to the monitoring and command files to expose the local operator gateway.
+services:
+  api:
+    environment:
+      EVDT_OPERATOR_ASSET: ${COMMAND_ASSET_ID:?}
+      EVDT_DASHBOARD_OPERATOR_FILE: /run/secrets/command_operator
+    secrets:
+      - command_operator

@@ -1,0 +1,94 @@
+{
+  "checkpoint": "P3-B1 live monitoring integration",
+  "date": "2026-11-05",
+  "passed": true,
+  "scope": "One paced local SUMO bus and one opt-in operator speed cap. The dashboard data endpoints were exercised.",
+  "cases": {
+    "baseline": {
+      "private_report": "evidence/p3/2026-11-05-live-speed-baseline-01/qualification.json",
+      "sha256": "4aab41492a3cab1aa00b1e18393ad4e2b7adf278ce929866c467f82ad1fadbc6",
+      "passed": true,
+      "cleanup_passed": true,
+      "source_files_match": true,
+      "accepted_originals": 16,
+      "accepted_readings": 320,
+      "live_snapshots": {
+        "before": {
+          "sim_time_s": 4.0,
+          "value_m_s": 3.800000000000001
+        },
+        "after": {
+          "sim_time_s": 15.0,
+          "value_m_s": 0.0
+        }
+      },
+      "maximum_post_command_speed_m_s": 7.800000000000004,
+      "observations_sha256": "667061ca070cddf237924dee34309733604e34a592434e38eac4667a5a792a47"
+    },
+    "commanded": {
+      "private_report": "evidence/p3/2026-11-05-live-speed-commanded-01/qualification.json",
+      "sha256": "10370d87977d6933a7d48b92c26770e52f1d0440ea85428b78f246d2a91cd82c",
+      "passed": true,
+      "cleanup_passed": true,
+      "source_files_match": true,
+      "accepted_originals": 16,
+      "accepted_readings": 320,
+      "live_snapshots": {
+        "before": {
+          "sim_time_s": 4.0,
+          "value_m_s": 3.800000000000001
+        },
+        "after": {
+          "sim_time_s": 15.0,
+          "value_m_s": 0.0
+        }
+      },
+      "maximum_post_command_speed_m_s": 4.0,
+      "observations_sha256": "6d262e74337d68ac9cb6a0731d224dfdb793e8977a0f803c67d09741d6d7757c"
+    }
+  },
+  "execution_state": "acknowledged",
+  "attempt_sim_s": 4.0,
+  "second_handoff_refused": true,
+  "independent_speed_effect": {
+    "unit": "m/s",
+    "status": "confirmed",
+    "confirmed": true,
+    "signal_id": "motion.speed",
+    "post_command_pairs": 11,
+    "maximum_baseline_m_s": 7.800000000000004,
+    "maximum_commanded_m_s": 4.0,
+    "pairs_showing_lower_speed": 4,
+    "matching_pre_command_samples": 4
+  },
+  "standalone_command_regression": {
+    "private_report": "evidence/p3/2026-11-05-live-speed-fixture-regression-01/qualification.json",
+    "sha256": "a02b2cd0cc781d3ffdfce945596f0fab4d70d3e65d547cb2b0500f4fd61c322c",
+    "passed": true,
+    "cleanup_passed": true,
+    "source_files_match": true
+  },
+  "focused_fixture_correction": "Use the command contract UTC suffix before exercising the missing lease case.",
+  "historical_monitoring_comparison": {
+    "private_source_report": "evidence/p1/2026-11-03-dashboard-05/services/source/source-report.json",
+    "sha256": "0e50917a8acdd75af4ee38fdcaad8670c188dd1399efbb1b122b48f8d692ff4d",
+    "matching_messages": 16,
+    "matching_readings": 320,
+    "same_motion_sensor_and_contract_inputs": true,
+    "different_non_motion_input": "stations.json"
+  },
+  "phase_2_source_compatibility": {
+    "qualified_revision": "a414c5c",
+    "historical_audit_passed": true,
+    "historical_audit_sha256": "3afd1c9a0169e1ee5d067cbb5e219c993377e80f275782ee17405ec0113447d2",
+    "current_strict_audit_passed": false,
+    "current_audit_sha256": "bbbb22d03d48ad8d48d2d3e3a861a8f3e532aff8a423c5c3476b555c43f7d731",
+    "changed_release_fingerprint": "src/evdt/monitoring/source.py"
+  },
+  "matched_source_fingerprints": 152,
+  "next_step": {
+    "id": "P3-B2",
+    "name": "Simulator restart safety"
+  },
+  "phase_3_complete": false
+}

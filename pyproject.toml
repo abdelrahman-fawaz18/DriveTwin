@@ -1,0 +1,37 @@
+[project]
+name = "ev-dt"
+version = "0.1.0"
+description = "Electric vehicle digital twin engineering and qualification"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "fastapi>=0.115,<1",
+    "uvicorn>=0.34,<1",
+    "paho-mqtt>=2.1,<3",
+    "psycopg[binary]>=3.2,<4",
+    "jsonschema[format-nongpl]>=4.23,<5",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "ruff>=0.12,<1", "mypy>=2.4,<3"]
+
+[project.optional-dependencies]
+simulator = ["eclipse-sumo==1.28.0", "traci==1.28.0", "sumolib==1.28.0", "sumo-data==1.28.0"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests/unit"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+follow_imports = "skip"

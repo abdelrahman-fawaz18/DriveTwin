@@ -1,0 +1,198 @@
+{
+  "policy_version": "phase1-local-monitoring/1.3.1",
+  "host_policy_version": "phase1-local-host/1.0.1",
+  "status": "blocked",
+  "passed": false,
+  "phase_1_local_monitoring_milestone_complete": false,
+  "session": {
+    "start_utc": "2026-11-04T17:48:22Z",
+    "deadline_utc": "2026-11-04T18:48:22Z",
+    "results_finalized_utc": "2026-11-04T18:22:11.369739+00:00",
+    "testing_stopped_after_single_correction_and_rerun": true,
+    "goal": "Cleared by the user previously; no goal created or resumed."
+  },
+  "approved_changes": {
+    "2GiB_reserve": "Recorded warning for local Phase 1; full host capacity deferred/unpassed.",
+    "provisional_emergency_guards": "Abort after conservative 10-second critical interval: physical available <512 MiB or system commit headroom <1 GiB. Missing/invalid counters or gaps fail closed. Not a certified Windows safe minimum.",
+    "workloads": "Unchanged W0 60 + 120 seconds; W1 ten simultaneous buses, 20 signals each, 1 Hz, 60 + 300 seconds.",
+    "product_and_linux_requirements": "Integrity, access, replay, freshness, recovery, accounting, latency, container limits, zero OOM and Linux swap limits unchanged.",
+    "feature_and_architecture_freeze": true,
+    "optional_storage_enabled": false
+  },
+  "passed_checks": {
+    "initial_shared_python_tests": 518,
+    "final_shared_python_tests": 520,
+    "final_frontend_tests": 22,
+    "original_contract_cases_per_language": 339,
+    "monitoring_contract_cases_per_language": 81,
+    "strict_python_modules": 8,
+    "focused_initial_tests": 103,
+    "focused_correction_tests": 59,
+    "final_shared_passed": true,
+    "final_shared_source_hashes_matched": 313,
+    "runtime_source_guard_passed": true,
+    "native_windows_commit_counter_smoke_passed": true,
+    "local_emergency_cancellation_exercised_in_actual_attempts": true
+  },
+  "W0_component_reuse": {
+    "passed": true,
+    "scope": "Complete data/latency/Linux-resource components only. Original overall failed run unchanged.",
+    "runtime_and_configuration_hashes_matched": 157,
+    "events": {
+      "unique_generated": 180,
+      "accepted": 180,
+      "quarantined": 0,
+      "dropped": 0,
+      "pending": 0,
+      "measured_events": 120,
+      "warmup_events": 60,
+      "publish_attempts": 180,
+      "receiver_deliveries": 180,
+      "duplicate_deliveries": 0
+    },
+    "latency": {
+      "count": 120,
+      "min_s": 0.0602341300000003,
+      "max_s": 0.7605224410000088,
+      "p95_s": 0.7143258799999924,
+      "p99_s": 0.7557719379999835
+    },
+    "new_host_policy_retroactively_assessed": false
+  },
+  "W1": {
+    "passed": false,
+    "attempts": [
+      {
+        "attempt": "initial",
+        "passed": false,
+        "status": "incomplete, stopped by physical-memory emergency",
+        "policy": "phase1-local-monitoring/1.3.0",
+        "host_emergency": {
+          "reason": "physical memory emergency",
+          "observed_duration_s": 10.000152900116518,
+          "observed_bytes": 483155968,
+          "floor_bytes": 536870912
+        },
+        "local_host": {
+          "policy": {
+            "version": "phase1-local-host/1.0.0",
+            "warning_available_bytes": 2147483648,
+            "warning_duration_s": 30,
+            "emergency_available_bytes": 536870912,
+            "emergency_commit_headroom_bytes": 1073741824,
+            "emergency_duration_s": 10,
+            "capacity_qualification_phase": 6
+          },
+          "passed": false,
+          "failure": {
+            "reason": "physical memory emergency",
+            "observed_duration_s": 10.000152900116518,
+            "observed_bytes": 483155968,
+            "floor_bytes": 536870912
+          },
+          "available_min_bytes": 223244288,
+          "commit_headroom_min_bytes": 14530781184,
+          "physical_emergency_upper_s": 10.997725500026718,
+          "commit_emergency_upper_s": 0.0,
+          "below_2GiB_upper_s": 74.49636779981665,
+          "capacity_warning": true,
+          "host_capacity_qualified": false
+        },
+        "setup_cache_preparation": null,
+        "owned_cleanup_exit_code": 0,
+        "partial_copy_success_count": 0,
+        "partial_copy_failure_count": 11,
+        "partial_preservation_complete": false
+      },
+      {
+        "attempt": "single_corrected_rerun",
+        "passed": false,
+        "status": "incomplete, stopped by physical-memory emergency",
+        "policy": "phase1-local-monitoring/1.3.1",
+        "host_emergency": {
+          "reason": "physical memory emergency",
+          "observed_duration_s": 10.995781400008127,
+          "observed_bytes": 456916992,
+          "floor_bytes": 536870912
+        },
+        "local_host": {
+          "policy": {
+            "version": "phase1-local-host/1.0.1",
+            "warning_available_bytes": 2147483648,
+            "warning_duration_s": 30,
+            "emergency_available_bytes": 536870912,
+            "emergency_commit_headroom_bytes": 1073741824,
+            "emergency_duration_s": 10,
+            "capacity_qualification_phase": 6,
+            "setup_reclaim_policy": "clean-file-cache-before-browser/1.0.0"
+          },
+          "passed": false,
+          "failure": {
+            "reason": "physical memory emergency",
+            "observed_duration_s": 10.995781400008127,
+            "observed_bytes": 456916992,
+            "floor_bytes": 536870912
+          },
+          "available_min_bytes": 429338624,
+          "commit_headroom_min_bytes": 14697005056,
+          "physical_emergency_upper_s": 11.994971399893984,
+          "commit_emergency_upper_s": 0.0,
+          "below_2GiB_upper_s": 55.00894939992577,
+          "capacity_warning": true,
+          "host_capacity_qualified": false
+        },
+        "setup_cache_preparation": {
+          "policy": "clean-file-cache-before-browser/1.0.0",
+          "before_cached_bytes": 972664832,
+          "after_cached_bytes": 349859840
+        },
+        "owned_cleanup_exit_code": 0,
+        "partial_copy_success_count": 11,
+        "partial_copy_failure_count": 0,
+        "partial_preservation_complete": true
+      }
+    ],
+    "measured_300_second_run_completed": false
+  },
+  "retained_evidence": {
+    "history": "Complete 72,000 events / 1,440,000 readings, queries/downloads/restore remain passed in recorded original scope. Prior 88-file integrity/compatibility review preserved; relevant application/query/restore code unchanged.",
+    "outage": "Latest actual 300.357-second outage / 22.987-second recovery remains valid in recorded opt-in nominal-storage scope; runtime/configuration unchanged.",
+    "extension_replay_access_storage": "Existing component/functional results preserved in their tested scopes; no blanket fresh integration claim."
+  },
+  "pending_not_passed": [
+    "Complete short ten-bus local monitoring acceptance",
+    "Fresh current-configuration readings/history/map/reconnect/stale/access/replay smoke",
+    "Current startup measurement and normal-queue backup compatibility integration"
+  ],
+  "deferred_to_phase_6": [
+    "Full Windows host-capacity qualification, including the 2 GiB reserve",
+    "Former 30-minute qualification",
+    "Sustained-load/soak",
+    "Comprehensive visual regression",
+    "Broader reboot/deployment/storage lifecycle",
+    "Automatic retention deletion",
+    "Production hardening beyond active monitoring"
+  ],
+  "nondeferrable": [
+    "Silent data corruption",
+    "Unauthorized control defects"
+  ],
+  "preservation_issue": {
+    "initial_attempt": "Fallback source/trace copies failed because Windows-style destinations reached Linux Docker cp; complete originals from that interrupted temporary run were not recovered. Available host/Linux resource records, browser/control artifacts and original failed report were preserved as incomplete.",
+    "correction": "Canonical Linux-relative evidence path is constrained to evidence/p1 and tested against escapes. All 11 rerun copy operations succeeded. Preserved artifacts remain incomplete, not a full recording or a passing result."
+  },
+  "cleanup": {
+    "application_containers_remaining": 0,
+    "new_attempt_volumes_remaining": 0,
+    "sleep_prevention_released": true,
+    "ubuntu_stopped": false,
+    "codex_restarted": false,
+    "original_failed_reports_preserved": true
+  },
+  "remaining_blocker": "With ten simultaneous source/sender instances, the shared Windows host still crossed the selected 512 MiB physical-memory emergency floor for about 11 seconds after clean-cache setup preparation. Allocation capacity was not exhausted. No lower guard or further automatic retry was applied.",
+  "future_decision_not_applied": "First practical option: run the existing qualification commands in a separately launched terminal with other desktop applications closed, then review the saved evidence. This removes the app/tool RAM competition without changing buses or guard thresholds, but needs a user-approved external-run procedure. Alternatively use more host headroom, or explicitly narrow Phase 1 to one/two buses and defer ten-bus qualification to Phase 6. No option was silently applied.",
+  "host_capacity_qualified": false,
+  "sustained_load_qualified": false,
+  "publication": "Local Git commit only; no publication or Phase 2.",
+  "operator_guide": "docs/setup/monitoring-start-view-stop.md"
+}

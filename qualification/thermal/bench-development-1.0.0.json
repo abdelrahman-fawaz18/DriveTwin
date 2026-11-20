@@ -1,0 +1,18 @@
+{
+  "version": "bench-thermal-development/1.0.0",
+  "scope": "Offline winding prediction for the single Paderborn motor at the frozen bench cadence",
+  "fit_block_samples": 20,
+  "max_optimizer_evaluations": 70,
+  "capacity_reference_j_per_k": 1000,
+  "current_squared_reference_a2": 100000,
+  "speed_reference_rad_s": 600,
+  "validation_selection": "lowest profile-mean MAE, with single-node preferred within 0.15 K",
+  "interval": {"within_profile_error_quantile": 0.9, "validation_multiplier": 1.25, "minimum_radius_k": 2, "maximum_radius_k": 18},
+  "release_limit_rules": {
+    "mean_profile_mae_k": {"floor": 2, "validation_multiplier": 1.5, "cap": 6},
+    "worst_profile_mae_k": {"floor": 4, "validation_multiplier": 1.65, "cap": 15},
+    "minimum_mean_profile_interval_coverage": 0.85
+  },
+  "operating_regime_screen": {"high_current_squared_a2": 50000, "near_zero_speed_rad_s": 10},
+  "runtime": {"python": "3.13.7", "numpy": "2.4.3", "scipy": "1.17.1"}
+}

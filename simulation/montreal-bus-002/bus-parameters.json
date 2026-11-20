@@ -1,0 +1,157 @@
+{
+  "parameter_set_id": "synthetic-urban-bus-002-v1",
+  "status": "Explicit provisional design values; no real bus calibration or manufacturer-model claim",
+  "parameters": {
+    "length": {
+      "value": 12.0,
+      "unit": "m",
+      "evidence_class": "assumed",
+      "rationale": "Generic city-bus geometry",
+      "validation_due": "P1",
+      "source": "project design choice"
+    },
+    "width": {
+      "value": 2.55,
+      "unit": "m",
+      "evidence_class": "assumed",
+      "rationale": "Generic city-bus geometry",
+      "validation_due": "P1",
+      "source": "project design choice"
+    },
+    "height": {
+      "value": 3.2,
+      "unit": "m",
+      "evidence_class": "assumed",
+      "rationale": "Generic city-bus geometry",
+      "validation_due": "P2",
+      "source": "project design choice"
+    },
+    "curb_mass": {
+      "value": 12000,
+      "unit": "kg",
+      "evidence_class": "assumed",
+      "rationale": "Independent second-asset design hypothesis for extension/isolation checks",
+      "validation_due": "P2",
+      "source": "project design choice"
+    },
+    "passenger_load": {
+      "value": 3000,
+      "unit": "kg",
+      "evidence_class": "assumed",
+      "rationale": "Independent second-asset design hypothesis for extension/isolation checks",
+      "validation_due": "P2",
+      "source": "project design choice"
+    },
+    "usable_battery_energy": {
+      "value": 300,
+      "unit": "kWh",
+      "evidence_class": "assumed",
+      "rationale": "Independent second-asset design hypothesis for extension/isolation checks",
+      "validation_due": "P2",
+      "source": "project design choice"
+    },
+    "initial_soc": {
+      "value": 0.65,
+      "unit": "1",
+      "evidence_class": "assumed",
+      "rationale": "Independent second-asset design hypothesis for extension/isolation checks",
+      "validation_due": "P1",
+      "source": "project design choice"
+    },
+    "warning_soc": {
+      "value": 0.2,
+      "unit": "1",
+      "evidence_class": "assumed",
+      "rationale": "Informational warning only; not diversion authorization",
+      "validation_due": "P2/P4",
+      "source": "project design choice"
+    },
+    "maximum_speed": {
+      "value": 10,
+      "unit": "m/s",
+      "evidence_class": "assumed",
+      "rationale": "Independent second-asset design hypothesis for extension/isolation checks",
+      "validation_due": "P1",
+      "source": "project design choice"
+    },
+    "acceleration": {
+      "value": 0.7,
+      "unit": "m/s2",
+      "evidence_class": "assumed",
+      "rationale": "Independent second-asset design hypothesis for extension/isolation checks",
+      "validation_due": "P1",
+      "source": "project design choice"
+    },
+    "comfortable_deceleration": {
+      "value": 2.0,
+      "unit": "m/s2",
+      "evidence_class": "assumed",
+      "rationale": "Movement assumption",
+      "validation_due": "P1",
+      "source": "project design choice"
+    },
+    "emergency_deceleration": {
+      "value": 4.5,
+      "unit": "m/s2",
+      "evidence_class": "assumed",
+      "rationale": "Simulator limit, not physical safety validation",
+      "validation_due": "P2",
+      "source": "project design choice"
+    },
+    "baseline_auxiliary_power": {
+      "value": 6500,
+      "unit": "W",
+      "evidence_class": "assumed",
+      "rationale": "Independent second-asset design hypothesis for extension/isolation checks",
+      "validation_due": "P2",
+      "source": "project design choice"
+    },
+    "ambient_temperature": {
+      "value": 283.15,
+      "unit": "K",
+      "evidence_class": "assumed",
+      "rationale": "Independent second-asset design hypothesis for extension/isolation checks",
+      "validation_due": "P1/P5",
+      "source": "project design choice"
+    },
+    "driver_tau": {
+      "value": 1.0,
+      "unit": "s",
+      "evidence_class": "assumed",
+      "rationale": "Deterministic following model assumption",
+      "validation_due": "P1",
+      "source": "project design choice"
+    },
+    "driver_sigma": {
+      "value": 0.0,
+      "unit": "1",
+      "evidence_class": "assumed",
+      "rationale": "No driver randomness in baseline",
+      "validation_due": "P1",
+      "source": "project design choice"
+    },
+    "scheduled_stop": {
+      "value": 15,
+      "unit": "s",
+      "evidence_class": "assumed",
+      "rationale": "Independent second-asset design hypothesis for extension/isolation checks",
+      "validation_due": "P1",
+      "source": "project design choice"
+    }
+  },
+  "derived": {
+    "loaded_mass_kg": 15000,
+    "initial_usable_energy_J": 702000000
+  },
+  "future_model_parameters": {
+    "status": "not selected or calibrated",
+    "items": [
+      "chemistry and capacity dependence",
+      "drivetrain/regen/charge efficiency",
+      "drag and rolling resistance",
+      "thermal capacities and heat transfer",
+      "HVAC/weather/load model",
+      "sensor bias/noise/dropout distributions"
+    ]
+  }
+}

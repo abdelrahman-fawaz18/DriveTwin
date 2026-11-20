@@ -1,0 +1,105 @@
+{
+  "checkpoint": "P1-E3 complete W2 history/query/browser-export/restore",
+  "date": "2026-11-04",
+  "E3_local_passed": true,
+  "history_protocol": "history-volume/1.0.0",
+  "query_cases_version": "history-query-cases/1.0.0",
+  "backup_format": "evdt-history-backup/1.0.0",
+  "volume": {
+    "assets": 10,
+    "events": 72000,
+    "scalar_rows": 1440000,
+    "accepted_receipts": 72000,
+    "quarantine": 0,
+    "original_values_and_bytes_and_provenance_checked": true,
+    "physical_intervals": 359990,
+    "generation": "Independent actual accelerated source execution, sequential; no live delivery or real-time soak claim"
+  },
+  "Q05": {
+    "passed": true,
+    "signals": 5,
+    "window_s": 3600,
+    "maximum_total_plot_points": 5000,
+    "cold": {
+      "count": 20,
+      "p95_s": 0.44103644599999825,
+      "min_s": 0.38199292900026194,
+      "max_s": 0.4411530689999381
+    },
+    "warm": {
+      "count": 20,
+      "p95_s": 0.37950258299997586,
+      "min_s": 0.3289307860000008,
+      "max_s": 0.5047353130003103
+    },
+    "uniform_priming_cases": 20,
+    "all_points_extrema_endpoints_segments_quality_buckets_and_summaries_checked": true,
+    "cold_definition": "PostgreSQL restart/readiness per case; API and OS/storage caches uncontrolled",
+    "warm_definition": "One identical untimed recorded/audited priming request immediately before every measured case",
+    "timing": "One client monotonic interval includes HTTP response and JSON parsing",
+    "p95_limit_s": 2
+  },
+  "Q10": {
+    "passed": true,
+    "restore_and_verification_s": 109.39232569000023,
+    "repeat_browser_restore_s": 109.43088829299995,
+    "limit_s": 900,
+    "different_empty_cluster_fresh_credentials": true,
+    "full_data_schema_acl_sequence_inventory_equal": true,
+    "actual_restored_table_counts_checked": {
+      "m_observations": 72000,
+      "m_sample_history": 1440000,
+      "m_receipts": 72000,
+      "m_current": 200,
+      "m_quarantine": 0,
+      "m_registrations": 10,
+      "m_source_clocks": 10
+    },
+    "representative_frozen_queries": 4,
+    "restricted_roles_old_credentials_and_scope_denials": true,
+    "same_cluster_and_nonempty_target_refusals": true,
+    "matching_recorded_application_and_database_images": true
+  },
+  "browser_export": {
+    "passed": true,
+    "browsers": [
+      "visible Windows Edge",
+      "automated pinned Chromium"
+    ],
+    "assets": [
+      "bus-001",
+      "bus-010"
+    ],
+    "signals": 5,
+    "rows_per_download": 18000,
+    "pages_per_download": 18,
+    "formats": [
+      "JSON",
+      "CSV"
+    ],
+    "download_files": 8,
+    "total_downloaded_scalar_rows_including_formats_and_browsers": 144000,
+    "unique_original_selected_scalar_rows": 36000,
+    "every_downloaded_row_units_identity_quality_time_provenance_checked": true,
+    "frozen_json_csv_metadata_equal": true,
+    "largest_download_bytes": 11271150,
+    "desktop_mobile_controls_document_overflow_checked": true,
+    "formal_visual_baseline_passed": false
+  },
+  "verification": {
+    "python_tests": 345,
+    "frontend_tests": 18,
+    "contract_outcomes_per_language": [
+      339,
+      81
+    ],
+    "strict_types_build_format_privacy_secret_checks": true,
+    "source_fingerprints_match": true,
+    "owned_container_volume_cleanup_empty": true
+  },
+  "new_dependencies_routes_wire_schemas_catalogs_migrations": 0,
+  "full_W0_W1_passed": false,
+  "Q12_passed": false,
+  "phase_1_complete": false,
+  "remaining": "Current-policy full live W0/W1/resource acceptance, physical quotas/critical reserve/overflow, retention, startup, formal visual/mobile-axis work and final E5 matching-source audit."
+}

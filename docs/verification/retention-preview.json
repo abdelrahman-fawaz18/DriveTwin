@@ -1,0 +1,17 @@
+{
+  "checkpoint": "P6-01",
+  "status": "read_only_preview_passed",
+  "private_report": "evidence/p6/retention-01/qualification.json",
+  "sha256": "77e45be53c4019d239f61ce7857850497238d8dab3f0d421706ed64c2f114bf6",
+  "source_inventory_sha256": "2e12f7610bb360e080c65ab908bce14c74b54f38ed6126744241831657c333f0",
+  "source_inventory_files": 341,
+  "selected_run_originals": 3,
+  "other_run_originals_excluded": 1,
+  "before_cutoff_candidates": 1,
+  "exact_cutoff_excluded": true,
+  "protected_candidates": 0,
+  "over_budget_flag_verified": true,
+  "ordinary_read_role_and_read_only_transaction": true,
+  "originals_unchanged": true,
+  "owned_database_cleanup_passed": true
+}

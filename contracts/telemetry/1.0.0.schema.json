@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:evdt:telemetry:1.0.0",
+  "title": "P0 scalar telemetry envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "catalog_version", "event_id", "asset_id", "source_id", "session_id", "stream_seq", "run_id", "mode", "observed_at", "clock_domain", "sim_time_s", "samples"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "catalog_version": {"const": "0.1.0"},
+    "event_id": {"type": "string", "format": "uuid"},
+    "asset_id": {"type": "string", "pattern": "^[a-z][a-z0-9-]{0,63}$"},
+    "source_id": {"type": "string", "pattern": "^[a-z][a-z0-9-]{0,63}$"},
+    "session_id": {"type": "string", "format": "uuid"},
+    "stream_seq": {"type": "integer", "minimum": 0, "maximum": 9223372036854775807},
+    "run_id": {"type": "string", "format": "uuid"},
+    "mode": {"const": "qualification"},
+    "observed_at": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "clock_domain": {"const": "simulation"},
+    "sim_time_s": {"type": "number", "minimum": 0},
+    "samples": {
+      "type": "array", "minItems": 1, "maxItems": 64,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["signal_id", "value", "unit", "quality", "provenance"],
+        "properties": {
+          "signal_id": {"type": "string", "minLength": 1, "maxLength": 128},
+          "value": {"type": "number"},
+          "unit": {"type": "string", "minLength": 1, "maxLength": 32},
+          "quality": {"const": "good"},
+          "provenance": {"const": "synthetic-fixture"}
+        }
+      }
+    }
+  }
+}

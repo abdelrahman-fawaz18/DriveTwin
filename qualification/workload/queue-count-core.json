@@ -1,0 +1,8 @@
+{
+  "src/evdt/monitoring/spool.py": {
+    "baseline_sha256": "fe9e413dadda57522481ac85c0c40e5e15e0c3234194c8daaa5676d655a1f4ee",
+    "previous_reviewed_sha256": "26e3e522bc6e3821d74081b9e6770a865740833fd2c052451c8da83d910d45f3",
+    "reviewed_sha256": "000434891bf0298de8e27e4e5b427738eb4ee6d2471387f495e3b806187d8199",
+    "reason": "Read legacy and explicit-capacity queue counters in one committed SQLite snapshot so a concurrent receipt cannot combine counts from different states. No wire, schema, capacity or policy changes."
+  }
+}

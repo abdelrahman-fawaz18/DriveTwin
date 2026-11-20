@@ -1,0 +1,9 @@
+# ADR 0051. Verify a speed cap through the regular monitoring pipeline
+
+The live SUMO driver owns the simulation clock and advances the bus. When the source has the explicit operator-only command overlay, it can claim one speed cap at simulated second 4, between completed motion and the next step. The existing executor checks the request's run, bus, capability, validity and current local speed ceiling. It checks the elapsed-time lease immediately before calling SUMO. The monitoring-only profile starts with its ordinary producer credential. The overlay adds the executor credential for this one source.
+
+If the command service is unreachable or the handoff cannot be authenticated and validated, continue taking measurements with the existing cap. If an attempted command loses its result on the way back, the reservation remains in the journal for reconciliation. The plant step, sensor readings and telemetry path stay under the existing source owner. The command overlay identifies itself in the driver options fingerprint, and the registered run manifest includes the actual source and scenario fingerprints.
+
+Use two fresh registered runs on the same route and inputs. The reference run uses the monitoring-only profile. The commanded run applies one operator speed cap. Both drives use the existing durable outbox, sender, broker, ingestion service, database and monitoring API. An independent observer has one scoped monitoring-reader credential and one effect-writer credential. It reads the monitoring API and applies the existing observation-window rules through the command journal. Execution acknowledgment and measured effect remain separate.
+
+This checkpoint covers a paced local SUMO source with one operator command. Live arbitration, active simulator restart, command backup and the operator interface require their own checks. [Reproduction guide](../setup/live-speed-command-check.md)

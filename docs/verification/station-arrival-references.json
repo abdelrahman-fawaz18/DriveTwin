@@ -1,0 +1,102 @@
+{
+  "checkpoint": "P4-A2, Station-arrival qualification design and reference drives",
+  "passed": true,
+  "scope": "Development-only station stopping and energy references in the local simulation",
+  "private_report": "evidence/p4/station-arrivals-02/qualification.json",
+  "private_report_sha256": "6568adb796faa18a760b3f2dc2b073571a42c9569ac032a676627a5e666e76b1",
+  "source_sha256": {
+    "scripts/p4/collect_station_arrivals.py": "415f43f41634cc956df4b491ee3ad0940f64b7a767ae91998d2b4c64a2fd0d92",
+    "qualification/charging/station-arrival-design-1.0.0.json": "b707f4b83b1efc0af0ec1a72fa486d2b1a80d32f243433d855b4a7545083dc5b",
+    "simulation/montreal/charging-stations-1.0.0.json": "9941a23a2e4069ecaa8b1b0b1eba9289b7386be15e14454ba434805008950525",
+    "data/public/montreal-core-v1/roads.osm.xml": "2bc98528975cd2dcb68cb123d32083c50305d8d9c1c13f0f42a2326b0747a420",
+    "src/evdt/monitoring/network.py": "3fb15a30349ecead402b095cb4bd921525749db3b87885f0bb77799f4cf41979",
+    "src/evdt/monitoring/plant.py": "747f4a7b7e5f91089fa679fd51d9c28972fc6c58142277e1f4073cfa4be4a7b5",
+    "simulation/montreal/mission.json": "6fac46aa281b97672b255d59758a2f44b406baa3644de50ae1d4d0808ef0682d",
+    "simulation/montreal/bus-parameters.json": "2018dca5649076ccddb91a5802ddd9fc9c4260459ecf01d728836543f6fff6f7",
+    "simulation/montreal/plant.json": "645eb0de5a662d8aa27a6349b688f2732fc95365479782068d827bc04a647103",
+    "simulation/montreal/import-review.json": "f578854337d9baa454fa81724066160d03b10310f36b6615dc48e884b1801724"
+  },
+  "simulator_version": "1.28.0",
+  "reserve_kwh": 35.0,
+  "development_drives_completed": 6,
+  "reserved_outcomes_generated": 0,
+  "charge_received_wh": 0,
+  "physical_steps_reconciled": 6079,
+  "maximum_energy_balance_residual_j": 2.9802322387695312e-08,
+  "drives": [
+    {
+      "id": "dev-depot-nominal",
+      "station": "depot-a",
+      "arrival_sim_s": 6.4,
+      "arrival_energy_kwh": 55.961131,
+      "minimum_approach_energy_kwh": 55.939429,
+      "minimum_through_wait_energy_kwh": 55.939429,
+      "wait_energy_kwh": 0.0,
+      "reserve_maintained": true
+    },
+    {
+      "id": "dev-depot-reserve",
+      "station": "depot-a",
+      "arrival_sim_s": 80.6,
+      "arrival_energy_kwh": 34.670365,
+      "minimum_approach_energy_kwh": 34.577942,
+      "minimum_through_wait_energy_kwh": 34.570365,
+      "wait_energy_kwh": 0.1,
+      "reserve_maintained": false
+    },
+    {
+      "id": "dev-opportunity-nominal",
+      "station": "opportunity-b",
+      "arrival_sim_s": 234.2,
+      "arrival_energy_kwh": 53.554602,
+      "minimum_approach_energy_kwh": 53.429476,
+      "minimum_through_wait_energy_kwh": 53.429476,
+      "wait_energy_kwh": 0.0,
+      "reserve_maintained": true
+    },
+    {
+      "id": "dev-opportunity-reserve",
+      "station": "opportunity-b",
+      "arrival_sim_s": 234.2,
+      "arrival_energy_kwh": 32.869026,
+      "minimum_approach_energy_kwh": 32.749233,
+      "minimum_through_wait_energy_kwh": 32.749233,
+      "wait_energy_kwh": 0.0,
+      "reserve_maintained": false
+    },
+    {
+      "id": "dev-west-nominal",
+      "station": "west-c",
+      "arrival_sim_s": 300.2,
+      "arrival_energy_kwh": 53.448317,
+      "minimum_approach_energy_kwh": 53.348735,
+      "minimum_through_wait_energy_kwh": 53.348735,
+      "wait_energy_kwh": 0.0,
+      "reserve_maintained": true
+    },
+    {
+      "id": "dev-west-reserve",
+      "station": "west-c",
+      "arrival_sim_s": 300.2,
+      "arrival_energy_kwh": 32.514408,
+      "minimum_approach_energy_kwh": 32.419715,
+      "minimum_through_wait_energy_kwh": 32.414408,
+      "wait_energy_kwh": 0.1,
+      "reserve_maintained": false
+    }
+  ],
+  "initial_failed_attempt": {
+    "private_report": "evidence/p4/station-arrivals-01/qualification.json",
+    "private_report_sha256": "92bef02ec7ee9623d53f928bd299f6179cedd7227e63f6cb254404bc1d41e6cc",
+    "cause": "SUMO flagged the stop during the final deceleration step. The collector now waits for zero speed."
+  },
+  "lint_and_format_passed": true,
+  "phase_4_entry": {
+    "command_integrity_passed": true,
+    "advisory_release_verified": true,
+    "runtime_model_qualified": false,
+    "station_endpoint_accuracy_qualified": false,
+    "automatic_dispatch_approved": false
+  },
+  "next_checkpoint": "P4-A3, Develop station-energy forecasts and freeze acceptance limits"
+}

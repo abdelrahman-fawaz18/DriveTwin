@@ -1,0 +1,18 @@
+{
+  "version": "known-route-energy-product/1.1.0",
+  "scope": "Known-route synthetic advisory energy plus functional assumed-plan station assessments; no automatic control",
+  "release_sha256": "ce3f18a038a9ccde385b11645380c5a0bd6c0557c10e12178c2440b32fcae9df",
+  "mission_id": "montreal-core-loop-v1",
+  "route_sha256": "c6ba35cabadc14f4b98750516ad001492e4d46e05001e89098a3668b74969924",
+  "declared_capacity_kwh": 350,
+  "reserve_soc": 0.1,
+  "cutoff_sim_s": 120,
+  "history_s": 60,
+  "max_age_s": 5,
+  "maximum_points": 1000,
+  "model_qualified": false,
+  "automatic_dispatch_approved": false,
+  "navigation_file": "qualification/energy/station-navigation.json",
+  "navigation_file_sha256": "b85df17753089bfc588986fb95b643d4299b862e6a222ad396e0bbd635431b91",
+  "navigation_content_sha256": "ebeb9d87c1b5b5c94f0a6340a2c738698ca77371a23c193f7251acc1db17beae"
+}

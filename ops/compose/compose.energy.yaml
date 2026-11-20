@@ -1,0 +1,23 @@
+# Optional overlay: the original monitoring stack works without this tool service.
+services:
+  forecast-writer:
+    image: ${MONITORING_IMAGE:?}
+    environment:
+      EVDT_RUN_ID: ${EVDT_RUN_ID:?}
+      DB_USER: evdt_forecast
+      DB_PASSWORD_FILE: /run/secrets/forecast_db
+    secrets: [forecast_db]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 128m
+    pids_limit: 32
+    networks: [fixture]
+    profiles: [energy]
+    command: [python, -m, evdt.monitoring.energy_views, save]
+  probe:
+    environment:
+      FORECAST_DB_PASSWORD_FILE: /run/secrets/forecast_db
+    secrets: [forecast_db]
+secrets:
+  forecast_db: {file: "${SECRET_DIRECTORY:?}/forecast_db"}

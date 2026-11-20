@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:evdt:receipt:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "asset_id",
+    "source_id",
+    "event_id",
+    "wire_sha256",
+    "status",
+    "reason"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "receipt/1.0.0"
+    },
+    "run_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "asset_id": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "source_id": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "event_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "wire_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "status": {
+      "enum": [
+        "accepted",
+        "rejected"
+      ]
+    },
+    "reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 128
+    }
+  }
+}

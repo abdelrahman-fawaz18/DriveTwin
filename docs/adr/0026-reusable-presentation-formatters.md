@@ -1,0 +1,11 @@
+# ADR-0026: Reuse immutable presentation-formatting helpers
+
+Date: November 4, 2026. Status: selected and locally requalified for ordinary base/extension behavior in both browsers. Short fleet DOM checks passed; full wall-time/resource acceptance remains open.
+
+The dashboard's shared `value` helper constructed an `Intl.NumberFormat` for each numeric display, and `time` delegated each timestamp to `Date.toLocaleTimeString`. Repeated live table redraws repeated that setup across all cells and browser contexts. `Intl` is the browser's built-in internationalization interface: it turns values into text using a chosen language, decimal convention and time format.
+
+Create one private immutable number-formatting object and one UTC time-formatting object when the shared presentation module loads. Reuse their `format` methods. Preserve the existing `en-US` numeric convention, three-decimal display maximum, UTC timezone, hour/minute/second normalization and missing/invalid-input text. Cache only formatting configuration, never observations, timestamps, freshness, permissions, signal definitions or formatted per-asset values. No parser, segment/reduction logic, export number, wire contract, catalog, migration or backend behavior changes.
+
+The explicit time fields reproduce the defaults added by `Date.toLocaleTimeString`; omitting them from `Intl.DateTimeFormat` would otherwise select a date display. See [the primary method documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString). Regression checks verify the selected time fields across supported engines.
+
+Retain historical review manifests and freeze their bytes. Add an exact successor review for `apps/dashboard/src/monitoring/model.ts`. Verify old/native versus new output for zero, rounding, large/special numbers, absent values, invalid times, midnight/noon, offsets and leap-day cases; compare actual browser raw-inspector UTC text too. Repeat affected monitoring/history/map/export/quality/clock/role/replay and added-sensor browser regressions. Offline helper profiling must report equivalence, exact source/runtime and actual samples; it cannot establish whole-browser memory or fleet latency. Required measured quality thresholds and the 60 +1,800-second full-run policy remain unchanged.

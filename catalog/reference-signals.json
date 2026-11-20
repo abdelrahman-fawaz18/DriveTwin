@@ -1,0 +1,23 @@
+{
+  "catalog_version": "0.1.0",
+  "scope": "Qualification-only synthetic scalars; not a calibrated bus model",
+  "assets": {"bus-001": {"sources": ["fixture-adapter"]}},
+  "signals": {
+    "battery.pack.soc": {
+      "component_id": "battery-pack-01",
+      "physical_location": "traction battery pack",
+      "quantity": "state of charge",
+      "data_type": "number", "unit": "1", "minimum": 0, "maximum": 1,
+      "classification": "observed", "sample_period_s": 1, "freshness_s": 5,
+      "display": {"label": "Battery state of charge", "scale": 100, "suffix": "%"}
+    },
+    "traction.motor.temperature": {
+      "component_id": "traction-motor-01",
+      "physical_location": "synthetic motor temperature sensor",
+      "quantity": "temperature",
+      "data_type": "number", "unit": "K", "minimum": 233.15, "maximum": 473.15,
+      "classification": "observed", "sample_period_s": 1, "freshness_s": 5,
+      "display": {"label": "Motor temperature", "offset": -273.15, "suffix": "deg C"}
+    }
+  }
+}

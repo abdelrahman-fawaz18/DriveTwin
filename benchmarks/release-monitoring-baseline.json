@@ -1,0 +1,90 @@
+{
+  "version": "phase6-local-integration/1.0.0",
+  "checkpoint": "P6-A1",
+  "basis_commit": "087069297ad27bb476c01a9377be977d61fb0383",
+  "qualification_state": "baseline_frozen_workload_execution_pending",
+  "reference_inputs_sha256": {
+    "benchmarks/workloads.json": "ef6301c879c0c7795cbe94678846a380cf08ac06035a2999671fdcf02a10b2d9",
+    "benchmarks/phase1-host.json": "4bf35a3ffb9e2086f1d36612aacdf2d78980636aed18707f2b484935ead2e08b",
+    "compose.p1-uplink.yaml": "54fa1c4256c4033fbcf70a518751387e3df90e9053ef490afc888f35b4b4f9aa",
+    "compose.p1-extension.yaml": "99732e14d744260a5c1ed1e4d39864e898a6af4ed0ef8d4039896d915b6db5a8",
+    "contracts/monitoring.profile.json": "6a8c77ee49aa2fda7a9cdc683d9ee484d2aa479e8a2bbca0cfaa1d725de5768c",
+    "catalog/monitoring-fleet-1.4.0.json": "72cbc634ccdab045400d77823af9afb840a83e3b32cd3f5a5acf8671b3d699d0",
+    "environments/engineering-images.json": "107c67c143670040bc06afe6dc3a4cb47344857fca943027924b8b12128096c1",
+    "environments/p0-dataflow-images.json": "350e86104c2ffd9a6554eb8b911a08270419fb244324e0c5409eae9b37c3b480",
+    "uv.lock": "0caa907da4ee4e37435ac90b521e9fe183c5984c3ab1606f9de73c2753f5b0bc",
+    "qualification/browser/package-lock.json": "e3892def6125ce678d1a74f79cf3e0995dd44f94085359a8e2412de5d2b2a550"
+  },
+  "monitoring_profile": {
+    "engine": "Ubuntu WSL Docker Engine via the Windows project launcher",
+    "compose_base_in_order": ["compose.p1-uplink.yaml", "compose.p1-extension.yaml"],
+    "fleet_overlay": "Owned per-attempt override extending the base sender/source bindings",
+    "asset_ids_for_single_bus": ["bus-001"],
+    "asset_ids_for_fleet": ["bus-001", "bus-002", "bus-003", "bus-004", "bus-005", "bus-006", "bus-007", "bus-008", "bus-009", "bus-010"],
+    "scenario_root": "simulation/montreal-sustained",
+    "telemetry_schema_version": "3.2.0",
+    "catalog_version": "1.4.0",
+    "source_manifest_version": "source-run/2.2.0",
+    "durable_queue": "Normal per-asset SQLite queue and application persistence receipt",
+    "browser": "chromium-automated",
+    "browser_viewer_policy": "fleet-operator-table/1.0.0",
+    "simultaneous_browser_contexts": 1,
+    "simultaneous_browser_pages": 1,
+    "command_authority_enabled": false,
+    "optional_bounded_storage_enabled": false,
+    "automatic_retention_enabled": false,
+    "replay_scope": "Separate reader, credentials, and provenance; independent permission checks"
+  },
+  "warmup_s": 60,
+  "measured_windows_use_wall_monotonic_clock": true,
+  "signals_per_asset": 20,
+  "sequence": [
+    {"checkpoint": "P6-A2", "run": "monitoring-smoke", "assets": 1, "measured_s": 30, "segments": [{"duration_s": 30, "messages_per_asset_s": 1}], "release_workload": false},
+    {"checkpoint": "P6-B1", "run": "W0-30", "assets": 1, "measured_s": 1800, "segments": [{"duration_s": 1800, "messages_per_asset_s": 1}], "expected_measured_events": 1800, "expected_measured_scalar_samples": 36000},
+    {"checkpoint": "P6-B1", "run": "W1-30", "assets": 10, "measured_s": 1800, "segments": [{"duration_s": 1800, "messages_per_asset_s": 1}], "expected_measured_events": 18000, "expected_measured_scalar_samples": 360000},
+    {"checkpoint": "P6-B2", "run": "W3", "inherit_workload": "W3"},
+    {"checkpoint": "P6-B2", "run": "W4", "inherit_workload": "W4"},
+    {"checkpoint": "P6-B2", "run": "W1-queue-capacity", "assets": 10, "outage_measured_s": 1800, "messages_per_asset_s": 1, "maximum_event_bytes_from": "declared_workload_event_max_bytes", "expected_outage_events": 18000, "expected_outage_scalar_samples": 360000},
+    {"checkpoint": "P6-B3", "run": "W2", "inherit_workload": "W2"}
+  ],
+  "w4_order": [
+    "At measured t=600 s make the broker unavailable while all ten sources continue.",
+    "At t=900 s restore the broker and restart ingestion before crediting any drain.",
+    "Start the 120 s recovery clock only when broker and restarted ingestion are both ready. Keep sources and display active and reconcile 3000 outage events and all other measured events."
+  ],
+  "combined_fault_scenario": {
+    "checkpoint": "P6-C1",
+    "mode": "Separate single-asset simulation with one actuation authority; operator-only charging candidate and fixture-scoped thermal request",
+    "automatic_dispatch_enabled_by_baseline": false,
+    "ordered_cases": [
+      "Qualify healthy monitoring and permitted effects separately with the same registered identity.",
+      "Inject cooling degradation and prepare the charging request without releasing it.",
+      "Break observation freshness or assert local thermal protection before the grant, then withdraw selected charger power while transport is unavailable.",
+      "Recover transport and fresh readings, reconcile original event and command identities, and reject the stale or interrupted handoff.",
+      "Use a fresh eligible request or report the blocked outcome. Verify any physical effect from the simulation trace independently."
+    ],
+    "requires_before_execution": "Dedicated adapter and reviewed one-writer run recipe, exact scenario controls and clock timing, independent witness, authorization for any expansion of automatic dispatch scope"
+  },
+  "host_launch_precheck": {
+    "active_ubuntu_valid_sample_span_min_s": 30,
+    "windows_available_physical_min_bytes_each_sample": 2147483648,
+    "windows_commit_headroom_min_bytes_each_sample": 1073741824,
+    "max_interval_between_samples_s": 1.5,
+    "require_positive_wsl_working_set_coverage": true,
+    "disk_reserve_bytes_in_addition_to_projected_run_growth": 21474836480,
+    "require_no_other_qualification_attempt": true,
+    "failure_action": "Record launch hold; diagnose before another precheck. Offline harness and review work can continue."
+  },
+  "runtime_stop_conditions": {
+    "full_q12_limits_from": "benchmarks/workloads.json#limits",
+    "emergency_limits_from": "benchmarks/phase1-host.json",
+    "stop_on_memory_or_disk_limit": true,
+    "stop_on_missing_or_invalid_required_counters": true,
+    "stop_on_unsafe_command_or_unexplained_event_loss": true,
+    "stop_on_guard_or_input_mismatch": true,
+    "one_owned_attempt_at_a_time": true,
+    "preserve_failure_and_partial_evidence": true,
+    "cleanup_only_owned_resources": true,
+    "automatic_retry": false
+  }
+}

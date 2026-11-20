@@ -1,0 +1,239 @@
+{
+  "date": "2026-11-03",
+  "checkpoint": "P1-C1",
+  "passed": true,
+  "phase_1_complete": false,
+  "p1_c_complete": false,
+  "scope": "First local simulated product dashboard: overview, all measurements, selected raw-history trend and explicit snapshot recovery",
+  "frontend": {
+    "react": "19.3.1",
+    "react_dom": "19.3.1",
+    "typescript": "6.0.3",
+    "vite": "8.3.5",
+    "prettier": "3.6.2",
+    "node_build": "v24.22.2",
+    "same_origin": true,
+    "external_requests": 0,
+    "credential_storage": "page memory only"
+  },
+  "shared_checks": {
+    "python_tests": 76,
+    "frontend_logic_tests": 5,
+    "original_contract_outcomes_per_language": 339,
+    "simulation_contract_outcomes_per_language": 60,
+    "strict_typescript": true,
+    "python_strict_typing_scope": [
+      "spool",
+      "plant",
+      "sensors",
+      "run_policy"
+    ],
+    "formatter_and_production_build": true,
+    "privacy_findings": 0,
+    "secret_findings": 0
+  },
+  "browser_projects": [
+    {
+      "passed": true,
+      "browser": "156.0.8078.4",
+      "project": "chromium-automated",
+      "raw_readings": 18,
+      "signals": 20,
+      "external_requests": 0,
+      "checks": [
+        "catalog/filter",
+        "real history",
+        "disconnect/stale",
+        "resynchronize",
+        "asset isolation",
+        "mobile layout",
+        "memory-only credential"
+      ]
+    },
+    {
+      "passed": true,
+      "browser": "156.0.4314.58",
+      "project": "windows-edge-visible",
+      "raw_readings": 18,
+      "signals": 20,
+      "external_requests": 0,
+      "checks": [
+        "catalog/filter",
+        "real history",
+        "disconnect/stale",
+        "resynchronize",
+        "asset isolation",
+        "mobile layout",
+        "memory-only credential"
+      ]
+    }
+  ],
+  "read_models": {
+    "passed": true,
+    "checks": [
+      "consistent 20-signal snapshot",
+      "scoped authentication/cursors",
+      "18 raw readings across nine pages",
+      "query bounds and malformed continuation",
+      "uncommitted data invisible",
+      "concurrent writer serialization",
+      "rollback restores revision and 360-sample projection"
+    ]
+  },
+  "uplink": {
+    "live_source_events": 18,
+    "live_source_scalar_samples": 360,
+    "manifest_reference_verified": true,
+    "historical_sql_upgrade_preserved_bytes": true,
+    "sensor_layer_quality_through_ingress": true,
+    "accepted_events_including_controlled_cases": 28,
+    "terminal_rejections": {
+      "identity_conflict": 1,
+      "manifest_mismatch": 1,
+      "source_not_registered": 1,
+      "session_mismatch": 1,
+      "ahead_of_declared_clock": 1,
+      "simulation_time_reset": 1,
+      "observation_predates_registration": 1,
+      "future_timestamp": 2,
+      "envelope_schema": 1,
+      "wrong_unit": 1,
+      "registered_format_required": 1,
+      "retired_source_time": 1,
+      "sequence_time_conflict": 1
+    }
+  },
+  "outage_pending_sampled": 2,
+  "final_spool": {
+    "pending": 0,
+    "accepted": 18
+  },
+  "healthy_seven_second_source_pause": true,
+  "heading_unit_correction": {
+    "source": "TraCI getAngle degrees",
+    "stored": "radians",
+    "historical_pre_c1_heading_values_mislabeled": true,
+    "historical_bytes_unchanged": true
+  },
+  "complete_plant_missions": [
+    {
+      "sample_events": 864,
+      "scalar_samples": 17280,
+      "trace_steps": 4322,
+      "trace_sha256": "5fc21dc3194143e80e31890d1da4a5a531bc455d7f46f216f654c59bdadc6549",
+      "manifest_sha256": "a4edf4e75c73a4b2c28e7cf38fd6efa4bac2bbc180ef5c2ee022b10b86ef67dc",
+      "stopped_steps": 1280,
+      "regenerative_steps": 411,
+      "heading_conversion_checked_steps": 4322,
+      "energy_ledger": {
+        "previous_j": 977762472.0738673,
+        "capacity_j": 1260000000,
+        "tolerance_j": 0.01,
+        "steps": 4322,
+        "maximum_residual_j": 2.384185791015625e-07,
+        "net_consumed_j": 30237527.926138565,
+        "clipped_j": 0.0
+      },
+      "mission_finished": true,
+      "completed_sim_time_s": 864.8,
+      "sensor_period_ticks": {
+        "location.latitude": 5,
+        "location.longitude": 5,
+        "motion.speed": 5,
+        "motion.distance": 5,
+        "motion.heading": 5,
+        "motion.acceleration": 5,
+        "battery.pack.soc": 5,
+        "battery.pack.voltage": 5,
+        "battery.pack.current": 5,
+        "battery.pack.power": 5,
+        "battery.pack.energy": 5,
+        "battery.pack.temperature": 5,
+        "traction.motor.speed": 5,
+        "traction.motor.torque": 5,
+        "traction.motor.temperature": 5,
+        "ambient.temperature": 5,
+        "auxiliary.power": 5,
+        "hvac.power": 5,
+        "location.horizontal_accuracy": 5,
+        "braking.pressure": 5
+      },
+      "insertion": {
+        "sim_time_s": 0.2,
+        "energy_j": 1008000000.0,
+        "device_step_j": 0.0,
+        "emission_rate_query_w": 8000.0
+      },
+      "maximum_emission_rate_difference_w": 44774.94379850681
+    },
+    {
+      "sample_events": 864,
+      "scalar_samples": 17280,
+      "trace_steps": 4322,
+      "trace_sha256": "5fc21dc3194143e80e31890d1da4a5a531bc455d7f46f216f654c59bdadc6549",
+      "manifest_sha256": "a4edf4e75c73a4b2c28e7cf38fd6efa4bac2bbc180ef5c2ee022b10b86ef67dc",
+      "stopped_steps": 1280,
+      "regenerative_steps": 411,
+      "heading_conversion_checked_steps": 4322,
+      "energy_ledger": {
+        "previous_j": 977762472.0738673,
+        "capacity_j": 1260000000,
+        "tolerance_j": 0.01,
+        "steps": 4322,
+        "maximum_residual_j": 2.384185791015625e-07,
+        "net_consumed_j": 30237527.926138565,
+        "clipped_j": 0.0
+      },
+      "mission_finished": true,
+      "completed_sim_time_s": 864.8,
+      "sensor_period_ticks": {
+        "location.latitude": 5,
+        "location.longitude": 5,
+        "motion.speed": 5,
+        "motion.distance": 5,
+        "motion.heading": 5,
+        "motion.acceleration": 5,
+        "battery.pack.soc": 5,
+        "battery.pack.voltage": 5,
+        "battery.pack.current": 5,
+        "battery.pack.power": 5,
+        "battery.pack.energy": 5,
+        "battery.pack.temperature": 5,
+        "traction.motor.speed": 5,
+        "traction.motor.torque": 5,
+        "traction.motor.temperature": 5,
+        "ambient.temperature": 5,
+        "auxiliary.power": 5,
+        "hvac.power": 5,
+        "location.horizontal_accuracy": 5,
+        "braking.pressure": 5
+      },
+      "insertion": {
+        "sim_time_s": 0.2,
+        "energy_j": 1008000000.0,
+        "device_step_j": 0.0,
+        "emission_rate_query_w": 8000.0
+      },
+      "maximum_emission_rate_difference_w": 44774.94379850681
+    }
+  ],
+  "owned_cleanup": {
+    "containers_remaining": 0,
+    "volumes_remaining": 0
+  },
+  "source_input_count": 81,
+  "source_set_sha256": "c4a9614fdbabf71275792868c42e735f50a2dfbc8672fecd156f2a29c9c0f993",
+  "remaining": [
+    "map/trajectory/route/stops/stations",
+    "arbitrary historical queries and metadata exports",
+    "multi-signal synchronized interaction",
+    "event/system-health completeness",
+    "browser matrix for all controlled quality/clock transitions",
+    "visual regression baseline",
+    "replay/extension/restore",
+    "full W0/W1, five-minute outage, retention/quota and performance gates",
+    "real-vehicle calibration, distributed clocks, remote TLS and vehicle control"
+  ],
+  "private_evidence": "evidence/p1/2026-11-03-dashboard-05",
+  "private_source_checks": ".runtime/dev-checks/bf75fdd5d9a64e038097b803051d6aeb/report.json"
+}

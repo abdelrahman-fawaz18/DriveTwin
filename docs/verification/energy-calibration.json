@@ -1,0 +1,287 @@
+{
+  "checkpoint": "P2-B2 synthetic energy calibration and validation freeze",
+  "date": "2026-11-04",
+  "verified_utc": "2026-11-05T01:16:19.830191+00:00",
+  "passed": true,
+  "phase_2_complete": false,
+  "model_qualified": false,
+  "scope": "Actual training/validation collection, effective-parameter fit, causal known-route validation, empirical sensitivity selection, worker reproduction and frozen pre-held-out criteria; no independent final accuracy or product/physical qualification.",
+  "collection": {
+    "passed": true,
+    "training_missions": 12,
+    "validation_missions": 6,
+    "repeatability_runs": 1,
+    "held_out_collected": false,
+    "original_observation_events": 16382,
+    "scalar_readings": 327640,
+    "physical_steps": 81916,
+    "simulation_seconds_per_mission_min": 890.2,
+    "simulation_seconds_per_mission_max": 981.4,
+    "sequential_one_bus": true,
+    "container_limit_bytes": 536870912,
+    "oom_killed": false,
+    "all_original_packets_admitted": true,
+    "distinct_causal_and_observation_hashes": true,
+    "exact_seeded_motion_and_sensor_repeatability": true,
+    "raw_files_reverified": 216,
+    "raw_bytes_reverified": 165978098,
+    "new_monitoring_source_or_configuration_changes": false
+  },
+  "fit": {
+    "version": "bounded-energy-grid/1.0.0",
+    "candidate_pairs": 36,
+    "training_only": true,
+    "effective_rolling_resistance": 0.01,
+    "effective_propulsion_efficiency": 0.9,
+    "training_mse_kwh2": 0.13073667205027448,
+    "leave_one_trip_out_pairs": [
+      [
+        0.01,
+        0.9
+      ],
+      [
+        0.008,
+        0.86
+      ]
+    ],
+    "physical_parameter_identification_claim": false,
+    "actual_capacity_inference_used": false,
+    "new_framework_or_dependency": false
+  },
+  "forecast_setup": {
+    "cutoff_sim_s": 120,
+    "history_s": 60,
+    "cases_per_mission": 1,
+    "forward_motion_source": "Frozen training historical template, anchored at current distance/speed",
+    "validation_future_motion_used_as_plan": false,
+    "auxiliary_demand": "Latest good observed auxiliary power held constant",
+    "declared_capacity_kwh": 350,
+    "declared_loaded_mass_kg": 18000,
+    "reserve_soc_illustrative": 0.1,
+    "endpoint": "Last sampled state of successfully completed mission, not exact station arrival",
+    "predictions_saved_before_physical_truth_scoring": true
+  },
+  "validation": {
+    "missions": 6,
+    "available": 6,
+    "failed_or_unavailable": [],
+    "baseline_available": 6,
+    "energy_mae_kwh": 0.27913317520368786,
+    "energy_max_absolute_error_kwh": 0.6258722694487702,
+    "soc_mae_percentage_points": 0.3569013832154427,
+    "soc_max_absolute_error_percentage_points": 0.6667053821458491,
+    "baseline_energy_mae_kwh": 2.471550260461571,
+    "joint_envelope_covered": 6,
+    "joint_envelope_coverage": 1.0,
+    "maximum_energy_envelope_width_kwh": 5.418619298228759,
+    "maximum_soc_envelope_width_pp": 3.7427745397231567,
+    "maximum_fixed_plan_refinement_relative_change": 1.6268174789296014e-05,
+    "checks": {
+      "all_available": true,
+      "energy_mae": true,
+      "energy_max": true,
+      "soc_mae": true,
+      "soc_max": true,
+      "baseline_comparison": true,
+      "coverage": true,
+      "energy_width": true,
+      "soc_width": true,
+      "refinement": true
+    },
+    "targets_met": true
+  },
+  "uncertainty": {
+    "method": "training-joint-grid-envelope/1.0.0",
+    "training_joint_pairs": [
+      [
+        0.008,
+        0.86
+      ],
+      [
+        0.01,
+        0.9
+      ],
+      [
+        0.012,
+        0.94
+      ]
+    ],
+    "other_mass_capacity_regeneration_auxiliary_soc_stop_assumptions_preserved": true,
+    "all_error_coverage_and_width_thresholds_preserved": true,
+    "point_and_baseline_predictions_identical_to_first_attempt": true,
+    "probability_or_global_bound_guarantee": false,
+    "actual_joint_coverage": "6 of 6 deliberate validation regimes; no population confidence claim"
+  },
+  "frozen_release_manifest": "docs/models/energy-validation-release.json",
+  "D18_status": "Frozen synthetic energy/charge advisory targets only; physical/thermal/effect criteria remain open",
+  "held_out_generated_or_scored": false,
+  "C1_release_eligible": true,
+  "C1_started": false,
+  "isolated_worker": {
+    "cases": 12,
+    "all_results_match": true,
+    "packaged_bytes_verified_after_rebuild": true,
+    "prior_policy_and_wire_versions_unchanged": true,
+    "fit_and_dataset_modules_excluded": true,
+    "worker_point_record_remains_unqualified": true
+  },
+  "focused_new_tests": 20,
+  "shared_checks": {
+    "passed": true,
+    "python_tests": 706,
+    "dashboard_tests": 22,
+    "strict_python_modules": 15,
+    "original_contract_cases_per_language": 339,
+    "operational_contract_cases_per_language": 81,
+    "source_fingerprints_match": 342,
+    "types_formatting_build_passed": true,
+    "candidate_privacy_and_secret_findings": 0
+  },
+  "compatibility": {
+    "passed": true,
+    "scope": "Read-only prior monitoring and energy compatibility; no Phase 1 workload repeat",
+    "P1": {
+      "functional_controller": {
+        "exact": 78,
+        "prior_reviewed_harness_difference": []
+      },
+      "functional_service": {
+        "exact": 212,
+        "prior_reviewed_harness_difference": [
+          "scripts/p1/recovery_fixture.py"
+        ]
+      },
+      "recovery_service": {
+        "exact": 213,
+        "prior_reviewed_harness_difference": []
+      }
+    },
+    "runtime_guard_passed": true,
+    "A2": {
+      "all_existing_recorded_sources_match": 12,
+      "report_preserved": true
+    },
+    "B1": {
+      "all_existing_recorded_sources_match": 17,
+      "report_preserved": true
+    },
+    "numerical_1_1": {
+      "all_existing_recorded_sources_match": 4,
+      "report_preserved": true
+    },
+    "development_collection": {
+      "all_existing_recorded_sources_match": 121,
+      "report_preserved": true
+    }
+  },
+  "cleanup": {
+    "passed": true,
+    "preexisting_volumes_preserved": 13,
+    "new_volumes": 0,
+    "new_containers": 0
+  },
+  "preserved_attempts": [
+    {
+      "private_evidence": "evidence/p2/2026-11-04-energy-calibration-01/analysis",
+      "analysis_completed": true,
+      "validation_targets_met": false,
+      "failed_conditions": [
+        "energy envelope width",
+        "charge envelope width"
+      ],
+      "maximum_energy_width_kwh": 6.990512265147952,
+      "maximum_soc_width_pp": 4.232721353405128,
+      "point_errors_and_coverage_passed": true
+    },
+    {
+      "private_evidence": "evidence/p2/2026-11-04-energy-calibration-release-01",
+      "passed": false,
+      "worker_cases_started": 0,
+      "reason": "Historical local worker image unavailable; corrected controller rebuilds the same guarded pinned package",
+      "cleanup_passed": true
+    }
+  ],
+  "limits": [
+    "Known route, synthetic parameter regimes and assumed sensor imperfections only",
+    "No held-out outcome has been generated or scored",
+    "Fitted coefficients are effective approximations, not measured physical specifications",
+    "Six validation cases are not statistical population coverage or final generalization proof",
+    "Sampled parameter envelope is not a rigorous confidence interval/global enclosure",
+    "Worker base forecast status remains advisory; composite calibrated/uncertainty record integration remains P2-D1",
+    "No real bus, interacting fleet traffic, temperature-dependent battery chemistry, automatic dispatch, station selection or commands",
+    "Private checkpoint is same-disk convenience, not encrypted/offsite backup"
+  ],
+  "private_collection": "evidence/p2/2026-11-04-energy-development-01",
+  "private_analysis": "evidence/p2/2026-11-04-energy-calibration-02/analysis",
+  "private_worker_verification": "evidence/p2/2026-11-04-energy-calibration-release-02",
+  "private_checkpoint": ".private/model-releases/energy-validation-1.0.0",
+  "private_shared_checks": ".runtime/dev-checks/4380d9e48b5146659f54241988a47249",
+  "decision": "docs/adr/0042-energy-calibration-and-validation-freeze.md",
+  "learning_guide": "docs/setup/energy-calibration-and-validation.md",
+  "new_goal_or_agent_host_memory_changes": false,
+  "published": false,
+  "source_sha256": {
+    "scripts/p2/analyze_energy_development.py": "11adf8181ab793eda15fa39bb47590e8f3f7ed0895544724f14b154929fe62fc",
+    "src/evdt/energy/calibration.py": "5a791d4e3b1c716f98db875204f6054f1071f4dea70f99ff1fe3013a03912b4f",
+    "qualification/energy/development-protocol.json": "64b2caa299d2fb71665e6e8bd6282492c9974ec6292e929078b022a58a7534fb",
+    "src/evdt/energy/__init__.py": "8338ac160d2c3e23e03eed91fdb1ea2a8cb9e2c46bbf1149544376be1e9f9440",
+    "src/evdt/energy/forecasts.py": "c719c83dc7eb938497c764b26ea455b5932b8966ebee91ed558700fbe202b1e9",
+    "src/evdt/energy/jobs.py": "85cc43b87a163bea56f2e828b4a13d560330a49cff1489f4310d116e336f46e6",
+    "src/evdt/energy/model.py": "bd078e9e6c1aba57901ced24d44aef39905523889dd51dc4310cd769fe918d14",
+    "src/evdt/energy/observations.py": "e1fc665d4d24222c99edeac31d62535a208774d71ff4502c0f56c884b12ee12a",
+    "src/evdt/energy/partitions.py": "3a04553f5f3b7cddb5931ba92f30f263cce7bb2d6810a9e72419c4a8bdd493b4",
+    "src/evdt/energy/worker.py": "46603c3e718d0422e547c19d19b9bf2b46a3f5361c98046565feeff7e58184ce",
+    "qualification/energy/uncertainty-selection.json": "50e5d4f082c2be349b158e5b80a901b3c38b5d186b7190e41d8f8af35cbec13f",
+    "scripts/p2/qualify_energy_calibration.py": "657be60f346a070a31aa5d374beb47df852a2adb0960781b656f6f6771a4a9d5"
+  },
+  "validation_by_regime": [
+    {
+      "regime": "nominal",
+      "independent_missions": 1,
+      "failed_forecasts": 0,
+      "energy_signed_error_kwh": 0.24228637434802902,
+      "final_charge_signed_error_percentage_points": 0.022179295830448975,
+      "joint_envelope_covered": true
+    },
+    {
+      "regime": "high_load",
+      "independent_missions": 1,
+      "failed_forecasts": 0,
+      "energy_signed_error_kwh": -0.6258722694487702,
+      "final_charge_signed_error_percentage_points": 0.4508340430781632,
+      "joint_envelope_covered": true
+    },
+    {
+      "regime": "stop_heavy",
+      "independent_missions": 1,
+      "failed_forecasts": 0,
+      "energy_signed_error_kwh": -0.19457785638543434,
+      "final_charge_signed_error_percentage_points": 0.23761759324286702,
+      "joint_envelope_covered": true
+    },
+    {
+      "regime": "cold_auxiliary",
+      "independent_missions": 1,
+      "failed_forecasts": 0,
+      "energy_signed_error_kwh": 0.24412409660860135,
+      "final_charge_signed_error_percentage_points": 0.1982004475894361,
+      "joint_envelope_covered": true
+    },
+    {
+      "regime": "capacity_mismatch",
+      "independent_missions": 1,
+      "failed_forecasts": 0,
+      "energy_signed_error_kwh": 0.2623782380557005,
+      "final_charge_signed_error_percentage_points": 0.6667053821458491,
+      "joint_envelope_covered": true
+    },
+    {
+      "regime": "low_charge_auxiliary",
+      "independent_missions": 1,
+      "failed_forecasts": 0,
+      "energy_signed_error_kwh": 0.10556021637559176,
+      "final_charge_signed_error_percentage_points": 0.5658715374058918,
+      "joint_envelope_covered": true
+    }
+  ]
+}

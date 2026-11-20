@@ -1,0 +1,82 @@
+{
+  "checkpoint": "P6-B1",
+  "workload": "W1-30",
+  "review_date_local": "2026-11-06",
+  "attempt_directory": "evidence/p6/external-b1-w1-30-2026-11-06-074813-597ff7d3",
+  "power_condition": "Plugged-in retry requested by operator. The workload reports do not log power source.",
+  "passed": false,
+  "status": "stopped_during_warmup_by_windows_available_memory_guard",
+  "source_compatibility": {
+    "passed": true,
+    "release_sha256": "d30f350187ba0255b0d5b501d9dfb2479e07ac1b0ae18ab94aef9741290932bd",
+    "reviewed_input_files": 315,
+    "input_inventory_sha256": "1d4cea0c8e0bc7cde2c2d97f093dca922399d4f0ad2b1d9366d1bce267b120d0",
+    "windows_before_and_after_match_current_release": true,
+    "final_service_report_present": false
+  },
+  "preflight": {
+    "passed": true,
+    "windows_minimum_available_bytes": 4849819648,
+    "disk_and_container_inventory_passed": true
+  },
+  "stop_condition": {
+    "reason": "Windows available RAM below 2 GiB for over 30 seconds",
+    "recorded_guard_reproduced_from_saved_samples": true,
+    "minimum_available_bytes": 1948340224,
+    "available_floor_bytes": 2147483648,
+    "maximum_consecutive_seconds_below_floor": 30,
+    "conservative_seconds_below_floor_at_trigger": 30.9878762,
+    "first_low_sample_seconds_relative_to_paced_start": -5.209,
+    "trigger_seconds_after_paced_start": 24.794,
+    "separate_emergency_thresholds_reached": false,
+    "partial_linux_core_peak_bytes": 1661046784,
+    "partial_linux_observed_out_of_memory_kills": 0,
+    "partial_linux_swap_in_and_out_page_changes": [0, 0]
+  },
+  "partial_accounting": {
+    "asset_count": 10,
+    "generated_trace_events": 280,
+    "accepted_transaction_trace_events": 280,
+    "generated_and_committed_identities_match": true,
+    "queued_and_committed_wire_fingerprints_match": true,
+    "trace_events_per_asset": 28,
+    "latest_trace_event_seconds_after_paced_start": 28.128,
+    "measured_window_started": false,
+    "final_measurement_present": false,
+    "final_browser_result_present": false,
+    "fleet_host_capacity_qualified": false
+  },
+  "comparison": {
+    "prior_review": "docs/verification/p6-b1-w1-30-first-attempt-review.json",
+    "prior_minimum_available_bytes": 1574100992,
+    "retry_minimum_available_bytes": 1948340224,
+    "both_stopped_on_same_guard": true,
+    "power_effect_isolated": false
+  },
+  "cleanup": {
+    "passed": true,
+    "partial_copy_operations_passed": 11,
+    "owned_containers_volumes_and_networks_empty": true,
+    "before_and_after_inventories_equal": true,
+    "live_followup_counts_match": true,
+    "containers": 0,
+    "preexisting_volumes": 16,
+    "preexisting_networks": 3,
+    "sleep_request_released": true,
+    "power_plan_changed": false
+  },
+  "evidence_sha256": {
+    "operator-result.json": "b40aeda253224798f51a2f03ebff51fb55b679fe7817db0d4d819a49b7ee2e35",
+    "monitoring/qualification.json": "9476dc396180ee2150759646b6bee879a3f8e8b4a1ca714c5b18ee8a5d2505b3",
+    "monitoring/phase6-preflight.json": "0212b30330339e6e1516c83c542d7624affc3e91d848c0a91e19cedb0f219e91",
+    "monitoring/windows-resources.jsonl": "2282d97042693023feb56b2b5fe1fb2386986e201d7c68ba9d9e4c6466ce45eb",
+    "monitoring/services/linux-resources.jsonl": "dff996873e21e0a732de86512bc470244f791996add0a198b93542a9c06621e6",
+    "monitoring/services/partial/incomplete.json": "2c70ba0070e64a1dd12e1766e8866ad08ee38e96e873d48f05a8f87f079a6a24",
+    "monitoring/services/partial/traces/start.json": "c70fdc87422e8fc46197865b8f4338097b030d4ce894c6f46e44a7978ff2bea4",
+    "inventory-before.json": "ae1b6566919c4a932fcc996422cc2e3ca57e166de040f441df45698a28b3bba4",
+    "inventory-after.json": "ae1b6566919c4a932fcc996422cc2e3ca57e166de040f441df45698a28b3bba4",
+    "sleep-helper.log": "c55a60cf6a0306c546ddcd0e8db19855351460f266d2950547094264b30ce83e"
+  },
+  "new_workload_started_during_review": false,
+  "next": "Diagnose Windows memory headroom during fleet startup before another full attempt."
+}

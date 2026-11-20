@@ -1,0 +1,86 @@
+{
+  "date": "2026-11-03",
+  "gate": "P0-05",
+  "passed": true,
+  "scope": "Local engineering foundation; not a complete application or hosted CI result",
+  "design_review": {
+    "reviewer": "implementation agent",
+    "artifacts": [
+      "docs/conops.md",
+      "docs/requirements.md",
+      "docs/architecture.md",
+      "docs/compatibility.md",
+      "docs/adr/0007-initial-architecture.md",
+      "docs/adr/0008-time-and-energy-authority.md",
+      "docs/setup/engineering-checks.md",
+      ".github/workflows/checks.yml",
+      ".gitignore",
+      ".githooks/pre-commit",
+      "docs/privacy.md",
+      "PROJECT_PLAN.md",
+      "README.md"
+    ],
+    "decisions": {
+      "D-03": "modular Python/FastAPI backend; architectural comparison, no alternate runtime benchmark",
+      "D-04": "Mosquitto MQTT 5",
+      "D-05": "vanilla PostgreSQL 18",
+      "D-06": "locked Python 3.12 / Node 24 / TypeScript 6.0.3 / SUMO 1.28.0 initial toolchain",
+      "D-09": "one driver, initial 0.2-second step, SUMO initial energy authority; P2 validation required",
+      "D-10": "React/Leaflet/SSE direction; pin and qualify UI dependencies at P1 integration"
+    }
+  },
+  "checks": {
+    "windows_entrypoint": true,
+    "native_linux_entrypoint": true,
+    "same_source_inputs": true,
+    "unit_tests_passed": 24,
+    "contracts": {
+      "cases": 339,
+      "valid": 116,
+      "rejected": 223,
+      "adaptation_cases": 3,
+      "mismatches": 0
+    },
+    "versions": {
+      "python": "3.12.16",
+      "node": "v24.22.2",
+      "pytest": "9.2.0",
+      "ruff": "0.17.3",
+      "jsonschema": "4.26.0",
+      "typescript": "6.0.3"
+    },
+    "p0_02_requalification": true,
+    "p0_03_requalification": true,
+    "privacy_negative_tests": {
+      "passed": true,
+      "staged_secret_rejected_despite_clean_working_copy": true,
+      "force_staged_private_path_rejected": true,
+      "isolated_fixture_removed": true
+    }
+  },
+  "git": {
+    "initialized": true,
+    "local_history_saved": true,
+    "remote_configured": false,
+    "publication_performed": false,
+    "author_identity": "generic repository-local identity",
+    "candidate_and_initial_history_secret_findings": 0
+  },
+  "ci": {
+    "definition_saved": true,
+    "hosted_run_performed": false,
+    "reason": "No remote configured or publication requested."
+  },
+  "raw_evidence": "Retained locally and ignored; this summary exports only reviewed fields.",
+  "remaining_phase_0_gate": "P0-06",
+  "limitations": [
+    "No full host reboot or sustained workload/resource objective claimed.",
+    "Project-wide strict Python typing not claimed; P1 typed-interface checks remain.",
+    "Energy/convergence/calibration/control and product dashboard remain future gates.",
+    "Source/data rights, route/parameter assumptions and workload/metric budgets remain P0-06."
+  ],
+  "source_verification": {
+    "source_fingerprints_verified": 87,
+    "details": "Exact measured working-tree fingerprints remain in ignored local reports. Git records source history; a fresh checkout runs its own checks."
+  }
+}

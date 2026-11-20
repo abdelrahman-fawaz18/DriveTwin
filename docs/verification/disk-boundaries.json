@@ -1,0 +1,127 @@
+{
+  "checkpoint": "P1-E4 separate persistent filesystem boundary mechanism",
+  "date": "2026-11-04",
+  "mechanism_passed": true,
+  "profile": {
+    "version": "queue-disk-boundaries/1.0.0",
+    "encoded_telemetry_bytes": 33554432,
+    "telemetry_disk_bytes": 67108864,
+    "critical_disk_bytes": 8388608,
+    "host_free_reserve_bytes": 21474836480,
+    "scope": "Persistent filesystem boundary mechanism; vehicle queue/critical-result integration remains separate"
+  },
+  "physical_image_bytes": {
+    "telemetry": 67108864,
+    "critical": 8388608
+  },
+  "actual_checks": {
+    "initial_ownership": {
+      "passed": true
+    },
+    "telemetry_marker": {
+      "passed": true,
+      "action": "marker",
+      "role": "telemetry",
+      "uid": 10001,
+      "filesystem_bytes": 58675200,
+      "available_bytes": 57307136
+    },
+    "telemetry_full": {
+      "passed": true,
+      "action": "fill",
+      "role": "telemetry",
+      "uid": 10001,
+      "filler_bytes": 57303040,
+      "filesystem_bytes": 58675200,
+      "available_bytes": 0
+    },
+    "critical_writable_with_telemetry_full": {
+      "passed": true,
+      "action": "marker",
+      "role": "critical",
+      "uid": 10001,
+      "filesystem_bytes": 3653632,
+      "available_bytes": 3461120
+    },
+    "telemetry_reopen_when_full": {
+      "passed": true,
+      "action": "check",
+      "role": "telemetry",
+      "uid": 10001,
+      "filesystem_bytes": 58675200,
+      "available_bytes": 0
+    },
+    "critical_reopen": {
+      "passed": true,
+      "action": "check",
+      "role": "critical",
+      "uid": 10001,
+      "filesystem_bytes": 3653632,
+      "available_bytes": 3461120
+    },
+    "critical_full": {
+      "passed": true,
+      "action": "fill",
+      "role": "critical",
+      "uid": 10001,
+      "filler_bytes": 3461120,
+      "filesystem_bytes": 3653632,
+      "available_bytes": 0
+    },
+    "telemetry_recover_with_critical_full": {
+      "passed": true,
+      "action": "clear",
+      "role": "telemetry",
+      "uid": 10001,
+      "recovery_bytes": 4096,
+      "filesystem_bytes": 58675200,
+      "available_bytes": 57303040
+    },
+    "critical_stays_full": {
+      "passed": true,
+      "action": "full",
+      "role": "critical",
+      "uid": 10001,
+      "one_byte_refused_errno": 28,
+      "filesystem_bytes": 3653632,
+      "available_bytes": 0
+    },
+    "telemetry_final_reopen": {
+      "passed": true,
+      "action": "check",
+      "role": "telemetry",
+      "uid": 10001,
+      "filesystem_bytes": 58675200,
+      "available_bytes": 57303040
+    }
+  },
+  "all_reopened_original_marker_bytes_and_hashes_checked": true,
+  "one_byte_no_space_refusals_checked": true,
+  "separate_critical_writability_and_independent_telemetry_recovery_checked": true,
+  "ordinary_probe_uid": 10001,
+  "no_network_no_elevated_capabilities_read_only_container_root": true,
+  "provisioner": "Scoped Ubuntu root; only new labeled image files and verified owned loop associations",
+  "path_ownership_link_inode_and_missing_corrupt_marker_negatives": true,
+  "first_prototype_raw_positive_preserved_but_unaccepted": true,
+  "shared_checks": {
+    "python_tests": 374,
+    "frontend_tests": 22,
+    "strict_python_modules": 5,
+    "contract_outcomes_per_language": [
+      339,
+      81
+    ],
+    "types_build_format_privacy_secrets": true
+  },
+  "captured_source_hashes_match": true,
+  "owned_container_volume_loop_cleanup_empty": true,
+  "new_dependencies_routes_wire_schemas_catalogs_database_migrations": 0,
+  "usable_record_space_equals_physical_image_budget": false,
+  "vehicle_queue_quota_integration_passed": false,
+  "critical_status_result_policy_passed": false,
+  "host_reboot_power_loss_startup_reattachment_passed": false,
+  "E4_complete": false,
+  "full_W0_W1_passed": false,
+  "Q12_passed": false,
+  "phase_1_complete": false
+}

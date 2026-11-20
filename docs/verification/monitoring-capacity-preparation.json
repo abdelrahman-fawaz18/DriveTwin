@@ -1,0 +1,31 @@
+{
+  "checkpoint": "P6-B1",
+  "review_date_local": "2026-11-06",
+  "scope": "Offline profile and operator harness preparation",
+  "preparation_passed": true,
+  "timed_workloads_started": 0,
+  "live_qualification_passed": false,
+  "release": "benchmarks/phase6-capacity.json",
+  "release_sha256": "d30f350187ba0255b0d5b501d9dfb2479e07ac1b0ae18ab94aef9741290932bd",
+  "reviewed_source_inventory": {
+    "files": 315,
+    "sha256": "1d4cea0c8e0bc7cde2c2d97f093dca922399d4f0ad2b1d9366d1bce267b120d0"
+  },
+  "expected_profiles": {
+    "W0-30": {"assets": 1, "warmup_s": 60, "measured_s": 1800, "measured_events": 1800, "measured_readings": 36000},
+    "W1-30": {"assets": 10, "warmup_s": 60, "measured_s": 1800, "measured_events": 18000, "measured_readings": 360000}
+  },
+  "checks": {
+    "focused_offline_tests_passed": 17,
+    "both_controller_profiles_refuse_failed_precheck_without_starting_fixture": true,
+    "linux_resource_guard_exercised_for_1860_synthetic_samples": true,
+    "windows_clock_step_and_late_linux_sample_gap_rejected": true,
+    "pinned_chromium_executable_present": true,
+    "sleep_request_acquired_and_released_in_bounded_check": true,
+    "sleep_request_max_seconds": 3600,
+    "original_a2_measurement_reconstructed_exactly_without_evidence_writes": true,
+    "original_a2_release_guard_rejected_changed_harness_inputs": true,
+    "original_a2_evidence_hashes_unchanged": true
+  },
+  "next": "Run W0-30 manually from a dedicated PowerShell session and review its saved evidence and cleanup before W1-30."
+}

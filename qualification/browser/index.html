@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EV-DT browser connection check</title>
+  <style>
+    :root { color-scheme: light; font: 16px/1.5 system-ui, sans-serif; color: #182c3c; background: #f3f6f8; }
+    body { margin: 0; padding: 36px 24px; }
+    main { max-width: 1080px; margin: auto; }
+    h1 { margin: 6px 0 12px; font-size: 30px; }
+    h2 { margin-top: 0; font-size: 20px; }
+    .eyebrow { color: #48677d; font-weight: 700; letter-spacing: .08em; font-size: 13px; }
+    .notice { border-left: 4px solid #a66d14; background: #fff5df; padding: 12px 16px; }
+    section { background: white; border: 1px solid #d5e0e7; border-radius: 8px; padding: 20px; margin-top: 20px; }
+    button, input { font: inherit; padding: 7px 12px; border-radius: 4px; border: 1px solid #8ca5b6; }
+    button { cursor: pointer; background: #164f71; color: white; margin-left: 8px; }
+    input { width: 190px; margin-left: 8px; }
+    [role="status"] { font-weight: 650; color: #0b6245; }
+    [role="alert"] { color: #a11d2c; }
+    dl { display: grid; grid-template-columns: 160px 1fr; gap: 8px; margin-bottom: 0; }
+    dt { color: #48677d; } dd { margin: 0; overflow-wrap: anywhere; }
+    code { font-size: 14px; }
+    .table-scroll { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid #dce5eb; white-space: nowrap; }
+    th { background: #eff4f7; }
+    .small { color: #48677d; font-size: 14px; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">EV-DT / PHASE 0 / P0-03</div>
+  <h1>Browser connection check</h1>
+  <p class="notice">Qualification fixture: saved synthetic readings. This is not a live bus or the monitoring dashboard.</p>
+  <section aria-labelledby="connection-title">
+    <h2 id="connection-title">Connection to the test backend</h2>
+    <p role="status" id="status">Loading readings…</p>
+    <p role="alert" id="error" hidden></p>
+    <form id="query-form">
+      <label for="asset">Vehicle</label><input id="asset" name="asset_id" required maxlength="64" autocomplete="off">
+      <button type="submit">Refresh readings</button>
+    </form>
+    <dl>
+      <dt>Mode</dt><dd id="mode">—</dd>
+      <dt>Run identifier</dt><dd><code id="run">—</code></dd>
+      <dt>Registered signals</dt><dd id="signal-count">—</dd>
+      <dt>Returned observations</dt><dd id="observation-count">—</dd>
+    </dl>
+  </section>
+  <section aria-labelledby="history-title">
+    <h2 id="history-title">Stored observation history</h2>
+    <p class="small">Values come from the query API. UTC times identify the artificial fixture history; they do not represent current vehicle health.</p>
+    <p id="empty" hidden>No stored readings for this vehicle.</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Observation time (UTC)</th><th scope="col">Signal</th><th scope="col">Stored value</th><th scope="col">Display value</th></tr></thead>
+        <tbody id="readings"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+<script>
+  const byId = id => document.getElementById(id);
+  let catalog;
+  let loadNumber = 0;
+  async function readJson(path) {
+    const response = await fetch(path, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`Request failed (${response.status})`);
+    return response.json();
+  }
+  async function load() {
+    const number = ++loadNumber;
+    byId('status').textContent = 'Loading readings…';
+    byId('error').hidden = true;
+    byId('readings').replaceChildren();
+    byId('empty').hidden = true;
+    byId('observation-count').textContent = '—';
+    byId('run').textContent = '—';
+    byId('mode').textContent = '—';
+    try {
+      const [health, signals] = await Promise.all([readJson('/health/ready'), readJson('/v1/catalog')]);
+      if (!health.ready) throw new Error('Backend is not ready');
+      catalog = signals;
+      const asset = byId('asset').value || Object.keys(catalog.assets)[0];
+      byId('asset').value = asset;
+      const history = await readJson('/v1/observations?' + new URLSearchParams({ asset_id: asset, limit: '100' }));
+      if (number !== loadNumber) return;
+      byId('mode').textContent = history.mode;
+      byId('run').textContent = history.run_id;
+      byId('signal-count').textContent = Object.keys(catalog.signals).length;
+      byId('observation-count').textContent = history.items.length;
+      for (const observation of history.items) {
+        for (const sample of observation.payload.samples) {
+          const row = document.createElement('tr');
+          row.dataset.eventId = observation.event_id;
+          const spec = catalog.signals[sample.signal_id];
+          const display = spec?.display || {};
+          const value = sample.value * (display.scale ?? 1) + (display.offset ?? 0);
+          const cells = [observation.observed_at, sample.signal_id, `${sample.value} ${sample.unit}`,
+                         `${Number(value.toFixed(4))}${display.suffix || ''}`];
+          for (const text of cells) {
+            const cell = document.createElement('td');
+            cell.textContent = text;
+            row.appendChild(cell);
+          }
+          byId('readings').appendChild(row);
+        }
+      }
+      byId('empty').hidden = history.items.length !== 0;
+      byId('status').textContent = 'Connection verified';
+    } catch (error) {
+      if (number !== loadNumber) return;
+      byId('status').textContent = 'Connection unavailable';
+      byId('error').textContent = error.message;
+      byId('error').hidden = false;
+    }
+  }
+  byId('query-form').addEventListener('submit', event => { event.preventDefault(); load(); });
+  load();
+</script>
+</body>
+</html>

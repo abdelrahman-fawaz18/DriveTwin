@@ -1,0 +1,88 @@
+{
+  "checkpoint": "P2-A1 independent energy numerical foundation",
+  "date": "2026-11-04",
+  "verified_utc": "2026-11-04T23:17:43.672373+00:00",
+  "passed": true,
+  "phase_2_complete": false,
+  "model_version": "longitudinal-energy-estimate/1.0.0",
+  "scope": "Numerical implementation and analytical profiles only; not calibrated forecast accuracy, operational truth isolation or product integration.",
+  "implemented": [
+    "Explicit immutable estimator parameters and continuous planned motion intervals",
+    "Acceleration, rolling, air and grade work with declared conversion efficiencies",
+    "Battery-side equipment consumption, regeneration and discharge-power bounds",
+    "Full/empty estimated battery bounds with rejected recovery and unserved demand recorded",
+    "Earlier energy shortfall remains infeasible despite later recovery",
+    "Configurable midpoint step and prechecked work budget",
+    "Finite-input/output guards and versioned source/input evidence"
+  ],
+  "focused_tests": 44,
+  "reference_profiles": 9,
+  "reference_profile_ids": [
+    "zero-demand",
+    "stationary-equipment-demand",
+    "acceleration-with-conversion-loss",
+    "rolling-resistance",
+    "air-drag",
+    "regeneration-power-bound",
+    "full-pack-rejects-recovery",
+    "electrical-power-shortfall",
+    "recovery-cannot-erase-prior-shortfall"
+  ],
+  "maximum_reference_balance_residual_j": 0.0,
+  "numerical_refinement_test": "Independent closed-form kinetic/cubic-drag integral; 0.4/0.2/0.1-second midpoint refinement errors reduce with expected second-order behavior. This is not complete SUMO mission convergence.",
+  "shared_checks": {
+    "passed": true,
+    "python_tests": 571,
+    "dashboard_tests": 22,
+    "strict_python_modules": 9,
+    "original_contract_cases_per_language": 339,
+    "operational_contract_cases_per_language": 81,
+    "types_formatting_build_passed": true,
+    "source_fingerprints_match": 319,
+    "candidate_privacy_and_secret_findings": 0
+  },
+  "phase_1_compatibility": {
+    "recorded_source_checks": {
+      "functional": {
+        "all_recorded_files_match": true,
+        "files": 78
+      },
+      "recovery": {
+        "all_recorded_files_match": true,
+        "files": 213
+      }
+    },
+    "runtime_guard_passed": true,
+    "existing_monitoring_runtime_contracts_catalogs_migrations_unchanged": true,
+    "no_fleet_or_service_workload_repeated": true,
+    "changes_to_preexisting_code": "Only offline check scope, input fingerprint collection and development-image packaging; new energy files are not imported by the monitoring runtime."
+  },
+  "isolation": "Pure numerical function has no simulator/store/transport/file/network import. OS/network isolation of a deployed forecasting service remains untested and is not claimed.",
+  "cleanup": {
+    "temporary_containers_remaining": 0,
+    "preexisting_volumes_preserved": 13,
+    "persistent_volumes_added": 0,
+    "global_agent_or_memory_settings_changed": false
+  },
+  "remaining": [
+    "Observation-based baseline and route/mission input preparation",
+    "Input freshness/missing/validity and qualified operating domain",
+    "Whole-mission training/validation/held-out partitions and independent runtime access-denial tests",
+    "Calibration, uncertainty method and D-18 threshold freeze before held-out evaluation",
+    "Unseen mission accuracy/coverage report and comparison against simple baselines",
+    "Versioned forecast records, API/dashboard integration and final P2-01 through P2-06 review"
+  ],
+  "decision_D18": "Still open; numerical tolerances are not physical forecast accuracy targets.",
+  "new_dependencies_frameworks_or_monitoring_wire_versions": false,
+  "private_evidence": "evidence/p2/2026-11-04-energy-core-01",
+  "private_shared_checks": ".runtime/dev-checks/eef74e1266a5461ca2e2fff99ff15331",
+  "model_card": "docs/models/energy-model-card.md",
+  "source_sha256": {
+    "src/evdt/energy/model.py": "33a3a32149b803153060f4be0985a509b7893f3c6e99a8c8b6ebb026518c7ad7",
+    "src/evdt/energy/__init__.py": "8338ac160d2c3e23e03eed91fdb1ea2a8cb9e2c46bbf1149544376be1e9f9440",
+    "scripts/p2/qualify_energy_core.py": "0ceae2c2f597c2d2e672635b7996dcefa4a35465ed59c4f6fb9125dedcba01e9",
+    "qualification/energy/core-cases.json": "d4a9a0bc08b0b1f1e1dae26e99bfd4355a5dc2868bc221fc5df322d682e73af4"
+  },
+  "publications": "Local Git only; no publication, commands or Phase 3.",
+  "runtime_image_id": "sha256:b93f266750796d1410705963843541a6fc87fafaf3248465f5216d053136406e"
+}

@@ -1,0 +1,111 @@
+{
+  "checkpoint": "P3-A2 authenticated speed-limit command and durable result",
+  "date": "2026-11-05",
+  "scope": "One registered local simulation target using authenticated HTTP and the existing PostgreSQL deployment topology",
+  "private_evidence": "evidence/p3/2026-11-05-connected-speed-04",
+  "first_attempts_preserved": [
+    {
+      "private_evidence": "evidence/p3/2026-11-05-connected-speed-01",
+      "passed": false,
+      "reason": "Command migration exited before the API was ready.",
+      "cleanup_passed": true
+    },
+    {
+      "private_evidence": "evidence/p3/2026-11-05-connected-speed-02",
+      "passed": false,
+      "reason": "Startup diagnostics found the older database login default.",
+      "cleanup_passed": true
+    },
+    {
+      "private_evidence": "evidence/p3/2026-11-05-connected-speed-03",
+      "passed": false,
+      "reason": "The temporary monitoring policy omitted the catalog fingerprint required by the catalog API.",
+      "cleanup_passed": true
+    }
+  ],
+  "passed": true,
+  "http_scope_checks_passed": true,
+  "payload_and_expiry_checks_passed": true,
+  "forged_result_before_reservation_refused": true,
+  "database_role_denial_checks": 3,
+  "command_requests": 1,
+  "actuation_reservations": 1,
+  "execution_results": 1,
+  "result_exact_after_api_replacement_and_database_restart": true,
+  "command_and_result_retries_idempotent": true,
+  "independent_speed_effect": {
+    "confirmed": true,
+    "signal_id": "motion.speed",
+    "unit": "m/s",
+    "matching_pre_command_samples": 4,
+    "post_command_pairs": 11,
+    "pairs_showing_lower_speed": 2,
+    "maximum_baseline_m_s": 8.33,
+    "maximum_commanded_m_s": 4.0
+  },
+  "sumo_version": "SUMO 1.28.0",
+  "cleanup_passed": true,
+  "source_files": [
+    {
+      "path": "compose.p1-uplink.yaml",
+      "sha256": "54fa1c4256c4033fbcf70a518751387e3df90e9053ef490afc888f35b4b4f9aa"
+    },
+    {
+      "path": "compose.p3-commands.yaml",
+      "sha256": "3047b9c8f448e29bd447b1a6b2083d38697900de749e1ebd30fbd4a017b97ed2"
+    },
+    {
+      "path": "migrations/commands/001_journal.sql",
+      "sha256": "2354879f9dc8f2688b63d81d2c07305c4da0e8fd120ea9fce3aa88a610a4e65d"
+    },
+    {
+      "path": "src/evdt/commands.py",
+      "sha256": "8616bfb5eebbc9228d4a70781bb62c3887c55e54223f154304432b723203054d"
+    },
+    {
+      "path": "src/evdt/command_api.py",
+      "sha256": "b0cb9c0dbf0f8d4611b5ce3cbfba2a3c569044c1e18a97d5a5c2ffe30ec1f75e"
+    },
+    {
+      "path": "src/evdt/command_journal.py",
+      "sha256": "4545cb91199a36f7f15abe612b1a0aff472b45b4a7cfc128b1b0565ff44c0e2c"
+    },
+    {
+      "path": "contracts/commands/execution-result-1.0.0.schema.json",
+      "sha256": "4200bca02d86e5bf04af1ea8ad103f93fee56ce30104f180b937a752eadae840"
+    },
+    {
+      "path": "contracts/commands/speed-limit-1.0.0.schema.json",
+      "sha256": "9db3203570de32b5a438e0c381b22215705ef19d3a40c206bb128c2d7c770946"
+    },
+    {
+      "path": "scripts/p3/qualify_connected_speed_limit.py",
+      "sha256": "358ddc5e32a395628465a63d691fc04730052273deabe669e8cdf195d3315171"
+    },
+    {
+      "path": "scripts/p3/run_connected_speed_limit.py",
+      "sha256": "2e229964e5abe8a69c61680d7693422e2aa3be43762ae6bedd889e6af28448c4"
+    },
+    {
+      "path": "scripts/p3/run_speed_limit.py",
+      "sha256": "2106a6e08d7233e15ea23a388793e4e29eab6351c1321c331f1d7edbd7768f41"
+    }
+  ],
+  "source_files_match": true,
+  "local_a1_compatibility_check": {
+    "passed": true,
+    "private_evidence": "evidence/p3/2026-11-05-speed-a1-regression-01"
+  },
+  "phase_2_evidence_reverified": true,
+  "shared_checks": {
+    "passed": true,
+    "python_tests_passed": 797,
+    "dashboard_tests_passed": 29,
+    "original_contract_cases": 339,
+    "monitoring_contract_cases": 81,
+    "source_fingerprints_verified": 380,
+    "candidate_privacy_findings": 0,
+    "candidate_secret_findings": 0
+  },
+  "phase_3_complete": false
+}

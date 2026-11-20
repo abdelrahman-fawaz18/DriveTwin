@@ -1,0 +1,96 @@
+{
+  "checkpoints": ["P5-D1", "P5-D2", "P5-D3"],
+  "passed": true,
+  "scope": "Offline synthetic motor and housing plant with one bounded cooling grant per mission and a single-writer charging coordination fixture",
+  "freeze_commit": "572b68e1cc43aceb5884596e980a0b9b34497ed1",
+  "release_sha256": "2c0c56ee4f1f5bd0d502973c7bc7ece9971edfc75c58fb2a31019c4c6e54cb53",
+  "reserved_report_sha256": "c0ab9887e124d338986fbb001deebc96eb45352b9205079a5126b83bc5fba040",
+  "reserved_claim_sha256": "1d501fc2d1b2d242a73ca793cb82c8e63fdc27e88b687ab4ab145b757d810f5f",
+  "reserved_attempts": 1,
+  "development_reserved_seeds_disjoint": true,
+  "reserved_scenarios": 24,
+  "verified_trace_digests": 72,
+  "checks": {
+    "forecast_qualified_before_predictive": true,
+    "all_traces_and_commands_valid": true,
+    "independent_effect": true,
+    "no_unsafe_grants": true,
+    "no_additional_incomplete_missions": true
+  },
+  "forecast": {
+    "horizon_s": 60,
+    "interval_half_width_k": 3.5,
+    "scored_forecasts": 1590,
+    "mean_absolute_error_k": 1.296342,
+    "interval_coverage": 0.993082,
+    "maximum_mean_absolute_error_k": 1.75,
+    "minimum_coverage": 0.95
+  },
+  "isolated_cooling_effect": {
+    "seconds_after_grant": 120,
+    "minimum_effect_k": 1,
+    "minimum_passing_cases_per_controller": 7,
+    "eligible_cooling_loss_cases": 8,
+    "threshold": {"passing": 8, "minimum_measured_k": 1.461910},
+    "predictive": {"passing": 8, "minimum_measured_k": 2.045896}
+  },
+  "matched_missions": {
+    "per_strategy": 24,
+    "complete": 72,
+    "failed": 0,
+    "incomplete": 0,
+    "unsafe_grants": 0,
+    "no_grant_expected_per_cooling_strategy": 16,
+    "predictive_granted_earlier_than_threshold_cases": 8,
+    "predictive_lead_range_s": [40, 123],
+    "predictive_lower_exposure_than_threshold_cases": 8,
+    "predictive_lower_delay_than_threshold_cases": 7,
+    "means_for_eight_cooling_loss_cases": {
+      "local_only": {
+        "peak_k": 359.480388,
+        "exposure_k_min": 62.566972,
+        "total_energy_kwh": 25.904014,
+        "pump_energy_kwh": 0,
+        "mission_delay_s": 184.125
+      },
+      "threshold": {
+        "peak_k": 356.937777,
+        "exposure_k_min": 39.195935,
+        "total_energy_kwh": 25.928477,
+        "pump_energy_kwh": 0.034333,
+        "mission_delay_s": 152.75
+      },
+      "predictive": {
+        "peak_k": 354.598448,
+        "exposure_k_min": 19.278598,
+        "total_energy_kwh": 25.736806,
+        "pump_energy_kwh": 0.079208,
+        "mission_delay_s": 54.75
+      }
+    }
+  },
+  "coordination": {
+    "thermal_tests_passed": 33,
+    "thermal_coordination_tests_included": 13,
+    "phase4_diversion_regressions_passed": 3,
+    "existing_command_clock_regressions_passed": 10,
+    "coverage": [
+      "authorized scope and corroboration persistence",
+      "first effect, expired reservation, exact boost end and elapsed-clock boundaries",
+      "current probes and missing-data cancellation",
+      "operator veto and local protection before and after grant",
+      "pending or active cooling versus diversion and selected diversion versus new cooling",
+      "Phase 4 station and departure freshness, approval, and route eligibility",
+      "spent grant and operator veto across journal reopen"
+    ]
+  },
+  "preserved_development_findings": [
+    "An initial incremental plant calculation used the state transition in the wrong orientation. The corrected calculation agrees with the frozen thermal model's batch rollout.",
+    "The first valid whole-mission effect measurement combined pump cooling with independent local load reduction. The pre-freeze scoring design now holds the load-reduction schedule fixed for the isolated effect and reports the full mission comparison separately."
+  ],
+  "limits": [
+    "Forecast coverage is empirical for overlapping samples on these synthetic trajectories.",
+    "The motor bench model does not supply bus thermal parameters or commands.",
+    "Charging interaction is verified at an offline simulated actuator boundary with the existing Phase 4 admission guard. Live service coordination, hardware calibration and vehicle actuation remain unqualified."
+  ]
+}

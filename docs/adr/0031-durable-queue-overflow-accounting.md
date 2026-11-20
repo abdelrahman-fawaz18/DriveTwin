@@ -1,0 +1,23 @@
+# ADR-0031: Durable oldest-first telemetry eviction and reconciliation
+
+Date: November 4, 2026. Status: opt-in queue-policy component implemented and qualified by shared/component checks. Default vehicle transport integration remains disabled. Physical quotas, critical storage and transport integration remain separate unpassed gates.
+
+## Required policy and compatibility
+
+Keep the existing default queue's refusal/backpressure behavior and its historical capacity/recovery checks unchanged. Add an explicitly selected, immutable `oldest-first/1.0.0` policy for new queues. Bind its encoded limit and finite audit capacity durably. A used legacy queue cannot silently adopt it, an opted-in queue cannot reopen as legacy, and reopening with changed policy settings fails. The production target remains 32 MiB encoded telemetry inside a 64 MiB physical telemetry budget, plus a separate 8 MiB critical reserve. A component test with smaller limits is not a physical-capacity qualification.
+
+When new valid telemetry would exceed the encoded limit, evict the oldest unacknowledged entries in source-epoch/sequence order. Record every evicted event ID, original-byte hash, epoch/sequence, original observed/simulated time and eviction time. Eviction, ledger insertion, new original insertion, generated count and next sequence share one SQLite transaction. If any step fails, rollback preserves the old queue and sequence. Invalid or individually oversized input never evicts prior data. When the audit reaches capacity, the queue refuses further eviction and retains the existing loss evidence.
+
+SQLite rollback-journal transactions remain enabled with EXTRA synchronization. Main database page limits and post-commit journal-size limits are not a complete physical quota; an independently enforced filesystem boundary and measured transient overhead are required separately. See SQLite's [transaction explanation](https://www.sqlite.org/atomiccommit.html) and [configuration reference](https://www.sqlite.org/pragma.html). Do not disable journaling to fit a disk limit.
+
+## Evicted does not automatically mean lost
+
+A sender can already hold an original packet when another process evicts its queue row. The server might still accept it. The ledger therefore starts at `unconfirmed`, and event accounting keeps that event pending even though its queued bytes have been removed. Report queued and unresolved counts separately. A matching validated terminal receipt, including its original-byte hash and asset/run/source identity, can settle an evicted event as accepted or rejected exactly once. Preserve lifetime eviction count independently.
+
+An explicit trusted local reconciliation can confirm a missing original as dropped only with its exact ID/hash and a durable audit reference. The caller must establish that publication has stopped, in-flight work is settled and the authoritative accepted/rejected inventory excludes the original; the queue method alone cannot establish those external facts. Retain that reference. If a later valid receipt contradicts a prior loss assertion, retain the assertion and receipt while correcting current disposition/counters; never count the same event as both accepted and dropped. This is bookkeeping, not a new remotely exposed command or unauthenticated loss declaration.
+
+The invariant is `generated = accepted + rejected + dropped + pending`, where pending includes queued originals plus evicted originals awaiting disposition. Lifetime evictions are a separate diagnostic and are not added to that sum. Exact event/time records support loss intervals without inventing observations. The finite ledger never silently prunes an unsettled or confirmed loss; exhaustion exposes an explicit fault/backpressure condition. Critical-result retention, physical reserve exhaustion and command refusal remain future integration checks; operational commands are already unavailable in Phase 1.
+
+## Required proof before integration
+
+Test oldest order across sessions, exact IDs/hashes/times, unchanged surviving bytes, generated/sequence accounting, invalid/oversized rejection without eviction, transactional failure and actual process-crash rollback, reopen/configuration/legacy guards, audit exhaustion, wrong/duplicate/late receipts, explicit loss confirmation and correction. Then separately qualify persistent physical filesystem ceilings, actual journal/index/reserve overhead, full-disk behavior, restart recovery and authenticated reconnect indication through existing operational diagnostics. Do not mark E4 or overflow acceptance complete from component tests alone.

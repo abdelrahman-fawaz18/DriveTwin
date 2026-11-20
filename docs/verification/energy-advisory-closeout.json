@@ -1,0 +1,121 @@
+{
+  "checkpoint": "P2-E1 complete: Phase 2 simulated advisory energy milestone",
+  "date": "2026-11-05",
+  "passed": true,
+  "phase_2_advisory_milestone_complete": true,
+  "all_original_items_passed": 17,
+  "resolved_gaps": [
+    "G-01",
+    "G-02",
+    "G-03"
+  ],
+  "private_integration_evidence": "evidence/p2/2026-11-04-energy-e1-02",
+  "private_readiness_review": "evidence/p2/2026-11-05-phase2-closeout-02/review.json",
+  "readiness_review_sha256": "3afd1c9a0169e1ee5d067cbb5e219c993377e80f275782ee17405ec0113447d2",
+  "advisory_release_sha256": "1cdb32a0e86317f0b540b3190606dd9804200b145581906631d3277c9d42b9ab",
+  "current_integration_sources_verified": 139,
+  "retained_primary_collection_files_verified": 288,
+  "retained_primary_collection_bytes_verified": 221108979,
+  "retained_repeatability_files_verified": 12,
+  "first_attempt": {
+    "private_evidence": "evidence/p2/2026-11-04-energy-e1-01",
+    "passed": false,
+    "reason": "Sequential worker calls and persistence exceeded unchanged five-second freshness before browser display.",
+    "original_cleanup_passed": false,
+    "separate_followup_verified_no_owned_containers_volumes_networks_and_removed_exact_image": true
+  },
+  "startup_s": 7.931,
+  "startup_limit_s": 120,
+  "validation_preparation_parity": {
+    "passed": true,
+    "validation_cases": 6,
+    "candidate_reference_values_and_envelopes_identical": true,
+    "held_out_opened": false
+  },
+  "browser": {
+    "passed": true,
+    "input_age_horizon_assumptions_displayed": true,
+    "conditional_range_time_displayed": true,
+    "two_station_assessments_displayed": true,
+    "stale_and_disconnected_values_hidden": true,
+    "immutable_history_visible": true,
+    "missing_required_input_visible": true,
+    "unsupported_cutoff_visible": true,
+    "connection_recovery_passed": true,
+    "new_registered_run_recovery_passed": true,
+    "asset_and_run_state_cleared": true,
+    "page_errors": 0
+  },
+  "station_example": [
+    {
+      "station_id": "depot-a",
+      "path_distance_m": 652.037,
+      "status": "reachable_under_assumptions"
+    },
+    {
+      "station_id": "opportunity-b",
+      "path_distance_m": 1526.732,
+      "status": "reachable_under_assumptions"
+    }
+  ],
+  "accounting": {
+    "records": 3,
+    "available": 2,
+    "unavailable": 1,
+    "original_packets_intact": 183
+  },
+  "ordinary_monitoring_views": {
+    "snapshot_signals": 20,
+    "raw_history_readings": 61,
+    "map_read_passed": true
+  },
+  "scoped_read_checks": {
+    "passed": true,
+    "checks": 6
+  },
+  "dedicated_input_credential_checks": {
+    "passed": true,
+    "checks": 5
+  },
+  "database_access_and_immutability": {
+    "passed": true,
+    "checks": 10
+  },
+  "current_backup_restore": {
+    "passed": true,
+    "fresh_cluster": true,
+    "exact_data_schema_permissions": true,
+    "forecast_rows": 3,
+    "original_packets": 183
+  },
+  "legacy_backup_restore": {
+    "passed": true,
+    "fresh_cluster": true,
+    "exact_original_payloads": 2,
+    "original_packets_intact": 61,
+    "current_read_role_and_browser_parser": true,
+    "old_records_rewritten": false
+  },
+  "cleanup": {
+    "passed": true,
+    "preexisting_volumes_preserved": 13,
+    "owned_application_image_removed": true
+  },
+  "station_endpoint_accuracy_qualified": false,
+  "runtime_model_flags_changed": false,
+  "automatic_dispatch_approved": false,
+  "held_out_regenerated_or_rescored": false,
+  "phase_3_started": false,
+  "phase_6_deferrals_changed": false,
+  "final_shared_checks": {
+    "passed": true,
+    "python_tests": 781,
+    "dashboard_tests": 29,
+    "strict_modules": 15,
+    "original_contract_cases_per_language": 339,
+    "operational_contract_cases_per_language": 81,
+    "source_fingerprints_verified": 371,
+    "candidate_privacy_findings": 0,
+    "candidate_secret_findings": 0
+  }
+}

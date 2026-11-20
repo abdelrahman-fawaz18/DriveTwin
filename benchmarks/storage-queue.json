@@ -1,0 +1,11 @@
+{
+  "version": "queue-storage-integration/1.0.0",
+  "catalog_version": "1.4.0",
+  "schema_version": "3.2.0",
+  "packet_bytes": 8192,
+  "nominal_horizon_events": 1800,
+  "encoded_capacity_events": 4096,
+  "overflow_events": 10,
+  "loss_record_limit": 16384,
+  "scope": "Accelerated synthetic storage fixture using normal queue validation and transactions; no live rate, physical-model, broker or server-persistence claim"
+}

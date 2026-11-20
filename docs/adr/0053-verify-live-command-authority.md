@@ -1,0 +1,9 @@
+# ADR 0053. Verify the winning authority at the live simulator
+
+The live speed-command source can opt into the existing one-decision arbitration policy. The command service seals the highest eligible proposal for one bus and run, under a distinct coordinator identity. The source declares the arbitration profile in its run manifest fingerprint. The source credential can claim and verify a reservation and report the outcome. The proposer credentials stay with their respective requesters.
+
+The source accepts the coordinator's command within the configured simulation window and checks the local speed ceiling. It sends the decision's fencing token, an authority number, back to the command service together with the command, run and bus. The service verifies the exact active reservation. A missing, invalid, stale or unverified token prevents actuation. After a successful fence check, the source rechecks the elapsed-time deadline immediately before applying the cap. Failed verification leaves telemetry running. A refusal is recorded when the service can receive it.
+
+Use the regular monitoring API for independent evidence of the result. An eligible operator wins over the thermal and energy proposals. An expired operator proposal leaves the thermal proposal eligible. The stale-token case replaces the valid number with an injected older number in the live source's verification request. The real command service refuses the request, and the complete accepted speed trace matches the monitoring-only reference.
+
+The profile covers one sealed decision on one paced simulated bus. Thermal and energy requests are synthetic qualification inputs. Replacing a pending decision, handing authority between active coordinators and deploying automatic services require separate work. [Reproduction guide](../setup/live-command-arbitration-check.md)

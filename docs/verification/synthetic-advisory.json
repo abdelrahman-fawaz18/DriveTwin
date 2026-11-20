@@ -1,0 +1,73 @@
+{
+  "checkpoint": "P5-C3 Frozen synthetic detection evaluation",
+  "passed": true,
+  "scope": "Independent synthetic bus thermal fixture with a primary motor reading and optional simulated housing probe",
+  "freeze_commit": "23c0bb2740b96205af15480cb22d428def8b1340",
+  "release_sha256": "92f40ecac4ce9211db8e7dbdec996f6f39888e41bf354b231bac71f22e411eef",
+  "reserved_report_sha256": "c957a48eec349bbab713caadb32d586a6cb8cbe284ef22a22df70996fcb52865",
+  "reserved_claim_sha256": "6b0f3d9e9308feabc953957b024992640c378696a51962a4cff2777e620b53f8",
+  "reserved_attempts": 1,
+  "development_reserved_seeds_disjoint": true,
+  "candidate": {
+    "name": "sensitive",
+    "hot_residual_k": 3.5,
+    "case_residual_k": 2.5,
+    "persistence_s": 20
+  },
+  "frozen_limits": {
+    "maximum_healthy_alerts_per_hour": 0.2,
+    "maximum_pre_fault_alerts": 0,
+    "maximum_missed_dual_cooling": 0,
+    "maximum_cooling_delay_s": 390,
+    "minimum_thermal_warning_lead_s": 45,
+    "minimum_fault_induced_threshold_crossings": 4,
+    "maximum_unexpected_cooling_attributions": 0,
+    "maximum_missed_sensor_or_ambiguity_cases": 0,
+    "maximum_unavailable_window_violations": 0
+  },
+  "reference_hot_limit_k": 354,
+  "checks": {
+    "false_alert_rate": true,
+    "prefault_alerts": true,
+    "missed_cooling": true,
+    "cooling_delay": true,
+    "thermal_lead": true,
+    "attribution": true,
+    "sensor_and_ambiguity": true,
+    "unavailable": true
+  },
+  "metrics": {
+    "case_count": 48,
+    "healthy_hours": 8.266666666666667,
+    "healthy_alert_episodes": 0,
+    "healthy_alerts_per_hour": 0.0,
+    "prefault_alert_episodes": 0,
+    "dual_cooling_cases": 8,
+    "missed_dual_cooling": 0,
+    "maximum_cooling_delay_s": 306,
+    "fault_induced_threshold_crossings": 12,
+    "warnings_before_crossing": 12,
+    "minimum_thermal_warning_lead_s": 78,
+    "unexpected_cooling_attribution_samples": 0,
+    "missed_sensor_or_ambiguity_cases": 0,
+    "unavailable_window_violations": 0,
+    "ambiguous_case_count": 8,
+    "ambiguity_by_case": {
+      "healthy": 0,
+      "cooling_loss": 0,
+      "step_bias": 0,
+      "slow_bias": 4,
+      "dropout": 0,
+      "stale": 0,
+      "cooling_dropout": 0,
+      "cooling_bias": 0,
+      "single_probe_cooling": 4
+    }
+  },
+  "retained_housing_conductance_fraction_range": [
+    0.18,
+    0.34
+  ],
+  "command_scope": "Advisory states only",
+  "next_checkpoint": "P5-D1 Bounded thermal intervention"
+}

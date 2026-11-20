@@ -1,0 +1,256 @@
+{
+  "audit_completed": true,
+  "evidence_integrity_passed": true,
+  "phase_2_ready": false,
+  "exact_checkpoint_sources": {
+    "advisory": 9,
+    "boundary": 17,
+    "calibration": 12,
+    "heldout": 7,
+    "product": 129,
+    "current_numerical": 4
+  },
+  "current_numerical_profiles": 9,
+  "original_numerical_1_0_0_is_historical": true,
+  "collection_counts": {
+    "train": 12,
+    "validation": 6,
+    "held_out": 6
+  },
+  "primary_collection_files_verified": 288,
+  "primary_collection_bytes_verified": 221108979,
+  "repeatability_files_verified": 12,
+  "collection_compatibility": [
+    {
+      "exact": 115,
+      "reviewed_changed_files": [
+        "containers/monitoring.Dockerfile",
+        "src/evdt/monitoring/api.py",
+        "src/evdt/monitoring/database.py",
+        "src/evdt/monitoring/http_readers.py",
+        "src/evdt/monitoring/repository.py",
+        "src/evdt/recovery/database.py"
+      ],
+      "basis": "D1 product/database/auth/runtime-stage changes; simulator and collector algorithm bytes unchanged. Current changed bytes match the product requalification. Recorded packets are not regenerated."
+    },
+    {
+      "exact": 118,
+      "reviewed_changed_files": [
+        "containers/monitoring.Dockerfile",
+        "src/evdt/monitoring/api.py",
+        "src/evdt/monitoring/database.py",
+        "src/evdt/monitoring/http_readers.py",
+        "src/evdt/monitoring/repository.py",
+        "src/evdt/recovery/database.py"
+      ],
+      "basis": "D1 product/database/auth/runtime-stage changes; simulator and collector algorithm bytes unchanged. Current changed bytes match the product requalification. Recorded packets are not regenerated."
+    }
+  ],
+  "full_product_report_preserved_with_two_reviewed_differences": true,
+  "current_presentation_sources_verified": 129,
+  "frozen_B2_C1_artifacts_and_consumed_claim_unchanged": true,
+  "new_collection_scoring_or_workload_started": false,
+  "unresolved_gaps": [
+    "G-01",
+    "G-02",
+    "G-03"
+  ],
+  "incomplete_items": [
+    "P2-W03",
+    "P2-W06",
+    "P2-04"
+  ],
+  "automatic_dispatch_approved": false,
+  "runtime_model_flags_changed": false,
+  "checkpoint": "P2-E1 original-scope readiness and retained-evidence review",
+  "date": "2026-11-04",
+  "phase_2_complete": false,
+  "promotion": "withheld",
+  "phase3_started": false,
+  "scope_reduced_or_original_work_deferred": false,
+  "product_runtime_or_model_changed": false,
+  "workload_started": false,
+  "reviewed_scope": "Original six work items, six acceptance criteria and five deliverables; current known-route synthetic advisory evidence only",
+  "readiness_checklist": "qualification/energy/readiness-checklist.json",
+  "readiness_checklist_sha256": "4af1092f10ba6f58c0eeb84c0e1ca17c46684669700b43b9373e9cb5930e4b42",
+  "items": [
+    {
+      "id": "P2-W01",
+      "status": "passed",
+      "description": "Energy ownership, equations, units and assumptions documented",
+      "gaps": []
+    },
+    {
+      "id": "P2-W02",
+      "status": "passed",
+      "description": "Reference and route-dependent forecasts with immutable derived records",
+      "gaps": []
+    },
+    {
+      "id": "P2-W03",
+      "status": "partial",
+      "description": "Route energy, final charge, conditional time/range, reserve and station reachability",
+      "gaps": [
+        "G-01",
+        "G-02"
+      ]
+    },
+    {
+      "id": "P2-W04",
+      "status": "passed",
+      "description": "Explicit uncertainty assumptions, observed coverage and width limits",
+      "gaps": []
+    },
+    {
+      "id": "P2-W05",
+      "status": "passed",
+      "description": "Whole-mission train/validation/held-out separation and designated-data fitting",
+      "gaps": []
+    },
+    {
+      "id": "P2-W06",
+      "status": "partial",
+      "description": "Forecast display includes input age, horizon, versions, assumptions, uncertainty and explanations",
+      "gaps": [
+        "G-02"
+      ]
+    },
+    {
+      "id": "P2-01",
+      "status": "passed",
+      "description": "Numerical energy balance, bounds, limiting cases and refinement",
+      "gaps": []
+    },
+    {
+      "id": "P2-02",
+      "status": "passed",
+      "description": "Selected isolated worker denies private plant/truth access; trusted host/controller boundary remains explicit",
+      "gaps": []
+    },
+    {
+      "id": "P2-03",
+      "status": "passed",
+      "description": "Frozen known-route cutoff study reports every regime/count/failure against unchanged criteria",
+      "gaps": []
+    },
+    {
+      "id": "P2-04",
+      "status": "partial",
+      "description": "Degraded/unavailable inputs and visible interface behavior; explicit missing/out-of-domain browser assertions still needed",
+      "gaps": [
+        "G-03"
+      ]
+    },
+    {
+      "id": "P2-05",
+      "status": "passed",
+      "description": "Identical calculation inputs/settings reproduce outputs in the declared scope",
+      "gaps": []
+    },
+    {
+      "id": "P2-06",
+      "status": "passed",
+      "description": "Input lineage, model/uncertainty identity and separate immutable observations",
+      "gaps": []
+    },
+    {
+      "id": "P2-D01",
+      "status": "passed",
+      "description": "Current model cards distinguish foundation, calibrated study and product integration",
+      "gaps": []
+    },
+    {
+      "id": "P2-D02",
+      "status": "passed",
+      "description": "Calibration/validation and held-out reports preserved",
+      "gaps": []
+    },
+    {
+      "id": "P2-D03",
+      "status": "passed",
+      "description": "Actual complete dataset manifests and exact file inventories retained",
+      "gaps": []
+    },
+    {
+      "id": "P2-D04",
+      "status": "passed",
+      "description": "Asset-scoped forecast read API exists for the documented route/cutoff",
+      "gaps": []
+    },
+    {
+      "id": "P2-D05",
+      "status": "passed",
+      "description": "Private Phase 2 evidence is present and integrity verified; this is not all-requirements completion",
+      "gaps": []
+    }
+  ],
+  "open_gaps": [
+    {
+      "id": "G-01",
+      "next_part": "P2-E1b",
+      "description": "Station locations exist, but no station-specific reachability calculation or verified road approach exists",
+      "closure": "Provide a read-only station assessment bound to an explicit valid road approach and assumed forward plan; report reachable/reserve-shortfall/unavailable with station and input lineage. Verify route, energy and failure cases. Do not infer reachability from straight-line distance or relabel end-of-route evaluation as station-arrival accuracy."
+    },
+    {
+      "id": "G-02",
+      "next_part": "P2-E1a",
+      "description": "Input age, explicit forward horizon, conditional driving range/time and concrete assumptions are not fully presented",
+      "closure": "Expose those quantities from traceable stored/derived inputs with correct wall/simulation time and units; distinguish the conditional recent-consumption reference from the route model. Show unavailable values honestly and preserve old records and frozen model/targets."
+    },
+    {
+      "id": "G-03",
+      "next_part": "P2-E1c",
+      "description": "Missing and out-of-domain UI states have logic/unit/API coverage but lack explicit assertions in the actual Energy browser test",
+      "closure": "Extend the small controlled integration with separate missing-required-input and unsupported-domain browser cases, plus recovery and scope checks. Requalify affected behavior once after changes stabilize; do not repeat fleet/soak or the consumed held-out study."
+    }
+  ],
+  "next_part": "P2-E1a",
+  "focused_readiness_tests": 17,
+  "private_review": "evidence/p2/2026-11-04-phase2-readiness-01/review.json",
+  "private_review_sha256": "ffc1dd777909816b23917887580aca4f68c574514f3eaa5f216dbf1599d1b641",
+  "review_source_files": [
+    {
+      "path": "scripts/p2/review_phase2.py",
+      "sha256": "39ec303fc8667c4491e8ab997392ccbc99c78d97adc2edcb3d21a21333e4c22a"
+    },
+    {
+      "path": "qualification/energy/readiness-checklist.json",
+      "sha256": "4af1092f10ba6f58c0eeb84c0e1ca17c46684669700b43b9373e9cb5930e4b42"
+    }
+  ],
+  "shared_checks": {
+    "passed": true,
+    "python_tests": 765,
+    "dashboard_tests": 25,
+    "strict_python_modules": 15,
+    "source_fingerprints_match": 361,
+    "original_contract_cases_per_language": 339,
+    "operational_contract_cases_per_language": 81,
+    "format_types_build_passed": true,
+    "candidate_privacy_and_secret_findings": 0,
+    "private_report": ".runtime/dev-checks/fdb73ae7f4184227b584a0b98d166551",
+    "scope": "Audit/checklist/test changes; product and model implementation unchanged. Not an application acceptance rerun."
+  },
+  "learning_and_traceability": "docs/verification/phase2-readiness-review.md",
+  "published": false,
+  "supplemental_private_reports_reviewed": [
+    {
+      "path": "evidence/p2/2026-11-04-energy-boundary-01/qualification.json",
+      "sha256": "7c19a80678450b18e92c8ea26af1721137a1a0221d922f497b9279fc811bf581",
+      "passed": true,
+      "source_or_input_fingerprints_match": 17
+    },
+    {
+      "path": "evidence/p2/2026-11-04-energy-advisory-02/qualification.json",
+      "sha256": "d020c051f73ab3ab125e6e7b0af7b62571ac9d6a71d78f543c2e515e97fc92fa",
+      "passed": true,
+      "source_or_input_fingerprints_match": 12
+    },
+    {
+      "path": "evidence/p2/2026-11-04-energy-calibration-release-02/qualification.json",
+      "sha256": "5b084e451d8e387b26d830d234eea5ee318b39f3a489ed19a46b1e448cceafd1",
+      "passed": true,
+      "source_or_input_fingerprints_match": 5
+    }
+  ]
+}

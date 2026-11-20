@@ -1,0 +1,71 @@
+{
+  "checkpoint": "P5-B4 Frozen reserved winding evaluation",
+  "passed": true,
+  "scope": "Offline Paderborn winding prediction with one measured startup value and observed forcing",
+  "freeze_commit": "486c1f9f0910a175755075c0469fdb5d7b60d483",
+  "release_sha256": "7a522898abc72b1aec8046f310dda74b3468ec55782dc38109026b60e565258d",
+  "reserved_report_sha256": "491c040b50890e940e024af728f8642a529de979b123ec6291882c392176941f",
+  "reserved_claim_sha256": "8bc1d09452945272a856de84c60cdfac981b297d3af7bc3591c91c5f462a2ffa",
+  "same_release_attempts": 1,
+  "test_profiles": 13,
+  "frozen_limits": {
+    "mean_profile_mae_k": 5.306144852402691,
+    "worst_profile_mae_k": 15,
+    "minimum_mean_profile_interval_coverage": 0.85
+  },
+  "empirical_interval_radius_k": 17.698628338645037,
+  "checks": {
+    "mean_error": true,
+    "worst_profile": true,
+    "interval_coverage": true,
+    "beats_persistence": true
+  },
+  "measured_startup": {
+    "profiles": 13,
+    "samples": 268299,
+    "mean_profile_mae_k": 3.187552574553881,
+    "worst_profile_mae_k": 7.261870639936649,
+    "maximum_absolute_error_k": 17.979010434460122,
+    "mean_profile_interval_coverage": 0.9998627416622861,
+    "mean_persistence_mae_k": 39.51050098199474
+  },
+  "ambient_startup_sensitivity": {
+    "profiles": 13,
+    "samples": 268299,
+    "mean_profile_mae_k": 3.251728871941556,
+    "worst_profile_mae_k": 7.261898286648702,
+    "maximum_absolute_error_k": 26.38006864579836,
+    "mean_profile_interval_coverage": 0.9993658316030067,
+    "mean_persistence_mae_k": 44.087115587974544
+  },
+  "overlapping_operating_regimes": {
+    "high_current": {
+      "samples": 32817,
+      "sample_weighted_mae_k": 6.466549475944076,
+      "sample_weighted_bias_k": -5.296028577669702
+    },
+    "other_current": {
+      "samples": 235482,
+      "sample_weighted_mae_k": 2.8960651922725376,
+      "sample_weighted_bias_k": -0.5088823616436842
+    },
+    "near_zero_speed": {
+      "samples": 43451,
+      "sample_weighted_mae_k": 2.5276749237545215,
+      "sample_weighted_bias_k": -2.1790674143057984
+    },
+    "negative_shaft_power": {
+      "samples": 90062,
+      "sample_weighted_mae_k": 2.605237562073392,
+      "sample_weighted_bias_k": 0.01070450674270364
+    }
+  },
+  "out_of_training_range_counts_by_feature": {
+    "ambient_k": 4,
+    "coolant_k": 2,
+    "speed_rad_s": 1,
+    "current_squared_a2": 5
+  },
+  "diagnostic_and_intervention_qualification": "separate synthetic bus evidence required",
+  "next_checkpoint": "P5-C1 Synthetic fault protocol"
+}

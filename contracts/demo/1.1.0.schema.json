@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:evdt:branched-trip-demo:1.1.0",
+  "title": "DriveTwin semantic branched-trip manifest",
+  "description": "Separate public semantic export; not an original telemetry or authenticated replay envelope. Runtime validation of referenced assets is in demoModel.ts. Version 1.1 permits a reviewed decision checkpoint and preserves the original forecast energy ledger in timeline summaries.",
+  "type": "object",
+  "required": [
+    "version",
+    "id",
+    "title",
+    "region",
+    "basis",
+    "initialSoc",
+    "reserveSoc",
+    "decision",
+    "files",
+    "attribution",
+    "evidence"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "branched-trip-demo/1.1.0"
+    },
+    "id": {
+      "$ref": "#/$defs/text"
+    },
+    "title": {
+      "$ref": "#/$defs/text"
+    },
+    "region": {
+      "$ref": "#/$defs/text"
+    },
+    "basis": {
+      "$ref": "#/$defs/text"
+    },
+    "initialSoc": {
+      "$ref": "#/$defs/soc"
+    },
+    "reserveSoc": {
+      "$ref": "#/$defs/soc"
+    },
+    "attribution": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/text"
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "at",
+        "stationId",
+        "stationName",
+        "targetSoc",
+        "chargingSeconds",
+        "minimumSocWithStop",
+        "arrivalSocWithStop",
+        "arrivalWorkingS",
+        "waitSeconds",
+        "energyKwh",
+        "choices"
+      ],
+      "properties": {
+        "at": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 900
+        },
+        "stationId": {
+          "$ref": "#/$defs/text"
+        },
+        "stationName": {
+          "$ref": "#/$defs/text"
+        },
+        "targetSoc": {
+          "$ref": "#/$defs/soc"
+        },
+        "minimumSocWithStop": {
+          "$ref": "#/$defs/soc"
+        },
+        "arrivalSocWithStop": {
+          "$ref": "#/$defs/soc"
+        },
+        "arrivalWorkingS": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 14400
+        },
+        "waitSeconds": {
+          "$ref": "#/$defs/time"
+        },
+        "chargingSeconds": {
+          "$ref": "#/$defs/time"
+        },
+        "energyKwh": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10000
+        },
+        "choices": {
+          "const": [
+            "charge",
+            "continue"
+          ]
+        }
+      }
+    },
+    "files": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "catalog",
+        "map",
+        "common",
+        "charge",
+        "continue"
+      ],
+      "properties": {
+        "catalog": {
+          "$ref": "#/$defs/asset"
+        },
+        "map": {
+          "$ref": "#/$defs/asset"
+        },
+        "common": {
+          "$ref": "#/$defs/asset"
+        },
+        "charge": {
+          "$ref": "#/$defs/asset"
+        },
+        "continue": {
+          "$ref": "#/$defs/asset"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "prefixSha256",
+        "sourceRevision"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/text"
+        },
+        "prefixSha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "sourceRevision": {
+          "$ref": "#/$defs/sha"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000
+    },
+    "soc": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "time": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 14400
+    },
+    "sha": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "bytes",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*\\.json$"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2000000
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha"
+        }
+      }
+    }
+  }
+}

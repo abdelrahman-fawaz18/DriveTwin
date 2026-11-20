@@ -1,0 +1,245 @@
+{
+  "checkpoint": "P3-A3 interrupted command recovery from speed evidence",
+  "date": "2026-11-05",
+  "passed": true,
+  "scope": "Three abrupt interruptions of the command transport process in the bounded local SUMO exercise, with command service and database restart and a separately authenticated observer.",
+  "cases": {
+    "before": {
+      "private_evidence": "evidence/p3/2026-11-05-recovery-before-01",
+      "qualification_sha256": "50554d4a9432de0463ddf3d2d0e7f508246b339a036b1c54d0b7be35c42e84bc",
+      "passed": true,
+      "http_scope_checks_passed": true,
+      "payload_and_expiry_checks_passed": true,
+      "forged_result_before_reservation_refused": true,
+      "database_role_denial_checks": 4,
+      "command_requests": 1,
+      "actuation_reservations": 1,
+      "execution_results": 0,
+      "execution_state_exact_after_api_replacement_and_database_restart": true,
+      "command_retry_and_second_handoff_checked": true,
+      "result_retry_checked": false,
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "not_observed",
+        "confirmed": false,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 8.33,
+        "maximum_commanded_m_s": 8.33,
+        "pairs_showing_lower_speed": 0,
+        "matching_pre_command_samples": 4
+      },
+      "effect_durable_across_second_restart_checked": false,
+      "fault": "before_actuation",
+      "transport_interruptions": [
+        {
+          "endpoint": "claim",
+          "signal": "SIGKILL"
+        }
+      ],
+      "final_execution_state": "unknown_outcome",
+      "sumo_version": "SUMO 1.28.0",
+      "cleanup_passed": true,
+      "source_files_match": true
+    },
+    "after": {
+      "private_evidence": "evidence/p3/2026-11-05-recovery-after-01",
+      "qualification_sha256": "c2f1b2079d14f7d6903c05a30060747da5fabf91d5ee3e2caf8dadc35ee441e3",
+      "passed": true,
+      "http_scope_checks_passed": true,
+      "payload_and_expiry_checks_passed": true,
+      "forged_result_before_reservation_refused": true,
+      "database_role_denial_checks": 4,
+      "command_requests": 1,
+      "actuation_reservations": 1,
+      "execution_results": 0,
+      "execution_state_exact_after_api_replacement_and_database_restart": true,
+      "command_retry_and_second_handoff_checked": true,
+      "result_retry_checked": false,
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "confirmed",
+        "confirmed": true,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 8.33,
+        "maximum_commanded_m_s": 4.0,
+        "pairs_showing_lower_speed": 2,
+        "matching_pre_command_samples": 4
+      },
+      "effect_durable_across_second_restart_checked": true,
+      "fault": "after_actuation",
+      "transport_interruptions": [
+        {
+          "endpoint": "result",
+          "signal": "SIGKILL"
+        }
+      ],
+      "final_execution_state": "unknown_outcome",
+      "sumo_version": "SUMO 1.28.0",
+      "cleanup_passed": true,
+      "source_files_match": true
+    },
+    "ack": {
+      "private_evidence": "evidence/p3/2026-11-05-recovery-ack-01",
+      "qualification_sha256": "7cd80419eb1ae02920de045cf23672107ea32d89b4a0c375f7c3f02740f8008b",
+      "passed": true,
+      "http_scope_checks_passed": true,
+      "payload_and_expiry_checks_passed": true,
+      "forged_result_before_reservation_refused": true,
+      "database_role_denial_checks": 4,
+      "command_requests": 1,
+      "actuation_reservations": 1,
+      "execution_results": 1,
+      "execution_state_exact_after_api_replacement_and_database_restart": true,
+      "command_retry_and_second_handoff_checked": true,
+      "result_retry_checked": true,
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "confirmed",
+        "confirmed": true,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 8.33,
+        "maximum_commanded_m_s": 4.0,
+        "pairs_showing_lower_speed": 2,
+        "matching_pre_command_samples": 4
+      },
+      "effect_durable_across_second_restart_checked": false,
+      "fault": "before_result_ack",
+      "transport_interruptions": [
+        {
+          "endpoint": "result",
+          "signal": "SIGKILL"
+        }
+      ],
+      "final_execution_state": "acknowledged",
+      "sumo_version": "SUMO 1.28.0",
+      "cleanup_passed": true,
+      "source_files_match": true
+    },
+    "normal": {
+      "private_evidence": "evidence/p3/2026-11-05-recovery-normal-01",
+      "qualification_sha256": "0e1294ccbbde9d7724cfc5f34e122f5a0387fb503b0c6eaa99c241a96aa4c3ae",
+      "passed": true,
+      "http_scope_checks_passed": true,
+      "payload_and_expiry_checks_passed": true,
+      "forged_result_before_reservation_refused": true,
+      "database_role_denial_checks": 4,
+      "command_requests": 1,
+      "actuation_reservations": 1,
+      "execution_results": 1,
+      "execution_state_exact_after_api_replacement_and_database_restart": true,
+      "command_retry_and_second_handoff_checked": true,
+      "result_retry_checked": true,
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "confirmed",
+        "confirmed": true,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 8.33,
+        "maximum_commanded_m_s": 4.0,
+        "pairs_showing_lower_speed": 2,
+        "matching_pre_command_samples": 4
+      },
+      "effect_durable_across_second_restart_checked": false,
+      "fault": null,
+      "transport_interruptions": [],
+      "final_execution_state": "acknowledged",
+      "sumo_version": "SUMO 1.28.0",
+      "cleanup_passed": true,
+      "source_files_match": true
+    }
+  },
+  "legacy_journal_upgrade": {
+    "private_evidence": "evidence/p3/2026-11-05-recovery-upgrade-01",
+    "passed": true,
+    "legacy_journal_sha256": "4545cb91199a36f7f15abe612b1a0aff472b45b4a7cfc128b1b0565ff44c0e2c",
+    "previous_result_and_reservation_preserved": true,
+    "additive_effect_field_initially_empty": true,
+    "repeat_handoff_refused": true,
+    "actual_actuation_performed": false,
+    "cleanup_passed": true
+  },
+  "shared_case_source_files": [
+    {
+      "path": "compose.p1-uplink.yaml",
+      "sha256": "54fa1c4256c4033fbcf70a518751387e3df90e9053ef490afc888f35b4b4f9aa"
+    },
+    {
+      "path": "compose.p3-commands.yaml",
+      "sha256": "e860810f6958298e8f322c9f50cd5d2c40d3138782aa53830d49834c42a8ade8"
+    },
+    {
+      "path": "migrations/commands/001_journal.sql",
+      "sha256": "2354879f9dc8f2688b63d81d2c07305c4da0e8fd120ea9fce3aa88a610a4e65d"
+    },
+    {
+      "path": "migrations/commands/002_speed_evidence.sql",
+      "sha256": "370ffe3a525c5eb5947e20457334cbdb34fcbeec1a4b455767d18592e61272b0"
+    },
+    {
+      "path": "src/evdt/commands.py",
+      "sha256": "8616bfb5eebbc9228d4a70781bb62c3887c55e54223f154304432b723203054d"
+    },
+    {
+      "path": "src/evdt/command_api.py",
+      "sha256": "ef1511c942554c08d08480686987a22b7f9252c14aa5485ffe4b2bd892f589ca"
+    },
+    {
+      "path": "src/evdt/command_journal.py",
+      "sha256": "0951a1dacc84c1b13501b5030c9504c35b9d022f11cba3982b0a4be0d1131caf"
+    },
+    {
+      "path": "src/evdt/command_effect.py",
+      "sha256": "0b569f97d0f42862fd427df363ab0725f2d6b69da7b589b854eac8e3566b6d0e"
+    },
+    {
+      "path": "contracts/commands/execution-result-1.0.0.schema.json",
+      "sha256": "4200bca02d86e5bf04af1ea8ad103f93fee56ce30104f180b937a752eadae840"
+    },
+    {
+      "path": "contracts/commands/speed-evidence-1.0.0.schema.json",
+      "sha256": "d6662dfea332854e0ac7ab983f52326a62f73e6ce9b943cdfd5825cf696d06b9"
+    },
+    {
+      "path": "contracts/commands/speed-limit-1.0.0.schema.json",
+      "sha256": "9db3203570de32b5a438e0c381b22215705ef19d3a40c206bb128c2d7c770946"
+    },
+    {
+      "path": "scripts/p3/command_wire.py",
+      "sha256": "b68ec7af36589f6fc994ebcb7154eb367904dfaa60e1116ad2ba409be69493dc"
+    },
+    {
+      "path": "scripts/p3/qualify_connected_speed_limit.py",
+      "sha256": "a91ee6cb3bacb53c90a16402a5a64e294fc9a463db72cc2a0e701e9a1b307c3a"
+    },
+    {
+      "path": "scripts/p3/report_speed_evidence.py",
+      "sha256": "9911a69d1d41017f4efc5ef1631e8a8c22196892614714efb5e48ba18007ef35"
+    },
+    {
+      "path": "scripts/p3/run_connected_speed_limit.py",
+      "sha256": "9ba5373b9f0c7245a82a0b22c6681cd854370c1959c9e3e7b76ba3f23f5d35ba"
+    },
+    {
+      "path": "scripts/p3/run_speed_limit.py",
+      "sha256": "d67557b315f5c4d73f4e66085f277245db967ae9abea61db0e8510322c59590c"
+    }
+  ],
+  "focused_command_and_effect_tests_passed": 21,
+  "shared_checks": {
+    "passed": true,
+    "python_tests_passed": 802,
+    "dashboard_tests_passed": 29,
+    "original_contract_cases": 339,
+    "monitoring_contract_cases": 81,
+    "source_fingerprints_verified": 385,
+    "candidate_privacy_findings": 0,
+    "candidate_secret_findings": 0
+  },
+  "phase_2_evidence_reverified": true,
+  "active_plant_restart_qualified": false,
+  "phase_3_complete": false
+}

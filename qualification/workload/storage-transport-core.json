@@ -1,0 +1,26 @@
+{
+  "src/evdt/monitoring/transport.py": {
+    "baseline_sha256": "6e4e84882e7946290eb7379189230a2c1217740c40b9ef0350761ec449eabf22",
+    "previous_reviewed_sha256": "51e50c1a113529549253ac3e2b04f511d4553a4283ef5dfd9c07a60c5fbce5d3",
+    "reviewed_sha256": "de3842773a656672da1c74faed4f559f19ecc92df869b79bda9fa45ace291a7b",
+    "reason": "Select the verified bounded provider only with an explicit identity-bound configuration; retain legacy default behavior. Add authenticated current overflow/loss/unresolved/fault/physical-bound diagnostics and display unknown when unavailable. Wire contracts/catalogs/database migrations and MQTT delivery behavior are unchanged; actual sender/browser integration remains an unpassed gate."
+  },
+  "src/evdt/monitoring/metrics.py": {
+    "baseline_sha256": "e615db48ff1f2c94f391daab326de45e9202396b40d8ef334048efcc6b1b389a",
+    "previous_reviewed_sha256": "e615db48ff1f2c94f391daab326de45e9202396b40d8ef334048efcc6b1b389a",
+    "reviewed_sha256": "a5482d1325f0151a441eeaaeb603db57b80ed2bf5b62a9e901e11120be7a17fc",
+    "reason": "Select the verified bounded provider only with an explicit identity-bound configuration; retain legacy default behavior. Add authenticated current overflow/loss/unresolved/fault/physical-bound diagnostics and display unknown when unavailable. Wire contracts/catalogs/database migrations and MQTT delivery behavior are unchanged; actual sender/browser integration remains an unpassed gate."
+  },
+  "src/evdt/monitoring/analysis_views.py": {
+    "baseline_sha256": "33511070454abe35220a34356096ac46c9c65f662d04e0de1080e3a67d2775cc",
+    "previous_reviewed_sha256": "33511070454abe35220a34356096ac46c9c65f662d04e0de1080e3a67d2775cc",
+    "reviewed_sha256": "5b610854feb061f6f2109f02851b8c9dbc0917d13180522c068d37d145659459",
+    "reason": "Select the verified bounded provider only with an explicit identity-bound configuration; retain legacy default behavior. Add authenticated current overflow/loss/unresolved/fault/physical-bound diagnostics and display unknown when unavailable. Wire contracts/catalogs/database migrations and MQTT delivery behavior are unchanged; actual sender/browser integration remains an unpassed gate."
+  },
+  "apps/dashboard/src/Operations.tsx": {
+    "baseline_sha256": "66ec1aa37c1c1075383063d8f04f7ce9eb238ba812aee034cb8a7d28879bb5b4",
+    "previous_reviewed_sha256": "66ec1aa37c1c1075383063d8f04f7ce9eb238ba812aee034cb8a7d28879bb5b4",
+    "reviewed_sha256": "356c8fcc9ab4315a33942b2647fe6a258c61330dece34b83dff7564f8fb2d998",
+    "reason": "Select the verified bounded provider only with an explicit identity-bound configuration; retain legacy default behavior. Add authenticated current overflow/loss/unresolved/fault/physical-bound diagnostics and display unknown when unavailable. Wire contracts/catalogs/database migrations and MQTT delivery behavior are unchanged; actual sender/browser integration remains an unpassed gate."
+  }
+}

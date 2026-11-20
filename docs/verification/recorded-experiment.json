@@ -1,0 +1,43 @@
+{
+  "checkpoints": ["P6-03", "P6-05"],
+  "status": "passed_bounded_simulation_scope",
+  "scope": "Two independent accelerated scalar sources in each local run. The live-source run and the recorded-input experiment use separate deployments, queues and credentials. Browser replay is separately authorized and read-only.",
+  "source_recording_result": "docs/verification/p6-signal-extension.json",
+  "attempts": [
+    {
+      "private_report": "evidence/p6/experiment-01/qualification.json",
+      "sha256": "630c334e27fbe08debdffa90c68d801e3134b097a2855662917adc9bb6256e46",
+      "outcome": "Held before services started. Windows available memory was below the 2 GiB launch limit.",
+      "minimum_launch_windows_available_bytes": 2073382912
+    },
+    {
+      "private_report": "evidence/p6/experiment-02/qualification.json",
+      "sha256": "5f580403ece7838901987f48a4b569667ed5e5dd12b9f55e65a9b5db8b04f9eb",
+      "outcome": "Passed with the existing exact-source image. The memory and clock safeguards stayed active.",
+      "minimum_launch_windows_available_bytes": 2251935744,
+      "runtime_last_below_2gib_window_upper_s": 23.63,
+      "source_inventory_sha256": "b81fbf1272250993f4fc74ee434e003d8c7d1b44543f2e50029f83ebf6855763",
+      "source_inventory_files": 339
+    }
+  ],
+  "offline_input_check": {
+    "private_report": "evidence/p6/experiment-offline-01.json",
+    "sha256": "6b30f5a95946eb248933766bac7ea5372447a762789d21997bf9066332f0bc59",
+    "exact_original_recipes_reproduced": 2,
+    "corrupted_reading_refused_before_recipe_write": true
+  },
+  "verified": {
+    "shared_application_changes": 0,
+    "experiment_messages": 32,
+    "experiment_scalar_readings": 648,
+    "original_samples_and_message_fingerprints_retained_as_lineage": true,
+    "run_session_event_and_replay_identities_distinct": true,
+    "registry_write_denials": 4,
+    "mqtt_publish_denials": 4,
+    "previous_run_reader_credentials_refused": true,
+    "replay_refuses_original_run_and_other_asset": true,
+    "monitoring_and_replay_services_have_no_dispatch_route": true,
+    "all_originals_persisted_and_queues_empty": true,
+    "owned_cleanup_passed": true
+  }
+}

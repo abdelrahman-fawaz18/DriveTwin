@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:evdt:command:speed-evidence:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "command_id", "run_id", "asset_id", "signal_id", "unit", "baseline", "commanded"],
+  "properties": {
+    "schema_version": {"const": "evdt-speed-evidence/1.0.0"},
+    "command_id": {"type": "string", "format": "uuid"},
+    "run_id": {"type": "string", "format": "uuid"},
+    "asset_id": {"type": "string", "pattern": "^[a-z][a-z0-9-]{0,63}(?![\\s\\S])"},
+    "signal_id": {"const": "motion.speed"},
+    "unit": {"const": "m/s"},
+    "baseline": {"$ref": "#/$defs/speed_trace"},
+    "commanded": {"$ref": "#/$defs/speed_trace"}
+  },
+  "$defs": {
+    "speed_trace": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16,
+      "items": {"type": "number", "minimum": 0, "maximum": 60}
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "status": "Hypothetical planning locations; no real infrastructure or availability claim",
+  "stations": [
+    {
+      "station_id": "depot-a",
+      "longitude": -73.573,
+      "latitude": 45.51,
+      "power_limit_W": 150000,
+      "availability": "assumed available",
+      "location_class": "hypothetical",
+      "road_access": "not validated; P4 requires approach/stop mapping"
+    },
+    {
+      "station_id": "opportunity-b",
+      "longitude": -73.565,
+      "latitude": 45.516,
+      "power_limit_W": 100000,
+      "availability": "assumed available",
+      "location_class": "hypothetical",
+      "road_access": "not validated; P4 requires approach/stop mapping"
+    }
+  ]
+}

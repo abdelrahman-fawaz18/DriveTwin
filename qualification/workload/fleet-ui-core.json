@@ -1,0 +1,14 @@
+{
+  "apps/dashboard/src/main.tsx": {
+    "baseline_sha256": "fcfed83569d2f87dcb0f28ca2b5aa23c24aa934564fc49e143d526daa8f2c10a",
+    "previous_reviewed_sha256": "acac6f6672e490afae46284445655195be1e4ca6e0a94bebb35e76f943a6eeb6",
+    "reviewed_sha256": "7a27666ad9c86f3a05730f03f10f6aa1989fc7bce389207ccf5b68a4b7b19795",
+    "reason": "Add an authorized generic fleet measurement page with independent per-asset connection/quality state, bounded two-worker reads, memory-only credentials and all original identity/value metadata. Preserve existing selected-asset views and routes; no numeric qualification requirement changes."
+  },
+  "apps/dashboard/src/style.css": {
+    "baseline_sha256": "72c175bed0acb87563af43ed99c00bd6c9cd4844da61418029c5f1aff9a6c8b0",
+    "previous_reviewed_sha256": "72c175bed0acb87563af43ed99c00bd6c9cd4844da61418029c5f1aff9a6c8b0",
+    "reviewed_sha256": "545841267c759bda15bab043f8532e77e64ee5884384d8fe6dd4fafb6b7e1728",
+    "reason": "Add an authorized generic fleet measurement page with independent per-asset connection/quality state, bounded two-worker reads, memory-only credentials and all original identity/value metadata. Preserve existing selected-asset views and routes; no numeric qualification requirement changes."
+  }
+}

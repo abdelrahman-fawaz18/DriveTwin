@@ -1,0 +1,30 @@
+{
+  "checkpoint": "P5-A2 Profile split and signal mapping",
+  "passed": true,
+  "scope": "Whole-session testbench partition and separate bench and simulated-bus input definitions",
+  "profile_count": 69,
+  "sample_count": 1330816,
+  "partitions": {
+    "train": {"profiles": 43, "samples": 795471, "recorded_hours": 110.4821},
+    "validation": {"profiles": 13, "samples": 267033, "recorded_hours": 37.0879},
+    "test": {"profiles": 13, "samples": 268312, "recorded_hours": 37.2656}
+  },
+  "comparable_profile_pairs_screened": 64,
+  "likely_repeated_groups_kept_together": 3,
+  "checks": {
+    "source_archive_matches_A1": true,
+    "rebuilt_manifest_matches_frozen_bytes": true,
+    "each_audited_profile_assigned_exactly_once": true,
+    "partition_sample_totals_match_A1": true,
+    "linked_pairs_remain_in_one_partition": true,
+    "aligned_repeat_and_distinct_profile_probes_passed": true,
+    "contract_columns_units_and_sample_periods_checked": true
+  },
+  "temperature_outcomes_used_for_assignment": false,
+  "model_fitting_started": false,
+  "artifacts": [
+    {"path": "qualification/thermal/motor-profile-split-1.0.0.json", "sha256": "8289678cdfddf669f42265ed7dfc5087d089f7658c9082033c3acba028a43a2a"},
+    {"path": "qualification/thermal/motor-input-contract-1.0.0.json", "sha256": "db42f5bfb524f08986dcac8177f537e83af71afc0eb7bf45cc5e1103b53a4729"}
+  ],
+  "next_checkpoint": "P5-B1 Thermal numerical core"
+}

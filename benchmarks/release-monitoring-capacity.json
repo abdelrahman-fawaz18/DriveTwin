@@ -1,0 +1,14 @@
+{
+  "version": "phase6-monitoring-capacity/1.0.0",
+  "checkpoint": "P6-B1",
+  "baseline_sha256": "7cfda7f24976aba66b6d0362a3e321cc3f41d346745402362703de3368e95a9b",
+  "reviewed_source_inventory": {
+    "files": 315,
+    "sha256": "1d4cea0c8e0bc7cde2c2d97f093dca922399d4f0ad2b1d9366d1bce267b120d0"
+  },
+  "projected_growth_bytes": {
+    "W0-30": 4294967296,
+    "W1-30": 8589934592
+  },
+  "scope": "Separate one-bus and ten-bus fault-free runs, each with 60 warmup and 1800 measured wall-clock seconds."
+}

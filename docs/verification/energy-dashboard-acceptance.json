@@ -1,0 +1,58 @@
+{
+  "version": "energy-dashboard-acceptance/1.0.0",
+  "review_date": "2026-11-13",
+  "status": "accepted",
+  "scope": "one-bus connected route-aware dashboard",
+  "tested_commit": "cc92bd50c37b6703352791fc9272218fad93c3aa",
+  "source_inventory": {
+    "files": 432,
+    "sha256": "e6c075290261c7ce908308bf6b379c61cf9d95dde6901ccffb1d6661f1f0fc6d"
+  },
+  "current_source_matches": true,
+  "terrain_manifest_sha256": "25c854c3aa5a396fc01884ed585ecbe0eb26df6339483ef803b5a3bf81076db4",
+  "metrics": {
+    "buses": 1,
+    "observation_events": 135,
+    "signals_per_event": 20,
+    "scalar_readings": 2700,
+    "first_forecast_cutoff_working_s": 7.0,
+    "completed_forecast_jobs": 10,
+    "failed_forecast_jobs": 0,
+    "completed_comparisons": 1,
+    "minimum_available_windows_bytes": 4637270016
+  },
+  "checks": [
+    "pink_route_card_and_matching_saved_charge_values_and_colors",
+    "current_result_with_model_cutoff_and_energy",
+    "stale_current_hidden_history_retained",
+    "all_twenty_signal_raw_export_and_interval_summaries",
+    "energy_history_navigation_all_twenty_charts_and_bound_forecast_route",
+    "recovered_after_source_outage_and_assignment_change"
+  ],
+  "host_guard_passed": true,
+  "source_unchanged_during_run": true,
+  "terrain_fingerprint_verified": true,
+  "authenticated_scope_checked": true,
+  "cleanup_report_passed": true,
+  "independent_owned_container_network_volume_check": "empty",
+  "evidence_sha256": {
+    "qualification.json": "ef67408b153049c186c7987a2234f59204e7b0b48ed05bd1cd79d72355774092",
+    "worker-result.json": "d6d065fb1d228e07f4cb9ac7845bc7e434d4a0add07754682b79fb127fabf74e",
+    "browser-result.json": "25a856ad9cc88e6015d27328763d963e91e8c25ba42fdc04baa478829ac5b2ad",
+    "source.json": "d89dd008870a1550497c71f1c2d59ace9892c496cbd31b79975c0c4f5befc4c9"
+  },
+  "screenshots": {
+    "energy-current.png": "37aaf93290c6e0a5c4c774aa6d7b2098b927bfabfd99d64de3294aebac1984d0",
+    "energy-recovered.png": "df2913ba2248350961c05c00bee566ba31887557c588d8553745290862ba6a05",
+    "energy-saved.png": "75b8226f7bd42d911e3ae99d908207e5f8d0eefb64cee5c98841f7cab8788d7a",
+    "energy-stale.png": "69a906377f4f8292ba37e1550e053de6ef9342879c9e5a673491db81c11969e1",
+    "history-all-signals.png": "6fd3025cdf84f202f5000a2bb9f1c3830d58529537a327dd68581938ac787952",
+    "history-from-energy.png": "9245ab93fc2b825dd09812d19d0eb5ae16daa48bfd7f8715e0aa3355655e5c74",
+    "map-forecast.png": "a714fd3fdff94da01308e1ac5dc3069aa55c36e84f7a1331197be8cf6fc4b149"
+  },
+  "limits": [
+    "Bounded integration review, not a new forecast-accuracy study",
+    "Existing scenario-range method unchanged",
+    "Ten-bus endurance remains deferred"
+  ]
+}

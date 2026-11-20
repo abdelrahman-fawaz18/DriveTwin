@@ -1,0 +1,11 @@
+{
+  "version": "phase6-monitoring-smoke/1.0.0",
+  "checkpoint": "P6-A2",
+  "baseline_sha256": "7cfda7f24976aba66b6d0362a3e321cc3f41d346745402362703de3368e95a9b",
+  "reviewed_source_inventory": {
+    "files": 313,
+    "sha256": "ed3a223bb209ea90fa0141505d8f1625154b8047d985c26a8305ad1ded2231cf"
+  },
+  "projected_smoke_growth_bytes": 4294967296,
+  "scope": "One bus, 60 warmup plus 30 measured seconds. Qualification of the smoke harness only. Release workloads require their own frozen profiles."
+}

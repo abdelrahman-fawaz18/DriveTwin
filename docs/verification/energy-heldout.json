@@ -1,0 +1,252 @@
+{
+  "checkpoint": "P2-C1 frozen independent held-out energy evaluation",
+  "date": "2026-11-04",
+  "verified_utc": "2026-11-05T02:39:54.240336+00:00",
+  "passed": true,
+  "evaluation_completed": true,
+  "phase_2_complete": false,
+  "model_promotion": "pending_P2_E1",
+  "automatic_dispatch_approved": false,
+  "scope": "Six previously reserved complete synthetic known-route missions, one fixed forecast per mission; no model/criterion tuning or product/physical promotion.",
+  "validation_release_sha256": "5a4f1c9e2adf4b56a9ea8f9ea7b3316e6f36ef5e90d81acc33e347a6961a5462",
+  "frozen_model_targets_protocol_and_analysis_unchanged": true,
+  "new_parameter_fitting_or_template_selection": false,
+  "validation_parity": {
+    "passed": true,
+    "cases": 6,
+    "exact_serialized_candidate_reference_jobs": true,
+    "exact_scenario_envelopes_and_refinement": true,
+    "locked_Linux_runtime": true,
+    "before_reserving_held_out_attempt": true
+  },
+  "collection": {
+    "missions": 6,
+    "observation_events": 5431,
+    "scalar_readings": 108620,
+    "physical_steps": 27155,
+    "files_verified": 72,
+    "bytes_verified": 55130881,
+    "min_sim_s": 890.2,
+    "max_sim_s": 981.0,
+    "combined_design_missions": 24,
+    "cross_partition_copy_checks_passed": true,
+    "one_bus_at_a_time": true,
+    "repeat_or_regenerated_held_out_trials": 0,
+    "all_packets_existing_contract_admitted": true,
+    "collection_limit_bytes": 536870912
+  },
+  "worker": {
+    "candidate_cases": 6,
+    "reference_cases": 6,
+    "complete_batch_sealed_before_scoring": true,
+    "all_exits_zero": true,
+    "all_restrictions_verified": true,
+    "packaged_source_bytes_verified": true,
+    "no_plant_or_fitting_module_in_image": true,
+    "future_observations_as_model_inputs": false,
+    "future_or_actual_test_motion_used_as_plan": false,
+    "worker_record_labels_not_promoted": true
+  },
+  "evaluation": {
+    "missions": 6,
+    "available": 6,
+    "failed_or_unavailable": [],
+    "baseline_available": 6,
+    "energy_mae_kwh": 0.28502492774270555,
+    "energy_max_absolute_error_kwh": 0.6300482935702103,
+    "soc_mae_percentage_points": 0.1789548506060494,
+    "soc_max_absolute_error_percentage_points": 0.2523246204781393,
+    "baseline_energy_mae_kwh": 2.384034749650893,
+    "joint_envelope_covered": 6,
+    "joint_envelope_coverage": 1.0,
+    "maximum_energy_envelope_width_kwh": 5.42007639241238,
+    "maximum_soc_envelope_width_pp": 3.743612628368784,
+    "maximum_fixed_plan_refinement_relative_change": 1.6593413033509957e-05,
+    "checks": {
+      "all_available": true,
+      "energy_mae": true,
+      "energy_max": true,
+      "soc_mae": true,
+      "soc_max": true,
+      "baseline_comparison": true,
+      "coverage": true,
+      "energy_width": true,
+      "soc_width": true,
+      "refinement": true
+    },
+    "targets_met": true,
+    "baseline_soc_mae_percentage_points": 0.6312810038249086,
+    "baseline_soc_max_absolute_error_percentage_points": 1.0168805198408348
+  },
+  "per_regime": [
+    {
+      "regime": "nominal",
+      "independent_missions": 1,
+      "candidate_failed_or_unavailable": false,
+      "reference_failed_or_unavailable": false,
+      "energy_signed_error_kwh": 0.2541146769850622,
+      "final_charge_signed_error_percentage_points": -0.2312865917202589,
+      "reference_energy_signed_error_kwh": -2.431822302808106,
+      "reference_final_charge_signed_error_percentage_points": 0.5361239739349433,
+      "joint_envelope_covered": true
+    },
+    {
+      "regime": "high_load",
+      "independent_missions": 1,
+      "candidate_failed_or_unavailable": false,
+      "reference_failed_or_unavailable": false,
+      "energy_signed_error_kwh": -0.6300482935702103,
+      "final_charge_signed_error_percentage_points": 0.05146840774268302,
+      "reference_energy_signed_error_kwh": -3.01759317115177,
+      "reference_final_charge_signed_error_percentage_points": 0.7336240870516986,
+      "joint_envelope_covered": true
+    },
+    {
+      "regime": "stop_heavy",
+      "independent_missions": 1,
+      "candidate_failed_or_unavailable": false,
+      "reference_failed_or_unavailable": false,
+      "energy_signed_error_kwh": -0.19376913679914143,
+      "final_charge_signed_error_percentage_points": -0.21179935723401044,
+      "reference_energy_signed_error_kwh": -2.016372019434817,
+      "reference_final_charge_signed_error_percentage_points": 0.3089443235190448,
+      "joint_envelope_covered": true
+    },
+    {
+      "regime": "cold_auxiliary",
+      "independent_missions": 1,
+      "candidate_failed_or_unavailable": false,
+      "reference_failed_or_unavailable": false,
+      "energy_signed_error_kwh": 0.2511168642633752,
+      "final_charge_signed_error_percentage_points": -0.2523246204781393,
+      "reference_energy_signed_error_kwh": -2.2134623572885914,
+      "reference_final_charge_signed_error_percentage_points": 0.4518408713938604,
+      "joint_envelope_covered": true
+    },
+    {
+      "regime": "capacity_mismatch",
+      "independent_missions": 1,
+      "candidate_failed_or_unavailable": false,
+      "reference_failed_or_unavailable": false,
+      "energy_signed_error_kwh": 0.24879392766261343,
+      "final_charge_signed_error_percentage_points": 0.22110645169833854,
+      "reference_energy_signed_error_kwh": -2.536415310836187,
+      "reference_final_charge_signed_error_percentage_points": 1.0168805198408348,
+      "joint_envelope_covered": true
+    },
+    {
+      "regime": "low_charge_auxiliary",
+      "independent_missions": 1,
+      "candidate_failed_or_unavailable": false,
+      "reference_failed_or_unavailable": false,
+      "energy_signed_error_kwh": 0.13230666717583084,
+      "final_charge_signed_error_percentage_points": 0.10574367476286622,
+      "reference_energy_signed_error_kwh": -2.0885433363858867,
+      "reference_final_charge_signed_error_percentage_points": 0.74027224720907,
+      "joint_envelope_covered": true
+    }
+  ],
+  "frozen_criteria_file": "docs/models/energy-validation-release.json",
+  "criteria_changed_after_opening_outcomes": false,
+  "probability_or_population_coverage_guarantee": false,
+  "one_time_guard": {
+    "private_release_fingerprint_claim": true,
+    "completed_attempt_recorded": true,
+    "ordinary_second_trial_refused": true,
+    "read_only_inspection_passed": true
+  },
+  "focused_new_tests": 19,
+  "shared_checks": {
+    "passed": true,
+    "python_tests": 725,
+    "dashboard_tests": 22,
+    "strict_python_modules": 15,
+    "original_contract_cases_per_language": 339,
+    "operational_contract_cases_per_language": 81,
+    "source_fingerprints_match": 347,
+    "types_formatting_build_passed": true,
+    "candidate_privacy_and_secret_findings": 0
+  },
+  "compatibility": {
+    "passed": true,
+    "frozen_validation_manifest_sha256": "5a4f1c9e2adf4b56a9ea8f9ea7b3316e6f36ef5e90d81acc33e347a6961a5462",
+    "frozen_model_targets_protocol_and_analysis_bytes_match": true,
+    "prior_evidence": {
+      "A2": {
+        "recorded_source_and_input_files_match": 12,
+        "original_report_preserved": true
+      },
+      "B1": {
+        "recorded_source_and_input_files_match": 17,
+        "original_report_preserved": true
+      },
+      "B2_collection": {
+        "recorded_source_and_input_files_match": 121,
+        "original_report_preserved": true
+      },
+      "B2_analysis": {
+        "recorded_source_and_input_files_match": 13,
+        "original_report_preserved": true
+      },
+      "B2_worker_release": {
+        "recorded_source_and_input_files_match": 5,
+        "original_report_preserved": true
+      },
+      "functional_controller": {
+        "exact_files": 78,
+        "prior_reviewed_harness_difference": []
+      },
+      "functional_service": {
+        "exact_files": 212,
+        "prior_reviewed_harness_difference": [
+          "scripts/p1/recovery_fixture.py"
+        ]
+      },
+      "recovery_service": {
+        "exact_files": 213,
+        "prior_reviewed_harness_difference": []
+      }
+    },
+    "monitoring_runtime_guard_passed": true
+  },
+  "cleanup": {
+    "passed": true,
+    "preexisting_volumes_preserved": 13,
+    "new_volumes": 0,
+    "new_containers": 0,
+    "networks_preserved": true
+  },
+  "limits": [
+    "One held-out case in each of six deliberate regimes on the same known synthetic route",
+    "No population coverage, unseen-route, real-bus calibration or interacting-fleet proof",
+    "Empirical scenario envelope, not a probability confidence interval or global bound",
+    "Endpoint is the last sampled state of a complete mission, not exact station arrival",
+    "Persistent calibrated/uncertainty records, live input authorization, read API and dashboard integration remain P2-D1",
+    "Final P2 requirement review/promotion remains P2-E1; station reachability and other original service requirements still need explicit traceability",
+    "No automatic control/dispatch or Phase 3 started",
+    "Private checkpoint is same-disk convenience, not offsite/encrypted backup"
+  ],
+  "evaluation_release_manifest": "docs/models/energy-held-out-release.json",
+  "decision": "docs/adr/0043-frozen-held-out-energy-evaluation.md",
+  "learning_guide": "docs/setup/held-out-energy-evaluation.md",
+  "private_evidence": "evidence/p2/2026-11-04-energy-heldout-01",
+  "private_checkpoint": ".private/model-releases/energy-held-out-1.0.0",
+  "private_shared_checks": ".runtime/dev-checks/ba35278fd64f4e47b81c73c7b9705a33",
+  "new_goal_or_host_memory_agent_settings_changes": false,
+  "published": false,
+  "source_sha256": {
+    "scripts/p2/qualify_energy_holdout.py": "6d6644c4ba93b6562a717aac5168bf1c42f0647f2ce6febadc6760a91d064145",
+    "scripts/p2/energy_holdout.py": "6b77254180c8fa9c33d259396cd2b355bfea1094712e41467864016153943ad7",
+    "scripts/p2/collect_energy_holdout.py": "3ba893cca471deaff4fc1239c41d0ecd31a960c4576c594f3dd07c1ca28e48aa",
+    "scripts/p2/evaluate_energy_holdout.py": "8e43c29d511831028d4dc18f73819aa5b288536d00adc503aada392469b5edb4",
+    "scripts/p2/collect_energy_missions.py": "eeced566fb482a474bd0142ec5f368b57a98fc85abdbd75fa1b6fef2385bad45",
+    "scripts/p2/energy_runtime.py": "ba2bd0eb9d9a5e05791d09143cb4f6b2ba69ea35461a6ad99d6fa1c3ea459923",
+    "docs/models/energy-validation-release.json": "5a4f1c9e2adf4b56a9ea8f9ea7b3316e6f36ef5e90d81acc33e347a6961a5462"
+  },
+  "release_manifest_storage": {
+    "qualified_B2_working_file_unchanged": true,
+    "line_ending_normalization_disabled_for_release_manifests_only": true,
+    "staged_blob_sha256_must_match_qualified_bytes": true,
+    "source_or_telemetry_normalization_guards_relaxed": false
+  }
+}

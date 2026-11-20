@@ -1,0 +1,60 @@
+{
+  "scope": "Optional Windows CPython 3.13 OSM extraction and atlas context tools. Excluded from numerical workers and application images. Installed wheel notices describe package terms; bundled native libraries have their own notices.",
+  "packages": [
+    {
+      "name": "certifi",
+      "version": "2026.10.23",
+      "declared_terms": "MPL-2.0",
+      "installed_notice_paths": [
+        "certifi-2026.10.23.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/certifi/2026.10.23/"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "declared_terms": "MIT",
+      "installed_notice_paths": [
+        "charset_normalizer-3.5.2.dist-info/licenses/LICENSE"
+      ],
+      "metadata_source": "https://pypi.org/project/charset-normalizer/3.5.2/"
+    },
+    {
+      "name": "idna",
+      "version": "3.20",
+      "declared_terms": "BSD-3-Clause",
+      "installed_notice_paths": [
+        "idna-3.20.dist-info/licenses/LICENSE.md"
+      ],
+      "metadata_source": "https://pypi.org/project/idna/3.20/"
+    },
+    {
+      "name": "osmium",
+      "version": "4.3.2",
+      "declared_terms": "BSD-2-Clause",
+      "installed_notice_paths": [
+        "osmium-4.3.2.dist-info/licenses/LICENSE.TXT"
+      ],
+      "metadata_source": "https://pypi.org/project/osmium/4.3.2/"
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2",
+      "declared_terms": "Apache-2.0",
+      "installed_notice_paths": [
+        "requests-2.34.2.dist-info/licenses/LICENSE",
+        "requests-2.34.2.dist-info/licenses/NOTICE"
+      ],
+      "metadata_source": "https://pypi.org/project/requests/2.34.2/"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0",
+      "declared_terms": "MIT",
+      "installed_notice_paths": [
+        "urllib3-2.8.0.dist-info/licenses/LICENSE.txt"
+      ],
+      "metadata_source": "https://pypi.org/project/urllib3/2.8.0/"
+    }
+  ]
+}

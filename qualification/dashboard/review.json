@@ -1,0 +1,16 @@
+{
+  "version": "connected-dashboard-review/1.0.0",
+  "case": "dashboard-review",
+  "buses": 1,
+  "signals": 20,
+  "sample_period_s": 1,
+  "samples": 300,
+  "pause_at_s": 6,
+  "pause_seconds": 28,
+  "recording_review_seconds": 120,
+  "worker_timeout_seconds": 750,
+  "live_capture_rounds": 3,
+  "scope": "Functional and visual review; no endurance or fleet-capacity claim",
+  "host_policy": "Unchanged release preflight, WindowsSmokeGuard, and LinuxSmokeGuard",
+  "automatic_dispatch": false
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "evdt-charging-stations/1.0.0",
+  "catalog_id": "montreal-charging-v1",
+  "mission_id": "montreal-core-loop-v1",
+  "stations": [
+    {
+      "station_id": "depot-a",
+      "location_class": "hypothetical",
+      "longitude": -73.573,
+      "latitude": 45.51,
+      "approach": {"lane_id": "107583310#8_0", "start_m": 4, "end_m": 26},
+      "connector_ids": ["sim-dc-plug-a"],
+      "power_per_bay_w": 150000,
+      "charge_efficiency": 0.95,
+      "bay_count": 1,
+      "queue_capacity": 2,
+      "status_max_age_sim_s": 30
+    },
+    {
+      "station_id": "opportunity-b",
+      "location_class": "hypothetical",
+      "longitude": -73.565,
+      "latitude": 45.516,
+      "approach": {"lane_id": "465380604#1_0", "start_m": 5, "end_m": 27},
+      "connector_ids": ["sim-dc-plug-a"],
+      "power_per_bay_w": 100000,
+      "charge_efficiency": 0.95,
+      "bay_count": 1,
+      "queue_capacity": 0,
+      "status_max_age_sim_s": 15
+    },
+    {
+      "station_id": "west-c",
+      "location_class": "hypothetical",
+      "longitude": -73.57596,
+      "latitude": 45.51671,
+      "approach": {"lane_id": "1295964571#2_0", "start_m": 46, "end_m": 82},
+      "connector_ids": ["sim-dc-plug-a", "sim-dc-plug-b"],
+      "power_per_bay_w": 75000,
+      "charge_efficiency": 0.95,
+      "bay_count": 2,
+      "queue_capacity": 1,
+      "status_max_age_sim_s": 30
+    }
+  ]
+}

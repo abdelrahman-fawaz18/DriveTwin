@@ -1,0 +1,113 @@
+{
+  "date": "2026-11-03",
+  "gate": "P0-06",
+  "passed": true,
+  "phase_0_status": "Complete within documented local engineering scopes",
+  "scope": "Workload/metric specifications, source/rights records, explicit assumptions and isolated Montreal movement qualification",
+  "workload_specification": {
+    "passed": true,
+    "scope": "Specification arithmetic and encoded example only",
+    "workloads": {
+      "W0": {
+        "events": 1800,
+        "scalar_samples": 36000
+      },
+      "W1": {
+        "events": 36000,
+        "scalar_samples": 720000
+      },
+      "W2": {
+        "events": 72000,
+        "scalar_samples": 1440000
+      },
+      "W3": {
+        "events": 4800,
+        "scalar_samples": 96000
+      },
+      "W4": {
+        "events": 36000,
+        "scalar_samples": 720000
+      },
+      "W5": {
+        "events": 1200,
+        "scalar_samples": 24000
+      }
+    },
+    "planning_event_bytes": 2558,
+    "maximum_declared_event_bytes": 8192,
+    "nominal_30min_max_encoded_bytes_per_asset": 14745600,
+    "nominal_30min_max_encoded_bytes_all_10_assets": 147456000,
+    "spool_disk_budget_bytes_per_asset": 67108864,
+    "performance_targets_measured": false,
+    "planning_payload_admitted_by_current_receiver": false
+  },
+  "map": {
+    "reviewed_bytes": 679082,
+    "counts": {
+      "node": 3661,
+      "way": 820,
+      "relation": 177
+    },
+    "database_timestamp": "2026-11-03T16:50:35Z",
+    "terms": "ODbL-1.0",
+    "attribution": "OpenStreetMap contributors",
+    "reviewed_import_warnings": 55,
+    "operational_route_certified": false
+  },
+  "mission_runs": [
+    {
+      "records": 4323,
+      "arrival_sim_s": 864.6,
+      "distance_m": 5135.791000000002,
+      "scheduled_stopped_s": 10.0,
+      "collisions": 0,
+      "teleports": 0,
+      "coordinate_round_trip_max_observed_m": 2.673469480100515e-09
+    },
+    {
+      "records": 4323,
+      "arrival_sim_s": 864.6,
+      "distance_m": 5135.791000000002,
+      "scheduled_stopped_s": 10.0,
+      "collisions": 0,
+      "teleports": 0,
+      "coordinate_round_trip_max_observed_m": 2.673469480100515e-09
+    }
+  ],
+  "checks": {
+    "application_and_foundation_tests": 35,
+    "strict_typescript": true,
+    "contracts": {
+      "cases": 339,
+      "valid": 116,
+      "rejected": 223,
+      "adaptation_cases": 3,
+      "mismatches": 0
+    },
+    "real_dataflow_regression": true,
+    "original_sumo_regression": true,
+    "both_windows_browsers_regression": true,
+    "source_fingerprints_verified": 91
+  },
+  "decisions": {
+    "D-07": "Generic synthetic bus/mission/stations selected, explicitly assumed",
+    "D-11": "Versioned workload/freshness/retention/byte/resource/clock rules selected; actual guarantees unmeasured",
+    "D-16": "Current data/software inventory recorded; original code license and distribution review before publication",
+    "D-18": "Accuracy limits require P2/P5 domain analysis and pre-evaluation freeze"
+  },
+  "dependency_change": "jsonschema 4.26.0 supported format-nongpl extra; removed unused optional rfc3987 parser; format checking and parity retained",
+  "publication": {
+    "remote_configured": false,
+    "upload_performed": false,
+    "hosted_ci_run_performed": false,
+    "project_code_license_selected": false
+  },
+  "limitations": [
+    "Workload arithmetic is not W0/W1 throughput, UI latency, durability or two-hour soak measurement.",
+    "Known map import limitations preclude a certified/legal/physically safe route claim.",
+    "Coordinate round-trip precision is not physical GPS accuracy.",
+    "Energy/thermal model accuracy, replay/command safety and production security remain later gates.",
+    "Complete binary/native distribution notice/SBOM review remains before release."
+  ],
+  "next_phase": "P1 complete uplink monitoring, current readings/freshness, live/history dashboard, map and trajectory"
+}

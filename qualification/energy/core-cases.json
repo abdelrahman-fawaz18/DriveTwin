@@ -1,0 +1,95 @@
+{
+  "version": "energy-core-analytic-cases/1.0.0",
+  "scope": "Hand-calculable numerical profiles; not real-bus calibration or held-out SUMO mission evaluation",
+  "base_parameters": {
+    "declared_capacity_kwh": 1.0,
+    "loaded_mass_kg": 1000.0,
+    "equivalent_rotating_mass_kg": 0.0,
+    "frontal_area_m2": 2.0,
+    "air_drag_coefficient": 0.0,
+    "rolling_resistance_coefficient": 0.0,
+    "air_density_kg_m3": 1.0,
+    "propulsion_efficiency": 1.0,
+    "regeneration_efficiency": 1.0,
+    "max_electrical_regeneration_power_w": 100000.0,
+    "max_battery_discharge_power_w": 100000.0,
+    "gravity_m_s2": 10.0
+  },
+  "cases": [
+    {
+      "id": "zero-demand",
+      "initial_soc": 0.5,
+      "step_s": 0.2,
+      "parameter_overrides": {},
+      "plan": [{"duration_s": 10, "start_speed_m_s": 0, "end_speed_m_s": 0, "grade_ratio": 0, "auxiliary_power_w": 0}],
+      "expected": {"final_energy_kwh": 0.5, "requested_draw_j": 0, "energy_plan_feasible": true}
+    },
+    {
+      "id": "stationary-equipment-demand",
+      "initial_soc": 1,
+      "step_s": 0.2,
+      "parameter_overrides": {},
+      "plan": [{"duration_s": 3600, "start_speed_m_s": 0, "end_speed_m_s": 0, "grade_ratio": 0, "auxiliary_power_w": 500}],
+      "expected": {"final_energy_kwh": 0.5, "requested_draw_j": 1800000, "planned_distance_m": 0, "energy_plan_feasible": true}
+    },
+    {
+      "id": "acceleration-with-conversion-loss",
+      "initial_soc": 1,
+      "step_s": 0.2,
+      "parameter_overrides": {"propulsion_efficiency": 0.5},
+      "plan": [{"duration_s": 10, "start_speed_m_s": 0, "end_speed_m_s": 10, "grade_ratio": 0, "auxiliary_power_w": 0}],
+      "expected": {"requested_draw_j": 100000, "planned_distance_m": 50, "energy_plan_feasible": true}
+    },
+    {
+      "id": "rolling-resistance",
+      "initial_soc": 1,
+      "step_s": 0.2,
+      "parameter_overrides": {"rolling_resistance_coefficient": 0.01},
+      "plan": [{"duration_s": 100, "start_speed_m_s": 10, "end_speed_m_s": 10, "grade_ratio": 0, "auxiliary_power_w": 0}],
+      "expected": {"requested_draw_j": 100000, "planned_distance_m": 1000, "energy_plan_feasible": true}
+    },
+    {
+      "id": "air-drag",
+      "initial_soc": 1,
+      "step_s": 0.2,
+      "parameter_overrides": {"air_drag_coefficient": 1},
+      "plan": [{"duration_s": 100, "start_speed_m_s": 10, "end_speed_m_s": 10, "grade_ratio": 0, "auxiliary_power_w": 0}],
+      "expected": {"requested_draw_j": 100000, "energy_plan_feasible": true}
+    },
+    {
+      "id": "regeneration-power-bound",
+      "initial_soc": 0.5,
+      "step_s": 1,
+      "parameter_overrides": {"max_electrical_regeneration_power_w": 1000},
+      "plan": [{"duration_s": 10, "start_speed_m_s": 10, "end_speed_m_s": 0, "grade_ratio": 0, "auxiliary_power_w": 0}],
+      "expected": {"potential_regeneration_j": 50000, "regeneration_power_rejected_j": 40500, "energy_plan_feasible": true}
+    },
+    {
+      "id": "full-pack-rejects-recovery",
+      "initial_soc": 1,
+      "step_s": 1,
+      "parameter_overrides": {},
+      "plan": [{"duration_s": 10, "start_speed_m_s": 10, "end_speed_m_s": 0, "grade_ratio": 0, "auxiliary_power_w": 0}],
+      "expected": {"final_soc": 1, "regeneration_capacity_rejected_j": 50000, "energy_plan_feasible": true}
+    },
+    {
+      "id": "electrical-power-shortfall",
+      "initial_soc": 1,
+      "step_s": 1,
+      "parameter_overrides": {"max_battery_discharge_power_w": 1000},
+      "plan": [{"duration_s": 10, "start_speed_m_s": 0, "end_speed_m_s": 0, "grade_ratio": 0, "auxiliary_power_w": 2000}],
+      "expected": {"unserved_demand_j": 10000, "first_shortfall_step_start_s": 0, "energy_plan_feasible": false}
+    },
+    {
+      "id": "recovery-cannot-erase-prior-shortfall",
+      "initial_soc": 0.0005,
+      "step_s": 1,
+      "parameter_overrides": {},
+      "plan": [
+        {"duration_s": 4, "start_speed_m_s": 10, "end_speed_m_s": 10, "grade_ratio": 0, "auxiliary_power_w": 900},
+        {"duration_s": 10, "start_speed_m_s": 10, "end_speed_m_s": 0, "grade_ratio": 0, "auxiliary_power_w": 0}
+      ],
+      "expected": {"potential_regeneration_j": 50000, "unserved_demand_j": 1800, "first_shortfall_step_start_s": 2, "energy_plan_feasible": false}
+    }
+  ]
+}

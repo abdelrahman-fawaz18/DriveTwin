@@ -1,0 +1,38 @@
+{
+  "version": "synthetic-thermal-intervention/1.0.0",
+  "seeds": {"development": 123100, "reserved": 194100},
+  "cases_per_partition": {
+    "cooling_loss": 8,
+    "healthy": 4,
+    "step_bias": 2,
+    "slow_bias": 2,
+    "cooling_dropout": 2,
+    "cooling_stale": 2,
+    "cooling_bias": 2,
+    "single_probe": 2
+  },
+  "mission_work_s": 1320,
+  "mission_deadline_s": 1850,
+  "boost": {"duration_s": 240, "housing_conductance_w_per_k": 120, "aux_power_w": 1200},
+  "protection": {"engage_k": 354, "release_k": 352, "pace": 0.67, "heat_factor": 0.72},
+  "threshold_k": 351.5,
+  "forecast": {
+    "horizon_s": 60,
+    "lookback_s": 25,
+    "minimum_anchor_k": 346,
+    "maximum_rise_k_per_s": 0.14,
+    "interval_half_width_k": 3.5,
+    "maximum_mae_k": 1.75,
+    "minimum_interval_coverage": 0.95,
+    "minimum_forecasts": 100
+  },
+  "scoring": {
+    "exposure_threshold_k": 350,
+    "effect_after_grant_s": 120,
+    "minimum_effect_k": 1,
+    "minimum_effect_cases_per_policy": 7,
+    "maximum_unsafe_grants": 0,
+    "maximum_command_failures": 0,
+    "maximum_additional_incomplete": 0
+  }
+}

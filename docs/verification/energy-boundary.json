@@ -1,0 +1,226 @@
+{
+  "checkpoint": "P2-B1 whole-mission partition design and isolated worker",
+  "date": "2026-11-04",
+  "verified_utc": "2026-11-05T00:32:31.875803+00:00",
+  "passed": true,
+  "phase_2_complete": false,
+  "scope": "Planned whole-mission partition policy/guards and actual local one-request worker access denial. Mission collection, calibration, accuracy, uncertainty and live product authorization remain pending.",
+  "versions": {
+    "mission_design": "energy-mission-design/1.0.0",
+    "worker_policy": "energy-worker-sandbox/1.0.0",
+    "job": "isolated-energy-job/1.0.0",
+    "result": "isolated-energy-result/1.0.0"
+  },
+  "partition_design": {
+    "design_sha256": "61456c5e187c1c726ff0301ec63dfd753697f032a9aa715cd9773aed5d30ac7e",
+    "missions": 24,
+    "counts": {
+      "train": 12,
+      "validation": 6,
+      "held_out": 6
+    },
+    "status": "planned_not_collected",
+    "whole_mission_ownership": true
+  },
+  "data_collected": false,
+  "held_out_outcomes_generated_or_scored": false,
+  "held_out_gate_closed": true,
+  "partition_guards": [
+    "Whole causal families, recipes and realization seeds cannot cross splits",
+    "Every declared regime represented in all three splits",
+    "Collected-artifact assignments must match frozen design/family/recipe",
+    "Copied trace or observed-content digests cannot cross splits",
+    "Incomplete inventory refused when completion required",
+    "Fit/train and tune/validation purpose restrictions",
+    "Held-out evaluation requires calibration/target/protocol references; actual frozen artifacts must be verified by later controller"
+  ],
+  "request_boundary": {
+    "four_quantity_projection": true,
+    "unrelated_metadata_and_sensors_removed_without_rewriting_originals": true,
+    "future_and_wrong_scope_inputs_rejected_not_filtered": true,
+    "exact_nested_field_allowlists": true,
+    "duplicate_keys_nonfinite_invalid_encoding_rejected": true,
+    "maximum_bytes": 1048576,
+    "maximum_points": 1000,
+    "maximum_motion_intervals": 1000,
+    "maximum_numerical_steps": 100000,
+    "generic_rejection_without_input_echo": true,
+    "live_scope_clock_charging_and_plan_still_trusted_caller_declarations": true
+  },
+  "runtime": {
+    "image_id": "sha256:9abababb6b78d79f87dbb2dba2c948fdb56dd7b99f740040bbce0837d86a8ddd",
+    "pinned_python_base": true,
+    "only_reviewed_worker_sources_packaged": true,
+    "packaged_bytes_match": true,
+    "user": "10001:10001",
+    "mounts": [],
+    "published_ports": [],
+    "external_network": false,
+    "read_only_root": true,
+    "effective_capabilities": 0,
+    "no_new_privileges": true,
+    "default_seccomp_filter_observed": true,
+    "memory_bytes": 268435456,
+    "memory_swap_bytes": 268435456,
+    "cpus": 1,
+    "pids_limit": 32,
+    "controller_deadline_s": 30,
+    "exact_image_id_used": true,
+    "no_injected_environment": true,
+    "no_monitoring_plant_dataset_or_simulator_library_in_image": true,
+    "new_framework_dependency_or_monitoring_interface": false
+  },
+  "positive_controls": {
+    "files_read": 4,
+    "endpoints_read": 4,
+    "passed": true
+  },
+  "access_denial": {
+    "passed": true,
+    "private_file_reads_blocked": 7,
+    "private_endpoint_reads_blocked": 4,
+    "forbidden_imports_absent": 4,
+    "network_interfaces": [
+      "lo"
+    ],
+    "uid": 10001,
+    "effective_capabilities": 0,
+    "no_new_privileges": true,
+    "seccomp_filter_active": true,
+    "root_write_blocked": true
+  },
+  "worker_cases": [
+    {
+      "id": "reference",
+      "passed": true,
+      "forecast_status": "advisory",
+      "job_sha256": "15d27a9abab09253606b5d5f40fb4c37a2e8b372a31911c8f87432d1e73042c6"
+    },
+    {
+      "id": "planned",
+      "passed": true,
+      "forecast_status": "advisory",
+      "job_sha256": "90d77120319cbf9c76c8280401ee0f662091d16b8abb6a2f1a72bb263e5571f4"
+    },
+    {
+      "id": "stale_unavailable",
+      "passed": true,
+      "forecast_status": "unavailable",
+      "job_sha256": "f074b44b5e41532f6287827d3812a9a8b5594ce6653983bade471da28f8be003"
+    },
+    {
+      "id": "future_unavailable",
+      "passed": true,
+      "forecast_status": "unavailable",
+      "job_sha256": "4f4b93d63d11176985e105545049c45cecbb1156bc361f03aca0574c67cf8398"
+    },
+    {
+      "id": "hidden_field_rejected",
+      "passed": true
+    }
+  ],
+  "reusable_single_job_command_passed": true,
+  "focused_boundary_tests": 58,
+  "total_energy_tests": 159,
+  "shared_checks": {
+    "passed": true,
+    "python_tests": 686,
+    "dashboard_tests": 22,
+    "strict_python_modules": 14,
+    "original_contract_cases_per_language": 339,
+    "operational_contract_cases_per_language": 81,
+    "source_fingerprints_match": 334,
+    "types_formatting_build_passed": true,
+    "candidate_privacy_and_secret_findings": 0
+  },
+  "prior_evidence_compatibility": {
+    "passed": true,
+    "scope": "Read-only compatibility audit; no Phase 1 workload or historical regeneration",
+    "recorded_source_checks": {
+      "functional_controller": {
+        "files": 78,
+        "exact": 78,
+        "mismatches": []
+      },
+      "functional_service": {
+        "files": 213,
+        "exact": 212,
+        "mismatches": [
+          "scripts/p1/recovery_fixture.py"
+        ]
+      },
+      "recovery_service": {
+        "files": 213,
+        "exact": 213,
+        "mismatches": []
+      }
+    },
+    "reviewed_prior_harness_change_unchanged": true,
+    "runtime_guard_passed": true,
+    "A2": {
+      "existing_input_source_hashes_match": 12,
+      "original_report_unchanged": true,
+      "scope": "Existing calculations unchanged; added worker serialization/selection tested separately"
+    },
+    "core_1_1": {
+      "existing_input_source_hashes_match": 4,
+      "original_report_unchanged": true,
+      "scope": "Existing calculations unchanged; added worker serialization/selection tested separately"
+    }
+  },
+  "cleanup": {
+    "passed": true,
+    "preexisting_volumes_preserved": 13,
+    "new_volumes": 0,
+    "new_containers": 0,
+    "missing_preexisting_volumes": 0,
+    "owned_network_removed": true,
+    "preexisting_networks_preserved": true
+  },
+  "limits": [
+    "Design contains 24 planned missions, no collected dataset or empirical errors",
+    "Known route with reserved realizations; no unseen-route/interacting-traffic claim",
+    "Traffic/temperature/seed labels require explicit implemented collection behavior",
+    "Content hash guards depend on trustworthy collection without ID/path contamination",
+    "Direct-access denial is not prevention of inference from permitted sensor values",
+    "Host/kernel/Docker administrators and upstream admission/configuration owner remain trusted",
+    "No live API authorization, sensor-noise realism, calibration, D-18 target freeze or uncertainty coverage qualification",
+    "No persistent forecast ledger, dashboard forecast card, commands or charging authority"
+  ],
+  "remaining": [
+    "Collect training and validation missions under frozen recipe and source inventories",
+    "Fit/evaluate mismatch and measurement regimes; freeze D-18 targets using validation",
+    "Open held-out evaluation only after frozen calibration/targets/protocol artifacts are verified",
+    "Integrate asset-scoped input admission, persistent records, read API and visible UI unavailable behavior",
+    "Complete P2-01 through P2-06 evidence review"
+  ],
+  "decision": "docs/adr/0041-mission-partitions-and-energy-worker-isolation.md",
+  "learning_guide": "docs/setup/energy-worker-and-mission-partitions.md",
+  "private_evidence": "evidence/p2/2026-11-04-energy-boundary-01",
+  "private_single_job_check": "evidence/p2/2026-11-04-energy-worker-cli-01",
+  "private_shared_checks": ".runtime/dev-checks/6fec70597b844b189db4158d6d529923",
+  "source_sha256": {
+    "src/evdt/__init__.py": "e0f0cf0ee01301e137a0702b703ddb5c90bd9e641f842798d7795f8073575e96",
+    "src/evdt/energy/__init__.py": "8338ac160d2c3e23e03eed91fdb1ea2a8cb9e2c46bbf1149544376be1e9f9440",
+    "src/evdt/energy/model.py": "bd078e9e6c1aba57901ced24d44aef39905523889dd51dc4310cd769fe918d14",
+    "src/evdt/energy/observations.py": "e1fc665d4d24222c99edeac31d62535a208774d71ff4502c0f56c884b12ee12a",
+    "src/evdt/energy/forecasts.py": "c719c83dc7eb938497c764b26ea455b5932b8966ebee91ed558700fbe202b1e9",
+    "src/evdt/energy/jobs.py": "85cc43b87a163bea56f2e828b4a13d560330a49cff1489f4310d116e336f46e6",
+    "src/evdt/energy/worker.py": "46603c3e718d0422e547c19d19b9bf2b46a3f5361c98046565feeff7e58184ce",
+    "containers/energy-worker.Dockerfile": "153f379fcbd4ea55135929ed1b41b41100f5fa7d51a33f0905745015b6360a63",
+    "qualification/energy/runtime-policy.json": "f630223a2f90bf6c3f1271e866f7b9b52369f541b9e4c592445a96475b89a968",
+    "environments/p0-dataflow-images.json": "350e86104c2ffd9a6554eb8b911a08270419fb244324e0c5409eae9b37c3b480",
+    "scripts/p2/energy_runtime.py": "ba2bd0eb9d9a5e05791d09143cb4f6b2ba69ea35461a6ad99d6fa1c3ea459923",
+    "scripts/p2/run_energy_job.py": "8eb8017e7e99a5e7685b9eb0a9ed5c30f34ddcb1cd5331478b7610efdf66e1e2",
+    "scripts/p2/qualify_energy_boundary.py": "0162973b2fab410a062b9ebfc1ce932a8f03e79fd79ef7c52aa29f627f1970d7",
+    "scripts/p2/qualify_energy_forecasts.py": "973002b886d9399400f56b36752f5f7264f8259278b1b714aef0a0405b2ffe73",
+    "src/evdt/energy/partitions.py": "3a04553f5f3b7cddb5931ba92f30f263cce7bb2d6810a9e72419c4a8bdd493b4",
+    "qualification/energy/mission-design.json": "8010a5ca530e4a88721c12909468c61e029da866e5d19d1a0d1a7920b708dde7",
+    "qualification/energy/forecast-cases.json": "916f8432a452ddfcd6a98044e015fa4b4148e564abd8a5b1d412321857ed0212"
+  },
+  "existing_model_versions_unchanged": true,
+  "host_memory_or_agent_settings_changed": false,
+  "new_phase1_workload_started": false,
+  "published": false,
+  "phase3_started": false
+}

@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Choose a DriveTwin trip and start its local services."
+    />
+    <title>DriveTwin · Launch</title>
+    <link rel="stylesheet" href="/leaflet.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/loading.css" />
+    <script defer src="/leaflet.js"></script>
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="DriveTwin launch home"
+        ><span class="logo"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M9 27 20 7 12 4h9l5 4-7 19z" fill="white" />
+            <path d="m21 27 7-18-1 18z" fill="white" opacity=".5" /></svg></span
+        >DriveTwin</a
+      >
+      <div class="workspace-label">LOCAL WORKSPACE</div>
+      <a href="#trips" class="nav active"><span>◈</span> Launch a trip</a>
+      <a href="#session" class="nav"><span>◷</span> Current session</a>
+      <a href="#saved" class="nav"><span>▤</span> Saved sessions</a>
+      <div class="side-foot">
+        <span class="local-dot"></span> This laptop only
+        <p>One vehicle · Real road routes</p>
+        <button id="close-app" class="quiet">Close DriveTwin</button>
+      </div>
+    </aside>
+    <main>
+      <header class="topbar">
+        <span>Workspace <span class="crumb">/</span> Launch</span
+        ><span class="connection"
+          ><i id="connection-dot"></i
+          ><span id="connection">Connecting</span></span
+        >
+      </header>
+      <div class="content">
+        <div class="page-heading">
+          <div>
+            <div class="eyebrow">YOUR DIGITAL TWIN, READY TO RUN</div>
+            <h1>Choose the next journey.</h1>
+            <p>
+              Pick a real-road trip, choose your services, and follow the bus
+              live.
+            </p>
+          </div>
+          <span class="pill">SUMO vehicle · One bus</span>
+        </div>
+        <div id="error" role="alert" tabindex="-1" hidden></div>
+        <div id="launcher-update" class="warning" role="alert" hidden></div>
+        <p id="launcher-loading" class="loading-inline" role="status" hidden>
+          <span class="loading-spinner" aria-hidden="true"></span> Connecting to
+          DriveTwin…
+        </p>
+        <div id="locked" class="card" hidden>
+          <h2>Open DriveTwin from its launcher</h2>
+          <p>
+            Double-click <strong>DriveTwin.cmd</strong> in the project folder.
+            It opens this page with its temporary local access key.
+          </p>
+        </div>
+        <div id="workspace" hidden>
+          <section class="layout" id="trips">
+            <div class="trip-column">
+              <section class="card trip-picker">
+                <div class="section-heading">
+                  <h2><span class="step">01</span> Select a trip</h2>
+                  <span id="trip-count" class="muted"></span>
+                </div>
+                <div
+                  class="filters"
+                  role="group"
+                  aria-label="Filter trips by region"
+                >
+                  <button data-region="all" aria-pressed="true">
+                    All regions</button
+                  ><button data-region="Montréal" aria-pressed="false">
+                    Montréal</button
+                  ><button data-region="Ottawa" aria-pressed="false">
+                    Ottawa</button
+                  ><button data-region="Metro Vancouver" aria-pressed="false">
+                    Vancouver
+                  </button>
+                </div>
+                <label class="sr-only" for="trip-select">Trip preset</label
+                ><select id="trip-select"></select>
+                <div
+                  id="trip-list"
+                  role="group"
+                  aria-label="Trip presets"
+                ></div>
+              </section>
+            </div>
+            <div class="configuration">
+              <section class="route-card">
+                <div class="route-title">
+                  <span id="region" class="route-tag"></span
+                  ><span class="route-tag outline-tag"
+                    >OSM route · Elevation included</span
+                  >
+                </div>
+                <h2 id="trip-title"></h2>
+                <p id="trip-description"></p>
+                <div
+                  id="route-outline"
+                  role="region"
+                  aria-label="Local street map with route and planned passenger stops"
+                  hidden
+                ></div>
+                <div id="route-map-message" role="status" hidden></div>
+                <div class="route-key">
+                  <span><i class="teal-dot"></i> Departure</span
+                  ><span><i class="pink-dot"></i> Destination</span
+                  ><span><i class="yellow-dot"></i> Planned passenger stop</span
+                  ><span
+                    ><a href="/leaflet-license" target="_blank" rel="noopener"
+                      >Map library license</a
+                    ></span
+                  >
+                </div>
+                <div class="trip-stats">
+                  <div>
+                    <span>Distance</span><strong id="distance"></strong>
+                  </div>
+                  <div>
+                    <span>Working time</span><strong id="duration"></strong>
+                  </div>
+                  <div>
+                    <span>Real-life driving</span
+                    ><strong id="real-duration"></strong>
+                  </div>
+                  <div>
+                    <span>Scheduled stops</span><strong id="stops"></strong>
+                  </div>
+                </div>
+                <div class="speed-control charge-control">
+                  <label for="starting-charge">Starting charge (%)</label>
+                  <input
+                    id="starting-charge"
+                    title="Set the battery charge at departure. Lower values can trigger charging advice."
+                    type="number"
+                    min="0.1"
+                    max="100"
+                    step="0.1"
+                    required
+                    aria-describedby="charge-note"
+                  />
+                  <input
+                    id="starting-charge-slider"
+                    type="range"
+                    min="0.1"
+                    max="100"
+                    step="0.1"
+                    aria-label="Adjust starting charge"
+                  />
+                  <button id="reset-charge" type="button" class="secondary">
+                    Reset to preset
+                  </button>
+                  <p id="charge-note" role="status"></p>
+                </div>
+                <div class="speed-control">
+                  <label for="trip-speed">Trip speed</label>
+                  <select
+                    id="trip-speed"
+                    title="Working time stays the same. Faster speeds reduce real-life driving time."
+                    aria-describedby="speed-note"
+                  >
+                    <option value="0.5">0.5× · Slow</option>
+                    <option value="1" selected>1× · Real time</option>
+                    <option value="2">2×</option>
+                    <option value="5">5×</option>
+                    <option value="10">10×</option>
+                    <option value="20">20×</option>
+                  </select>
+                  <p id="speed-note">
+                    Choose a speed before starting. Working time and vehicle
+                    behavior stay unchanged.
+                  </p>
+                </div>
+              </section>
+              <section class="card">
+                <div class="section-heading">
+                  <h2><span class="step">02</span> Choose services</h2>
+                  <button id="select-all" class="text-button">
+                    Enable available services
+                  </button>
+                </div>
+                <div class="service base-service">
+                  <span class="service-icon teal">⌁</span>
+                  <div>
+                    <strong>Live monitoring</strong>
+                    <p>All 20 measurements, map, history, and downloads.</p>
+                  </div>
+                  <span class="pill small">Always on</span>
+                </div>
+                <label class="service"
+                  ><span class="service-icon pink">ϟ</span
+                  ><span class="service-copy"
+                    ><strong>Energy Forecast</strong
+                    ><span
+                      >Updated arrival charge, route energy, and reserve
+                      warnings.</span
+                    ></span
+                  ><input id="energy" type="checkbox" checked /><span
+                    class="toggle"
+                    aria-hidden="true"
+                  ></span
+                ></label>
+                <p id="energy-reason" class="service-note" hidden></p>
+                <label class="service"
+                  ><span class="service-icon teal">ϟ</span
+                  ><span class="service-copy"
+                    ><strong>Charging Advisor</strong
+                    ><span
+                      >Compare charging stops and departure targets in the
+                      Operator tab.</span
+                    ></span
+                  ><input id="charging" type="checkbox" /><span
+                    class="toggle"
+                    aria-hidden="true"
+                  ></span
+                ></label>
+                <p id="charging-layout" class="service-note" hidden></p>
+                <p id="charging-reason" class="service-note"></p>
+                <label
+                  id="charging-startup-option"
+                  class="service advisor-startup"
+                  hidden
+                >
+                  <span class="service-icon teal" aria-hidden="true">◷</span>
+                  <span class="service-copy"
+                    ><strong>Advisor startup delay</strong>
+                    <span
+                      >Working time before the first charging alert or
+                      recommendation.</span
+                    >
+                  </span>
+                  <select
+                    id="charging-startup-delay"
+                    aria-label="Advisor startup delay"
+                    title="The delay starts with the simulation clock and pauses with the trip."
+                  >
+                    <option value="0">Immediate</option>
+                    <option value="30">30 seconds</option>
+                    <option value="60">1 minute</option>
+                    <option value="120">2 minutes</option>
+                  </select>
+                </label>
+                <label id="charging-approval-option" class="service" hidden
+                  ><span class="service-icon pink">✓</span
+                  ><span class="service-copy"
+                    ><strong>Allow me to approve a charging stop</strong
+                    ><span
+                      >Sign in once to review and approve one eligible stop
+                      during the trip.</span
+                    ></span
+                  ><input id="charging-operator" type="checkbox" /><span
+                    class="toggle"
+                    aria-hidden="true"
+                  ></span
+                ></label>
+                <label class="service"
+                  ><span class="service-icon blue">↺</span
+                  ><span class="service-copy"
+                    ><strong>Recording replay</strong
+                    ><span
+                      >Explore the recording through a separate read-only
+                      viewer.</span
+                    ></span
+                  ><input id="replay" type="checkbox" checked /><span
+                    class="toggle"
+                    aria-hidden="true"
+                  ></span
+                ></label>
+                <details class="other-services">
+                  <summary>Other DriveTwin services</summary>
+                  <dl>
+                    <dt>Speed commands and charging control</dt>
+                    <dd>
+                      Charging advice uses simulated station conditions.
+                      Operator confirmation is available on the reviewed
+                      Montréal preset.
+                    </dd>
+                    <dt>Thermal studies</dt>
+                    <dd>
+                      Separate laboratory and fault-study workflows. The bus's
+                      temperature readings remain part of monitoring.
+                    </dd>
+                  </dl>
+                </details>
+              </section>
+              <section class="launch-panel">
+                <div>
+                  <h3 id="launch-selection">Trip summary</h3>
+                  <dl id="launch-summary" class="launch-summary">
+                    <div>
+                      <dt>Starting charge</dt>
+                      <dd id="launch-charge">—</dd>
+                    </div>
+                    <div>
+                      <dt>Working time</dt>
+                      <dd id="launch-working">—</dd>
+                    </div>
+                    <div>
+                      <dt>Real-life driving estimate</dt>
+                      <dd id="launch-real-life">—</dd>
+                    </div>
+                    <div>
+                      <dt>Services</dt>
+                      <dd id="launch-services">Monitoring</dd>
+                    </div>
+                  </dl>
+                  <p id="timing-note">
+                    The bus runs at normal speed. One working minute takes one
+                    real-life minute.
+                  </p>
+                  <details>
+                    <summary>Vehicle settings and session timing</summary>
+                    <p id="assumptions"></p>
+                    <p class="timing-extra">
+                      Allow a few minutes for startup, five minutes for history
+                      after arrival, and up to three minutes to save and clean
+                      up.
+                    </p>
+                  </details>
+                </div>
+                <button
+                  id="start"
+                  title="Check the host and start the trip with these settings"
+                  class="primary"
+                >
+                  <span>▶</span> Start trip
+                </button>
+              </section>
+              <p class="operating-note">
+                Keep power connected and the lid open. Startup checks the
+                existing 2 GiB memory reserve and available storage. A blocked
+                check starts no bus.
+              </p>
+            </div>
+          </section>
+          <section class="card session" id="session">
+            <div class="section-heading">
+              <h2>Current session</h2>
+              <span class="pill" id="state">Idle</span>
+            </div>
+            <div id="idle">
+              <p>
+                Start a trip above. Live dashboard access and progress appear
+                here.
+              </p>
+            </div>
+            <div id="run" hidden>
+              <h3 id="run-title"></h3>
+              <p id="run-message" role="status" aria-live="polite"></p>
+              <a id="completed-recording" class="secondary" href="#saved" hidden
+                >Find saved recording</a
+              >
+              <p id="run-error" class="warning" hidden></p>
+              <p id="pause-status" role="status" hidden></p>
+              <p
+                id="dashboard-opening"
+                role="status"
+                aria-live="polite"
+                hidden
+              ></p>
+              <div class="run-meta">
+                <span id="elapsed"></span><span id="run-services"></span
+                ><span id="cleanup"></span>
+              </div>
+              <ol
+                id="run-stages"
+                class="run-stages"
+                aria-label="Run progress"
+              ></ol>
+              <p id="dashboard-history" class="fine" hidden>
+                Use your open dashboard tab to review the trip.
+              </p>
+              <div id="access" hidden>
+                <div id="monitor-help" class="access-heading">
+                  <h3>Dashboard access</h3>
+                  <p>
+                    Sign in once for monitoring, charging decisions, and replay.
+                  </p>
+                </div>
+                <div id="monitor-access" class="access-card">
+                  <div>
+                    <label for="monitor-key">Dashboard key</label>
+                    <div class="key-row">
+                      <input
+                        id="monitor-key"
+                        type="password"
+                        readonly
+                        spellcheck="false"
+                        autocomplete="off"
+                      />
+                      <button
+                        id="show-monitor"
+                        class="secondary"
+                        aria-pressed="false"
+                        title="Reveal the key if you need to copy it manually"
+                      >
+                        Show key
+                      </button>
+                      <button
+                        id="copy-monitor"
+                        class="secondary"
+                        title="Copy this session’s only sign-in key"
+                      >
+                        Copy key
+                      </button>
+                    </div>
+                    <p id="dashboard-key-access" class="fine"></p>
+                  </div>
+                  <div class="access-actions">
+                    <button
+                      id="open-monitor"
+                      class="primary small-primary"
+                      title="Copy the dashboard key and open a new dashboard tab"
+                    >
+                      Copy key &amp; open dashboard ↗
+                    </button>
+                    <a
+                      id="monitor-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Open without copying</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="run-bottom">
+                <details class="run-files">
+                  <summary>Recording and logs</summary>
+                  <p id="result-path"></p>
+                  <p id="log-path"></p>
+                </details>
+                <div class="run-actions">
+                  <button id="recover" class="primary" hidden>
+                    Recover previous trip
+                  </button>
+                  <button
+                    id="pause"
+                    title="Pause the bus and keep the dashboard open"
+                    class="secondary"
+                    hidden
+                  >
+                    Pause trip
+                  </button>
+                  <button
+                    id="stop"
+                    title="End the drive or replay window and save the recording"
+                    class="danger"
+                  >
+                    Stop and save recording
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="card saved" id="saved" aria-labelledby="saved-title">
+            <div class="section-heading">
+              <h2 id="saved-title">Saved sessions</h2>
+              <button
+                id="refresh-history"
+                title="Refresh the list of locally saved recordings"
+                class="secondary"
+              >
+                Refresh
+              </button>
+            </div>
+            <div class="history-filters">
+              <label for="history-search"
+                >Find a trip<input
+                  type="search"
+                  id="history-search"
+                  maxlength="100"
+                  placeholder="Search by trip name"
+              /></label>
+              <label for="history-outcome"
+                >Show<select id="history-outcome">
+                  <option value="all">All sessions</option>
+                  <option value="saved">Recording saved</option>
+                  <option value="attention">Needs review</option>
+                </select></label
+              >
+              <span id="history-count" role="status"></span>
+              <span
+                id="history-loading"
+                class="loading-inline"
+                role="status"
+                hidden
+              >
+                <span class="loading-spinner" aria-hidden="true"></span> Loading
+                saved sessions…
+              </span>
+            </div>
+            <p id="history-error" class="warning" role="alert" hidden></p>
+            <div id="history-list"></div>
+            <div class="history-pages">
+              <button id="history-prev" class="secondary" disabled>
+                ← Previous</button
+              ><span id="history-page"></span
+              ><button id="history-next" class="secondary" disabled>
+                Next →
+              </button>
+            </div>
+          </section>
+          <footer>
+            <span>DriveTwin · Local launch workspace</span
+            ><span
+              >OpenStreetMap contributors · ODbL-1.0
+              <span class="crumb">/</span>
+              <a href="/font-license" target="_blank" rel="noopener"
+                >Font license</a
+              ></span
+            >
+          </footer>
+        </div>
+      </div>
+    </main>
+    <dialog
+      id="stop-dialog"
+      aria-labelledby="stop-title"
+      aria-describedby="stop-description"
+    >
+      <div class="dialog-icon">Ⅱ</div>
+      <h2 id="stop-title">End this trip?</h2>
+      <p id="stop-description">
+        The bus will stop, collected readings will be saved, and the trip's
+        services will close. A trip ended before arrival is recorded as stopped
+        early. Allow up to three minutes for cleanup.
+      </p>
+      <div class="dialog-actions">
+        <button id="cancel-stop" class="secondary" autofocus>
+          Keep running</button
+        ><button id="confirm-stop" class="primary">Stop and save</button>
+      </div>
+    </dialog>
+    <div id="toast" role="status" hidden></div>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+{
+  "checkpoint": "P3-B2 Simulator restart safety",
+  "date": "2026-11-05",
+  "passed": true,
+  "scope": "A single local live source and its operator command. Same-run startup is refused, and a new run is isolated in the original database.",
+  "cases": {
+    "before_actuation": {
+      "private_report": "evidence/p3/2026-11-05-live-restart-before_actuation-03/qualification.json",
+      "sha256": "8129c7218844100af3eca7c3aa2c64b10cd5d8579aaa0763709e4cf737790feb",
+      "passed": true,
+      "cleanup_passed": true,
+      "source_files_match": true,
+      "source_exit_code": 137,
+      "same_run_restart_refused": true,
+      "queue_state_preserved": true,
+      "interrupted_source_marked_stale": true,
+      "interrupted_originals": 4,
+      "old_execution_state": "unknown_outcome",
+      "old_attempts": 1,
+      "old_result_present": false,
+      "old_effect_present": false,
+      "interrupted_speed_m_s": [
+        0.8,
+        1.7999999999999998,
+        2.8000000000000003,
+        3.800000000000001
+      ],
+      "fresh_originals": 16,
+      "fresh_maximum_speed_m_s": 7.800000000000004,
+      "fresh_uses_existing_database": true,
+      "old_command_refused_in_fresh_run": true,
+      "old_command_preserved": true,
+      "fresh_command_journal_empty": true
+    },
+    "after_actuation": {
+      "private_report": "evidence/p3/2026-11-05-live-restart-after_actuation-01/qualification.json",
+      "sha256": "d451d6f2c4c545dbe05df1d4fd1f6dd9e374218ca119f5b6d44b1bdb8a4655f6",
+      "passed": true,
+      "cleanup_passed": true,
+      "source_files_match": true,
+      "source_exit_code": 137,
+      "same_run_restart_refused": true,
+      "queue_state_preserved": true,
+      "interrupted_source_marked_stale": true,
+      "interrupted_originals": 8,
+      "old_execution_state": "unknown_outcome",
+      "old_attempts": 1,
+      "old_result_present": false,
+      "old_effect_present": false,
+      "interrupted_speed_m_s": [
+        0.8,
+        1.7999999999999998,
+        2.8000000000000003,
+        3.800000000000001,
+        4.0,
+        4.0,
+        4.0,
+        4.0
+      ],
+      "fresh_originals": 16,
+      "fresh_maximum_speed_m_s": 7.800000000000004,
+      "fresh_uses_existing_database": true,
+      "old_command_refused_in_fresh_run": true,
+      "old_command_preserved": true,
+      "fresh_command_journal_empty": true
+    }
+  },
+  "p3_b1_live_regression": {
+    "baseline": {
+      "private_report": "evidence/p3/2026-11-05-live-restart-regression-baseline/qualification.json",
+      "sha256": "e39b8182883118ad19d6716dc06d621aff11865996e1462ac052eedac0f02a83",
+      "passed": true,
+      "cleanup_passed": true,
+      "source_files_match": true,
+      "accepted_originals": 16,
+      "accepted_readings": 320,
+      "maximum_post_command_speed_m_s": 7.800000000000004
+    },
+    "commanded": {
+      "private_report": "evidence/p3/2026-11-05-live-restart-regression-commanded/qualification.json",
+      "sha256": "9fec560a1411d29e5f4ed106c81e566457e379c737d31a0606f9cf13cedb2ca4",
+      "passed": true,
+      "cleanup_passed": true,
+      "source_files_match": true,
+      "accepted_originals": 16,
+      "accepted_readings": 320,
+      "maximum_post_command_speed_m_s": 4.0,
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "confirmed",
+        "confirmed": true,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 7.800000000000004,
+        "maximum_commanded_m_s": 4.0,
+        "pairs_showing_lower_speed": 4,
+        "matching_pre_command_samples": 4
+      }
+    }
+  },
+  "initial_failed_attempt": {
+    "private_report": "evidence/p3/2026-11-05-live-restart-before_actuation-01/qualification.json",
+    "sha256": "9866df7eb6c208246cc34530485d05b36c8bfadcc9383c9207348bf978ba9a05",
+    "passed": false,
+    "cleanup_passed": true,
+    "reported_error": "Same-run restart was not refused by the source guard",
+    "cause": "The refusal was present on Docker stderr. The controller read stdout only."
+  },
+  "second_failed_attempt": {
+    "private_report": "evidence/p3/2026-11-05-live-restart-before_actuation-02/qualification.json",
+    "sha256": "013b7f9080770fc1d34a9ccb3805b0999f5049022b2bff18aa5d207076509141",
+    "passed": false,
+    "functional_checks_passed": true,
+    "cleanup_passed": false,
+    "remaining_volumes": 3,
+    "owned_volumes_removed_separately": true,
+    "cause": "The new Compose mounts excluded the retired run's volumes from down."
+  },
+  "phase_2_changed_release_source_files": [
+    "src/evdt/monitoring/adapter.py",
+    "src/evdt/monitoring/source.py",
+    "src/evdt/monitoring/spool.py"
+  ],
+  "matched_source_fingerprints": 154,
+  "next_step": {
+    "id": "P3-B3",
+    "name": "Live command arbitration"
+  },
+  "phase_3_complete": false
+}

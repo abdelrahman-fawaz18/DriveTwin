@@ -1,0 +1,7 @@
+{
+  "src/evdt/monitoring/run_policy.py": {
+    "baseline_sha256": "2a55b4d476555b116a751835108185273ccce470acb1208d0081d08334ec37e4",
+    "reviewed_sha256": "9157bf0a949f8a5d5071f22547ecfb875194fb2ee904fe509d1c99eba261cadb",
+    "reason": "Only trusted startup policy-file parsing uses a separate 1 MiB portable-JSON bound; telemetry, registration and clock wire limits/validation unchanged"
+  }
+}

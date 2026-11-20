@@ -1,0 +1,129 @@
+{
+  "scope": "Clean-source setup and source-only packaging",
+  "tested_commit": "c71ceb941086cd2fbbd5ee401c356e9eef0e5719",
+  "archive": {
+    "verified_files": 830,
+    "sha256": "5f4a1eeb325f986abce986ddaf73e1f0ecb543c43d0b30f4122710ebc50a82dc",
+    "includes_git_history": false,
+    "source_bytes_match_commit": true,
+    "archive_privacy_check_passed": true,
+    "initial_clean_archive_failures": 2,
+    "clean_archive_tests_passed_after_correction": 17,
+    "new_launcher_directories_checked_before_preflight": true
+  },
+  "clean_checkout": {
+    "private_settings_generated_from_local_environment": true,
+    "configured_remotes": 0,
+    "tracked_changes_after_preparation": 0,
+    "network_sha256": "ddddeb7882a45ca69f2ac45ae48549a88b87eb6b54a1d8282f51cb62ce4ed3d3",
+    "dashboard_source_inventory_sha256": "910383bb68d113360fd21a6e77db992e8c8766ebff0cae05a86f90296f7e7b7c",
+    "dashboard_built_with_cached_pinned_inputs": true,
+    "live_services_started": false
+  },
+  "current_clean_checkout_followup": {
+    "tested_commit": "c5614e1f14caf9480e6d766ba8a22f01ed65e500",
+    "network_sha256": "ddddeb7882a45ca69f2ac45ae48549a88b87eb6b54a1d8282f51cb62ce4ed3d3",
+    "dashboard_source_inventory_sha256": "2e12f7610bb360e080c65ab908bce14c74b54f38ed6126744241831657c333f0",
+    "dashboard_build_and_combined_fault_source_check_passed": true,
+    "tracked_changes_after_preparation": 0,
+    "startup_result": "Held before services started at the unchanged 2 GiB Windows precheck.",
+    "minimum_launch_windows_available_bytes": 2066669568,
+    "startup_report_sha256": "f5aa7c03e5e8adf8c329991ba21e6f99a2c46e5cd75338ef8d3f67f6e78b6b70",
+    "targeted_startup_retry": {
+      "result": "Held before services started. The runner used the already prepared image and the same precheck.",
+      "minimum_launch_windows_available_bytes": 2022125568,
+      "report_sha256": "c6e237922b982e322e00500e6aedba074d3974289be59a84dd0506bfbe66982e"
+    }
+  },
+  "clean_interactive_demo_preparation": {
+    "tested_commit": "dddac4572fe98d8aabb686b76c080e2d99ed3060",
+    "shallow_local_checkout_without_remote": true,
+    "tracked_changes_after_preparation": 0,
+    "network_sha256": "ddddeb7882a45ca69f2ac45ae48549a88b87eb6b54a1d8282f51cb62ce4ed3d3",
+    "windows_and_ubuntu_source_inventory_sha256": "ff3245b0cfffd685a1a608cb6bde8ceb423cdbb660e62bb425442b5f8f1d1385",
+    "dashboard_image_id": "sha256:2a30b83772312630492b6eb7248dfa93f8f9d927f4bd33f7d3c0875c1b274bf2",
+    "image_source_label_matched": true,
+    "interactive_result": "Clean startup and automated service checks passed. The operator confirmed the Measurements view and its final stale reading. Direct browser observations for the map, history, and replay were not reported.",
+    "initial_attempt": {
+      "private_report": ".runtime/clean-checkout-dddac45/evidence/p6/demo-external-01/qualification.json",
+      "sha256": "9913f303577e807744d2fd34eca02d6d100f4050e01cb19d6fd89fd11fef36dd",
+      "status": "Timed out waiting for the operator start signal",
+      "worker_cleanup_passed": true
+    },
+    "passing_retry": {
+      "private_report": ".runtime/clean-checkout-dddac45/evidence/p6/demo-external-02/qualification.json",
+      "sha256": "cc821356a80af23e970aa350fc9dec413d50f03db47921c5a884e9a81f22f25c",
+      "startup_s": 8.836872790999998,
+      "messages": 16,
+      "signals_checked": 20,
+      "history_signals_checked": 20,
+      "map_features": 1158,
+      "isolated_replay_messages": 16,
+      "pending_at_end": 0,
+      "source_first_to_last_message_s": 14.995853,
+      "source_cadence_gap_s": [0.985271, 1.012538],
+      "latitude_distinct_raw_values": 12,
+      "latitude_distinct_display_values": 1,
+      "resource_guard_replay_passed": true,
+      "owned_resources_remaining": 0
+    }
+  },
+  "automated_browser": {
+    "status": "Passed from clean source in pinned Chromium, from a dedicated PowerShell session.",
+    "playwright": "1.64.1",
+    "chromium": "156.0.8078.4",
+    "focused_tests_passed": 36,
+    "focused_subtests_passed": 12,
+    "initial_attempt": {
+      "private_report": ".runtime/clean-checkout-139c63d/evidence/p6/demo-browser-01/qualification.json",
+      "sha256": "89bb5574cf4d420fb30a38689f6c3f2c76c95d5ea54f563ccd16e7c42fe52e28",
+      "status": "Browser connected and stopped before starting the bus because the initial quality and freshness badges both matched the test selector.",
+      "owned_resources_remaining": 0
+    },
+    "corrected_attempt": {
+      "private_report": ".runtime/clean-checkout-139c63d/evidence/p6/demo-browser-02/qualification.json",
+      "sha256": "bfc7891d664c05ae43b27cc607bcf5e93dae1f32107fadb866cc8d2c0da9d5bf",
+      "tested_commit": "18d1ac9",
+      "source_inventory_sha256": "17b49749a0101a27788baa8003f5c21040241159806acf4bd4d04b8139185969",
+      "launch_minimum_windows_available_bytes": 2953871360,
+      "runtime_minimum_windows_available_bytes": 1626841088,
+      "runtime_below_reserve_conservative_s": 31.009,
+      "observed_browser_checks": ["Connected before source start", "Fresh event IDs advanced", "Healthy pause remained visible past the freshness deadline", "Map displayed paused vehicle", "Source disconnected and last observation became stale"],
+      "remaining": ["Fresh source recovery", "Browser resynchronization", "Rendered history", "Isolated replay and playhead"],
+      "owned_resources_remaining": 0
+    },
+    "passing_external_run": {
+      "private_report": ".runtime/clean-checkout-139c63d/evidence/p6/demo-browser-external-01/qualification.json",
+      "sha256": "b1641b3bf434e5452f69e65ace937a2957853757405d6e197d134507c119e91c",
+      "browser_report_sha256": "6e981482abca161e4c8906b0b8ff27bb7a5934691f5311ee782d041153b61784",
+      "source_recording_sha256": "3e05715714447bc2e0b160c58ea4c3bda9cc9d8b93e229fe8283158972c8235b",
+      "tested_commit": "18d1ac952f47fdad93c5a9188b07709081934031",
+      "source_inventory_sha256": "17b49749a0101a27788baa8003f5c21040241159806acf4bd4d04b8139185969",
+      "windows_ubuntu_and_final_sources_match": true,
+      "dashboard_image_id": "sha256:d399d930936f495dd0baddaaab459c0dec319e8c8ad95ea4423a7647c2f59e20",
+      "browser_checks_passed": 10,
+      "browser_scope": ["Connected before the source started", "New live readings", "Healthy pause and paused map position", "Source disconnect and fresh recovery", "Browser disconnect and resynchronization", "Rendered history and isolated replay with original messages"],
+      "messages": 16,
+      "readings_per_message": 20,
+      "pending_at_end": 0,
+      "startup_s": 8.562941659000003,
+      "launch_minimum_windows_available_bytes": 4316241920,
+      "runtime_minimum_windows_available_bytes": 3073093632,
+      "resource_guard_replay_passed": true,
+      "owned_resources_remaining": 0
+    }
+  },
+  "git_history": {
+    "commits_reviewed": 102,
+    "credential_scanner_findings": 0,
+    "internal_snapshot_blobs_flagged_by_privacy_review": 31,
+    "flagged_blobs_in_main_commit_history": 0,
+    "internal_snapshot_objects_at_private_paths": 73,
+    "historical_finding_types": {
+      "local_account_identity": 29,
+      "personal_home_path": 7,
+      "binary_needs_review": 2
+    },
+    "approved_artifact_boundary": "Reviewed source only. Keep repository metadata and internal snapshots private."
+  }
+}

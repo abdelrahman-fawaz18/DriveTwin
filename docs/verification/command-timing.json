@@ -1,0 +1,443 @@
+{
+  "checkpoint": "P3-A4 local command deadlines and rejection audit",
+  "date": "2026-11-05",
+  "passed": true,
+  "scope": "One bounded local SUMO speed-limit command with UTC, same-boot Linux elapsed time and trusted simulator step time.",
+  "cases": {
+    "pause-02": {
+      "private_evidence": "evidence/p3/2026-11-05-timing-pause-02",
+      "qualification_sha256": "cdb3fd2b5b2de5b9b861952dcc0ac28c1c1ba260e114b661527830fee8bf8695",
+      "passed": true,
+      "cleanup_passed": true,
+      "final_execution_state": "expired",
+      "journal_counts": {
+        "requests": 1,
+        "deadlines": 1,
+        "attempts": 0,
+        "results": 0,
+        "effects": 0
+      },
+      "linked_rejection_counts": [
+        {
+          "operation": "claim",
+          "reason": "already_closed",
+          "linked": true,
+          "count": 2
+        },
+        {
+          "operation": "claim",
+          "reason": "elapsed_deadline",
+          "linked": true,
+          "count": 1
+        },
+        {
+          "operation": "claim",
+          "reason": "simulation_paused",
+          "linked": true,
+          "count": 1
+        },
+        {
+          "operation": "claim",
+          "reason": "simulation_validity",
+          "linked": true,
+          "count": 1
+        }
+      ],
+      "no_actuation": true,
+      "matching_speed_traces": true,
+      "restart_and_retry_refused_handoff": true,
+      "paused_seconds": 12.144621044999997,
+      "actuation_refusals": []
+    },
+    "accelerated-01": {
+      "private_evidence": "evidence/p3/2026-11-05-timing-accelerated-01",
+      "qualification_sha256": "e23cd30850f29124e3f529548c625144b1b52ade3a9b9cfadd9264f36994ee77",
+      "passed": true,
+      "cleanup_passed": true,
+      "final_execution_state": "expired",
+      "journal_counts": {
+        "requests": 1,
+        "deadlines": 1,
+        "attempts": 0,
+        "results": 0,
+        "effects": 0
+      },
+      "linked_rejection_counts": [
+        {
+          "operation": "claim",
+          "reason": "already_closed",
+          "linked": true,
+          "count": 2
+        },
+        {
+          "operation": "claim",
+          "reason": "simulation_deadline",
+          "linked": true,
+          "count": 1
+        },
+        {
+          "operation": "claim",
+          "reason": "simulation_validity",
+          "linked": true,
+          "count": 1
+        }
+      ],
+      "no_actuation": true,
+      "matching_speed_traces": true,
+      "restart_and_retry_refused_handoff": true,
+      "actuation_refusals": []
+    },
+    "delivery-01": {
+      "private_evidence": "evidence/p3/2026-11-05-timing-delivery-01",
+      "qualification_sha256": "0fa56abce576f8e1f658f367e373bc700a28b11c72b3b3389608c5a6235cf5a7",
+      "passed": true,
+      "cleanup_passed": true,
+      "final_execution_state": "rejected_before_actuation",
+      "journal_counts": {
+        "requests": 1,
+        "deadlines": 1,
+        "attempts": 1,
+        "results": 0,
+        "effects": 0
+      },
+      "linked_rejection_counts": [
+        {
+          "operation": "claim",
+          "reason": "already_reserved",
+          "linked": true,
+          "count": 2
+        },
+        {
+          "operation": "claim",
+          "reason": "simulation_validity",
+          "linked": true,
+          "count": 1
+        },
+        {
+          "operation": "execute",
+          "reason": "elapsed_deadline",
+          "linked": true,
+          "count": 1
+        }
+      ],
+      "no_actuation": true,
+      "matching_speed_traces": true,
+      "restart_and_retry_refused_handoff": true,
+      "actuation_refusals": [
+        "elapsed_deadline"
+      ]
+    },
+    "normal-01": {
+      "private_evidence": "evidence/p3/2026-11-05-timing-normal-01",
+      "qualification_sha256": "c310cccff3c1d16f96a82e4d2dabbe0b6b346d912f25ef276f7d0cfed74e0260",
+      "passed": true,
+      "cleanup_passed": true,
+      "final_execution_state": "acknowledged",
+      "journal_counts": {
+        "requests": 1,
+        "deadlines": 1,
+        "attempts": 1,
+        "results": 1,
+        "effects": 1
+      },
+      "linked_rejection_counts": [
+        {
+          "operation": "claim",
+          "reason": "already_reserved",
+          "linked": true,
+          "count": 2
+        },
+        {
+          "operation": "claim",
+          "reason": "clock_skew",
+          "linked": true,
+          "count": 2
+        },
+        {
+          "operation": "claim",
+          "reason": "simulation_validity",
+          "linked": true,
+          "count": 1
+        }
+      ],
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "confirmed",
+        "confirmed": true,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 8.33,
+        "maximum_commanded_m_s": 4.0,
+        "pairs_showing_lower_speed": 2,
+        "matching_pre_command_samples": 4
+      },
+      "injected_coordinator_skew_refusals": 2,
+      "transport_interruptions": []
+    },
+    "recovery-01": {
+      "private_evidence": "evidence/p3/2026-11-05-timing-recovery-01",
+      "qualification_sha256": "886cef73e614ae218b12c0812a4d54c68f1dea1f5af0d3fbda62bd48b2aa5693",
+      "passed": true,
+      "cleanup_passed": true,
+      "final_execution_state": "acknowledged",
+      "journal_counts": {
+        "requests": 1,
+        "deadlines": 1,
+        "attempts": 1,
+        "results": 1,
+        "effects": 1
+      },
+      "linked_rejection_counts": [
+        {
+          "operation": "claim",
+          "reason": "already_reserved",
+          "linked": true,
+          "count": 2
+        },
+        {
+          "operation": "claim",
+          "reason": "simulation_validity",
+          "linked": true,
+          "count": 1
+        }
+      ],
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "confirmed",
+        "confirmed": true,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 8.33,
+        "maximum_commanded_m_s": 4.0,
+        "pairs_showing_lower_speed": 2,
+        "matching_pre_command_samples": 4
+      },
+      "injected_coordinator_skew_refusals": 0,
+      "transport_interruptions": [
+        {
+          "endpoint": "result",
+          "signal": "SIGKILL"
+        }
+      ]
+    }
+  },
+  "rejection_audit": {
+    "metadata_only": true,
+    "immutable_for_command_role": true,
+    "unlinked_rejection_counts": [
+      {
+        "operation": "claim",
+        "reason": "credential_required",
+        "linked": false,
+        "count": 2
+      },
+      {
+        "operation": "effect",
+        "reason": "attempt_not_found",
+        "linked": false,
+        "count": 1
+      },
+      {
+        "operation": "effect",
+        "reason": "credential_required",
+        "linked": false,
+        "count": 4
+      },
+      {
+        "operation": "effect",
+        "reason": "effect_conflict",
+        "linked": false,
+        "count": 1
+      },
+      {
+        "operation": "effect",
+        "reason": "effect_schema",
+        "linked": false,
+        "count": 2
+      },
+      {
+        "operation": "effect",
+        "reason": "wrong_target",
+        "linked": false,
+        "count": 1
+      },
+      {
+        "operation": "read",
+        "reason": "credential_required",
+        "linked": false,
+        "count": 5
+      },
+      {
+        "operation": "result",
+        "reason": "attempt_not_found",
+        "linked": false,
+        "count": 1
+      },
+      {
+        "operation": "result",
+        "reason": "credential_required",
+        "linked": false,
+        "count": 2
+      },
+      {
+        "operation": "result",
+        "reason": "result_conflict",
+        "linked": false,
+        "count": 1
+      },
+      {
+        "operation": "submit",
+        "reason": "command_conflict",
+        "linked": false,
+        "count": 1
+      },
+      {
+        "operation": "submit",
+        "reason": "credential_required",
+        "linked": false,
+        "count": 5
+      },
+      {
+        "operation": "submit",
+        "reason": "payload_too_large",
+        "linked": false,
+        "count": 1
+      },
+      {
+        "operation": "submit",
+        "reason": "replay_mode",
+        "linked": false,
+        "count": 1
+      },
+      {
+        "operation": "submit",
+        "reason": "unauthorized_issuer",
+        "linked": false,
+        "count": 1
+      },
+      {
+        "operation": "submit",
+        "reason": "unsupported_capability",
+        "linked": false,
+        "count": 1
+      },
+      {
+        "operation": "submit",
+        "reason": "wall_validity",
+        "linked": false,
+        "count": 1
+      },
+      {
+        "operation": "submit",
+        "reason": "wrong_asset",
+        "linked": false,
+        "count": 1
+      },
+      {
+        "operation": "submit",
+        "reason": "wrong_run",
+        "linked": false,
+        "count": 1
+      }
+    ]
+  },
+  "focused_command_timing_and_effect_tests_passed": 31,
+  "shared_checks": {
+    "passed": true,
+    "python_tests_passed": 812,
+    "dashboard_tests_passed": 29,
+    "original_contract_cases": 339,
+    "monitoring_contract_cases": 81,
+    "source_fingerprints_verified": 387,
+    "candidate_privacy_findings": 0,
+    "candidate_secret_findings": 0
+  },
+  "clock_probes_use_injected_readings": true,
+  "phase_2_evidence_reverified": true,
+  "current_case_source_files": [
+    {
+      "path": "compose.p1-uplink.yaml",
+      "sha256": "54fa1c4256c4033fbcf70a518751387e3df90e9053ef490afc888f35b4b4f9aa"
+    },
+    {
+      "path": "compose.p3-commands.yaml",
+      "sha256": "e860810f6958298e8f322c9f50cd5d2c40d3138782aa53830d49834c42a8ade8"
+    },
+    {
+      "path": "migrations/commands/001_journal.sql",
+      "sha256": "2354879f9dc8f2688b63d81d2c07305c4da0e8fd120ea9fce3aa88a610a4e65d"
+    },
+    {
+      "path": "migrations/commands/002_speed_evidence.sql",
+      "sha256": "370ffe3a525c5eb5947e20457334cbdb34fcbeec1a4b455767d18592e61272b0"
+    },
+    {
+      "path": "migrations/commands/003_timing_audit.sql",
+      "sha256": "b6242e829b5cc03e4f312c600c3a8b2a6b50066f7a793eacf5d8b53a0fd155c9"
+    },
+    {
+      "path": "src/evdt/commands.py",
+      "sha256": "e843f7bd2cc684915068000d6cffe3614b1be311986fc993507b52eadc130b9d"
+    },
+    {
+      "path": "src/evdt/command_api.py",
+      "sha256": "39db07cb87e49a6fcc3c75c1108b177875da76c02edcd4e4ccdd88f525fdd8c4"
+    },
+    {
+      "path": "src/evdt/command_journal.py",
+      "sha256": "ccbb7ef2217c23e713af5d0270aea07b2b6cbe989d63c201fb536a787160b4c0"
+    },
+    {
+      "path": "src/evdt/command_effect.py",
+      "sha256": "0b569f97d0f42862fd427df363ab0725f2d6b69da7b589b854eac8e3566b6d0e"
+    },
+    {
+      "path": "src/evdt/command_timing.py",
+      "sha256": "f24048eeb5a54e89178db90576c01a0d1a1d8d2a6c8ffd088ede3108983e977e"
+    },
+    {
+      "path": "contracts/commands/execution-result-1.0.0.schema.json",
+      "sha256": "4200bca02d86e5bf04af1ea8ad103f93fee56ce30104f180b937a752eadae840"
+    },
+    {
+      "path": "contracts/commands/speed-evidence-1.0.0.schema.json",
+      "sha256": "d6662dfea332854e0ac7ab983f52326a62f73e6ce9b943cdfd5825cf696d06b9"
+    },
+    {
+      "path": "contracts/commands/speed-limit-1.0.0.schema.json",
+      "sha256": "9db3203570de32b5a438e0c381b22215705ef19d3a40c206bb128c2d7c770946"
+    },
+    {
+      "path": "scripts/p3/command_wire.py",
+      "sha256": "4c9eb47878236cb22bb0bbef89e035aba8c4b4565d17aee49f8291b292a12f3c"
+    },
+    {
+      "path": "scripts/p3/qualify_connected_speed_limit.py",
+      "sha256": "38910ba7321844e61a08d159c62ae7937f25efcb4765985c37057fbf4a5abc0e"
+    },
+    {
+      "path": "scripts/p3/report_speed_evidence.py",
+      "sha256": "9911a69d1d41017f4efc5ef1631e8a8c22196892614714efb5e48ba18007ef35"
+    },
+    {
+      "path": "scripts/p3/run_connected_speed_limit.py",
+      "sha256": "cc977768e37da63b54425a44d7723bdf43914841b72f5dd630e08bd84e7f02f1"
+    },
+    {
+      "path": "scripts/p3/run_speed_limit.py",
+      "sha256": "fa2f6514af2d465c837c5d29a14ae20b5898d5edc76b99115121f44249352040"
+    }
+  ],
+  "distributed_clock_qualification": false,
+  "phase_3_complete": false,
+  "legacy_queued_request_upgrade": {
+    "private_evidence": "evidence/p3/2026-11-05-timing-upgrade-01",
+    "passed": true,
+    "legacy_journal_sha256": "0951a1dacc84c1b13501b5030c9504c35b9d022f11cba3982b0a4be0d1131caf",
+    "legacy_request_preserved": true,
+    "wall_valid_during_test": true,
+    "missing_clock_lease_audited": true,
+    "no_actuation_reservation": true,
+    "cleanup_passed": true
+  }
+}

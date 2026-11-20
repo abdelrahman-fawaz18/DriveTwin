@@ -1,0 +1,54 @@
+{
+  "version": "route-aware-study/2.0.1",
+  "scope": "Local simulated vehicle, independent route-aware forecasts and separately verified factors",
+  "legacy_reserved_evaluations": "consumed_and_excluded",
+  "partitions": {
+    "development": "Implementation and any parameter fitting",
+    "validation": "Policy, domain and threshold selection before release freeze",
+    "reserved": "One final evaluation of the frozen candidate on new route families"
+  },
+  "independence": {
+    "unit": "complete causal trip and route family",
+    "derived_versions_share_partition": true,
+    "reverse_shift_scale_replay_variants_share_family": true,
+    "future_observations_in_forecast_inputs": false,
+    "hidden_plant_parameters_in_worker": false,
+    "predictor_as_accuracy_reference": false,
+    "inspection_consumes_reserved_claim": true
+  },
+  "required_regimes": [
+    "flat_urban",
+    "rolling_hills",
+    "sustained_climb_and_descent",
+    "repeated_route_occurrences",
+    "long_journey",
+    "stop_heavy",
+    "traffic_change",
+    "confirmed_detour",
+    "auxiliary_change",
+    "head_tail_and_crosswind",
+    "mass_and_capacity_mismatch",
+    "low_charge_reserve_risk",
+    "charging_window_invalidation",
+    "missing_or_stale_conditions"
+  ],
+  "cutoffs": {
+    "early_working_s": [0, 30, 60, 120],
+    "later_elapsed_trip_time_fractions": [0.25, 0.5, 0.75],
+    "selection": "First recorded external-lane observation at or after each target, excluding the SUMO stop-entry step when residual speed remains",
+    "aggregation": "equal weight per complete trip; correlated cutoffs are not independent samples",
+    "obsolete_route_results": "report_separately"
+  },
+  "freeze_requires": [
+    "complete_recipe_manifest",
+    "family_and_partition_integrity",
+    "model_and_parameter_fingerprints",
+    "route_and_provider_fingerprints",
+    "runtime_and_trigger_policy",
+    "validation_report",
+    "unambiguous_metric_denominators",
+    "frozen_acceptance_criteria",
+    "independent_reference_description"
+  ],
+  "qualification_state": "not_qualified"
+}

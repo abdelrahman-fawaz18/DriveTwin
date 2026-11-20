@@ -1,0 +1,65 @@
+{
+  "checkpoint": "P6-A2",
+  "review_date_local": "2026-11-06",
+  "attempt_directory": "evidence/p6/external-a2-2026-11-06-053756-7a8e0cc4",
+  "scope": "Read-only review of the operator-started attempt from a dedicated PowerShell session",
+  "passed": false,
+  "status": "incomplete_due_to_ubuntu_wall_clock_step_during_warmup",
+  "source_compatibility": {
+    "passed": true,
+    "reviewed_input_files": 313,
+    "release_sha256": "7153bb1e3bb963c059af703a043e9c7e4486baa5e93f60a5d26847df459db6bd",
+    "input_inventory_sha256": "ed3a223bb209ea90fa0141505d8f1625154b8047d985c26a8305ad1ded2231cf",
+    "controller_before_and_after_match": true,
+    "current_committed_release_check_passed": true
+  },
+  "readiness": {
+    "precheck_passed": true,
+    "windows_precheck_samples": 34,
+    "windows_precheck_min_available_bytes": 4490469376,
+    "windows_attempt_samples": 81,
+    "windows_attempt_min_available_bytes": 3019214848,
+    "windows_attempt_samples_below_2gib": 0,
+    "scope": "Saved samples through interruption; no full-duration capacity result"
+  },
+  "failure": {
+    "resource_guard_reason": "Resource clock stepped",
+    "first_rejected_linux_sample_sequence": 29,
+    "rejected_sample_local_time": "2026-11-06T00:40:05.708188-05:00",
+    "wall_clock_jump_relative_to_elapsed_seconds": 1.792960,
+    "permitted_offset_deviation_seconds": 0.01,
+    "elapsed_seconds_into_warmup_at_detection": 21.902925,
+    "earlier_linux_resource_prefix_passed_offline": true,
+    "rejection_reproduced_offline": true,
+    "same_linux_boot": true,
+    "source_sender_and_ingest_traces_also_show_step": true,
+    "clock_adjustment_trigger_established": false
+  },
+  "partial_evidence": {
+    "preserved": true,
+    "source_ready_records": 26,
+    "database_commit_trace_records": 25,
+    "qualification_measurement_report_present": false
+  },
+  "cleanup": {
+    "passed": true,
+    "before_and_after_inventories_equal": true,
+    "container_count": 0,
+    "volume_count": 16,
+    "network_count": 3,
+    "live_followup_counts_match": true,
+    "sleep_request_released": true,
+    "power_plan_changed": false
+  },
+  "evidence_sha256": {
+    "operator-result.json": "869e715259927a20c25d7536fe55d3c82547025e2c43fc9e62bdf10a70738e61",
+    "smoke/qualification.json": "e848f4740e00719cbee13bb9404d039f5bff2e15c94c665c96b2331a0b24189f",
+    "smoke/phase6-preflight.json": "6646dc18e3addba619d80f8c821204a3e7157c668c2bd3ddd3fb4efb4343b094",
+    "smoke/services/linux-resources.jsonl": "f640c949fb8e52adb3e0e12f8960c476521a49f27a4e93f014cbfa97cadbdc25",
+    "smoke/windows-resources.jsonl": "40ba788a10039a5d58e251769793b2acf8145f6dc25425a5ff56d3a7d482c14e",
+    "inventory-before.json": "92f173703ebb6f22f9731a2dd1d8d539126127673299a5b2fee6b63ff86e4d64",
+    "inventory-after.json": "92f173703ebb6f22f9731a2dd1d8d539126127673299a5b2fee6b63ff86e4d64"
+  },
+  "next": "Investigate Ubuntu clock stability and obtain a passing P6-A2 smoke result before P6-B1.",
+  "new_workload_started_during_review": false
+}

@@ -1,0 +1,12 @@
+# Explicitly selected only by the isolated automatic charging qualifier.
+services:
+  charging-migrate:
+    environment:
+      CHARGING_AUTO_QUALIFICATION: "1"
+  command-api:
+    environment:
+      CHARGING_AUTO_QUALIFICATION: "1"
+    secrets: [command_charging_policy]
+
+secrets:
+  command_charging_policy: {file: "${SECRET_DIRECTORY:?}/command_charging_policy"}

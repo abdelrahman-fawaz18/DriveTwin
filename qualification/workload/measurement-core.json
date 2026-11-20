@@ -1,0 +1,27 @@
+{
+  "apps/dashboard/src/main.tsx": {
+    "baseline_sha256": "fcfed83569d2f87dcb0f28ca2b5aa23c24aa934564fc49e143d526daa8f2c10a",
+    "reviewed_sha256": "acac6f6672e490afae46284445655195be1e4ca6e0a94bebb35e76f943a6eeb6",
+    "reason": "Expose the actual rendered observation identity as inert row attributes for DOM correlation; value/rendering behavior retained."
+  },
+  "src/evdt/monitoring/api.py": {
+    "baseline_sha256": "e71ba16b6d177bfdc25076da0be6fe2ae1645154f1a6010cf9078cb21af8153e",
+    "reviewed_sha256": "55ed90ddbffadca41cbac94f91f9a0c0203e4d9d95539092c1c9bc05741016c3",
+    "reason": "Authenticated read-only clock exchange and asset-scoped post-DOM witness echo; elapsed-time-aware 250 ms snapshot refresh after measured coalescing losses. No threshold or denominator relaxed."
+  },
+  "src/evdt/monitoring/ingest.py": {
+    "baseline_sha256": "356fea49e04dd55b04aef85f69d9d5881cfbea9f6e3b6970a7f0332f4eae469e",
+    "reviewed_sha256": "d65ae8128d428f4a9fe3c027368062db3afeddd6ec55ca4600aab2f45a156ad5",
+    "reason": "Opt-in receiver callback and completed-delivery timing, with original packet fingerprints and broker delivery metadata."
+  },
+  "src/evdt/monitoring/transport.py": {
+    "baseline_sha256": "6e4e84882e7946290eb7379189230a2c1217740c40b9ef0350761ec449eabf22",
+    "reviewed_sha256": "51e50c1a113529549253ac3e2b04f511d4553a4283ef5dfd9c07a60c5fbce5d3",
+    "reason": "Record opt-in per-event publish attempts/returns, broker acknowledgments and persistence receipt application; retain existing queue retirement rules."
+  },
+  "src/evdt/monitoring/repository.py": {
+    "baseline_sha256": "74b2b9097545f66d984965d11e1a5f05107ed82a084425085eba3ff14ae9e801",
+    "reviewed_sha256": "970cd7a6329adf864f22fe6b28cb1e3193d2c560210b79a8b2bcc0b542d0f154",
+    "reason": "Opt-in projection-staged and post-commit-return timestamps; preserve transactional history/current/receipt semantics and migrations."
+  }
+}

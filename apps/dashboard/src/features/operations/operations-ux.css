@@ -1,0 +1,559 @@
+.trip-overview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 28px;
+  padding-block: 18px;
+}
+.trip-overview h2 {
+  margin: 4px 0 0;
+  max-width: 38ch;
+}
+.trip-overview dl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  flex: 1 1 260px;
+  margin: 0;
+}
+.trip-overview dt {
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+.trip-overview dd {
+  margin: 4px 0 0;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.trip-overview button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.map-trajectory-window {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.8rem;
+}
+.fleet-summary .table-scroll {
+  margin-top: 12px;
+}
+.fleet-summary th[scope="row"] {
+  font-weight: 650;
+}
+.fleet-summary .link-button {
+  padding-inline: 0;
+  border: 0;
+  background: transparent;
+  color: #a01d5b;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.fleet-detail > summary {
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+.measurement-filters {
+  display: grid;
+  grid-template-columns: minmax(180px, 2fr) repeat(4, minmax(108px, 1fr));
+  align-items: end;
+  gap: 10px;
+}
+.measurement-filters :is(input, select) {
+  width: 100%;
+  min-width: 0;
+}
+.history-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-block: 12px;
+}
+.history-presets button[aria-pressed="true"] {
+  background: #f8e5f0;
+  color: #8d1756;
+  border-color: #ebc3da;
+}
+.history-event-marker line {
+  stroke: #168179;
+  stroke-dasharray: 3 4;
+}
+.history-event-marker circle {
+  fill: #168179;
+  stroke: white;
+}
+.health-summary {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding-block: 16px;
+}
+.health-summary h2,
+.health-summary p {
+  margin: 0;
+}
+.health-summary p {
+  margin-top: 4px;
+}
+.health-summary.warning {
+  background: #fff3e7;
+  color: #793e14;
+  border-color: #f0d7be;
+}
+.health-summary.good {
+  background: #edf8f4;
+  color: #146354;
+  border-color: #d1e9e0;
+}
+.trip-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+.trip-timeline li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 10px 8px 10px 22px;
+  gap: 6px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.trip-timeline li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #168179;
+}
+.trip-timeline li span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.event-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.charge-outcomes {
+  margin-top: 20px;
+}
+.map-charging-context {
+  border-inline-start: 4px solid #b62a76;
+}
+.map-charging-context h2 {
+  margin-bottom: 8px;
+}
+.map-charging-context button {
+  margin-top: 10px;
+}
+.charging-alert .charge-recommendation {
+  margin: 0 0 12px;
+  padding: 18px;
+}
+.charging-alert [aria-label="Charging approval"] {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  margin-bottom: 12px;
+}
+.charging-alert [aria-label="Charging approval"] h3 {
+  font-size: 1rem;
+}
+.charge-recommendation-bottom {
+  border-color: var(--border);
+  align-items: center;
+}
+.charge-decision-actions {
+  align-items: end;
+  gap: 9px;
+}
+.charge-decision-actions select {
+  max-width: 100%;
+}
+.charge-decision-actions label {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.charging-alert button.primary {
+  background: linear-gradient(110deg, #ac195c, #8a206b);
+}
+.charging-alert button.primary:disabled {
+  background: #e9d6e0;
+  color: #674455;
+}
+.asset-meta strong {
+  display: block;
+  max-width: 30ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.charging-alert-actions {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+.charging-alert :is(button, select) {
+  scroll-margin: 12px;
+}
+@media (max-width: 1180px) {
+  .measurement-filters {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 146px), 1fr));
+  }
+}
+@media (max-width: 650px) {
+  .charging-alert .charge-recommendation {
+    padding: 12px;
+  }
+  .charge-decision-actions label {
+    width: 100%;
+  }
+}
+.trip-arrival-chip,
+.trip-arrival-detail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.trip-arrival-chip {
+  padding: 0.4rem 0.65rem;
+  border-radius: 0.65rem;
+  background: #edf4fb;
+  color: #275174;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.trip-arrival-detail {
+  margin: 0.9rem 0 0;
+  flex-wrap: wrap;
+}
+
+.topbar .trip-sound {
+  display: inline-grid;
+  place-items: center;
+  padding: 0.55rem;
+}
+
+.charge-shortcut.is-charging {
+  background: #e0f4ef;
+  border-color: #acdcd1;
+  color: #076358;
+}
+
+.vehicle-pin.is-charging {
+  background: #087669;
+  box-shadow:
+    0 0 0 5px #0876693b,
+    0 3px 12px #142d3533;
+}
+
+.charge-decision-note {
+  flex-basis: 100%;
+}
+
+.charge-recommendation .charge-offer-arrival {
+  grid-column: 1 / -1;
+  font-size: 0.85rem;
+}
+.approval-clock dl {
+  display: flex;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0;
+  font-size: 0.85rem;
+  flex-basis: 100%;
+}
+
+.approval-clock {
+  flex-basis: 100%;
+  font-size: 0.85rem;
+}
+
+.approval-clock dt,
+.approval-clock p {
+  color: #54637b;
+}
+
+.approval-clock dd {
+  margin: 0.15rem 0;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.approval-clock p {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.charging-alert {
+  width: min(45rem, calc(100% - 1.5rem));
+  padding: clamp(1rem, 3vw, 1.45rem);
+  color: #202c3d;
+}
+.charging-alert::backdrop {
+  backdrop-filter: blur(2px);
+}
+.charging-alert-header h2 {
+  font-size: clamp(1.1rem, 3vw, 1.55rem);
+}
+.charging-alert-header svg {
+  color: #aa5417;
+}
+.charging-alert-message {
+  margin: 0.75rem 0;
+  padding: 0.55rem 0.75rem;
+  border-inline-start: 3px solid #ca782c;
+  background: #fff4e8;
+}
+.charging-alert-status {
+  margin: 0.55rem 0;
+  color: #556780;
+  font-size: 0.86rem;
+}
+.charge-recommendation {
+  background: #f8fafc;
+  color: #253449;
+  border: 1px solid #dbe3ec;
+}
+.charge-recommendation.is-previous {
+  background: #f1f4f8;
+}
+.charge-recommendation h3 {
+  font-size: clamp(1.18rem, 4vw, 1.65rem);
+}
+.charge-offer-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.65rem;
+}
+.charge-offer-title .secondary {
+  color: #175a67;
+  background: #fff;
+}
+.charge-offer-arrival {
+  font-size: 0.85rem;
+}
+.charging-advisor .charge-mode {
+  background: #e5f3f0;
+  color: #216c61;
+}
+.charging-advisor .charge-heading {
+  margin-bottom: 1.25rem;
+}
+.charging-advisor .charge-heading h2 {
+  margin: 0;
+}
+.charging-advisor [aria-label="Charging approval"],
+.charging-alert [aria-label="Charging approval"] {
+  border: 1px solid #dfe6ee;
+  border-radius: 0.85rem;
+  background: #f8fafc;
+  padding: 0.8rem;
+}
+.charging-advisor [aria-label="Charging approval"] > p {
+  margin: 0.35rem 0;
+  font-size: 0.86rem;
+}
+.charge-primary-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  width: 100%;
+}
+.charge-primary-actions button {
+  white-space: nowrap;
+}
+.charge-action-hint {
+  color: #7c4a18;
+}
+.map-fit-action {
+  margin: 0.6rem 0.15rem 0.1rem;
+}
+.charge-decision-note {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+}
+.charge-pending {
+  padding: 0.65rem;
+  margin-top: 0.5rem;
+  border-radius: 0.65rem;
+  background: #edf4fc;
+}
+.charge-pending p {
+  margin: 0 0 0.4rem;
+}
+.charging-advisor .approval-clock {
+  padding: 0.35rem 0.6rem;
+  background: #edf3f9;
+  border-radius: 0.6rem;
+}
+.charge-outcomes,
+.charging-observed {
+  padding: 0.9rem;
+  border: 1px solid #e0e7ef;
+  border-radius: 0.85rem;
+}
+.charging-observed {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.05rem;
+  background: #f3f9f7;
+  border-color: #dce9e4;
+}
+.charging-advisor .charging-observed {
+  margin-top: 0.9rem;
+}
+.observed-charge-heading,
+.observed-charge-title,
+.observed-charge-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+.observed-charge-heading,
+.observed-charge-footer {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.observed-charge-heading :is(h3, p),
+.observed-charge-footer p {
+  margin: 0;
+}
+.observed-charge-title p,
+.observed-charge-footer p {
+  color: #40576a;
+  font-size: 0.85rem;
+}
+.observed-charge-state {
+  border-radius: 999px;
+  background: #d8eee7;
+  color: #155547;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+.observed-charge-readings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 0.65rem;
+  margin: 0;
+}
+.observed-charge-readings > div {
+  min-width: 0;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.65rem;
+  background: #fff;
+}
+.observed-charge-readings dt {
+  color: #40576a;
+  font-size: 0.8rem;
+}
+.observed-charge-readings dd {
+  margin: 0.2rem 0 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.trip-timeline li {
+  padding-inline-start: 1.2rem;
+}
+.charge-outcomes .trip-timeline li:first-child::before {
+  background: #be661e;
+}
+.charging-alert-actions {
+  margin-top: 0.65rem;
+}
+.charge-estimates {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0.8rem 0;
+}
+.charge-estimate-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr);
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.85rem;
+}
+.charge-estimate-row.charger-arrival {
+  background: linear-gradient(125deg, #d2eee9, #a6d9d2);
+  color: #134441;
+}
+.charge-estimate-row.charger-transfer {
+  background: linear-gradient(125deg, #edf1c9, #d5de9e);
+  color: #313e18;
+}
+.charge-estimate-row.trip-arrival {
+  background: linear-gradient(125deg, #f8e0eb, #eec0d5);
+  color: #54243e;
+}
+.charge-estimates :is(h4, p, dl, dd) {
+  margin: 0;
+}
+.charge-estimates h4 {
+  font-size: 0.95rem;
+}
+.charge-estimates p,
+.charge-estimate-row dt {
+  font-size: 0.86rem;
+}
+.charge-estimate-row dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+.charge-estimate-row dl > div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.charge-estimate-row dd {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+.charge-estimate-row dd small {
+  font-size: 0.75rem;
+  font-weight: 550;
+  white-space: nowrap;
+}
+.charge-estimate-note {
+  background: #f1f4f8;
+  color: #384b62;
+  border-radius: 0.75rem;
+  padding: 0.65rem 0.85rem;
+}
+.charge-estimate-note.reserve {
+  background: #fff2e5;
+  color: #713c18;
+}
+.charge-estimate-note header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 0.75rem;
+  margin-bottom: 0.2rem;
+}
+.charge-details .charging-advisory-details {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 520px) {
+  .charge-estimate-row {
+    grid-template-columns: 1fr;
+  }
+}

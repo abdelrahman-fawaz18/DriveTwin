@@ -1,0 +1,43 @@
+{
+  "scenario_id": "montreal-core-v1",
+  "label": "Hypothetical urban bus mission on an OSM-derived Montreal road subset",
+  "bbox_wgs84": {
+    "south": 45.505,
+    "west": -73.58,
+    "north": 45.52,
+    "east": -73.56
+  },
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "query_file": "simulation/montreal/roads.overpassql",
+  "artifact": "data/public/montreal-core-v1/roads.osm.xml",
+  "maximum_download_bytes": 10000000,
+  "license": "ODbL-1.0",
+  "attribution": "Ãƒâ€šÃ‚Â© OpenStreetMap contributors",
+  "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "copyright_url": "https://www.openstreetmap.org/copyright",
+  "accessed_at_utc": "2026-11-03T16:54:19.476914+00:00",
+  "osm_base_timestamp": "2026-11-03T16:50:35Z",
+  "query_sha256": "79f1923ac9104cfc596934efaa08c36099fd80f7a473dd48aa556b9b4ccf8221",
+  "download_sha256": "40f40138d51905039cb69586e820b32ae6e20b9dc280e28aa47024dcb132cc18",
+  "artifact_sha256": "2bc98528975cd2dcb68cb123d32083c50305d8d9c1c13f0f42a2326b0747a420",
+  "download_bytes": 2488942,
+  "artifact_bytes": 679082,
+  "counts": {
+    "node": 3661,
+    "way": 820,
+    "relation": 177
+  },
+  "request_method": "GET",
+  "cached_download_used": true,
+  "transformations": [
+    "Strip contributor/account/timestamp metadata",
+    "Retain motor-road categories or explicit bus/psv overrides and their nodes",
+    "Retain complete associated turn relations and whitelisted transport tags",
+    "Remove unrelated node POI/address tags; deterministic numeric ID order"
+  ],
+  "limitations": [
+    "Clipped snapshot, not a certified/legal bus route",
+    "Conditional restrictions/elevation/completeness not independently validated",
+    "No live traffic, bus schedule, telemetry or charger availability"
+  ]
+}

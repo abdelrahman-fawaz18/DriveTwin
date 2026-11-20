@@ -1,0 +1,58 @@
+{
+  "checkpoint": "Catalog read cache and database interface compatibility",
+  "date": "2026-11-04",
+  "component_and_functional_checks_passed": true,
+  "scope": "Content-bound static definitions, bounded connection lifecycle and original two-asset functional/browser regression; not W0/W1",
+  "implementation": {
+    "catalog_cache_max_entries": 8,
+    "key": "Exact profile/catalog content, version and every validation-schema fingerprint",
+    "per_call_registered_catalog_byte_check": true,
+    "returned_definitions_are_independent_copies": true,
+    "original_contract_validator_retained": true,
+    "live_observations_cached": false,
+    "database_factory_returns_real_driver_connection": true,
+    "direct_and_context_managed_callers_supported": true,
+    "admission_returned_once_on_close": true,
+    "new_runtime_dependencies": 0,
+    "changed_wire_formats_or_sql_migrations": 0
+  },
+  "verified": {
+    "python_tests": 210,
+    "frontend_logic_tests": 12,
+    "original_contract_outcomes_per_language": 339,
+    "operational_contract_outcomes_per_language": 81,
+    "strict_typescript": true,
+    "scoped_strict_python_modules": 4,
+    "format_build_privacy_secrets": true,
+    "original_functional_service_and_browser_regression": true,
+    "browsers": ["Windows Edge", "automated Chromium"],
+    "monitoring_history_map_export_quality_clock_roles_replay": true,
+    "independent_sources_and_repeated_complete_plant_missions": true,
+    "exact_original_bytes_and_owned_cleanup": true,
+    "source_fingerprint_sets_matched": 3,
+    "historical_core_files_unchanged": 45,
+    "representative_desktop_replay_screenshots_reviewed": true,
+    "formal_visual_baseline_complete": false
+  },
+  "offline_component_profiling": {
+    "definitions_identical": true,
+    "repetitions_per_repeated_case": 10,
+    "old_family_construction_min_s": 0.187628876,
+    "old_family_construction_max_s": 0.200807441,
+    "new_view_first_call_upper_s": 0.039156446,
+    "new_view_warm_min_s": 0.000233659,
+    "new_view_warm_max_upper_s": 0.000298201,
+    "limit": "One-process component measurement; not live API or source-to-browser latency"
+  },
+  "preserved_failed_attempts": [
+    "Ten-asset rehearsal 04 stopped at failed active-Ubuntu host-headroom preflight",
+    "Ten-asset rehearsal 05 stopped at failed active-Ubuntu host-headroom preflight",
+    "Original functional regression 01 caught a context-manager-only connection factory incompatible with a direct caller; fixed and rerun as a new attempt"
+  ],
+  "live_fleet_qualification_passed": false,
+  "W0_passed": false,
+  "W1_passed": false,
+  "Q12_W1_passed": false,
+  "phase_1_complete": false,
+  "remaining": "Current-policy full workloads and resource gates, W2 history/query/restore, physical storage/retention/startup/visual baselines and final audit remain required."
+}

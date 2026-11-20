@@ -1,0 +1,11 @@
+# Copy or generate as dev.toml; dev.toml is intentionally private and ignored.
+[linux]
+distribution = "Ubuntu-24.04"
+user = "YOUR_LINUX_USER"
+windows_mount_root = "/mnt"
+heartbeat_timeout_seconds = 15.0
+termination_grace_seconds = 2.0
+
+[linux.environment]
+DOCKER_HOST = "unix:///var/run/docker.sock"
+DOCKER_CONFIG = "/home/YOUR_LINUX_USER/.config/ev-dt/docker"

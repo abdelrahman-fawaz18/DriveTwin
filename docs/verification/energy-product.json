@@ -1,0 +1,664 @@
+{
+  "checkpoint": "P2-D1 persistent advisory forecast integration",
+  "date": "2026-11-04",
+  "passed": true,
+  "phase_2_complete": false,
+  "model_qualified": false,
+  "automatic_dispatch_approved": false,
+  "next_step": "P2-E1",
+  "scope": "Controlled small real database/API/isolated-worker/browser integration from retained training observations; known simulated route at 120 simulation seconds only",
+  "full_integration_private_evidence": "evidence/p2/2026-11-04-energy-product-02",
+  "focused_presentation_private_evidence": "evidence/p2/2026-11-04-energy-product-ui-03",
+  "first_failed_attempt": {
+    "evidence": "evidence/p2/2026-11-04-energy-product-01",
+    "passed": false,
+    "reason": "Controlled producer UTC timestamp format rejected before forecast acceptance",
+    "cleanup_passed": true,
+    "preserved": true
+  },
+  "startup_seconds": 7.961485299980268,
+  "startup_limit_seconds": 120,
+  "validation_preparation_parity": {
+    "passed": true,
+    "validation_cases": 6,
+    "candidate_reference_values_and_envelopes_identical": true,
+    "held_out_opened": false
+  },
+  "scoped_read_checks": {
+    "passed": true,
+    "checks": 6
+  },
+  "dedicated_input_credential_checks": {
+    "passed": true,
+    "checks": 5
+  },
+  "database_access_and_immutability": {
+    "passed": true,
+    "checks": 10
+  },
+  "accounting": {
+    "records": 2,
+    "available": 1,
+    "unavailable": 1,
+    "original_packets_intact": 61
+  },
+  "actual_Chromium_browser": {
+    "passed": true,
+    "current_advisory_seen": true,
+    "stale_values_hidden": true,
+    "immutable_history_visible": true,
+    "disconnected_values_hidden": true,
+    "asset_switch_cleared_old_state": true,
+    "page_errors": 0
+  },
+  "ordinary_monitoring_views": {
+    "snapshot_signals": 20,
+    "raw_history_readings": 61,
+    "map_read_passed": true
+  },
+  "backup_restore": {
+    "passed": true,
+    "fresh_cluster": true,
+    "exact_data_schema_permissions": true,
+    "forecast_rows": 2,
+    "original_packets": 61
+  },
+  "cleanup": {
+    "passed": true,
+    "preexisting_volumes_preserved": 13
+  },
+  "compatibility": {
+    "passed": true,
+    "full_integration_exact_source_files": 127,
+    "full_integration_differences": [
+      "apps/dashboard/src/style.css",
+      "scripts/p2/qualify_energy_product.py"
+    ],
+    "interpretation": "CSS spacing and focused-check controller scope only; no product/worker/DB/auth/numerical logic change after full integration",
+    "presentation_source_files_match": 129,
+    "B2_manifest_model_targets_protocol_analysis_sources_match": true,
+    "C1_manifest_evaluation_sources_artifacts_and_consumed_claim_match": true,
+    "old_P1_capacity_evidence_is_historical_not_current_forecast_capacity_qualification": true
+  },
+  "frozen_model_targets_and_numerical_worker_sources_unchanged": true,
+  "original_B2_C1_artifact_bytes_unchanged": true,
+  "held_out_generated_rescored_or_retuned": false,
+  "contract_schema_or_sensor_catalog_changed": false,
+  "new_migration": "007_energy_forecasts.sql",
+  "formats": [
+    "energy-assignment/1.0.0",
+    "trusted-energy-input/1.0.0",
+    "persistent-energy-forecast/1.0.0",
+    "energy-forecast-view/1.0.0",
+    "energy-record-detail/1.0.0"
+  ],
+  "policy": "qualification/energy/product-profile.json",
+  "shared_checks": {
+    "passed": true,
+    "python_tests": 748,
+    "dashboard_tests": 25,
+    "strict_python_modules": 15,
+    "source_fingerprints_match": 358,
+    "original_contract_cases_per_language": 339,
+    "operational_contract_cases_per_language": 81,
+    "format_types_build_passed": true,
+    "candidate_privacy_findings": 0,
+    "candidate_secret_findings": 0,
+    "private_report": ".runtime/dev-checks/70c5411864dc4681901587548a8ed2ea"
+  },
+  "decision": "docs/adr/0044-persistent-advisory-energy-forecasts.md",
+  "learning_guide": "docs/setup/persistent-energy-forecasts.md",
+  "limits": [
+    "Only the evaluated known simulated route/cutoff; no continuous-drive/unseen-route/real-bus calibration claim",
+    "Controlled producer uses unchanged training values with fresh test identities/timestamps; not another live SUMO/fleet benchmark",
+    "Host/controller/administrator are trusted; direct-access denial applies to the unchanged isolated worker",
+    "External charging exclusion is an operator/source-configuration assumption, not a measured detector",
+    "Current scenario bounds are empirical, not a probability/population guarantee",
+    "Conditional range/time remain reference assumptions in saved results; station reachability and all original P2 requirements need explicit P2-E1 review",
+    "No capacity/soak or comprehensive visual/reboot/deployment/storage-lifecycle claim; existing Phase 6 gates remain",
+    "New writer role is non-login after credential-free restoration until an administrator supplies a new private credential",
+    "No automatic controller scheduler, commands, charging dispatch, Phase 3, remote or publication enabled"
+  ],
+  "artifact_sha256": {
+    "full_qualification": "4c37062c4cbedeae423d2da99328927a5260554d7458184fe2c1f9899737afb3",
+    "presentation_qualification": "98bf5c8fa47002ab1b757979b71a9e347ebfdad2d4c421ea271f13f042b9f3ca"
+  },
+  "published": false,
+  "focused_product_tests": 23,
+  "browser_fixture_current_source_sha256": {
+    "qualification/browser/energy.config.mjs": "e2102074410f6f3668edbb33f5437e1a65015257c2fdb3fe3f849812e25685bf",
+    "qualification/browser/energy/product.spec.mjs": "5d0b2b6d575925b9881054341cab1eed9429a335d0fb15feccf0153926ebdba3"
+  },
+  "browser_fixture_fingerprint_scope": "Current reviewed fixture bytes; runtime/controller compatibility is independently recorded. These hashes are not retroactively inserted into the original reports.",
+  "source_files": [
+    {
+      "path": "src/evdt/api.py",
+      "sha256": "3811857878ae612a75cb05f51483e6665bc107c6aba1dda6646857e6fd1d0fa8"
+    },
+    {
+      "path": "src/evdt/config.py",
+      "sha256": "5cdbe52e9a229a78ad838cc27c1ace0b288d16235e79b64ebae5f99b27987184"
+    },
+    {
+      "path": "src/evdt/contracts.py",
+      "sha256": "451891ed325593ae358cd63bceb4f74be3101d56ef6207e581bbd5956016cfdd"
+    },
+    {
+      "path": "src/evdt/contract_profile.py",
+      "sha256": "7be400c14efdc7e5db221a7c371c60c2ce2d7c6846058682ba88ceee0a2fc7f1"
+    },
+    {
+      "path": "src/evdt/ingest.py",
+      "sha256": "2e8f546290055f0ba64e4fd8667f1cc1ac19409827a0b6f0f2ff56b22611890d"
+    },
+    {
+      "path": "src/evdt/probe.py",
+      "sha256": "8cd2ca580303d98fb658f4c9f8bd98f9f2dfa82f07ec3dc751fc654a64696eac"
+    },
+    {
+      "path": "src/evdt/repository.py",
+      "sha256": "f20f2323eb36f583085121898e6306fb4b3945588c75884139fd8a6b78917680"
+    },
+    {
+      "path": "src/evdt/__init__.py",
+      "sha256": "e0f0cf0ee01301e137a0702b703ddb5c90bd9e641f842798d7795f8073575e96"
+    },
+    {
+      "path": "src/evdt/energy/calibration.py",
+      "sha256": "5a791d4e3b1c716f98db875204f6054f1071f4dea70f99ff1fe3013a03912b4f"
+    },
+    {
+      "path": "src/evdt/energy/forecasts.py",
+      "sha256": "c719c83dc7eb938497c764b26ea455b5932b8966ebee91ed558700fbe202b1e9"
+    },
+    {
+      "path": "src/evdt/energy/jobs.py",
+      "sha256": "85cc43b87a163bea56f2e828b4a13d560330a49cff1489f4310d116e336f46e6"
+    },
+    {
+      "path": "src/evdt/energy/model.py",
+      "sha256": "bd078e9e6c1aba57901ced24d44aef39905523889dd51dc4310cd769fe918d14"
+    },
+    {
+      "path": "src/evdt/energy/observations.py",
+      "sha256": "e1fc665d4d24222c99edeac31d62535a208774d71ff4502c0f56c884b12ee12a"
+    },
+    {
+      "path": "src/evdt/energy/partitions.py",
+      "sha256": "3a04553f5f3b7cddb5931ba92f30f263cce7bb2d6810a9e72419c4a8bdd493b4"
+    },
+    {
+      "path": "src/evdt/energy/product.py",
+      "sha256": "7dfe5ed5c6a224014457d4c75be03208ec847cfdf63948d2e63d2e4c9e3c3ecf"
+    },
+    {
+      "path": "src/evdt/energy/worker.py",
+      "sha256": "46603c3e718d0422e547c19d19b9bf2b46a3f5361c98046565feeff7e58184ce"
+    },
+    {
+      "path": "src/evdt/energy/__init__.py",
+      "sha256": "8338ac160d2c3e23e03eed91fdb1ea2a8cb9e2c46bbf1149544376be1e9f9440"
+    },
+    {
+      "path": "src/evdt/monitoring/adapter.py",
+      "sha256": "3f880c685e3003bad6c0fc8a9a1c228bd09d47f38a567da4665952108dccb08f"
+    },
+    {
+      "path": "src/evdt/monitoring/analysis_probe.py",
+      "sha256": "ce33ad616c8c211cf174aaa40f3c8b1332995637d86b686ebef71aeac83c928b"
+    },
+    {
+      "path": "src/evdt/monitoring/analysis_views.py",
+      "sha256": "5b610854feb061f6f2109f02851b8c9dbc0917d13180522c068d37d145659459"
+    },
+    {
+      "path": "src/evdt/monitoring/api.py",
+      "sha256": "c4f5c9bdfbe4ce7daf29a23993cc0508df571bf96f23f0436656e86318323c47"
+    },
+    {
+      "path": "src/evdt/monitoring/asset_catalog.py",
+      "sha256": "029f5d5fd229fe4da3863dc11caa4b1a35a6ba5006b9c99dfc6b70439d64e15c"
+    },
+    {
+      "path": "src/evdt/monitoring/contracts.py",
+      "sha256": "dd02d8e1fcd9ccc83263646b7dcdebd86e6ad7b8dc89a85fc3a9421cf0ddf021"
+    },
+    {
+      "path": "src/evdt/monitoring/coolant_adapter.py",
+      "sha256": "801119affacc25b68fe746d9186519804036fca5a5ce138399667338b1bdd3bc"
+    },
+    {
+      "path": "src/evdt/monitoring/critical_fault.py",
+      "sha256": "1691edaf46a78322f8b7667878154663659c05c9b2a529f9832fc8f56230cbf4"
+    },
+    {
+      "path": "src/evdt/monitoring/dashboard.py",
+      "sha256": "59623a4462a77bc5d5a4c1018d355668db3c4c30960296e9fbf5ed83baf61017"
+    },
+    {
+      "path": "src/evdt/monitoring/dashboard_probe.py",
+      "sha256": "5e84db6c47e52297a5770ac480d1c722c9fc30dc1514925106334b01b2137c46"
+    },
+    {
+      "path": "src/evdt/monitoring/dashboard_scenarios.py",
+      "sha256": "ec78d224a1a7517f1ac41738add12e2e1e6168fc9ad8ac60d3b3bb5600076285"
+    },
+    {
+      "path": "src/evdt/monitoring/database.py",
+      "sha256": "ae9363357fa376cd6b62864327cdf7171d1edd09371b23146d56936a31e590d5"
+    },
+    {
+      "path": "src/evdt/monitoring/energy_probe.py",
+      "sha256": "492efed01ff12ea384965200b131ad3f9cf0d04ab4dc7789677d9d8fd5d4b99b"
+    },
+    {
+      "path": "src/evdt/monitoring/energy_views.py",
+      "sha256": "b7c9ff5ac8b699aad1313d04632da286e3da3877a25dd96681db9afe39c0c6d4"
+    },
+    {
+      "path": "src/evdt/monitoring/extension_policy.py",
+      "sha256": "11c70aa278f40d787ae7a2824624f19f9185f148850373d9056bc69b2130b82e"
+    },
+    {
+      "path": "src/evdt/monitoring/extension_probe.py",
+      "sha256": "7c648e40cf47c0808de7e02ada68ea40275df15e03f9a479acc5eb1da3699ea2"
+    },
+    {
+      "path": "src/evdt/monitoring/formats.py",
+      "sha256": "5636d9d3926bed219578b18e77d7ee753e3a82976ba482a887634ec7ee8a881a"
+    },
+    {
+      "path": "src/evdt/monitoring/history_probe.py",
+      "sha256": "9bb70c0109fe5497f3c61626c2dabab635eb1cb36cd8052b3ed5d29e24c930f0"
+    },
+    {
+      "path": "src/evdt/monitoring/history_queries.py",
+      "sha256": "31cddc847827abf14942dc9c419d996c1e154105b034bbca862fb89e17a4ec92"
+    },
+    {
+      "path": "src/evdt/monitoring/http_readers.py",
+      "sha256": "211fe52aa237626fca3cf65ad3393812a9ca67fbfb8485680c3bca26bc51cda6"
+    },
+    {
+      "path": "src/evdt/monitoring/ingest.py",
+      "sha256": "d65ae8128d428f4a9fe3c027368062db3afeddd6ec55ca4600aab2f45a156ad5"
+    },
+    {
+      "path": "src/evdt/monitoring/map_context.py",
+      "sha256": "70f730933438e8bd9200fc62bce03fd916712a8f13a65886f6e98a59ca7ff517"
+    },
+    {
+      "path": "src/evdt/monitoring/metrics.py",
+      "sha256": "a5482d1325f0151a441eeaaeb603db57b80ed2bf5b62a9e901e11120be7a17fc"
+    },
+    {
+      "path": "src/evdt/monitoring/network.py",
+      "sha256": "3fb15a30349ecead402b095cb4bd921525749db3b87885f0bb77799f4cf41979"
+    },
+    {
+      "path": "src/evdt/monitoring/plant.py",
+      "sha256": "747f4a7b7e5f91089fa679fd51d9c28972fc6c58142277e1f4073cfa4be4a7b5"
+    },
+    {
+      "path": "src/evdt/monitoring/probe.py",
+      "sha256": "0c088b38cacbe922da3fca57e6b8819d8bd274d7ab372361d3cbd5362efabc92"
+    },
+    {
+      "path": "src/evdt/monitoring/probe_support.py",
+      "sha256": "2175305611f9277b77a7694e821218128ebf35bb89fe88b091eff08a6cf2051b"
+    },
+    {
+      "path": "src/evdt/monitoring/provision_policy.py",
+      "sha256": "5ea6cef925128982f7eefee9e9eda2c162d623f2358b597d7511aefd631d79fc"
+    },
+    {
+      "path": "src/evdt/monitoring/receipt_window.py",
+      "sha256": "0ed633df5994bc8bfaa78b7048d42841f534a5e512c1636ceea76e7e6c8606fa"
+    },
+    {
+      "path": "src/evdt/monitoring/recipes.py",
+      "sha256": "09182d93d659cd34d577373e45e44bb73c20373bdbd8834517d62476f06c7832"
+    },
+    {
+      "path": "src/evdt/monitoring/registration_api.py",
+      "sha256": "d04b9e53f2c676a98eb837d177ab0721034e3d8736bc7bfc577f9590bdc1f307"
+    },
+    {
+      "path": "src/evdt/monitoring/registration_client.py",
+      "sha256": "96b23e84ac68e8d260cfa1d253d5065e8f305ebed5a114efc630658c65f00ea1"
+    },
+    {
+      "path": "src/evdt/monitoring/registry.py",
+      "sha256": "f363843553b7db95e8e734ca3030167ec0201ccae69cd98bd05543aee2920d2f"
+    },
+    {
+      "path": "src/evdt/monitoring/registry_probe.py",
+      "sha256": "e8ee8696e2d9d9620663ec568cec5c713beadcbcfb2e581e3fa15e3d8b840457"
+    },
+    {
+      "path": "src/evdt/monitoring/replay_api.py",
+      "sha256": "86ae294ab7644486e713349503e7b131984d1465703b4146530b1948ca2bf509"
+    },
+    {
+      "path": "src/evdt/monitoring/replay_probe.py",
+      "sha256": "2fec011456e98fbf68e24ec472685e97c0d630e87dbc0984c63fc96c64e2d160"
+    },
+    {
+      "path": "src/evdt/monitoring/replay_repository.py",
+      "sha256": "27c13bfc6480763d12cb9bef8b604125d6e70ffaf208827f7e6b608ce887a2e6"
+    },
+    {
+      "path": "src/evdt/monitoring/repository.py",
+      "sha256": "6b6a574f4622de9566c30734a17fa5faa5926b20569ed1a4903a9b3441d07ccc"
+    },
+    {
+      "path": "src/evdt/monitoring/run_policy.py",
+      "sha256": "9157bf0a949f8a5d5071f22547ecfb875194fb2ee904fe509d1c99eba261cadb"
+    },
+    {
+      "path": "src/evdt/monitoring/sensors.py",
+      "sha256": "548943e8814a2bb70a4d8ee88f8f2cbe8aa154eecbc41b1efbe153532c2056dc"
+    },
+    {
+      "path": "src/evdt/monitoring/source.py",
+      "sha256": "2cc9ff40fb7c2a1c1be39d7576a1613231b3f87bf79536b1128552b3129c4806"
+    },
+    {
+      "path": "src/evdt/monitoring/spool.py",
+      "sha256": "000434891bf0298de8e27e4e5b427738eb4ee6d2471387f495e3b806187d8199"
+    },
+    {
+      "path": "src/evdt/monitoring/spool_capacity.py",
+      "sha256": "4215321d07c16d81bef1632d9ce0f09ea6b5d49c73478cc1fcee08881229c987"
+    },
+    {
+      "path": "src/evdt/monitoring/trace.py",
+      "sha256": "2b9e5261a67e2bff0d1586f6b00507d41929476d628b80d1f71b2b2daf0d0464"
+    },
+    {
+      "path": "src/evdt/monitoring/transport.py",
+      "sha256": "04f2088e12f5c6f12aac430ff560074dc428feea69b709aa839ded8d57f8809b"
+    },
+    {
+      "path": "src/evdt/monitoring/vehicle_storage.py",
+      "sha256": "376f3fb3c46f26b7c7c7850c2d3b1e4047253959550af0c4b2f85d2dbcc48b1f"
+    },
+    {
+      "path": "src/evdt/monitoring/__init__.py",
+      "sha256": "7908a60723cd51dd9e0e29e0c66dbab3188768d63f60174d5265d8dc5a6b5438"
+    },
+    {
+      "path": "src/evdt/recovery/bundle.py",
+      "sha256": "28ecdc3a46d604ce0405e3ab4f455d12ffa94d25ca5679df95ba44a91a0427b0"
+    },
+    {
+      "path": "src/evdt/recovery/database.py",
+      "sha256": "96e82f4a439d292dd1a67c6286ce5d13eabc99152247d19f8ad0beb447d8245d"
+    },
+    {
+      "path": "src/evdt/recovery/history_bundle.py",
+      "sha256": "a6a43c8432ac14609ad4f7dbe7ff0bc4aee36d19de5c581ed91c0e3f301931b9"
+    },
+    {
+      "path": "src/evdt/recovery/probe.py",
+      "sha256": "3c269baa672e9d3a6691f70372b3c42912d12aecb2045edca74cacf07d088886"
+    },
+    {
+      "path": "src/evdt/recovery/__init__.py",
+      "sha256": "9b17dc8d3a0d94a7a045d436777fdf2c3ec1289cd4ea8a1a0e142795933119e2"
+    },
+    {
+      "path": "src/evdt/workload/bound_storage_health.py",
+      "sha256": "f31aa3c08bd1dc88b05e3395bd9975f958a2f6ee621a438d4919786ddec3d563"
+    },
+    {
+      "path": "src/evdt/workload/capacity.py",
+      "sha256": "20dd2c1636da4e3170c60695bd360d1da71b5d51efb4289f8fec8c49d7087031"
+    },
+    {
+      "path": "src/evdt/workload/correlation.py",
+      "sha256": "f3cf1590b0ac578798f1334445308128559720eb24e7dee47cdb4a9c6c8837df"
+    },
+    {
+      "path": "src/evdt/workload/disk_queue.py",
+      "sha256": "69518bb88dc4dd07b39b8d46d781683d6e60b53c58aadec72b1ce094a3ddbd94"
+    },
+    {
+      "path": "src/evdt/workload/fleet_probe.py",
+      "sha256": "579830bc2cd87188e7a40b9d610983ef1691900948a886fbba34e0e60bacd994"
+    },
+    {
+      "path": "src/evdt/workload/history_load.py",
+      "sha256": "ab9dc8498e2534fc30032ad956d47e1c19a21902e3a20515bf82bd9a3a8d2d3c"
+    },
+    {
+      "path": "src/evdt/workload/history_source.py",
+      "sha256": "a2c130c05e93c6a781f0523e792e7f68574c11bef6c01a74ddca6b512acc0273"
+    },
+    {
+      "path": "src/evdt/workload/measurement.py",
+      "sha256": "22b3ddd6e00adbc85f9c63c5a5dc5d66d28d9e28154fce15aa98eb5189bb566b"
+    },
+    {
+      "path": "src/evdt/workload/outage_probe.py",
+      "sha256": "a238d0500883252113e528958913fd3490ec2d09900e2e4c6fa47a46c3f82acb"
+    },
+    {
+      "path": "src/evdt/workload/pacing.py",
+      "sha256": "a93b3edd34ebd0355ad34da8169346a4b484d9e005b1b4cad22dea688fec4915"
+    },
+    {
+      "path": "src/evdt/workload/source_setup.py",
+      "sha256": "f43ece8d8df0c5107986b23a2dddb4566746b6d51fbe31e6671d53124a3c423d"
+    },
+    {
+      "path": "src/evdt/workload/sustained.py",
+      "sha256": "056e86689a00f781194eb1e40dd7af982bfe2b905e614f3a0c2b593f45e45d4b"
+    },
+    {
+      "path": "src/evdt/workload/vehicle_storage_probe.py",
+      "sha256": "e7c75d116870b12ba2b8e9f23d99ac72950901f34a4254e5c0519948fd47c260"
+    },
+    {
+      "path": "src/evdt/workload/__init__.py",
+      "sha256": "2558e50dad59ed007ce45838aa58809c62ee84000e6c6f3b3e1759f5ec16200d"
+    },
+    {
+      "path": "migrations/monitoring/001_observations.sql",
+      "sha256": "6fbba83cd6af381065134d9426cfcabce680369672ceb2fd081e2a3dc56d11ce"
+    },
+    {
+      "path": "migrations/monitoring/002_registry.sql",
+      "sha256": "88e5725d51bff73a151c03434d60213db7a026358960b45b947c9c91c683e830"
+    },
+    {
+      "path": "migrations/monitoring/003_dashboard.sql",
+      "sha256": "a27d8515bfef96bbfec3f6dc2514622653bce207def91e3cb778e6516939f61a"
+    },
+    {
+      "path": "migrations/monitoring/004_context_and_events.sql",
+      "sha256": "09ed7823fbc9f1a8062a4cc05407b1d5ef54dcce28ccfd9a02d31b41d21e3b3a"
+    },
+    {
+      "path": "migrations/monitoring/005_quality_recovery.sql",
+      "sha256": "0daee9a4b115ed889a690dd5a94a3969e6303b8b604865d04d662713134f0bbf"
+    },
+    {
+      "path": "migrations/monitoring/006_replay_read_views.sql",
+      "sha256": "9f3361ee46d7bb16f401347d2f0f9527148826dd9acde8d3d563fae297b31830"
+    },
+    {
+      "path": "migrations/monitoring/007_energy_forecasts.sql",
+      "sha256": "442aed5033d8e33cd509ea693d734d791300f99abbad7574f2cb631270b3fb66"
+    },
+    {
+      "path": "apps/dashboard/src/EnergyForecasts.tsx",
+      "sha256": "0eefa1d9e7429412e8dc75576aa70db7c493ad161ace815f6ab5328fe4a64302"
+    },
+    {
+      "path": "apps/dashboard/src/energyModel.ts",
+      "sha256": "8615d6c3efb3704c895bbc7ed7d89c58eae0f971dbfc9a251d44e66abd68b5f2"
+    },
+    {
+      "path": "apps/dashboard/src/env.d.ts",
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "apps/dashboard/src/Fleet.tsx",
+      "sha256": "1322f80335e5925d5b9b0cc3a87b4360cc62885d3c6437b1705685fc8fe4b734"
+    },
+    {
+      "path": "apps/dashboard/src/fleetPolling.ts",
+      "sha256": "c447c76f771f982b040fed8c3550ae5c4fc92c64ebf13ead919a7cec83f9435d"
+    },
+    {
+      "path": "apps/dashboard/src/HistoryExplorer.tsx",
+      "sha256": "768e40240d0cd6ecad031500ff7749c8776544f596c65557d3bce01841ec1e63"
+    },
+    {
+      "path": "apps/dashboard/src/historyModel.ts",
+      "sha256": "7a4c6c2aaa509844c4e0bc2cf0f1218984a4d8ecc0e5c6e36c8920408003acb8"
+    },
+    {
+      "path": "apps/dashboard/src/main.tsx",
+      "sha256": "713dbc69f4a16ba41f15ae2dafb6793a6d38fa274a68bcfcf1f41f3c487d2c93"
+    },
+    {
+      "path": "apps/dashboard/src/mapModel.ts",
+      "sha256": "45b17723f8286224177c89a829e3f7309535bd59d3565d9ef4aa0c3226516137"
+    },
+    {
+      "path": "apps/dashboard/src/MapPanel.tsx",
+      "sha256": "f57eba650b2a4351076355a0ec611d22a2bb12790bdd5ca7c7a37a2e4cfd4517"
+    },
+    {
+      "path": "apps/dashboard/src/model.ts",
+      "sha256": "8a1cbd116e2fb296c0d0c74396689ba510beb2148935a1e20af21e31d021e5ac"
+    },
+    {
+      "path": "apps/dashboard/src/Operations.tsx",
+      "sha256": "356c8fcc9ab4315a33942b2647fe6a258c61330dece34b83dff7564f8fb2d998"
+    },
+    {
+      "path": "apps/dashboard/src/overview.ts",
+      "sha256": "52e2046ff4c9803804ce1a3241572c7ff9c3df499092ff13e46a8b7abfffb64a"
+    },
+    {
+      "path": "apps/dashboard/src/replay.css",
+      "sha256": "ae3dcf3c821a18d24c016edafda7a4a34099fa9185d4ad87804e3d689708cf11"
+    },
+    {
+      "path": "apps/dashboard/src/replayMain.tsx",
+      "sha256": "d2285c37ee0de92a5d2053ad6027b83c581f21b85375663531fdd22efb244f95"
+    },
+    {
+      "path": "apps/dashboard/src/replayModel.ts",
+      "sha256": "cedf66d6d2d799093fb8c23fad455a042e592d8dcc7d74b39706b2af9418f99a"
+    },
+    {
+      "path": "apps/dashboard/src/style.css",
+      "sha256": "dc9375b1d9def0b997f133a8be4b538ed90417c2b63008e843ab1f2eb2473a51"
+    },
+    {
+      "path": "apps/dashboard/src/Trend.tsx",
+      "sha256": "2add7124f72ec3b977933258de7538376d75dfc92acc11dc4e9c96b9497668f6"
+    },
+    {
+      "path": "apps/dashboard/src/useLive.ts",
+      "sha256": "36c68d0b133c355e9d675102feef8335d1bfe70a05751ac0904ba69bcf4b444f"
+    },
+    {
+      "path": "apps/dashboard/src/useMapScene.ts",
+      "sha256": "02627875b7707545433823e96811d51042ec77bf4ccab352f79797aebd84d376"
+    },
+    {
+      "path": "scripts/p2/analyze_energy_development.py",
+      "sha256": "11adf8181ab793eda15fa39bb47590e8f3f7ed0895544724f14b154929fe62fc"
+    },
+    {
+      "path": "scripts/p2/collect_energy_holdout.py",
+      "sha256": "3ba893cca471deaff4fc1239c41d0ecd31a960c4576c594f3dd07c1ca28e48aa"
+    },
+    {
+      "path": "scripts/p2/collect_energy_missions.py",
+      "sha256": "eeced566fb482a474bd0142ec5f368b57a98fc85abdbd75fa1b6fef2385bad45"
+    },
+    {
+      "path": "scripts/p2/energy_holdout.py",
+      "sha256": "6b77254180c8fa9c33d259396cd2b355bfea1094712e41467864016153943ad7"
+    },
+    {
+      "path": "scripts/p2/energy_runtime.py",
+      "sha256": "ba2bd0eb9d9a5e05791d09143cb4f6b2ba69ea35461a6ad99d6fa1c3ea459923"
+    },
+    {
+      "path": "scripts/p2/evaluate_energy_holdout.py",
+      "sha256": "8e43c29d511831028d4dc18f73819aa5b288536d00adc503aada392469b5edb4"
+    },
+    {
+      "path": "scripts/p2/qualify_energy_boundary.py",
+      "sha256": "0162973b2fab410a062b9ebfc1ce932a8f03e79fd79ef7c52aa29f627f1970d7"
+    },
+    {
+      "path": "scripts/p2/qualify_energy_calibration.py",
+      "sha256": "657be60f346a070a31aa5d374beb47df852a2adb0960781b656f6f6771a4a9d5"
+    },
+    {
+      "path": "scripts/p2/qualify_energy_collection.py",
+      "sha256": "caf7cdf92964f549751a425690fab6abb0f6998f1b8132f76283d6799285afd8"
+    },
+    {
+      "path": "scripts/p2/qualify_energy_core.py",
+      "sha256": "0ceae2c2f597c2d2e672635b7996dcefa4a35465ed59c4f6fb9125dedcba01e9"
+    },
+    {
+      "path": "scripts/p2/qualify_energy_forecasts.py",
+      "sha256": "973002b886d9399400f56b36752f5f7264f8259278b1b714aef0a0405b2ffe73"
+    },
+    {
+      "path": "scripts/p2/qualify_energy_holdout.py",
+      "sha256": "6d6644c4ba93b6562a717aac5168bf1c42f0647f2ce6febadc6760a91d064145"
+    },
+    {
+      "path": "scripts/p2/qualify_energy_product.py",
+      "sha256": "2af80606f79a945c664f18cab809c92ba28b4ec599f8fcb30128fe858f517116"
+    },
+    {
+      "path": "scripts/p2/run_energy_job.py",
+      "sha256": "8eb8017e7e99a5e7685b9eb0a9ed5c30f34ddcb1cd5331478b7610efdf66e1e2"
+    },
+    {
+      "path": "scripts/p2/run_monitoring_forecast.py",
+      "sha256": "904aa1efbe9f367774c892801180ca503f81bd1c8a904768d8638e67583a3ed2"
+    },
+    {
+      "path": "compose.p1-uplink.yaml",
+      "sha256": "54fa1c4256c4033fbcf70a518751387e3df90e9053ef490afc888f35b4b4f9aa"
+    },
+    {
+      "path": "compose.p2-energy.yaml",
+      "sha256": "9f3c2ecd60b29b68b9f7fb8cc768cf2e6cd77eba8d5378363cc5a07cac80241c"
+    },
+    {
+      "path": "containers/monitoring.Dockerfile",
+      "sha256": "abf4268824a172aa0fdd3a9ce756821980f3e85faba63849740213ae7a6e8c49"
+    },
+    {
+      "path": "qualification/energy/product-profile.json",
+      "sha256": "e3b06d12057a575f4697f55fc4514d5514e731643aa5f2db83b55a9143ec801d"
+    }
+  ],
+  "git_storage_review": {
+    "preexisting_files_preserved_without_working_content_edits": [
+      "contracts/telemetry/1.1.0.schema.json",
+      "qualification/contracts/immutable.json",
+      "qualification/energy/mission-design.json",
+      "scripts/p1/qualify_dashboard.py",
+      "scripts/p1/qualify_uplink.py"
+    ],
+    "only_Git_line_ending_storage_corrected": true,
+    "qualified_source_bytes_unchanged": true,
+    "no_source_or_contract_guard_relaxed": true,
+    "staged_and_checkout_byte_verification_required": 358
+  }
+}

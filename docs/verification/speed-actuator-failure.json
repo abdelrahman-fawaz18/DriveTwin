@@ -1,0 +1,261 @@
+{
+  "checkpoint": "P3-A6 (P3-06) local speed-actuator failure",
+  "date": "2026-11-05",
+  "passed": true,
+  "scope": "One local SUMO speed-cap command per test run with a fault injected at its actuator adapter.",
+  "cases": {
+    "stuck": {
+      "private_report": "evidence/p3/2026-11-05-actuator-stuck-01/qualification.json",
+      "qualification_sha256": "3e188b0f72acc29917e4c8eb21e3b283a50082ef6f908feff228959fa64666fe",
+      "passed": true,
+      "cleanup_passed": true,
+      "source_files_match": true,
+      "final_execution_state": "acknowledged",
+      "actuator_calls": 1,
+      "identical_speed_traces": true,
+      "incomplete_evidence_refused_before_assessment": true,
+      "command_retry_and_second_handoff_checked": true,
+      "effect_durable_across_second_restart_checked": true,
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "not_observed",
+        "confirmed": false,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 8.33,
+        "maximum_commanded_m_s": 8.33,
+        "pairs_showing_lower_speed": 0,
+        "matching_pre_command_samples": 4
+      },
+      "sumo_version": "SUMO 1.28.0",
+      "journal_counts": {
+        "requests": 1,
+        "deadlines": 1,
+        "attempts": 1,
+        "results": 1,
+        "effects": 1
+      }
+    },
+    "failed": {
+      "private_report": "evidence/p3/2026-11-05-actuator-failed-01/qualification.json",
+      "qualification_sha256": "178cfe824e22d5fa402f360b960a22c227f8beae4a0f2624a27cf9191154b6cb",
+      "passed": true,
+      "cleanup_passed": true,
+      "source_files_match": true,
+      "final_execution_state": "unknown_outcome",
+      "actuator_calls": 1,
+      "identical_speed_traces": true,
+      "incomplete_evidence_refused_before_assessment": true,
+      "command_retry_and_second_handoff_checked": true,
+      "effect_durable_across_second_restart_checked": true,
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "not_observed",
+        "confirmed": false,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 8.33,
+        "maximum_commanded_m_s": 8.33,
+        "pairs_showing_lower_speed": 0,
+        "matching_pre_command_samples": 4
+      },
+      "sumo_version": "SUMO 1.28.0",
+      "journal_counts": {
+        "requests": 1,
+        "deadlines": 1,
+        "attempts": 1,
+        "results": 1,
+        "effects": 1
+      }
+    }
+  },
+  "successful_effect_regressions": {
+    "normal": {
+      "private_report": "evidence/p3/2026-11-05-actuator-normal-01/qualification.json",
+      "qualification_sha256": "66b6bb6200b3d704540198f20d8292b65436e8e583801fd137b0b2d59d3a9aca",
+      "passed": true,
+      "cleanup_passed": true,
+      "source_files_match": true,
+      "final_execution_state": "acknowledged",
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "confirmed",
+        "confirmed": true,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 8.33,
+        "maximum_commanded_m_s": 4.0,
+        "pairs_showing_lower_speed": 2,
+        "matching_pre_command_samples": 4
+      }
+    },
+    "authority": {
+      "private_report": "evidence/p3/2026-11-05-actuator-authority-01/qualification.json",
+      "qualification_sha256": "34a22250666ddab5dc209a623dc4612def8ea3e5a5aa656e66f0dd3be30fb159",
+      "passed": true,
+      "cleanup_passed": true,
+      "source_files_match": true,
+      "final_execution_state": "acknowledged",
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "confirmed",
+        "confirmed": true,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 8.33,
+        "maximum_commanded_m_s": 4.0,
+        "pairs_showing_lower_speed": 2,
+        "matching_pre_command_samples": 4
+      }
+    },
+    "lost-result": {
+      "private_report": "evidence/p3/2026-11-05-actuator-lost-result-01/qualification.json",
+      "qualification_sha256": "2f3a2da57b040ce0f7f5ab3135a64e201fbcc6046469101faa497801a4e11c3c",
+      "passed": true,
+      "cleanup_passed": true,
+      "source_files_match": true,
+      "final_execution_state": "unknown_outcome",
+      "independent_speed_effect": {
+        "unit": "m/s",
+        "status": "confirmed",
+        "confirmed": true,
+        "signal_id": "motion.speed",
+        "post_command_pairs": 11,
+        "maximum_baseline_m_s": 8.33,
+        "maximum_commanded_m_s": 4.0,
+        "pairs_showing_lower_speed": 2,
+        "matching_pre_command_samples": 4
+      }
+    }
+  },
+  "phase_2_retained_evidence": {
+    "private_report": "evidence/p2/2026-11-05-after-p3-a6/review.json",
+    "sha256": "3afd1c9a0169e1ee5d067cbb5e219c993377e80f275782ee17405ec0113447d2",
+    "evidence_integrity_passed": true,
+    "phase_2_ready": true
+  },
+  "source_files": [
+    {
+      "path": "compose.p1-uplink.yaml",
+      "sha256": "54fa1c4256c4033fbcf70a518751387e3df90e9053ef490afc888f35b4b4f9aa"
+    },
+    {
+      "path": "compose.p3-commands.yaml",
+      "sha256": "e860810f6958298e8f322c9f50cd5d2c40d3138782aa53830d49834c42a8ade8"
+    },
+    {
+      "path": "compose.p3-arbitration.yaml",
+      "sha256": "cf12b3d09fa949fbde533ec55af921249fb822035a8996922ad03bdfadd186d7"
+    },
+    {
+      "path": "migrations/commands/001_journal.sql",
+      "sha256": "2354879f9dc8f2688b63d81d2c07305c4da0e8fd120ea9fce3aa88a610a4e65d"
+    },
+    {
+      "path": "migrations/commands/002_speed_evidence.sql",
+      "sha256": "370ffe3a525c5eb5947e20457334cbdb34fcbeec1a4b455767d18592e61272b0"
+    },
+    {
+      "path": "migrations/commands/003_timing_audit.sql",
+      "sha256": "b6242e829b5cc03e4f312c600c3a8b2a6b50066f7a793eacf5d8b53a0fd155c9"
+    },
+    {
+      "path": "migrations/commands/004_authority.sql",
+      "sha256": "f0e2817d798d844d34c0ad9a56915c19e0875f2387cbde44db828d2d8fad0100"
+    },
+    {
+      "path": "src/evdt/commands.py",
+      "sha256": "e843f7bd2cc684915068000d6cffe3614b1be311986fc993507b52eadc130b9d"
+    },
+    {
+      "path": "src/evdt/command_api.py",
+      "sha256": "ec712f17f8b8a229f948d2846eb003f077e7c47e229f089d3833c98a811c5bc5"
+    },
+    {
+      "path": "src/evdt/command_journal.py",
+      "sha256": "02cd827cd184591f34342ff634c903dfbbbc554b916b8662e61c94afd59e23be"
+    },
+    {
+      "path": "src/evdt/command_effect.py",
+      "sha256": "0b569f97d0f42862fd427df363ab0725f2d6b69da7b589b854eac8e3566b6d0e"
+    },
+    {
+      "path": "src/evdt/command_timing.py",
+      "sha256": "f24048eeb5a54e89178db90576c01a0d1a1d8d2a6c8ffd088ede3108983e977e"
+    },
+    {
+      "path": "src/evdt/command_authority.py",
+      "sha256": "4170377e2c42e55590e1dfe6ec80d59b0a2f82b05b1f9560e137985df73d1917"
+    },
+    {
+      "path": "contracts/commands/execution-result-1.0.0.schema.json",
+      "sha256": "4200bca02d86e5bf04af1ea8ad103f93fee56ce30104f180b937a752eadae840"
+    },
+    {
+      "path": "contracts/commands/speed-evidence-1.0.0.schema.json",
+      "sha256": "d6662dfea332854e0ac7ab983f52326a62f73e6ce9b943cdfd5825cf696d06b9"
+    },
+    {
+      "path": "contracts/commands/speed-limit-1.0.0.schema.json",
+      "sha256": "9db3203570de32b5a438e0c381b22215705ef19d3a40c206bb128c2d7c770946"
+    },
+    {
+      "path": "scripts/p3/command_wire.py",
+      "sha256": "ed4f60973b4ead590123b93d4b1c0e7ad355621517b685048cde7826a9466e75"
+    },
+    {
+      "path": "scripts/p3/qualify_command_authority.py",
+      "sha256": "41c942451e513b58a4139bbcd0f74db877b436688c0149e44b2a2689bc304b90"
+    },
+    {
+      "path": "scripts/p3/qualify_connected_speed_limit.py",
+      "sha256": "9bd8b6984f8c59dabf3eaf204e5afcf7392d7c23b096812e6c1335d45cfe835c"
+    },
+    {
+      "path": "scripts/p3/report_speed_evidence.py",
+      "sha256": "9911a69d1d41017f4efc5ef1631e8a8c22196892614714efb5e48ba18007ef35"
+    },
+    {
+      "path": "scripts/p3/run_connected_speed_limit.py",
+      "sha256": "c34998946a5976ac81da77f1d3cee1c4f2041db5f313445c7c9b4525d5b55c8c"
+    },
+    {
+      "path": "scripts/p3/run_speed_limit.py",
+      "sha256": "6f384a437d7979cf48e42450ff60c5f3d12d5bbd281d656f0f1e2ae5641dd2b0"
+    },
+    {
+      "path": "catalog/monitoring-signals.json",
+      "sha256": "e54709fa3c44bee3decb8339961f5f0c3059f17d8da9b3a195fff4f7c55a0daa"
+    },
+    {
+      "path": "data/public/montreal-core-v1/roads.osm.xml",
+      "sha256": "2bc98528975cd2dcb68cb123d32083c50305d8d9c1c13f0f42a2326b0747a420"
+    },
+    {
+      "path": "simulation/montreal/bus-parameters.json",
+      "sha256": "2018dca5649076ccddb91a5802ddd9fc9c4260459ecf01d728836543f6fff6f7"
+    },
+    {
+      "path": "simulation/montreal/import-review.json",
+      "sha256": "f578854337d9baa454fa81724066160d03b10310f36b6615dc48e884b1801724"
+    },
+    {
+      "path": "simulation/montreal/mission.json",
+      "sha256": "6fac46aa281b97672b255d59758a2f44b406baa3644de50ae1d4d0808ef0682d"
+    },
+    {
+      "path": "src/evdt/contract_profile.py",
+      "sha256": "7be400c14efdc7e5db221a7c371c60c2ce2d7c6846058682ba88ceee0a2fc7f1"
+    },
+    {
+      "path": "src/evdt/monitoring/network.py",
+      "sha256": "3fb15a30349ecead402b095cb4bd921525749db3b87885f0bb77799f4cf41979"
+    },
+    {
+      "path": "src/evdt/monitoring/sensors.py",
+      "sha256": "548943e8814a2bb70a4d8ee88f8f2cbe8aa154eecbc41b1efbe153532c2056dc"
+    }
+  ],
+  "next_step": "Connect the command path to the monitoring simulation and verify effect through its regular telemetry stream.",
+  "phase_3_complete": false
+}

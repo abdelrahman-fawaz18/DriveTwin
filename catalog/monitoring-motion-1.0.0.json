@@ -1,0 +1,68 @@
+{
+  "catalog_version": "1.0.0",
+  "scope": "P1-A live motion slice; remaining planned signals are not fabricated",
+  "assets": {
+    "bus-001": {
+      "sources": [
+        "sumo-adapter"
+      ]
+    },
+    "bus-002": {
+      "sources": [
+        "sumo-adapter"
+      ]
+    }
+  },
+  "signals": {
+    "location.latitude": {
+      "unit": "deg",
+      "minimum": -90,
+      "maximum": 90,
+      "data_type": "number",
+      "component_id": "navigation-01",
+      "physical_location": "simulated navigation sensor",
+      "classification": "observed",
+      "sample_period_s": 1,
+      "freshness_s": 5,
+      "provenance": "simulated-observation"
+    },
+    "location.longitude": {
+      "unit": "deg",
+      "minimum": -180,
+      "maximum": 180,
+      "data_type": "number",
+      "component_id": "navigation-01",
+      "physical_location": "simulated navigation sensor",
+      "classification": "observed",
+      "sample_period_s": 1,
+      "freshness_s": 5,
+      "provenance": "simulated-observation"
+    },
+    "motion.speed": {
+      "unit": "m/s",
+      "minimum": 0,
+      "maximum": 60,
+      "data_type": "number",
+      "component_id": "motion-01",
+      "physical_location": "simulated vehicle motion",
+      "classification": "observed",
+      "sample_period_s": 1,
+      "freshness_s": 5,
+      "provenance": "simulated-observation"
+    },
+    "motion.distance": {
+      "unit": "m",
+      "minimum": 0,
+      "maximum": 1000000000.0,
+      "data_type": "number",
+      "component_id": "motion-01",
+      "physical_location": "simulated vehicle odometer",
+      "classification": "observed",
+      "sample_period_s": 1,
+      "freshness_s": 5,
+      "provenance": "simulated-observation"
+    }
+  },
+  "coordinate_reference": "WGS84 / EPSG:4326; explicit longitude and latitude signal IDs",
+  "source_policy": "One authorized producer per asset/source; local persistent source epochs; a reset simulation needs a new run"
+}

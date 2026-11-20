@@ -1,0 +1,14 @@
+{
+  "src/evdt/monitoring/repository.py": {
+    "baseline_sha256": "74b2b9097545f66d984965d11e1a5f05107ed82a084425085eba3ff14ae9e801",
+    "previous_reviewed_sha256": "970cd7a6329adf864f22fe6b28cb1e3193d2c560210b79a8b2bcc0b542d0f154",
+    "reviewed_sha256": "2ada245e0050e5258e374dd4278eb570db2faf9897f123151bafe9769eaaafb2",
+    "reason": "Delegate the existing context-managed connection API to bounded per-role admission, retaining database transaction/close semantics; ADR-0021."
+  },
+  "src/evdt/monitoring/registration_client.py": {
+    "baseline_sha256": "f55144d97cd5a76d3b80d58546af592df6ff2f68a53e137c57157e27e2d151b5",
+    "previous_reviewed_sha256": "f55144d97cd5a76d3b80d58546af592df6ff2f68a53e137c57157e27e2d151b5",
+    "reviewed_sha256": "96b23e84ac68e8d260cfa1d253d5065e8f305ebed5a114efc630658c65f00ea1",
+    "reason": "Retry unchanged metadata bytes for bounded transient 429/5xx responses; retain immediate semantic/authentication rejection and stop after three attempts; ADR-0021."
+  }
+}

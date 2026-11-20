@@ -1,0 +1,50 @@
+{
+  "checkpoint": "P1-E4 preallocated sticky critical-fault status",
+  "date": "2026-11-04",
+  "component_and_actual_full_disk_passed": true,
+  "internal_local_frame_format": "critical-fault/1.0.0",
+  "physical_storage_profile": "queue-disk-boundaries/1.0.0",
+  "telemetry_image_bytes": 67108864,
+  "critical_image_bytes": 8388608,
+  "preallocated_fault_slots": 2,
+  "slot_bytes": 4096,
+  "actual_allocated_slot_bytes": 8192,
+  "ordinary_probe_uid": 10001,
+  "critical_available_bytes_during_successful_update_and_reopen": 0,
+  "final_valid_copies": 2,
+  "final_faulted": true,
+  "occurrences": 2,
+  "first_reason": "telemetry_full",
+  "last_reason": "critical_full",
+  "first_fault_retained_new_fault_synced_and_fresh_container_reopened": true,
+  "negative_checks": [
+    "wrong identity/format",
+    "existing directory cannot reinitialize",
+    "missing/corrupt/torn/linked copies",
+    "same-generation conflict",
+    "invalid reason without writes",
+    "concurrent process occurrence updates",
+    "two-second lock timeout",
+    "actual process exit during partial slot update with old fault recovery"
+  ],
+  "shared_checks": {
+    "python_tests": 386,
+    "frontend_tests": 22,
+    "strict_python_modules": 6,
+    "contract_outcomes_per_language": [
+      339,
+      81
+    ],
+    "types_build_format_privacy_secrets": true
+  },
+  "source_fingerprints_match": true,
+  "owned_container_volume_loop_cleanup_empty": true,
+  "new_dependencies_routes_telemetry_wire_schemas_catalogs_database_migrations": 0,
+  "vehicle_sender_queue_critical_result_integration_passed": false,
+  "command_acceptance_or_executor_implemented": false,
+  "power_loss_or_host_reboot_recovery_passed": false,
+  "E4_complete": false,
+  "full_W0_W1_passed": false,
+  "Q12_passed": false,
+  "phase_1_complete": false
+}

@@ -1,0 +1,211 @@
+{
+  "date": "2026-11-03",
+  "checkpoint": "P1-D2",
+  "passed": true,
+  "phase_1_complete": false,
+  "full_release_acceptance_passed": false,
+  "scope": "A held-back scalar through unchanged shared paths after explicit preparation, and two independently stepped parameterized simulator assets",
+  "preparation_commit": "d2edc5292b6ac3812c5ee2afc3c6e03ff71d9c64",
+  "shared_code_freeze": {
+    "passed": true,
+    "baseline_commit": "d2edc5292b6ac3812c5ee2afc3c6e03ff71d9c64",
+    "frozen_files": 54,
+    "text_normalization": "CRLF to LF only; all other content is frozen",
+    "sha256": "6acf8dcd4b5da6b264ffb433700a94e11cbb64c495058a12af9ed311577b291f"
+  },
+  "extension_boundary": {
+    "shared_existing_files_unchanged": true,
+    "shared_frontend_backend_and_sql_scope": "qualification/extension/shared-core.json",
+    "code_text_line_break_normalization_only": true,
+    "wire_and_artifact_hashes_exact_bytes": true,
+    "new_adapter_model_configuration_catalog_schema_and_qualification_files": true,
+    "server_sql_migrations_added": 0,
+    "runtime_dependencies_added": 0
+  },
+  "formats": {
+    "bus-001": {
+      "envelope": "3.0.0",
+      "catalog": "1.2.0",
+      "recipe": "source-run/2.0.0"
+    },
+    "bus-002": {
+      "envelope": "3.1.0",
+      "catalog": "1.3.0",
+      "recipe": "source-run/2.1.0"
+    },
+    "replay_package": "1.0.0"
+  },
+  "held_back_signal": {
+    "id": "coolant.inlet.temperature",
+    "unit": "K",
+    "sample_period_s": 2,
+    "freshness_s": 6,
+    "history_samples": 15,
+    "good": 13,
+    "missing": 1,
+    "invalid_with_diagnostic_raw_value": 1,
+    "physical_model": "Assumed external conditioned inlet with analytic first-order response; not coupled to the existing pack/motor thermal model or a calibrated closed circuit"
+  },
+  "real_service_extension": {
+    "passed": true,
+    "assets": {
+      "bus-001": {
+        "events": 30,
+        "scalars": 600,
+        "signals": 20,
+        "catalog_version": "1.2.0",
+        "energy_ledger": {
+          "previous_j": 1007315770.1084722,
+          "capacity_j": 1260000000,
+          "tolerance_j": 0.01,
+          "steps": 149,
+          "maximum_residual_j": 1.1920928955078125e-07,
+          "net_consumed_j": 684229.8915297013,
+          "clipped_j": 0.0
+        },
+        "new_signal_history": 0
+      },
+      "bus-002": {
+        "events": 30,
+        "scalars": 615,
+        "signals": 21,
+        "catalog_version": "1.3.0",
+        "energy_ledger": {
+          "previous_j": 701569270.0004826,
+          "capacity_j": 1080000000,
+          "tolerance_j": 0.01,
+          "steps": 149,
+          "maximum_residual_j": 1.1920928955078125e-07,
+          "net_consumed_j": 430729.99951395544,
+          "clipped_j": 0.0
+        },
+        "new_signal_history": 15
+      }
+    },
+    "independent_motion_energy_and_sessions": true,
+    "original_packet_and_recipe_bytes": true,
+    "asset_and_cursor_isolation": true,
+    "real_ingress_rejections": [
+      "wrong_unit",
+      "envelope_schema",
+      "unregistered_signal"
+    ],
+    "cross_asset_broker_publish_denied": true,
+    "scoped_catalog_history_export": true
+  },
+  "browsers": [
+    {
+      "passed": true,
+      "project": "windows-edge-visible",
+      "browser": "156.0.4314.58",
+      "observed_live_fresh_signal": true,
+      "checks": [
+        "unchanged generic 20/21-signal views",
+        "new unit/location/model evidence",
+        "two-second history and missing/invalid raw values",
+        "JSON/CSV exports",
+        "independent map and per-asset diagnostics",
+        "asset switch and scoped readers",
+        "new-version replay/quality without new UI code",
+        "desktop/mobile",
+        "no external requests"
+      ]
+    },
+    {
+      "passed": true,
+      "project": "chromium-automated",
+      "browser": "156.0.8078.4",
+      "observed_live_fresh_signal": false,
+      "checks": [
+        "unchanged generic 20/21-signal views",
+        "new unit/location/model evidence",
+        "two-second history and missing/invalid raw values",
+        "JSON/CSV exports",
+        "independent map and per-asset diagnostics",
+        "asset switch and scoped readers",
+        "new-version replay/quality without new UI code",
+        "desktop/mobile",
+        "no external requests"
+      ]
+    }
+  ],
+  "browser_timing_scope": "Visible Edge observed the new reading fresh during publication; both browsers verified accepted current/history/export/replay data, scope and layout",
+  "complete_numerical_runs": {
+    "bus-001": {
+      "passed": true,
+      "repeat_runs": 2,
+      "sample_events_each": 864,
+      "scalar_samples_each": 17280,
+      "physical_intervals_each": 4322,
+      "completed_sim_time_s": 864.8,
+      "trace_sha256": "5fc21dc3194143e80e31890d1da4a5a531bc455d7f46f216f654c59bdadc6549",
+      "maximum_energy_residual_j": 2.384185791015625e-07,
+      "scope": "Assumed plant consistency/repeatability, not real-bus accuracy"
+    },
+    "bus-002": {
+      "passed": true,
+      "repeat_runs": 2,
+      "sample_events_each": 981,
+      "scalar_samples_each": 20110,
+      "physical_intervals_each": 4904,
+      "completed_sim_time_s": 981.2,
+      "trace_sha256": "2893a6ec79c0c547eaef4263dfc943643c29f6ea106dd7680d477c23babe5e5b",
+      "maximum_energy_residual_j": 1.1920928955078125e-07,
+      "scope": "Assumed plant consistency/repeatability, not real-bus accuracy"
+    }
+  },
+  "shared_checks": {
+    "python_tests": 89,
+    "frontend_logic_tests": 12,
+    "strict_typescript": true,
+    "strict_python_modules": [
+      "spool",
+      "plant",
+      "sensors",
+      "run_policy"
+    ],
+    "format_and_production_build": true,
+    "original_contract_outcomes_per_language": 339,
+    "simulation_contract_outcomes_per_language": 68
+  },
+  "original_monitoring_replay_regression": {
+    "passed": true,
+    "live_events": 18,
+    "live_scalar_samples": 360,
+    "final_pending": 0,
+    "outage_pending_sample": 2,
+    "old_byte_preserving_sql_upgrade": true,
+    "monitoring_quality_clock_and_replay_browsers_passed": true,
+    "replay_database_broker_network_isolation": true,
+    "owned_cleanup_empty": true
+  },
+  "original_dataflow_regression": {
+    "passed": true,
+    "owned_cleanup_empty": true,
+    "persistence_restart_cycles": 2
+  },
+  "owned_cleanup": {
+    "containers_remaining": 0,
+    "volumes_remaining": 0
+  },
+  "visual_review": {
+    "desktop_mobile_and_replay_reviewed": true,
+    "formal_visual_regression_baseline": false
+  },
+  "source_set_sha256": "5428b6f7ba9906db2d7115b9b4675c47858c017d961c4b826eea28818a5e5fa5",
+  "source_input_count": 122,
+  "privacy_and_secret_findings": 0,
+  "remaining": [
+    "P1-D3 backup and isolated application restore",
+    "P1-E full W0/W1/W2 history volume, latency, five-minute outage, capacity and retention acceptance",
+    "formal visual baseline and host suspension qualification",
+    "independent second adapter implementation and interacting fleet traffic",
+    "physical coolant coupling/calibration and model accuracy",
+    "P3 command/executor effect safety, remote transport and hardware",
+    "persistent developer/demo launcher"
+  ],
+  "private_evidence": "evidence/p1/2026-11-03-d2-06",
+  "private_original_regression": "evidence/p1/2026-11-03-d2-regression-02",
+  "private_original_dataflow": "evidence/p0/2026-11-03-dataflow-d2-final.json",
+  "private_source_checks": ".runtime/dev-checks/27d6d6df64a94cb4a3ad13080bb5a153/report.json"
+}

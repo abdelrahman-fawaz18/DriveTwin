@@ -1,0 +1,7 @@
+{
+  "provider": "conditioned-coolant-inlet/1.0.0",
+  "initial_k": 300.15,
+  "ambient_offset_k": 10,
+  "response_time_s": 60,
+  "evidence_class": "assumed"
+}

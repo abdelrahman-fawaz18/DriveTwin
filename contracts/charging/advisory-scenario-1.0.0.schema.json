@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:evdt:charging:advisory-scenario:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "vehicle_id", "mission_id", "decisions", "station_updates"],
+  "properties": {
+    "schema_version": {"const": "evdt-offline-charging-scenario/1.0.0"},
+    "run_id": {"$ref": "#/$defs/id"},
+    "vehicle_id": {"$ref": "#/$defs/id"},
+    "mission_id": {"$ref": "#/$defs/id"},
+    "decisions": {
+      "type": "array", "minItems": 1, "maxItems": 300, "items": {"$ref": "#/$defs/decision"}
+    },
+    "station_updates": {
+      "type": "array", "maxItems": 2000, "items": {"$ref": "#/$defs/update"}
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,63}(?![\\s\\S])"},
+    "seconds": {"type": "number", "minimum": 0, "maximum": 86400},
+    "energy": {"type": "number", "minimum": 0, "maximum": 350},
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sim_s", "observed_sim_s", "departure_route_index", "departure_m", "speed_m_s",
+        "mission_stop_served", "connector_id", "initial_energy_kwh", "auxiliary_power_w",
+        "remaining_minimum_kwh", "post_charge_draw_budget_kwh", "bus_acceptance_w",
+        "bus_charge_limit_kwh"
+      ],
+      "properties": {
+        "sim_s": {"$ref": "#/$defs/seconds"},
+        "observed_sim_s": {"$ref": "#/$defs/seconds"},
+        "departure_route_index": {"type": "integer", "minimum": 0},
+        "departure_m": {"type": "number", "minimum": 0},
+        "speed_m_s": {"type": "number", "minimum": 0},
+        "mission_stop_served": {"type": "boolean"},
+        "connector_id": {"$ref": "#/$defs/id"},
+        "initial_energy_kwh": {"$ref": "#/$defs/energy"},
+        "auxiliary_power_w": {"type": "number", "minimum": 0, "maximum": 1000000},
+        "remaining_minimum_kwh": {"anyOf": [{"$ref": "#/$defs/energy"}, {"type": "null"}]},
+        "post_charge_draw_budget_kwh": {"anyOf": [{"$ref": "#/$defs/energy"}, {"type": "null"}]},
+        "bus_acceptance_w": {"type": "number", "minimum": 1, "maximum": 1000000},
+        "bus_charge_limit_kwh": {"$ref": "#/$defs/energy"}
+      }
+    },
+    "update": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "station_id", "observed_sim_s", "available_sim_s", "state", "occupied_bays",
+        "queued_vehicles", "expected_wait_s"
+      ],
+      "properties": {
+        "station_id": {"$ref": "#/$defs/id"},
+        "observed_sim_s": {"$ref": "#/$defs/seconds"},
+        "available_sim_s": {"$ref": "#/$defs/seconds"},
+        "state": {"enum": ["open", "closed", "outage"]},
+        "occupied_bays": {"type": "integer", "minimum": 0},
+        "queued_vehicles": {"type": "integer", "minimum": 0},
+        "expected_wait_s": {"anyOf": [{"$ref": "#/$defs/seconds"}, {"type": "null"}]}
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "profile_id": "declared-urban-bus/2.0.0-dev",
+  "origin": {
+    "kind": "declared",
+    "source": "DriveTwin development profile",
+    "reference": "Legacy estimator values retained as initial assumptions; requires independent route-aware evaluation"
+  },
+  "capacity_kwh": 350,
+  "reserve_soc": 0.1,
+  "loaded_mass_kg": 18000,
+  "max_loaded_mass_kg": 25000,
+  "rotating_mass_kg": 200,
+  "frontal_area_m2": 8.16,
+  "drag_coefficient": 0.7,
+  "rolling_coefficient": 0.01,
+  "air_density_kg_m3": 1.2,
+  "propulsion_efficiency": 0.9,
+  "regeneration_efficiency": 0.55,
+  "max_discharge_w": 600000,
+  "max_regeneration_w": 250000,
+  "max_acceleration_m_s2": 1,
+  "max_deceleration_m_s2": 1.5,
+  "gravity_m_s2": 9.81,
+  "propulsion_by_power": null,
+  "regeneration_by_soc": null,
+  "discharge_by_temperature": null,
+  "regeneration_by_temperature": null,
+  "usable_fraction_by_temperature": null
+}

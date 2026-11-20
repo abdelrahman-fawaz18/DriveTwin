@@ -1,0 +1,8 @@
+{
+  "version": "queue-disk-boundaries/1.0.0",
+  "encoded_telemetry_bytes": 33554432,
+  "telemetry_disk_bytes": 67108864,
+  "critical_disk_bytes": 8388608,
+  "host_free_reserve_bytes": 21474836480,
+  "scope": "Persistent filesystem boundary mechanism; vehicle queue/critical-result integration remains separate"
+}

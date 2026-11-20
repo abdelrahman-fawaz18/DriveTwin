@@ -1,0 +1,10 @@
+{
+  "version": "phase1-local-host/1.0.1",
+  "warning_available_bytes": 2147483648,
+  "warning_duration_s": 30,
+  "emergency_available_bytes": 536870912,
+  "emergency_commit_headroom_bytes": 1073741824,
+  "emergency_duration_s": 10,
+  "capacity_qualification_phase": 6,
+  "setup_reclaim_policy": "clean-file-cache-before-browser/1.0.0"
+}

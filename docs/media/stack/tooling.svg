@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="219" height="22" viewBox="0 0 219 22" role="img" aria-labelledby="title">
+  <title id="title">Docker, pytest, Playwright</title>
+  <g fill="#fff" font-family="system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">
+    <rect x="0" width="62" height="22" rx="3" fill="#1269A6"/>
+    <text x="31" y="15">Docker</text>
+    <rect x="67" width="59" height="22" rx="3" fill="#54622C"/>
+    <text x="96.5" y="15">pytest</text>
+    <rect x="131" width="88" height="22" rx="3" fill="#356143"/>
+    <text x="175" y="15">Playwright</text>
+  </g>
+</svg>

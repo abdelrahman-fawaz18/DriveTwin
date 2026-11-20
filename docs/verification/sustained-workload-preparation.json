@@ -1,0 +1,60 @@
+{
+  "checkpoint": "P1-E2-C preparation",
+  "date": "2026-11-04",
+  "preparation_checks_passed": true,
+  "full_E2_passed": false,
+  "W0_passed": false,
+  "W1_passed": false,
+  "phase_1_complete": false,
+  "implemented": [
+    "Frozen W0/W1 profiles and separately labeled ten-asset short rehearsal",
+    "Run/boot-bound optional shared source start with actual duration and per-tick lag validation",
+    "Independent browser contexts, exact displayed value/unit checks and per-asset result files",
+    "Streaming trace validation and complete fleet-distribution aggregation",
+    "Active-Ubuntu memory preflight and conservative sampled host-headroom boundary accounting",
+    "Bounded per-role database connection admission and exact-byte transient metadata retries",
+    "Bounded renewable Windows sleep request without editing saved power settings"
+  ],
+  "verified": {
+    "python_tests": 185,
+    "frontend_logic_tests": 12,
+    "original_contract_outcomes_per_language": 339,
+    "operational_contract_outcomes_per_language": 81,
+    "strict_typescript": true,
+    "scoped_strict_python_modules": 4,
+    "format_build_privacy_secrets": true,
+    "reviewed_core_guard": true,
+    "historical_core_files_unchanged": 46,
+    "targeted_pacing_trace_concurrency_and_retry_tests": 72,
+    "actual_two_thread_common_start": true,
+    "actual_bounded_windows_sleep_request_release": true
+  },
+  "attempts": [
+    {
+      "attempt": "preflight-01",
+      "passed": false,
+      "workload_started": false,
+      "reason": "Active-Ubuntu Windows headroom remained below the frozen threshold for more than 30 seconds"
+    },
+    {
+      "attempt": "rehearsal-02",
+      "passed": false,
+      "workload_started": true,
+      "reason": "Three sources stopped after transient database connection exhaustion; failed services/browser/trace records retained",
+      "limitation": "Controller final source guard also rejected concurrent in-progress edits; no acceptance report or passing claim is reconstructed. Three failed source output directories were not copied before owned cleanup. The subsequent fix requires a fresh run."
+    },
+    {
+      "attempt": "rehearsal-03",
+      "passed": false,
+      "workload_started": false,
+      "reason": "Active-Ubuntu Windows headroom preflight failed again; no live proof of the new connection-budget fix is claimed"
+    }
+  ],
+  "remaining": [
+    "Fresh actual ten-source/browser qualification after the connection-budget fix",
+    "Full warmup plus W0 and W1 wall-time workloads and all required current-source metrics",
+    "Affected original monitoring/replay/recovery regressions against current bytes",
+    "W2 history/query/restore and E4/E5 acceptance"
+  ],
+  "privacy": "Raw diagnostics, originals, runtime settings, browser artifacts and handoffs stay ignored. No publishing."
+}

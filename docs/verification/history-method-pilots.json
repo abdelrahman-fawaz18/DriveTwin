@@ -1,0 +1,64 @@
+{
+  "checkpoint": "P1-E3 query, independent restore and real browser-download method pilots",
+  "date": "2026-11-04",
+  "method_pilots_passed": true,
+  "scope": "Small original history checkpoint, two assets, 60 events each; full W2 volume gates remain open",
+  "restore": {
+    "different_cluster": true,
+    "full_inventory_equal": true,
+    "representative_queries": 4,
+    "fresh_credentials_old_credentials_denied": true,
+    "restricted_roles_and_scoped_reads_checked": true,
+    "same_cluster_and_nonempty_target_refusals_checked": true,
+    "initial_small_restore_and_verification_s": 23.369998037000002,
+    "full_W2_Q10_passed": false
+  },
+  "queries": {
+    "fixed_full_case_count": 20,
+    "pilot_cold_cases": 4,
+    "pilot_warm_cases": 4,
+    "uniform_priming_requests": 4,
+    "independent_original_value_extrema_segment_quality_and_bucket_checks": true,
+    "cold_method": "PostgreSQL restart and readiness per case; OS/storage and API caches uncontrolled",
+    "warm_method": "One identical recorded and audited priming request immediately before each measured request",
+    "timing": "One client monotonic HTTP-plus-JSON-parse interval",
+    "full_W2_Q05_passed": false
+  },
+  "browser": {
+    "projects": [
+      "visible Windows Edge",
+      "automated pinned Chromium"
+    ],
+    "assets": 2,
+    "signals_per_view": 5,
+    "formats": [
+      "JSON",
+      "CSV"
+    ],
+    "rows_per_download": 300,
+    "pages_per_download": 1,
+    "download_files": 8,
+    "unique_selected_original_scalar_rows": 600,
+    "all_download_rows_values_units_identity_quality_recipe_schema_catalog_checked": true,
+    "desktop_mobile_controls_and_document_overflow_checked": true,
+    "formal_visual_baseline_passed": false,
+    "mobile_axis_readability_review_pending": true,
+    "full_W2_multipage_export_passed": false
+  },
+  "verification": {
+    "python_tests": 345,
+    "frontend_tests": 18,
+    "contract_outcomes_per_language": [
+      339,
+      81
+    ],
+    "strict_types_format_build_privacy_secrets": true,
+    "current_shared_and_browser_source_fingerprints_match": true,
+    "owned_cleanup_empty": true,
+    "real_failed_callback_reported_failed_and_cleaned": true
+  },
+  "prior_prototype_query_attempt_accepted": false,
+  "new_dependencies_or_runtime_routes_or_wire_schemas_or_migrations": 0,
+  "W2_database_passed": false,
+  "phase_1_complete": false
+}

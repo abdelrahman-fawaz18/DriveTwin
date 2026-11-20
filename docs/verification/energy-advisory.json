@@ -1,0 +1,148 @@
+{
+  "checkpoint": "P2-A2 observation-based advisory forecasts",
+  "date": "2026-11-04",
+  "verified_utc": "2026-11-04T23:58:40.556289+00:00",
+  "passed": true,
+  "phase_2_complete": false,
+  "scope": "Offline input validity, numerical reference/plan calculations and frozen-record consumption; no calibrated accuracy, runtime isolation or product integration claim.",
+  "models": {
+    "reference": "recent-net-distance-baseline/1.0.0",
+    "supplied_plan": "observed-plan-advisory/1.0.0",
+    "numerical": "longitudinal-energy-estimate/1.1.0",
+    "record": "advisory-energy-forecast/1.0.0"
+  },
+  "model_qualified": false,
+  "uncertainty_method": "not_established",
+  "implemented": [
+    "Four coincident good canonical quantities with configurable signal bindings; unrelated sensors ignored",
+    "Reviewed admitted envelope versions 3.0.0/3.1.0/3.2.0; unknown formats unavailable",
+    "Single asset/run/source/session/epoch, increasing time and sequence, unique events, gap/window/count/age limits",
+    "Explicit recorded-frozen versus caller-declared live-running simulation clock; future inputs rejected",
+    "Explicit external-charging exclusion and mandatory declared capacity/reserve assumptions",
+    "Recent net-consumption reference with conditional distance/time to reserve",
+    "Supplied future-plan estimate with observed initial speed/charge and explicit parameter/work limits",
+    "Minimum energy through the numerical trajectory prevents later recovery hiding a reserve breach",
+    "Unserved energy retained; unavailable output has no prediction values",
+    "Immutable results and deterministic normalized lineage/settings identity, including integration step"
+  ],
+  "focused_energy_tests": 101,
+  "synthetic_examples": {
+    "passed": true,
+    "count": 12,
+    "ids": [
+      "reference",
+      "stale",
+      "future",
+      "missing",
+      "invalid",
+      "mixed-asset",
+      "charging-unknown",
+      "zero-net-consumption",
+      "odometer-reset",
+      "planned",
+      "plan-distance-mismatch",
+      "intermediate-reserve-breach"
+    ]
+  },
+  "recorded_input_check": {
+    "passed": true,
+    "assets": 2,
+    "packets": 60,
+    "advisory_forecasts": 4,
+    "all_original_canonical_packet_hashes_verified": true,
+    "accepted_P1_reconciliation_required": true,
+    "recorded_analysis_time": true,
+    "actual_future_or_hidden_plant_parameters_used": false,
+    "declared_illustrative_parameters_and_forward_plan": true,
+    "accuracy_or_live_authentication_claim": false
+  },
+  "numerical_regression": {
+    "passed": true,
+    "existing_analytic_profiles": 9,
+    "original_1_0_0_record_preserved": true,
+    "only_numerical_change": "1.1.0 adds minimum estimated trajectory energy; equations and ledger unchanged"
+  },
+  "shared_checks": {
+    "passed": true,
+    "python_tests": 628,
+    "dashboard_tests": 22,
+    "strict_python_modules": 11,
+    "original_contract_cases_per_language": 339,
+    "operational_contract_cases_per_language": 81,
+    "source_fingerprints_match": 324,
+    "types_formatting_build_passed": true,
+    "candidate_privacy_secret_findings": 0
+  },
+  "phase1_compatibility": {
+    "passed": true,
+    "controller_files_exact": 78,
+    "current_recovery_files_exact": 213,
+    "functional_service_files_exact": 212,
+    "prior_reviewed_harness_only_difference": [
+      "scripts/p1/recovery_fixture.py"
+    ],
+    "harness_unchanged_since_P2_A1": true,
+    "existing_closeout_review": "docs/verification/p1-monitoring-complete.json",
+    "runtime_guard_passed": true,
+    "monitoring_runtime_wire_catalog_schema_migrations_unchanged": true,
+    "new_P1_workload_or_history_regeneration": false,
+    "clarification": "Earlier P2-A1 aggregate wording overstated functional service exact-file equality; 212 files are exact plus the previously reviewed recovery-only harness change. Its original evidence remains unchanged."
+  },
+  "preserved_attempts": [
+    {
+      "private_evidence": "evidence/p2/2026-11-04-energy-advisory-01",
+      "passed": false,
+      "synthetic_examples_passed": 12,
+      "recorded_assets_completed": 1,
+      "reason": "Selector initially refused the second bus existing 3.1.0 format; explicit reviewed-version compatibility correction and tests preceded the passing new attempt."
+    }
+  ],
+  "cleanup": {
+    "verified_utc": "2026-11-04T23:58:39.842503+00:00",
+    "passed": true,
+    "containers_remaining": 0,
+    "preexisting_volumes_preserved": 13,
+    "new_volumes_remaining": 0,
+    "missing_preexisting_volumes": 0,
+    "temporary_resources_started": "Offline --rm containers only; no volumes or application services",
+    "agent_settings_or_memory_settings_changed": false
+  },
+  "limits": [
+    "Selector assumes upstream admission; no complete telemetry validation or authentication replacement",
+    "Live state and absence of external charging are caller declarations, not runtime-health proof",
+    "Coincident four-signal simulation inputs only; no asynchronous alignment, replay or physical support",
+    "Conditional reference range/time assumes the recent driving pattern continues",
+    "Declared forward schedule/vehicle parameters may differ from actual future conditions",
+    "No uncertainty interval, held-out mission accuracy or D-18 target is qualified",
+    "Library has no I/O clients, but deployed OS/network truth isolation remains untested",
+    "No forecast persistence, API/dashboard integration, station optimization or commands"
+  ],
+  "remaining": [
+    "P2-B1 whole-mission partitions and operational truth isolation",
+    "P2-B2 calibration, mismatch validation and D-18 threshold freeze",
+    "P2-C1 unseen-mission accuracy/baseline and uncertainty coverage report",
+    "P2-D1 persistent forecast records, asset-scoped read API and UI unavailable states",
+    "P2-E1 final P2-01 through P2-06 review"
+  ],
+  "model_card": "docs/models/energy-advisory-model-card.md",
+  "reproduction": "docs/setup/energy-advisory-forecasts.md",
+  "decision": "docs/adr/0040-observation-based-advisory-forecasts.md",
+  "private_evidence": "evidence/p2/2026-11-04-energy-advisory-02",
+  "private_numerical_regression": "evidence/p2/2026-11-04-energy-core-v1_1-01",
+  "private_shared_checks": ".runtime/dev-checks/558ff7e6391944ff8c3470c6d566be0e",
+  "source_sha256": {
+    "src/evdt/energy/__init__.py": "8338ac160d2c3e23e03eed91fdb1ea2a8cb9e2c46bbf1149544376be1e9f9440",
+    "src/evdt/energy/forecasts.py": "c719c83dc7eb938497c764b26ea455b5932b8966ebee91ed558700fbe202b1e9",
+    "src/evdt/energy/model.py": "bd078e9e6c1aba57901ced24d44aef39905523889dd51dc4310cd769fe918d14",
+    "src/evdt/energy/observations.py": "e1fc665d4d24222c99edeac31d62535a208774d71ff4502c0f56c884b12ee12a",
+    "scripts/p2/qualify_energy_forecasts.py": "973002b886d9399400f56b36752f5f7264f8259278b1b714aef0a0405b2ffe73",
+    "qualification/energy/forecast-cases.json": "916f8432a452ddfcd6a98044e015fa4b4148e564abd8a5b1d412321857ed0212",
+    "contracts/telemetry/3.0.0.schema.json": "dfb7c6fafbe1d74d612c1414c8c7b9b480db81b5c28cacac780717f60c936e5f",
+    "contracts/telemetry/3.1.0.schema.json": "c3285622692d63bde65dee7fdf6fa5fbb02d322b99197a305588a056ef54a2e1",
+    "contracts/telemetry/3.2.0.schema.json": "fc86fe2a655dae4f7bbfc8f0bc1633cec8a844a4818b5a3cc4be9c8b8114d12b"
+  },
+  "runtime_image_id": "sha256:352f65d65d37c157fe5c61e1ed7664551d275b4f049ef97498eaf921d4bfa505",
+  "new_dependencies_frameworks_or_monitoring_interfaces": false,
+  "published": false,
+  "phase3_started": false
+}

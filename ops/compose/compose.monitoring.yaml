@@ -1,0 +1,198 @@
+x-app: &app
+  image: ${MONITORING_IMAGE:?}
+  environment: &environment
+    EVDT_RUN_ID: ${EVDT_RUN_ID:?}
+    DB_USER: evdt_ingest
+    DB_PASSWORD_FILE: /run/secrets/ingest_db
+  read_only: true
+  tmpfs: ["/tmp:size=32m,mode=1777"]
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  mem_limit: 192m
+  pids_limit: 64
+  networks: [fixture]
+
+services:
+  db:
+    image: ${POSTGRES_IMAGE:?}
+    environment:
+      POSTGRES_USER: evdt_admin
+      POSTGRES_DB: evdt
+      POSTGRES_PASSWORD_FILE: /run/secrets/admin_db
+    secrets: [admin_db]
+    command: [postgres, -c, shared_buffers=32MB, -c, max_connections=20]
+    volumes: [database:/var/lib/postgresql]
+    networks: [fixture, replay-data]
+    mem_limit: 256m
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U evdt_admin -d evdt"]
+      interval: 2s
+      timeout: 2s
+      retries: 30
+  broker:
+    image: ${MOSQUITTO_IMAGE:?}
+    user: "1883:1883"
+    volumes:
+      - ${BROKER_CONFIG:?}:/mosquitto/config/mosquitto.conf:ro
+      - ${BROKER_PASSWORDS:?}:/mosquitto/config/passwords:ro
+      - ${BROKER_ACL:?}:/mosquitto/config/acl:ro
+      - broker:/mosquitto/data
+    networks: [fixture]
+    mem_limit: 64m
+  migrate:
+    <<: *app
+    environment:
+      <<: *environment
+      DB_USER: evdt_admin
+      DB_PASSWORD_FILE: /run/secrets/admin_db
+      INGEST_DB_PASSWORD_FILE: /run/secrets/ingest_db
+      READ_DB_PASSWORD_FILE: /run/secrets/read_db
+      REGISTRY_DB_PASSWORD_FILE: /run/secrets/registry_db
+      REPLAY_DB_PASSWORD_FILE: /run/secrets/replay_db
+      RUN_POLICY_FILE: /run/secrets/run_policy
+      MAP_CONTEXT_FILE: /run/secrets/map_context
+    secrets: [admin_db, ingest_db, read_db, registry_db, replay_db, run_policy, map_context]
+    command: [python, -m, evdt.monitoring.repository]
+    depends_on:
+      db: {condition: service_healthy}
+  registry:
+    <<: *app
+    environment:
+      <<: *environment
+      DB_USER: evdt_registry
+      DB_PASSWORD_FILE: /run/secrets/registry_db
+      WRITERS_FILE: /run/secrets/writers
+    secrets: [registry_db, writers]
+    command: [uvicorn, evdt.monitoring.registration_api:app, --host, 0.0.0.0, --port, "9000"]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    healthcheck:
+      test: [CMD, python, -c, "from urllib.request import urlopen;urlopen('http://127.0.0.1:9000/health/ready',timeout=2)"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  ingest:
+    <<: *app
+    environment:
+      <<: *environment
+      MQTT_USER: ingest
+      MQTT_PASSWORD_FILE: /run/secrets/ingest_mqtt
+      METRICS_TOKEN_FILE: /run/secrets/metrics
+    secrets: [ingest_db, ingest_mqtt, metrics]
+    command: [python, -m, evdt.monitoring.ingest]
+    restart: on-failure
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+      broker: {condition: service_started}
+  api:
+    <<: *app
+    environment:
+      <<: *environment
+      DB_USER: evdt_read
+      DB_PASSWORD_FILE: /run/secrets/read_db
+      READERS_FILE: /run/secrets/readers
+      REPLAY_BROWSER_URL: "http://127.0.0.1:${REPLAY_PORT:-18766}"
+      METRICS_TOKEN_FILE: /run/secrets/metrics
+    secrets: [read_db, readers, metrics]
+    command: [uvicorn, evdt.monitoring.api:app, --host, 0.0.0.0, --port, "8000"]
+    networks: [fixture, host-access]
+    ports: ["127.0.0.1:${API_PORT:-18765}:8000"]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+  replay:
+    <<: *app
+    environment:
+      SOURCE_RUN_ID: ${EVDT_RUN_ID:?}
+      DB_USER: evdt_replay
+      DB_PASSWORD_FILE: /run/secrets/replay_db
+      READERS_FILE: /run/secrets/replay_readers
+      MONITORING_BROWSER_URL: "http://127.0.0.1:${API_PORT:-18765}"
+    secrets: [replay_db, replay_readers]
+    command: [uvicorn, evdt.monitoring.replay_api:app, --host, 0.0.0.0, --port, "8000"]
+    networks: [replay-data, replay-browser]
+    ports: ["127.0.0.1:${REPLAY_PORT:-18766}:8000"]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+  sender:
+    <<: *app
+    environment:
+      EVDT_RUN_ID: ${EVDT_RUN_ID:?}
+      ASSET_ID: bus-001
+      SOURCE_ID: sumo-adapter
+      SPOOL_FILE: /spool/queue.db
+      MQTT_USER: adapter-bus-001
+      MQTT_PASSWORD_FILE: /run/secrets/adapter_mqtt
+      METRICS_TOKEN_FILE: /run/secrets/metrics
+    secrets: [adapter_mqtt, metrics]
+    command: [python, -m, evdt.monitoring.transport]
+    volumes: [spool:/spool]
+    depends_on:
+      broker: {condition: service_started}
+  source:
+    <<: *app
+    image: ${SIMULATOR_IMAGE:?}
+    environment:
+      EVDT_RUN_ID: ${EVDT_RUN_ID:?}
+      ASSET_ID: bus-001
+      SOURCE_ID: sumo-adapter
+      SPOOL_FILE: /spool/queue.db
+      SOURCE_OUTPUT: /source-output
+      PRODUCER_TOKEN_FILE: /run/secrets/producer1
+    secrets: [producer1]
+    command: [python, -m, evdt.monitoring.adapter, --maximum-samples, "18", --pause-at-s, "3", --pause-seconds, "7"]
+    depends_on:
+      registry: {condition: service_healthy}
+    mem_limit: 512m
+    volumes:
+      - spool:/spool
+      - source-output:/source-output
+      - ./simulation/montreal:/scenario:ro
+      - ./data/public/montreal-core-v1/roads.osm.xml:/input/roads.osm.xml:ro
+    profiles: [source]
+  probe:
+    <<: *app
+    environment:
+      <<: *environment
+      DB_USER: evdt_admin
+      DB_PASSWORD_FILE: /run/secrets/admin_db
+      READERS_FILE: /run/secrets/readers
+      MQTT_USER: observer
+      MQTT_PASSWORD_FILE: /run/secrets/observer_mqtt
+      ASSET_ID: bus-001
+      SOURCE_ID: sumo-adapter
+      SPOOL_FILE: /spool/queue.db
+    secrets: [admin_db, read_db, replay_db, replay_readers, replay_mqtt, ingest_db, registry_db, producer1, producer2, readers, observer_mqtt, adapter_mqtt, adapter2_mqtt]
+    networks: [fixture, replay-data]
+    volumes: [spool:/spool, source-output:/source-output]
+    profiles: [tools]
+    command: [python, -m, evdt.monitoring.probe]
+
+networks:
+  fixture: {internal: true}
+  host-access: {}
+  replay-data: {internal: true}
+  replay-browser: {}
+volumes:
+  database: {labels: {com.evdt.scope: p1-uplink}}
+  broker: {labels: {com.evdt.scope: p1-uplink}}
+  spool: {labels: {com.evdt.scope: p1-uplink}}
+  source-output: {labels: {com.evdt.scope: p1-uplink}}
+secrets:
+  admin_db: {file: "${SECRET_DIRECTORY:?}/admin_db"}
+  ingest_db: {file: "${SECRET_DIRECTORY:?}/ingest_db"}
+  read_db: {file: "${SECRET_DIRECTORY:?}/read_db"}
+  replay_mqtt: {file: "${SECRET_DIRECTORY:?}/replay_mqtt"}
+  replay_db: {file: "${SECRET_DIRECTORY:?}/replay_db"}
+  replay_readers: {file: "${SECRET_DIRECTORY:?}/replay_readers.json"}
+  readers: {file: "${SECRET_DIRECTORY:?}/readers.json"}
+  ingest_mqtt: {file: "${SECRET_DIRECTORY:?}/ingest_mqtt"}
+  adapter_mqtt: {file: "${SECRET_DIRECTORY:?}/adapter_mqtt"}
+  observer_mqtt: {file: "${SECRET_DIRECTORY:?}/observer_mqtt"}
+  adapter2_mqtt: {file: "${SECRET_DIRECTORY:?}/adapter2_mqtt"}
+  registry_db: {file: "${SECRET_DIRECTORY:?}/registry_db"}
+  run_policy: {file: "${SECRET_DIRECTORY:?}/run_policy.json"}
+  map_context: {file: "${SECRET_DIRECTORY:?}/map_context.json"}
+  metrics: {file: "${SECRET_DIRECTORY:?}/metrics"}
+  writers: {file: "${SECRET_DIRECTORY:?}/writers.json"}
+  producer1: {file: "${SECRET_DIRECTORY:?}/producer1"}
+  producer2: {file: "${SECRET_DIRECTORY:?}/producer2"}
